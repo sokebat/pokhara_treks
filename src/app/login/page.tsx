@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 
 import Logo from "@/components/shared/Logo";
@@ -23,7 +24,9 @@ export default function LoginPage() {
         </div>
 
         <div className="mt-8">
-          <LoginForm />
+          <Suspense fallback={null}>
+            <LoginForm />
+          </Suspense>
         </div>
       </div>
     </div>
