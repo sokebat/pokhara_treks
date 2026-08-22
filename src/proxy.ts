@@ -8,6 +8,10 @@ import { authConfig } from "@/auth.config";
 // instead of re-verifying a password on every request.
 export default NextAuth(authConfig).auth;
 
+// Dashboard route protection is paused for now — /dashboard is reachable
+// without logging in. Add "/dashboard/:path*" (and "/login") back to the
+// matcher below to re-enable it; the rest of the auth setup (schema, login
+// page, Credentials provider) is untouched and ready to go.
 export const config = {
-  matcher: ["/dashboard/:path*", "/login"],
+  matcher: [],
 };
