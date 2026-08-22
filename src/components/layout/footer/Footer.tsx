@@ -1,6 +1,11 @@
 import Container from "@/components/shared/Container";
 import { destinationColumns } from "@/constant/destinations";
-import { FooterBottom, FooterBrand, FooterLinkColumn } from "@/components/layout/footer";
+import {
+  FooterBottom,
+  FooterBrand,
+  FooterContactStrip,
+  FooterLinkColumn,
+} from "@/components/layout/footer";
 
 const quickLinks = [
   { label: "FAQ", href: "/faq" },
@@ -21,7 +26,9 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <Container>
-        <div className="grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+        <FooterContactStrip />
+
+        <div className="grid grid-cols-1 gap-10 pt-10 pb-14 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
           <FooterBrand />
           <FooterLinkColumn title="Quick Links" links={quickLinks} />
           <FooterLinkColumn title="Trekking Regions" links={trekkingRegions} />

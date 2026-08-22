@@ -3,6 +3,7 @@ export const siteInfo = {
   phone: "+977-61-000000",
   phoneDisplay: "+977 61 000000",
   email: "info@pokharatreks.com",
+  address: "Lakeside, Pokhara-6, Nepal",
   companyRegNo: "000000/000",
   tourismLicenseNo: "0000/000",
   social: {
