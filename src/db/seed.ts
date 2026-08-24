@@ -23,7 +23,7 @@ function loadAdmins(): SeedAdmin[] {
   if (!raw) {
     throw new Error(
       "SEED_ADMINS is not set. Add a JSON array to .env.local, e.g.\n" +
-        `SEED_ADMINS='[{"name":"Admin One","email":"admin1@pokharatreks.com","password":"..."}]'`
+        `SEED_ADMINS='[{"name":"Admin One","email":"admin1@pokharatreks.com","password":"..."}]'`,
     );
   }
   return JSON.parse(raw) as SeedAdmin[];

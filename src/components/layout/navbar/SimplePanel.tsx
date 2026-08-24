@@ -15,7 +15,7 @@ const SimplePanel = ({ items }: SimplePanelProps) => {
     <div
       className={cn(
         "grid gap-x-4 gap-y-0.5 p-2",
-        wide ? "w-[30rem] grid-cols-2" : "w-64 grid-cols-1"
+        wide ? "w-[30rem] grid-cols-2" : "w-64 grid-cols-1",
       )}
     >
       {items.map((leaf) => (

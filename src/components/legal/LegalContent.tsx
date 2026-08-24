@@ -29,7 +29,10 @@ const LegalContent = ({ page }: LegalContentProps) => {
           {section.items && (
             <div className="flex flex-col gap-4">
               {section.items.map((item) => (
-                <p key={item.label ?? item.text} className="text-muted-foreground">
+                <p
+                  key={item.label ?? item.text}
+                  className="text-muted-foreground"
+                >
                   {item.label && (
                     <strong className="font-semibold text-foreground">
                       {item.label}{" "}

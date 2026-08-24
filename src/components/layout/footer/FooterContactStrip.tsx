@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { ArrowUpRightIcon, ClockIcon, MailIcon, MapPinIcon, PhoneCallIcon } from "lucide-react";
+import {
+  ArrowUpRightIcon,
+  ClockIcon,
+  MailIcon,
+  MapPinIcon,
+  PhoneCallIcon,
+} from "lucide-react";
 
 import { siteInfo } from "@/constant/site";
 

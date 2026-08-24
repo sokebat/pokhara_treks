@@ -2,7 +2,12 @@ import Link from "next/link";
 
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
-import { DesktopNav, Logo, MobileNav, TopBar } from "@/components/layout/navbar";
+import {
+  DesktopNav,
+  Logo,
+  MobileNav,
+  TopBar,
+} from "@/components/layout/navbar";
 
 const NavBar = () => {
   return (
@@ -17,7 +22,7 @@ const NavBar = () => {
       <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
         <Container>
           <div className="flex items-center gap-3 py-1 lg:gap-6">
-            <Logo priority className="h-12 w-auto " />
+            <Logo priority className="h-12 w-auto" />
 
             <DesktopNav className="hidden xl:flex" />
 

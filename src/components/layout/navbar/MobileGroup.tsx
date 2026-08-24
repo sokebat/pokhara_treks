@@ -26,7 +26,7 @@ const MobileGroup = ({ group, onNavigate }: MobileGroupProps) => {
         <ChevronRightIcon
           className={cn(
             "size-3.5 shrink-0 text-muted-foreground transition-transform",
-            open && "rotate-90"
+            open && "rotate-90",
           )}
         />
       </button>

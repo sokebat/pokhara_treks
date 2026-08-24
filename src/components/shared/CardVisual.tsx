@@ -12,7 +12,7 @@ const CardVisual = ({ icon: Icon, className }: CardVisualProps) => {
     <div
       className={cn(
         "relative overflow-hidden bg-linear-to-b from-primary to-[oklch(0.30_0.07_255)]",
-        className
+        className,
       )}
     >
       <svg

@@ -10,7 +10,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { DestinationsMenu, MegaPanel, SimplePanel } from "@/components/layout/navbar";
+import {
+  DestinationsMenu,
+  MegaPanel,
+  SimplePanel,
+} from "@/components/layout/navbar";
 
 interface DesktopNavProps {
   className?: string;

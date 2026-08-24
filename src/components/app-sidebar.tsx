@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 
 import {
   Sidebar,
@@ -13,9 +13,9 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/components/ui/sidebar"
-import SidebarUserMenu from "@/components/auth/SidebarUserMenu"
-import { GalleryVerticalEndIcon } from "lucide-react"
+} from "@/components/ui/sidebar";
+import SidebarUserMenu from "@/components/auth/SidebarUserMenu";
+import { GalleryVerticalEndIcon } from "lucide-react";
 
 // This is sample data.
 const data = {
@@ -156,7 +156,7 @@ const data = {
       ],
     },
   ],
-}
+};
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar variant="floating" {...props}>
@@ -206,5 +206,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarUserMenu />
     </Sidebar>
-  )
+  );
 }

@@ -16,8 +16,8 @@ const CTASection = () => {
             Ready for your Nepal adventure?
           </h2>
           <p className="mx-auto mt-3 max-w-md text-primary-foreground/80">
-            Tell us where you want to go and a local expert will get back to
-            you with a plan built around it.
+            Tell us where you want to go and a local expert will get back to you
+            with a plan built around it.
           </p>
 
           <Button

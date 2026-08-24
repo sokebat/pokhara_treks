@@ -24,7 +24,7 @@ const SectionHeader = ({
     <div
       className={cn(
         "flex flex-wrap items-end justify-between gap-6",
-        className
+        className,
       )}
     >
       <div>
@@ -33,7 +33,7 @@ const SectionHeader = ({
             "tracking-widest uppercase",
             isInverted
               ? "bg-accent/15 text-accent"
-              : "bg-accent/10 text-accent"
+              : "bg-accent/10 text-accent",
           )}
         >
           {eyebrow}
@@ -42,7 +42,7 @@ const SectionHeader = ({
         <h2
           className={cn(
             "mt-3 text-3xl font-bold tracking-tight sm:text-4xl",
-            isInverted ? "text-primary-foreground" : "text-primary"
+            isInverted ? "text-primary-foreground" : "text-primary",
           )}
         >
           {title}
@@ -54,7 +54,7 @@ const SectionHeader = ({
               "mt-2 max-w-xl",
               isInverted
                 ? "text-primary-foreground/75"
-                : "text-muted-foreground"
+                : "text-muted-foreground",
             )}
           >
             {description}

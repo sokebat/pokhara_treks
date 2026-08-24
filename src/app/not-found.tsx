@@ -46,9 +46,8 @@ export default function NotFound() {
               Looks like this trail doesn&apos;t exist
             </h1>
             <p className="mt-4 text-muted-foreground">
-              The page you&apos;re looking for may have been moved, renamed,
-              or is temporarily unavailable. Let&apos;s get you back on
-              track.
+              The page you&apos;re looking for may have been moved, renamed, or
+              is temporarily unavailable. Let&apos;s get you back on track.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

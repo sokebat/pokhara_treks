@@ -16,7 +16,8 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
   const [active, setActive] = React.useState(0);
   const current = groups[active];
 
-  const columns = current.children.length > 14 ? 3 : current.children.length > 6 ? 2 : 1;
+  const columns =
+    current.children.length > 14 ? 3 : current.children.length > 6 ? 2 : 1;
   const panelWidth =
     columns === 3 ? "w-[68rem]" : columns === 2 ? "w-[46rem]" : "w-[32rem]";
 
@@ -33,7 +34,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
                 "flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors",
                 active === index
                   ? "bg-accent/10 text-accent"
-                  : "text-foreground hover:bg-background"
+                  : "text-foreground hover:bg-background",
               )}
             >
               <span>{group.label}</span>
@@ -41,7 +42,9 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
                 <span
                   className={cn(
                     "text-xs tabular-nums",
-                    active === index ? "text-accent/70" : "text-muted-foreground"
+                    active === index
+                      ? "text-accent/70"
+                      : "text-muted-foreground",
                   )}
                 >
                   {group.children.length}
@@ -60,7 +63,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
               ? "grid-cols-3"
               : columns === 2
                 ? "grid-cols-2"
-                : "grid-cols-1"
+                : "grid-cols-1",
           )}
         >
           {current.children.map((leaf) => (

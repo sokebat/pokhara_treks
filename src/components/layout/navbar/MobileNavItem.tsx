@@ -39,7 +39,7 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
         <ChevronDownIcon
           className={cn(
             "size-4 shrink-0 text-muted-foreground transition-transform",
-            open && "rotate-180"
+            open && "rotate-180",
           )}
         />
       </button>

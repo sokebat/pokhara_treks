@@ -39,9 +39,15 @@ export const destinationColumns: DestinationColumn[] = [
     links: [
       { label: "Pokhara Day Tour", href: "/pokhara-day-tour" },
       { label: "Kathmandu Day Tour", href: "/kathmandu-day-tour" },
-      { label: "Chitwan National Park Safari", href: "/chitwan-national-park-safari" },
+      {
+        label: "Chitwan National Park Safari",
+        href: "/chitwan-national-park-safari",
+      },
       { label: "Best of Nepal Tour", href: "/best-of-nepal-tour" },
-      { label: "Birding Tour in Pokhara", href: "/birding-tour-in-pokhara-nepal" },
+      {
+        label: "Birding Tour in Pokhara",
+        href: "/birding-tour-in-pokhara-nepal",
+      },
     ],
   },
   {

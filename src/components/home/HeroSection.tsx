@@ -34,10 +34,7 @@ const HeroSection = () => {
       />
 
       {/* Background overlays */}
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-primary/45"
-      />
+      <div aria-hidden className="absolute inset-0 bg-primary/45" />
 
       <div
         aria-hidden
@@ -46,7 +43,6 @@ const HeroSection = () => {
 
       <Container>
         <div className="relative grid min-h-150 items-center gap-10 py-14 sm:min-h-160 sm:py-16 lg:min-h-175 lg:grid-cols-[1.3fr_0.7fr] lg:gap-8 lg:py-20">
-
           {/* Left content */}
           <div className="flex w-full flex-col items-start">
             {/* Eyebrow */}
@@ -56,7 +52,7 @@ const HeroSection = () => {
               </span>
 
               <span className="text-left">
-                <span className="block text-sm font-semibold leading-tight text-primary-foreground">
+                <span className="block text-sm leading-tight font-semibold text-primary-foreground">
                   Women-Led Trekking Company
                 </span>
 
@@ -67,7 +63,7 @@ const HeroSection = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="mt-7 w-full text-4xl font-bold leading-[1.08] tracking-tight text-primary-foreground sm:text-5xl xl:text-[3.8rem]">
+            <h1 className="mt-7 w-full text-4xl leading-[1.08] font-bold tracking-tight text-primary-foreground sm:text-5xl xl:text-[3.8rem]">
               The Himalaya, led by the{" "}
               <span className="text-accent">women</span> who know her best.
             </h1>
@@ -157,8 +153,8 @@ const HeroSection = () => {
                   </p>
 
                   <p className="mt-1.5 text-xs leading-5 text-muted-foreground">
-                    Every itinerary is planned and guided by
-                    Pokhara-trained women.
+                    Every itinerary is planned and guided by Pokhara-trained
+                    women.
                   </p>
                 </div>
               </div>

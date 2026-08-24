@@ -50,7 +50,11 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      className="flex flex-col gap-5"
+    >
       <FormField
         id="email"
         label="Email"
@@ -71,7 +75,7 @@ const LoginForm = () => {
             placeholder="••••••••"
             autoComplete="current-password"
             aria-invalid={!!errors.password}
-            className="h-14 w-full rounded-md border border-input bg-transparent pl-11 pr-4 text-base outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm"
+            className="h-14 w-full rounded-md border border-input bg-transparent pr-4 pl-11 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm"
             {...register("password")}
           />
         </div>
@@ -82,7 +86,12 @@ const LoginForm = () => {
 
       {formError && <p className="text-sm text-destructive">{formError}</p>}
 
-      <Button type="submit" size="lg" disabled={isSubmitting} className="rounded-md">
+      <Button
+        type="submit"
+        size="lg"
+        disabled={isSubmitting}
+        className="rounded-md"
+      >
         <LogInIcon className="size-4" />
         {isSubmitting ? "Signing in..." : "Sign In"}
       </Button>

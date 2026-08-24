@@ -5,7 +5,11 @@ const Container = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <section className="max-w-[1600px] mx-auto px-2 md:px-4">{children}</section>;
+  return (
+    <section className="mx-auto max-w-[1600px] px-2 md:px-4">
+      {children}
+    </section>
+  );
 };
 
 export default Container;

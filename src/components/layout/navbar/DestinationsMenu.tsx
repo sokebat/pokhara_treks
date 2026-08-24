@@ -53,7 +53,7 @@ const DestinationsMenu = () => {
                 render={<Link href={column.viewAllHref} />}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "sm" }),
-                  "mt-auto w-fit rounded-md border-border text-primary hover:border-accent hover:bg-accent/10 hover:text-accent"
+                  "mt-auto w-fit rounded-md border-border text-primary hover:border-accent hover:bg-accent/10 hover:text-accent",
                 )}
               >
                 View all

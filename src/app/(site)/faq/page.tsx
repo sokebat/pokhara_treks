@@ -46,7 +46,10 @@ function FaqAnswer({ sections }: { sections: FaqSection[] }) {
             <ul className="mt-1.5 flex flex-col gap-1.5">
               {section.list.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span aria-hidden className="mt-2 size-1 shrink-0 rounded-full bg-accent" />
+                  <span
+                    aria-hidden
+                    className="mt-2 size-1 shrink-0 rounded-full bg-accent"
+                  />
                   <span>{item}</span>
                 </li>
               ))}
@@ -73,8 +76,8 @@ export default function FaqPage() {
             Frequently Asked Questions
           </h1>
           <p className="mt-4 text-muted-foreground">
-            Everything you need to know before you trek with us — gear,
-            guides, permits, visas, safety, and more.
+            Everything you need to know before you trek with us — gear, guides,
+            permits, visas, safety, and more.
           </p>
         </div>
 

@@ -10,7 +10,10 @@ const TopBar = () => {
         <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 text-xs">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span>Company Reg. No: {siteInfo.companyRegNo}</span>
-            <span aria-hidden className="hidden h-3 w-px bg-primary-foreground/25 sm:block" />
+            <span
+              aria-hidden
+              className="hidden h-3 w-px bg-primary-foreground/25 sm:block"
+            />
             <span>Nepal Tourism License: {siteInfo.tourismLicenseNo}</span>
           </div>
           <div className="flex items-center gap-3.5">

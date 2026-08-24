@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { MailIcon, MapPinIcon, PhoneCallIcon } from "lucide-react";
-import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa6";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa6";
 
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
@@ -28,8 +33,8 @@ export default function ContactPage() {
             Let&apos;s plan your Nepal adventure
           </h1>
           <p className="mt-4 text-muted-foreground">
-            Have a question about a trek, or want a custom itinerary? Send us
-            a message and our team will get back to you within 24 hours.
+            Have a question about a trek, or want a custom itinerary? Send us a
+            message and our team will get back to you within 24 hours.
           </p>
         </div>
 
