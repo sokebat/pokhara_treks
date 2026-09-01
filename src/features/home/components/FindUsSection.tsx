@@ -95,7 +95,8 @@ const FindUsSection = () => {
                     rel="noopener noreferrer"
                   />
                 }
-                className="rounded-md"
+                size="lg"
+                className="h-12 w-full rounded-md text-sm font-semibold transition"
               >
                 Get directions
               </Button>
@@ -104,7 +105,8 @@ const FindUsSection = () => {
                 nativeButton={false}
                 render={<Link href="/customize-my-trip" />}
                 variant="outline"
-                className="rounded-md"
+                size="lg"
+                className="h-12 w-full rounded-md text-sm font-semibold transition"
               >
                 Book a free trip consultation
               </Button>

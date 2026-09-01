@@ -18,6 +18,7 @@ type TripCardProps = {
   subtitle?: string;
   icon: LucideIcon;
   tone?: "primary" | "accent" | "chart-3";
+  image: string;
   price: number;
   ctaLabel: string;
   facts: Fact[];
@@ -34,13 +35,20 @@ const TripCard = ({
   subtitle,
   icon,
   tone = "primary",
+  image,
   price,
   ctaLabel,
   facts,
   rating,
 }: TripCardProps) => (
   <Card className="h-full gap-0 overflow-hidden rounded-md py-0">
-    <CardVisual icon={icon} tone={tone} className="aspect-4/3" />
+    <CardVisual
+      icon={icon}
+      tone={tone}
+      image={image}
+      alt={title}
+      className="aspect-4/3"
+    />
 
     <CardContent className="flex flex-1 flex-col py-5">
       <h3 className="text-base leading-snug font-semibold text-balance text-foreground">
@@ -94,7 +102,7 @@ const TripCard = ({
         <Button
           nativeButton={false}
           render={<Link href={href} />}
-          size="sm"
+          size="lg"
           className="rounded-md"
         >
           {ctaLabel}

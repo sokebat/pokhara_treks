@@ -18,6 +18,11 @@ import {
   Wallet,
 } from "lucide-react";
 
+// Reused across cards until each item has its own photo.
+const TREK_PHOTO = "/images/collage-trekking.jpg";
+const WOMEN_TREK_PHOTO = "/images/hero-women-trekking.jpg";
+const HELI_PHOTO = "/images/collage-heli.jpg";
+
 export type Activity = {
   title: string;
   count: string;
@@ -75,6 +80,7 @@ export type Trek = {
   season: string;
   price: number;
   icon: LucideIcon;
+  image: string;
 };
 
 export const popularTreks: Trek[] = [
@@ -89,6 +95,7 @@ export const popularTreks: Trek[] = [
     season: "Mar to May, Sep to Nov",
     price: 475,
     icon: MountainSnow,
+    image: TREK_PHOTO,
   },
   {
     title: "Mardi Himal Trek",
@@ -101,6 +108,7 @@ export const popularTreks: Trek[] = [
     season: "Mar to May, Oct to Dec",
     price: 385,
     icon: Mountain,
+    image: WOMEN_TREK_PHOTO,
   },
   {
     title: "Ghorepani Poon Hill Trek",
@@ -113,6 +121,7 @@ export const popularTreks: Trek[] = [
     season: "All year",
     price: 295,
     icon: Sunrise,
+    image: TREK_PHOTO,
   },
   {
     title: "Khopra Danda Trek",
@@ -125,6 +134,7 @@ export const popularTreks: Trek[] = [
     season: "Mar to May, Sep to Nov",
     price: 550,
     icon: Tent,
+    image: WOMEN_TREK_PHOTO,
   },
   {
     title: "Annapurna Circuit Trek",
@@ -137,6 +147,7 @@ export const popularTreks: Trek[] = [
     season: "Mar to May, Sep to Nov",
     price: 850,
     icon: Route,
+    image: TREK_PHOTO,
   },
   {
     title: "Upper Mustang Trek",
@@ -149,6 +160,7 @@ export const popularTreks: Trek[] = [
     season: "Mar to Nov",
     price: 990,
     icon: Flag,
+    image: WOMEN_TREK_PHOTO,
   },
 ];
 
@@ -164,6 +176,7 @@ export const shortTreks: Trek[] = [
     season: "All year",
     price: 295,
     icon: Sunrise,
+    image: TREK_PHOTO,
   },
   {
     title: "Mardi Himal Trek",
@@ -176,6 +189,7 @@ export const shortTreks: Trek[] = [
     season: "Mar to Dec",
     price: 385,
     icon: Mountain,
+    image: WOMEN_TREK_PHOTO,
   },
   {
     title: "Australian Camp & Dhampus",
@@ -188,6 +202,7 @@ export const shortTreks: Trek[] = [
     season: "All year",
     price: 145,
     icon: Footprints,
+    image: TREK_PHOTO,
   },
   {
     title: "Sarangkot Sunrise & Paragliding",
@@ -200,6 +215,7 @@ export const shortTreks: Trek[] = [
     season: "All year",
     price: 120,
     icon: Compass,
+    image: WOMEN_TREK_PHOTO,
   },
   {
     title: "Pokhara Peace Pagoda Hike",
@@ -212,6 +228,7 @@ export const shortTreks: Trek[] = [
     season: "All year",
     price: 65,
     icon: Flag,
+    image: TREK_PHOTO,
   },
   {
     title: "Panchase Hill Day Hike",
@@ -224,6 +241,7 @@ export const shortTreks: Trek[] = [
     season: "Oct to May",
     price: 95,
     icon: Tent,
+    image: WOMEN_TREK_PHOTO,
   },
 ];
 
@@ -234,6 +252,7 @@ export type HeliTour = {
   landsAt: string;
   departs: string;
   price: number;
+  image: string;
 };
 
 export const heliTours: HeliTour[] = [
@@ -244,6 +263,7 @@ export const heliTours: HeliTour[] = [
     landsAt: "4,130 m",
     departs: "06:30",
     price: 450,
+    image: HELI_PHOTO,
   },
   {
     title: "Mardi Himal Heli Tour",
@@ -252,6 +272,7 @@ export const heliTours: HeliTour[] = [
     landsAt: "4,200 m",
     departs: "07:00",
     price: 420,
+    image: HELI_PHOTO,
   },
   {
     title: "Kapuche Glacier Lake Heli Tour",
@@ -260,6 +281,7 @@ export const heliTours: HeliTour[] = [
     landsAt: "2,546 m",
     departs: "07:30",
     price: 490,
+    image: HELI_PHOTO,
   },
   {
     title: "Poon Hill & Ghandruk Heli Tour",
@@ -268,6 +290,7 @@ export const heliTours: HeliTour[] = [
     landsAt: "3,210 m",
     departs: "06:45",
     price: 400,
+    image: HELI_PHOTO,
   },
 ];
 
@@ -278,6 +301,7 @@ export type Guide = {
   years: string;
   routes: string;
   languages: string;
+  image: string;
 };
 
 export const guides: Guide[] = [
@@ -288,6 +312,7 @@ export const guides: Guide[] = [
     years: "14 years",
     routes: "Annapurna, Mustang",
     languages: "Nepali, English, Hindi",
+    image: WOMEN_TREK_PHOTO,
   },
   {
     name: "Maya Tamang",
@@ -296,6 +321,7 @@ export const guides: Guide[] = [
     years: "9 years",
     routes: "Base Camp, Mardi Himal",
     languages: "Nepali, English",
+    image: WOMEN_TREK_PHOTO,
   },
   {
     name: "Sunita Rai",
@@ -304,6 +330,7 @@ export const guides: Guide[] = [
     years: "6 years",
     routes: "Poon Hill, Khopra Danda",
     languages: "Nepali, English, Japanese",
+    image: WOMEN_TREK_PHOTO,
   },
   {
     name: "Deepa Thapa",
@@ -312,6 +339,7 @@ export const guides: Guide[] = [
     years: "5 years",
     routes: "Circuit, Tilicho, Manaslu",
     languages: "Nepali, English, German",
+    image: WOMEN_TREK_PHOTO,
   },
 ];
 
@@ -431,6 +459,7 @@ export type BlogPost = {
   tag: string;
   href: string;
   icon: LucideIcon;
+  image: string;
 };
 
 export const blogPosts: BlogPost[] = [
@@ -441,6 +470,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Solo Women",
     href: "/blog/first-trek-alone-what-i-wish-i-knew",
     icon: HeartHandshake,
+    image: WOMEN_TREK_PHOTO,
   },
   {
     title: "Poon Hill or Mardi Himal? An honest comparison",
@@ -449,6 +479,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Route Guide",
     href: "/blog/poon-hill-or-mardi-himal",
     icon: Route,
+    image: TREK_PHOTO,
   },
   {
     title: "What a trek in the Annapurna actually costs in 2026",
@@ -457,5 +488,6 @@ export const blogPosts: BlogPost[] = [
     tag: "Money",
     href: "/blog/annapurna-trek-cost-2026",
     icon: Wallet,
+    image: WOMEN_TREK_PHOTO,
   },
 ];

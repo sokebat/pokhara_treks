@@ -41,19 +41,11 @@ const HomeFaqSection = () => {
                       rel="noopener noreferrer"
                     />
                   }
-                  className="rounded-md bg-[#25D366] text-white hover:bg-[#25D366]/85"
+                  size="xl"
+                  className="w-full bg-whatsapp text-white hover:bg-whatsapp/85"
                 >
                   <FaWhatsapp className="size-4" />
                   WhatsApp us
-                </Button>
-
-                <Button
-                  nativeButton={false}
-                  render={<Link href="/contact" />}
-                  variant="outline"
-                  className="rounded-md"
-                >
-                  Send a question
                 </Button>
               </div>
             </div>

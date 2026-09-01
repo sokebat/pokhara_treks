@@ -33,9 +33,8 @@ const BlogSection = () => {
             <Button
               nativeButton={false}
               render={<Link href="/blog" />}
-              variant="outline"
-              size="lg"
-              className="rounded-md"
+              variant="accent"
+              size="xl"
             >
               View all articles
             </Button>

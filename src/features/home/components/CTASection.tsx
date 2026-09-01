@@ -8,7 +8,7 @@ const CTASection = () => {
   return (
     <section className="py-12 sm:py-16">
       <Container>
-        <div className="rounded-md bg-linear-to-br from-primary to-[oklch(0.33_0.07_253)] px-6 py-14 text-center text-primary-foreground sm:py-16">
+        <div className="rounded-md bg-primary px-6 py-14 text-center text-primary-foreground sm:py-16">
           <p className="text-sm font-semibold tracking-wide text-accent uppercase">
             Start Your Journey
           </p>
@@ -23,8 +23,9 @@ const CTASection = () => {
           <Button
             nativeButton={false}
             render={<Link href="/customize-my-trip" />}
-            size="lg"
-            className="mt-8 rounded-md bg-accent text-accent-foreground hover:bg-accent/90"
+            variant="accent"
+            size="xl"
+            className="mt-8"
           >
             Plan Your Trip
             <ArrowRightIcon className="size-4" />

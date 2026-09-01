@@ -21,9 +21,8 @@ const ShortTreksSection = () => {
             <Button
               nativeButton={false}
               render={<Link href="/day-hike-in-nepal" />}
-              variant="outline"
-              size="lg"
-              className="rounded-md"
+              variant="accent"
+              size="xl"
             >
               See all short treks
             </Button>

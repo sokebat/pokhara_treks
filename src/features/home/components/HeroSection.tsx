@@ -80,21 +80,21 @@ const HeroSection = () => {
               <Button
                 nativeButton={false}
                 render={<Link href="/customize-my-trip" />}
-                size="lg"
-                className="h-12 rounded-lg bg-accent px-6 text-base font-semibold text-accent-foreground shadow-md transition hover:bg-accent/90"
+                variant="accent"
+                size="xl"
               >
                 Plan Your Trip
-                <ArrowRightIcon className="ml-1 size-4" />
+                <ArrowRightIcon className="size-4" />
               </Button>
 
               <Button
                 nativeButton={false}
                 render={<Link href="/trekking-and-hiking" />}
-                size="lg"
-                className="h-12 rounded-lg bg-primary-foreground px-6 text-base font-semibold text-primary shadow-md transition hover:bg-primary-foreground/90"
+                size="xl"
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
               >
                 Explore Treks
-                <ArrowRightIcon className="ml-1 size-4" />
+                <ArrowRightIcon className="size-4" />
               </Button>
             </div>
 

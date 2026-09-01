@@ -36,6 +36,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
 
+  --color-whatsapp: var(--whatsapp);
+
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
 
@@ -93,6 +95,9 @@
 
   /* Destructive */
   --destructive: oklch(0.529 0.182 26);
+
+  /* WhatsApp brand green — used for WhatsApp CTAs only */
+  --whatsapp: #25d366;
 
   /* Borders & Inputs */
   --border: oklch(0.9 0.01 245);

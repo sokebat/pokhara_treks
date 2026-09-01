@@ -323,7 +323,7 @@ const CustomizeTripForm = () => {
       <div className="flex flex-col gap-5 border-t border-border pt-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
-            <FaWhatsapp className="size-4 shrink-0 text-[#25D366]" />
+            <FaWhatsapp className="size-4 shrink-0 text-whatsapp" />
             Have questions? Call or WhatsApp us at{" "}
             <a
               href={`tel:${siteInfo.phone}`}

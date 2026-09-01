@@ -225,7 +225,7 @@ export default function CustomizeMyTripPage() {
             </div>
 
             <div className="rounded-md bg-linear-to-br from-primary to-[oklch(0.33_0.07_253)] p-6 text-primary-foreground">
-              <span className="flex size-11 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]">
+              <span className="flex size-11 items-center justify-center rounded-full bg-whatsapp/15 text-whatsapp">
                 <FaWhatsapp className="size-5" />
               </span>
               <p className="mt-4 text-sm font-semibold tracking-wide text-accent uppercase">
@@ -244,7 +244,7 @@ export default function CustomizeMyTripPage() {
                   />
                 }
                 size="lg"
-                className="mt-5 w-full rounded-md bg-[#25D366] text-white hover:bg-[#25D366]/85"
+                className="mt-5 w-full rounded-md bg-whatsapp text-white hover:bg-whatsapp/85"
               >
                 <FaWhatsapp className="size-4" />
                 Message us on WhatsApp

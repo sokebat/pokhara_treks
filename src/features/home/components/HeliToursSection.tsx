@@ -21,9 +21,8 @@ const HeliToursSection = () => {
             <Button
               nativeButton={false}
               render={<Link href="/heli-tours" />}
-              variant="outline"
-              size="lg"
-              className="rounded-md"
+              variant="accent"
+              size="xl"
             >
               All helicopter tours
             </Button>

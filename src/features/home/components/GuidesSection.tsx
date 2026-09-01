@@ -18,9 +18,8 @@ const GuidesSection = () => {
             <Button
               nativeButton={false}
               render={<Link href="/our-team" />}
-              variant="outline"
-              size="lg"
-              className="rounded-md"
+              variant="accent"
+              size="xl"
             >
               Meet the whole team
             </Button>

@@ -40,7 +40,7 @@ const PlatformBadge = ({ platform }: { platform: ReviewPlatform }) => {
   return (
     <span
       className={cn(
-        "inline-flex shrink-0 items-center gap-1.5 rounded-full py-1 pr-2.5 pl-1 text-[0.7rem] font-semibold",
+        "inline-flex items-center gap-1.5 rounded-full py-1 pr-2.5 pl-1 text-[0.7rem] font-semibold",
         platform === "tripadvisor"
           ? "bg-primary/10 text-primary"
           : "bg-chart-3/15 text-chart-3",
@@ -60,25 +60,21 @@ const PlatformBadge = ({ platform }: { platform: ReviewPlatform }) => {
 };
 
 const TestimonialMeta = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="mt-4 flex flex-col gap-2.5 border-t border-border pt-4">
-    <div className="flex flex-wrap items-center gap-2">
-      <span className="rounded-full bg-secondary px-2.5 py-1 text-[0.7rem] font-semibold text-secondary-foreground">
-        {testimonial.trek}
-      </span>
+  <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-border pt-4">
+    <span className="rounded-full bg-secondary px-2.5 py-1 text-[0.7rem] font-semibold text-secondary-foreground">
+      {testimonial.trek}
+    </span>
 
-      <span className="text-[0.7rem] text-muted-foreground">
-        {testimonial.date}
-      </span>
-    </div>
+    <span className="text-[0.7rem] text-muted-foreground">
+      {testimonial.date}
+    </span>
 
-    <div className="flex items-center justify-between gap-2">
-      <span className="min-w-0 truncate text-[0.7rem] text-muted-foreground">
-        Guided by{" "}
-        <span className="font-semibold text-accent">{testimonial.guide}</span>
-      </span>
+    <span className="text-[0.7rem] text-muted-foreground">
+      Guided by{" "}
+      <span className="font-semibold text-accent">{testimonial.guide}</span>
+    </span>
 
-      <PlatformBadge platform={testimonial.platform} />
-    </div>
+    <PlatformBadge platform={testimonial.platform} />
   </div>
 );
 
@@ -246,8 +242,10 @@ const TestimonialsSection = () => {
           description="Every review names the guide who led it, so you can ask for the same guide by name."
           action={
             <Button
-              size="lg"
-              className="rounded-md bg-accent text-accent-foreground hover:bg-accent/90"
+              nativeButton={false}
+              render={<Link href="/reviews" />}
+              variant="accent"
+              size="xl"
             >
               Read all {reviewSummary.totalReviews} reviews
             </Button>
@@ -275,7 +273,7 @@ const TestimonialsSection = () => {
             ))}
           </CarouselContent>
 
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-6 flex justify-center gap-3">
             <CarouselPrevious className="static translate-x-0 translate-y-0" />
             <CarouselNext className="static translate-x-0 translate-y-0" />
           </div>
