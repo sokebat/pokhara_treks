@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ScrollTextIcon } from "lucide-react";
 
 import Container from "@/components/shared/Container";
-import LegalContent from "@/components/legal/LegalContent";
-import LegalToc from "@/components/legal/LegalToc";
-import { termsContent } from "@/constant/legal";
+import LegalContent from "@/features/legal/components/LegalContent";
+import LegalToc from "@/features/legal/components/LegalToc";
+import { termsContent } from "@/features/legal/constant/legal";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",

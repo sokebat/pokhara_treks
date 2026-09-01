@@ -18,11 +18,11 @@ import {
   contactFormDefaultValues,
   contactFormSchema,
   type ContactFormValues,
-} from "@/validation/contact.validation";
+} from "@/features/contact/validation/contact.validation";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import FormField from "@/components/contact/FormField";
+import FormField from "@/components/shared/FormField";
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = React.useState(false);

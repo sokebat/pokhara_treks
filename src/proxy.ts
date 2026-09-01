@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 
-import { authConfig } from "@/auth.config";
+import { authConfig } from "@/features/auth/auth.config";
 
 // Next.js 16 renamed `middleware.ts` to `proxy.ts` (same behavior, new name).
 // This intentionally builds on `authConfig` alone (no Credentials provider,

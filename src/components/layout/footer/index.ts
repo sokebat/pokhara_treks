@@ -3,6 +3,7 @@
 export { default as FooterBrand } from "./FooterBrand";
 export { default as FooterContactStrip } from "./FooterContactStrip";
 export { default as FooterLinkColumn } from "./FooterLinkColumn";
+export { default as FooterLicenseStrip } from "./FooterLicenseStrip";
 export { default as FooterBottom } from "./FooterBottom";
 
 export { default as Footer } from "./Footer";

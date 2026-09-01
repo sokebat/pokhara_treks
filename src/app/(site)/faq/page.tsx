@@ -17,7 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faqCategories, faqItems, type FaqSection } from "@/constant/faq";
+import { faqCategories, faqItems, type FaqSection } from "@/features/faq/constant/faq";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",

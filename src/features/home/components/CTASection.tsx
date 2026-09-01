@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-12 sm:py-16">
       <Container>
         <div className="rounded-md bg-linear-to-br from-primary to-[oklch(0.33_0.07_253)] px-6 py-14 text-center text-primary-foreground sm:py-16">
           <p className="text-sm font-semibold tracking-wide text-accent uppercase">

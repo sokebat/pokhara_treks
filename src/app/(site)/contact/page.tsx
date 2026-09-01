@@ -9,8 +9,8 @@ import {
 
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
-import ContactForm from "@/components/contact/ContactForm";
-import ContactMap from "@/components/contact/ContactMap";
+import ContactForm from "@/features/contact/components/ContactForm";
+import ContactMap from "@/features/contact/components/ContactMap";
 import { siteInfo } from "@/constant/site";
 
 const MAPS_LINK = "https://share.google/XGBREMPM1hoMkMz1E";

@@ -1,5 +1,14 @@
+import Link from "next/link";
+
 import Container from "@/components/shared/Container";
 import { siteInfo } from "@/constant/site";
+
+const policyLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms and Conditions", href: "/terms" },
+  { label: "Booking and Payment", href: "/booking-and-payment" },
+  { label: "Cancellation and Refund", href: "/cancellation-and-refund" },
+];
 
 const FooterBottom = () => {
   const year = new Date().getFullYear();
@@ -11,13 +20,16 @@ const FooterBottom = () => {
           <p>
             © {year} {siteInfo.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-            <span>Company Reg. No: {siteInfo.companyRegNo}</span>
-            <span
-              aria-hidden
-              className="hidden h-3 w-px bg-primary-foreground/20 sm:block"
-            />
-            <span>Nepal Tourism License: {siteInfo.tourismLicenseNo}</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            {policyLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="transition-colors hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </Container>

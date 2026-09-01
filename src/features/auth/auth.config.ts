@@ -1,8 +1,8 @@
 import type { NextAuthConfig } from "next-auth";
 
 /**
- * Base config shared between the full auth setup (src/auth.ts) and the
- * proxy (src/proxy.ts). Kept free of the Credentials provider and any
+ * Base config shared between the full auth setup (src/features/auth/auth.ts)
+ * and the proxy (src/proxy.ts). Kept free of the Credentials provider and any
  * database/bcrypt imports so the proxy stays lightweight — it only needs
  * to read the session token, not re-verify a password on every request.
  */

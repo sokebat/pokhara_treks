@@ -1,12 +1,12 @@
-import { Badge } from "@/components/ui/badge";
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
 type SectionHeaderProps = {
   eyebrow: string;
-  title: React.ReactNode;
+  title: string;
   description?: string;
-  action?: React.ReactNode;
-  tone?: "default" | "inverted";
+  action?: ReactNode;
   className?: string;
 };
 
@@ -15,56 +15,33 @@ const SectionHeader = ({
   title,
   description,
   action,
-  tone = "default",
   className,
-}: SectionHeaderProps) => {
-  const isInverted = tone === "inverted";
-
-  return (
-    <div
-      className={cn(
-        "flex flex-wrap items-end justify-between gap-6",
-        className,
-      )}
-    >
-      <div>
-        <Badge
-          className={cn(
-            "tracking-widest uppercase",
-            isInverted
-              ? "bg-accent/15 text-accent"
-              : "bg-accent/10 text-accent",
-          )}
-        >
+}: SectionHeaderProps) => (
+  <div
+    className={cn(
+      "flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end",
+      className,
+    )}
+  >
+    <div>
+      <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-1.5">
+        <span className="size-1.5 rounded-full bg-accent" aria-hidden />
+        <span className="text-xs font-semibold tracking-widest text-accent uppercase">
           {eyebrow}
-        </Badge>
-
-        <h2
-          className={cn(
-            "mt-3 text-3xl font-bold tracking-tight sm:text-4xl",
-            isInverted ? "text-primary-foreground" : "text-primary",
-          )}
-        >
-          {title}
-        </h2>
-
-        {description && (
-          <p
-            className={cn(
-              "mt-2 max-w-xl",
-              isInverted
-                ? "text-primary-foreground/75"
-                : "text-muted-foreground",
-            )}
-          >
-            {description}
-          </p>
-        )}
+        </span>
       </div>
 
-      {action}
+      <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl">
+        {title}
+      </h2>
+
+      {description && (
+        <p className="mt-3 max-w-md text-muted-foreground">{description}</p>
+      )}
     </div>
-  );
-};
+
+    {action && <div className="shrink-0">{action}</div>}
+  </div>
+);
 
 export default SectionHeader;

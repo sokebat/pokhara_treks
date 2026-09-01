@@ -5,6 +5,7 @@ import {
   CreditCard,
   Flag,
   Footprints,
+  HeartHandshake,
   Helicopter,
   MapPin,
   Mountain,
@@ -421,5 +422,40 @@ export const departures: Departure[] = [
     grade: "Moderate",
     seatsLeft: 5,
     price: 990,
+  },
+];
+
+export type BlogPost = {
+  title: string;
+  excerpt: string;
+  tag: string;
+  href: string;
+  icon: LucideIcon;
+};
+
+export const blogPosts: BlogPost[] = [
+  {
+    title: "What I wish I had known before my first trek alone",
+    excerpt:
+      "Teahouse etiquette, sleeping arrangements, periods on the trail, and the three things every solo woman asks us.",
+    tag: "Solo Women",
+    href: "/blog/first-trek-alone-what-i-wish-i-knew",
+    icon: HeartHandshake,
+  },
+  {
+    title: "Poon Hill or Mardi Himal? An honest comparison",
+    excerpt:
+      "Two four to five day treks from Pokhara. One is busy and gentle, the other is quiet and steep. Which one suits you.",
+    tag: "Route Guide",
+    href: "/blog/poon-hill-or-mardi-himal",
+    icon: Route,
+  },
+  {
+    title: "What a trek in the Annapurna actually costs in 2026",
+    excerpt:
+      "Permits, guides, teahouses, tips and the things quotes leave out. With the real numbers, line by line.",
+    tag: "Money",
+    href: "/blog/annapurna-trek-cost-2026",
+    icon: Wallet,
   },
 ];

@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 
 import Logo from "@/components/shared/Logo";
-import LoginForm from "@/components/auth/LoginForm";
+import LoginForm from "@/features/auth/components/LoginForm";
 
 export const metadata: Metadata = {
   title: "Admin Login",

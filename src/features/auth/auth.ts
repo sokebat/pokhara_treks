@@ -3,10 +3,10 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 
-import { authConfig } from "@/auth.config";
+import { authConfig } from "@/features/auth/auth.config";
 import { db } from "@/db";
 import { users } from "@/db/schema";
-import { loginFormSchema } from "@/validation/login.validation";
+import { loginFormSchema } from "@/features/auth/validation/login.validation";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,

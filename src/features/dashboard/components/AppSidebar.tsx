@@ -14,7 +14,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
-import SidebarUserMenu from "@/components/auth/SidebarUserMenu";
+import SidebarUserMenu from "@/features/auth/components/SidebarUserMenu";
 import { GalleryVerticalEndIcon } from "lucide-react";
 
 // This is sample data.
