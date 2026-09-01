@@ -1,0 +1,65 @@
+import Link from "next/link";
+import { CalendarDaysIcon, MountainIcon } from "lucide-react";
+
+import Container from "@/components/shared/Container";
+import SectionHeader from "@/components/shared/SectionHeader";
+import { Button } from "@/components/ui/button";
+import { shortTreks } from "@/features/home/constant/home-data";
+import TripCard from "@/features/home/components/TripCard";
+
+const tones = ["primary", "accent", "chart-3"] as const;
+
+const ShortTreksSection = () => {
+  return (
+    <section className="bg-background py-12 sm:py-16">
+      <Container>
+        <SectionHeader
+          eyebrow="The Pokhara Advantage"
+          title="Short treks and day hikes from Pokhara"
+          description="Under a week, starting from our office in Lakeside."
+          action={
+            <Button
+              nativeButton={false}
+              render={<Link href="/day-hike-in-nepal" />}
+              variant="outline"
+              size="lg"
+              className="rounded-md"
+            >
+              See all short treks
+            </Button>
+          }
+        />
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {shortTreks.map((trek, index) => (
+            <TripCard
+              key={trek.title}
+              href={trek.href}
+              title={trek.title}
+              subtitle={trek.days}
+              icon={trek.icon}
+              tone={tones[index % tones.length]}
+              price={trek.price}
+              ctaLabel="View Trip"
+              rating={{
+                value: trek.rating,
+                reviews: trek.reviews,
+                difficulty: trek.difficulty,
+              }}
+              facts={[
+                { icon: MountainIcon, label: "Altitude", value: trek.altitude },
+                {
+                  icon: CalendarDaysIcon,
+                  label: "Best season",
+                  value: trek.season,
+                },
+              ]}
+            />
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+};
+
+export default ShortTreksSection;

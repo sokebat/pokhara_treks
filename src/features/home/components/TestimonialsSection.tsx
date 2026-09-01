@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
-import { QuoteIcon, StarIcon } from "lucide-react";
+import { QuoteIcon } from "lucide-react";
 
+import Avatar from "@/components/shared/Avatar";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
+import StarRating from "@/components/shared/StarRating";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -31,53 +33,6 @@ const platformMeta: Record<ReviewPlatform, { label: string; letter: string }> =
     tripadvisor: { label: "TripAdvisor", letter: "T" },
     google: { label: "Google", letter: "G" },
   };
-
-const avatarPalette = [
-  "bg-accent text-accent-foreground",
-  "bg-primary text-primary-foreground",
-  "bg-chart-3 text-white",
-];
-
-const getInitials = (name: string) =>
-  name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-
-const Avatar = ({ name, index = 0 }: { name: string; index?: number }) => (
-  <span
-    className={cn(
-      "flex size-10 shrink-0 items-center justify-center rounded-full text-sm font-bold",
-      avatarPalette[index % avatarPalette.length],
-    )}
-  >
-    {getInitials(name)}
-  </span>
-);
-
-const StarRating = ({
-  rating,
-  className,
-}: {
-  rating: number;
-  className?: string;
-}) => (
-  <div className={cn("flex items-center gap-0.5", className)} aria-hidden>
-    {Array.from({ length: 5 }).map((_, i) => (
-      <StarIcon
-        key={i}
-        className={cn(
-          "size-3.5",
-          i < Math.round(rating)
-            ? "fill-accent text-accent"
-            : "fill-transparent text-muted-foreground/30",
-        )}
-      />
-    ))}
-  </div>
-);
 
 const PlatformBadge = ({ platform }: { platform: ReviewPlatform }) => {
   const meta = platformMeta[platform];

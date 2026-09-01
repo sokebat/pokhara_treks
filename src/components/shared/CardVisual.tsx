@@ -2,19 +2,27 @@ import type { LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+const tones = {
+  primary: { bg: "bg-primary", icon: "text-primary" },
+  accent: { bg: "bg-accent", icon: "text-accent" },
+  "chart-3": { bg: "bg-chart-3", icon: "text-chart-3" },
+};
+
 type CardVisualProps = {
   icon: LucideIcon;
+  tone?: keyof typeof tones;
   className?: string;
 };
 
-const CardVisual = ({ icon: Icon, className }: CardVisualProps) => {
+const CardVisual = ({
+  icon: Icon,
+  tone = "primary",
+  className,
+}: CardVisualProps) => {
+  const colors = tones[tone];
+
   return (
-    <div
-      className={cn(
-        "relative overflow-hidden bg-linear-to-b from-primary to-[oklch(0.30_0.07_255)]",
-        className,
-      )}
-    >
+    <div className={cn("relative overflow-hidden", colors.bg, className)}>
       <svg
         aria-hidden
         viewBox="0 0 400 200"
@@ -31,8 +39,8 @@ const CardVisual = ({ icon: Icon, className }: CardVisualProps) => {
         />
       </svg>
 
-      <span className="absolute top-3 left-3 flex size-9 items-center justify-center rounded-full bg-background/95 shadow-sm">
-        <Icon className="size-4 text-primary" strokeWidth={1.75} />
+      <span className="absolute top-3 left-3 flex size-9 items-center justify-center rounded-full bg-background/95">
+        <Icon className={cn("size-4", colors.icon)} strokeWidth={1.75} />
       </span>
     </div>
   );

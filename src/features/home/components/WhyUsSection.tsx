@@ -4,7 +4,7 @@ import { reasons, whyUsStats } from "@/features/home/constant/home-data";
 
 const WhyUsSection = () => {
   return (
-    <section className="bg-background py-12 sm:py-16">
+    <section className="bg-secondary py-12 sm:py-16">
       <Container>
         <SectionHeader
           eyebrow="Why Us"
@@ -12,7 +12,7 @@ const WhyUsSection = () => {
           description="Six reasons, and every one of them is checkable."
         />
 
-        <div className="mt-8 grid grid-cols-2 divide-x divide-y divide-border rounded-md bg-secondary sm:grid-cols-4 sm:divide-y-0">
+        <div className="mt-8 grid grid-cols-2 divide-x divide-y divide-border rounded-md bg-card sm:grid-cols-4 sm:divide-y-0">
           {whyUsStats.map((stat) => (
             <div key={stat.label} className="p-5 sm:p-6">
               <p className="text-3xl font-bold text-primary sm:text-4xl">
