@@ -4,6 +4,7 @@ export const siteInfo = {
   phoneDisplay: "+977 61 000000",
   email: "info@pokharatreks.com",
   address: "Lakeside, Pokhara-6, Nepal",
+  mapsLink: "https://share.google/t7yEiNczr1FNAvXRt",
   companyRegNo: "000000/000",
   tourismLicenseNo: "0000/000",
   taanMemberNo: "«to confirm»",

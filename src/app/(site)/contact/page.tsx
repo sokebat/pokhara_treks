@@ -9,11 +9,9 @@ import {
 
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
+import GoogleMap from "@/components/shared/GoogleMap";
 import ContactForm from "@/features/contact/components/ContactForm";
-import ContactMap from "@/features/contact/components/ContactMap";
 import { siteInfo } from "@/constant/site";
-
-const MAPS_LINK = "https://share.google/XGBREMPM1hoMkMz1E";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -86,7 +84,7 @@ export default function ContactPage() {
                       Visit us
                     </p>
                     <a
-                      href={MAPS_LINK}
+                      href={siteInfo.mapsLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground transition-colors hover:text-accent"
@@ -156,7 +154,7 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-8">
-          <ContactMap />
+          <GoogleMap />
         </div>
       </Container>
     </div>

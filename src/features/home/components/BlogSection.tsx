@@ -24,7 +24,7 @@ const postTint = [
 
 const BlogSection = () => {
   return (
-    <section className="bg-background py-12 sm:py-16">
+    <section className="bg-secondary py-12 sm:py-16">
       <Container>
         <SectionHeader
           eyebrow="From the Trail"
@@ -42,7 +42,7 @@ const BlogSection = () => {
           }
         />
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {blogPosts.map((post, index) => {
             const tint = postTint[index % postTint.length];
             const Icon = post.icon;
