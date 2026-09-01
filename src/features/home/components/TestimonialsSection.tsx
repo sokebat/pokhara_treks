@@ -239,7 +239,7 @@ const TestimonialsSection = () => {
         <SectionHeader
           eyebrow="Reviews and Press"
           title="Your words, not ours"
-          description="Every review names the guide who led it, so you can ask for the same guide by name."
+          description="Every review names the guide, so you can ask for them by name."
           action={
             <Button
               nativeButton={false}

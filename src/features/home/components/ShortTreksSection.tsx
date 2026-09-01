@@ -38,6 +38,7 @@ const ShortTreksSection = () => {
               subtitle={trek.days}
               icon={trek.icon}
               tone={tones[index % tones.length]}
+              image={trek.image}
               price={trek.price}
               ctaLabel="View Trip"
               rating={{

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import Avatar from "@/components/shared/Avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Guide } from "@/features/home/constant/home-data";
@@ -9,8 +11,19 @@ type GuideCardProps = {
 
 const GuideCard = ({ guide, index }: GuideCardProps) => (
   <Card className="h-full gap-0 overflow-hidden rounded-md py-0">
-    <div className="flex aspect-4/3 items-center justify-center bg-muted">
-      <Avatar name={guide.name} index={index} className="size-16 text-xl" />
+    <div className="relative aspect-4/3">
+      <Image
+        src={guide.image}
+        alt={guide.name}
+        fill
+        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+        className="object-cover"
+      />
+      <Avatar
+        name={guide.name}
+        index={index}
+        className="absolute bottom-3 left-3 ring-2 ring-background"
+      />
     </div>
 
     <CardContent className="py-5">

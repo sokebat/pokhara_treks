@@ -13,7 +13,7 @@ const GuidesSection = () => {
         <SectionHeader
           eyebrow="The People You Walk With"
           title="Meet the guides"
-          description="Every guide here has a name, a face and a government licence number."
+          description="Every guide has a name, a face and a licence number."
           action={
             <Button
               nativeButton={false}

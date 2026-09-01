@@ -36,7 +36,7 @@ const SectionHeader = ({
       </h2>
 
       {description && (
-        <p className="mt-3 max-w-md text-muted-foreground">{description}</p>
+        <p className="mt-3 max-w-xl text-muted-foreground">{description}</p>
       )}
     </div>
 

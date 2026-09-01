@@ -45,7 +45,7 @@ const HomeFaqSection = () => {
                   className="w-full bg-whatsapp text-white hover:bg-whatsapp/85"
                 >
                   <FaWhatsapp className="size-4" />
-                  WhatsApp us
+                  WhatsApp Us
                 </Button>
               </div>
             </div>

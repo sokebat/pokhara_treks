@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 
+import CardVisual from "@/components/shared/CardVisual";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
@@ -9,18 +10,14 @@ import { cn } from "@/lib/utils";
 import { blogPosts } from "@/features/home/constant/home-data";
 
 const postTint = [
-  { tile: "bg-accent", tag: "bg-accent/10 text-accent", link: "text-accent" },
+  { tone: "accent", tag: "bg-accent/10 text-accent", link: "text-accent" },
+  { tone: "primary", tag: "bg-primary/10 text-primary", link: "text-primary" },
   {
-    tile: "bg-primary",
-    tag: "bg-primary/10 text-primary",
-    link: "text-primary",
-  },
-  {
-    tile: "bg-chart-3",
+    tone: "chart-3",
     tag: "bg-chart-3/15 text-chart-3",
     link: "text-chart-3",
   },
-];
+] as const;
 
 const BlogSection = () => {
   return (
@@ -44,19 +41,17 @@ const BlogSection = () => {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {blogPosts.map((post, index) => {
             const tint = postTint[index % postTint.length];
-            const Icon = post.icon;
 
             return (
               <Link key={post.title} href={post.href} className="group">
                 <Card className="h-full gap-0 overflow-hidden rounded-md py-0">
-                  <div
-                    className={cn(
-                      "flex aspect-video items-center justify-center",
-                      tint.tile,
-                    )}
-                  >
-                    <Icon className="size-10 text-white/90" />
-                  </div>
+                  <CardVisual
+                    icon={post.icon}
+                    tone={tint.tone}
+                    image={post.image}
+                    alt={post.title}
+                    className="aspect-video"
+                  />
 
                   <CardContent className="flex flex-1 flex-col py-5">
                     <span

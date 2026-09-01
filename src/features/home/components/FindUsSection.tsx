@@ -52,7 +52,7 @@ const FindUsSection = () => {
         <SectionHeader
           eyebrow="Come and See Us"
           title="Find us in Lakeside"
-          description="Ten minutes from most Lakeside hotels, two minutes from Barahi Chowk. Walk in and ask anything, no booking needed."
+          description="Ten minutes from most Lakeside hotels, two minutes from Barahi Chowk."
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_20rem]">

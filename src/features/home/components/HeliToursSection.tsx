@@ -37,6 +37,7 @@ const HeliToursSection = () => {
               title={tour.title}
               icon={HelicopterIcon}
               tone={tones[index % tones.length]}
+              image={tour.image}
               price={tour.price}
               ctaLabel="View Tour"
               facts={[
