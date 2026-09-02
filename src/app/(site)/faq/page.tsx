@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   BackpackIcon,
   CircleHelpIcon,
@@ -8,6 +7,7 @@ import {
   MessageCircleQuestionIcon,
   type LucideIcon,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { slugify } from "@/lib/utils";
+import { siteInfo } from "@/constant/site";
 import { faqCategories, faqItems, type FaqSection } from "@/features/faq/constant/faq";
 
 export const metadata: Metadata = {
@@ -81,62 +83,95 @@ export default function FaqPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 flex max-w-3xl flex-col gap-10">
-          {faqCategories.map((category) => {
-            const items = faqItems.filter((item) => item.category === category);
-            const Icon = categoryIcons[category];
+        <div className="mt-14 grid gap-10 lg:grid-cols-[220px_1fr]">
+          <nav className="sticky top-24 hidden w-full self-start rounded-md border border-border bg-card p-5 lg:block">
+            <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+              Categories
+            </p>
+            <ul className="mt-4 flex flex-col gap-1">
+              {faqCategories.map((category) => {
+                const Icon = categoryIcons[category];
+                return (
+                  <li key={category}>
+                    <a
+                      href={`#${slugify(category)}`}
+                      className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-accent"
+                    >
+                      <Icon className="size-4 shrink-0" />
+                      {category}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
 
-            return (
-              <div key={category}>
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                    <Icon className="size-5" />
-                  </span>
-                  <h2 className="text-lg font-bold text-foreground">
-                    {category}
-                  </h2>
+          <div className="flex flex-col gap-10">
+            {faqCategories.map((category) => {
+              const items = faqItems.filter((item) => item.category === category);
+              const Icon = categoryIcons[category];
+
+              return (
+                <div key={category} id={slugify(category)} className="scroll-mt-24">
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                      <Icon className="size-5" />
+                    </span>
+                    <h2 className="text-lg font-bold text-foreground">
+                      {category}
+                    </h2>
+                  </div>
+
+                  <div className="rounded-xl border border-border bg-card px-6 sm:px-8">
+                    <Accordion>
+                      {items.map((item) => (
+                        <AccordionItem key={item.id} value={item.id}>
+                          <AccordionTrigger className="py-5 text-base font-semibold text-foreground">
+                            {item.question}
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <FaqAnswer sections={item.sections} />
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </div>
                 </div>
+              );
+            })}
 
-                <div className="rounded-xl border border-border bg-card px-6 sm:px-8">
-                  <Accordion>
-                    {items.map((item) => (
-                      <AccordionItem key={item.id} value={item.id}>
-                        <AccordionTrigger className="py-5 text-base font-semibold text-foreground">
-                          {item.question}
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <FaqAnswer sections={item.sections} />
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
+            <div className="flex flex-col items-center gap-4 rounded-xl border border-border bg-muted/30 p-8 text-center sm:flex-row sm:justify-between sm:text-left">
+              <div className="flex items-center gap-4">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <MessageCircleQuestionIcon className="size-5" />
+                </span>
+                <div>
+                  <p className="font-semibold text-foreground">
+                    Still have questions?
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Our team is happy to help you plan your trip.
+                  </p>
                 </div>
               </div>
-            );
-          })}
-        </div>
-
-        <div className="mx-auto mt-12 flex max-w-3xl flex-col items-center gap-4 rounded-xl border border-border bg-muted/30 p-8 text-center sm:flex-row sm:justify-between sm:text-left">
-          <div className="flex items-center gap-4">
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-              <MessageCircleQuestionIcon className="size-5" />
-            </span>
-            <div>
-              <p className="font-semibold text-foreground">
-                Still have questions?
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Our team is happy to help you plan your trip.
-              </p>
+              <Button
+                nativeButton={false}
+                size={'xl'}
+                render={
+                  <a
+                    href={`https://wa.me/${siteInfo.phone.replace(/\D/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
+                variant="whatsapp"
+                className="w-full rounded-md sm:w-fit"
+              >
+                <FaWhatsapp className="size-4" />
+                WhatsApp Us
+              </Button>
             </div>
           </div>
-          <Button
-            nativeButton={false}
-            render={<Link href="/contact" />}
-            className="w-full rounded-md sm:w-fit"
-          >
-            Contact Us
-          </Button>
         </div>
       </Container>
     </div>

@@ -1,6 +1,17 @@
 "use client";
 
 import * as React from "react";
+import {
+  CalendarCheckIcon,
+  HelpCircleIcon,
+  LayoutDashboardIcon,
+  MapPinIcon,
+  MountainSnowIcon,
+  NewspaperIcon,
+  SettingsIcon,
+  StarIcon,
+  UsersRoundIcon,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -15,161 +26,96 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 import SidebarUserMenu from "@/features/auth/components/SidebarUserMenu";
-import { GalleryVerticalEndIcon } from "lucide-react";
+import { siteInfo } from "@/constant/site";
 
-// This is sample data.
 const data = {
   navMain: [
     {
-      title: "Getting Started",
+      title: "Overview",
+      url: "/dashboard",
+      icon: LayoutDashboardIcon,
+      items: [],
+    },
+    {
+      title: "Trips & Tours",
       url: "#",
+      icon: MountainSnowIcon,
       items: [
-        {
-          title: "Installation",
-          url: "#",
-        },
-        {
-          title: "Project Structure",
-          url: "#",
-        },
+        { title: "Treks", url: "#" },
+        { title: "Short Treks & Day Hikes", url: "#" },
+        { title: "Peak Climbing", url: "#" },
+        { title: "Helicopter Tours", url: "#" },
+        { title: "Adventure Activities", url: "#" },
+        { title: "Tours", url: "#" },
       ],
     },
     {
-      title: "Build Your Application",
+      title: "Destinations",
       url: "#",
+      icon: MapPinIcon,
+      items: [],
+    },
+    {
+      title: "Bookings & Enquiries",
+      url: "#",
+      icon: CalendarCheckIcon,
       items: [
-        {
-          title: "Routing",
-          url: "#",
-        },
-        {
-          title: "Data Fetching",
-          url: "#",
-          isActive: true,
-        },
-        {
-          title: "Rendering",
-          url: "#",
-        },
-        {
-          title: "Caching",
-          url: "#",
-        },
-        {
-          title: "Styling",
-          url: "#",
-        },
-        {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
-        },
+        { title: "Trip Enquiries", url: "#", isActive: true },
+        { title: "Contact Messages", url: "#" },
       ],
     },
     {
-      title: "API Reference",
+      title: "Guides & Team",
       url: "#",
+      icon: UsersRoundIcon,
+      items: [],
+    },
+    {
+      title: "Reviews & Testimonials",
+      url: "#",
+      icon: StarIcon,
+      items: [],
+    },
+    {
+      title: "Blog",
+      url: "#",
+      icon: NewspaperIcon,
       items: [
-        {
-          title: "Components",
-          url: "#",
-        },
-        {
-          title: "File Conventions",
-          url: "#",
-        },
-        {
-          title: "Functions",
-          url: "#",
-        },
-        {
-          title: "next.config.js Options",
-          url: "#",
-        },
-        {
-          title: "CLI",
-          url: "#",
-        },
-        {
-          title: "Edge Runtime",
-          url: "#",
-        },
+        { title: "All Posts", url: "#" },
+        { title: "Categories", url: "#" },
       ],
     },
     {
-      title: "Architecture",
+      title: "FAQs",
       url: "#",
-      items: [
-        {
-          title: "Accessibility",
-          url: "#",
-        },
-        {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
-        },
-      ],
+      icon: HelpCircleIcon,
+      items: [],
     },
     {
-      title: "Community",
+      title: "Site Settings",
       url: "#",
+      icon: SettingsIcon,
       items: [
-        {
-          title: "Contribution Guide",
-          url: "#",
-        },
+        { title: "Contact & Office Info", url: "#" },
+        { title: "Admin Users", url: "#" },
       ],
     },
   ],
 };
+
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar variant="floating" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" render={<a href="#" />}>
+            <SidebarMenuButton size="lg" render={<a href="/dashboard" />}>
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <GalleryVerticalEndIcon className="size-4" />
+                <MountainSnowIcon className="size-4" />
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
-                <span className="font-medium">Documentation</span>
-                <span className="">v1.0.0</span>
+                <span className="font-medium">{siteInfo.name}</span>
+                <span className="text-xs">Admin Dashboard</span>
               </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -183,17 +129,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarMenuButton
                   render={<a href={item.url} className="font-medium" />}
                 >
+                  <item.icon className="size-4" />
                   {item.title}
                 </SidebarMenuButton>
                 {item.items?.length ? (
                   <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
-                    {item.items.map((item) => (
-                      <SidebarMenuSubItem key={item.title}>
+                    {item.items.map((subItem) => (
+                      <SidebarMenuSubItem key={subItem.title}>
                         <SidebarMenuSubButton
-                          isActive={item.isActive}
-                          render={<a href={item.url} />}
+                          isActive={subItem.isActive}
+                          render={<a href={subItem.url} />}
                         >
-                          {item.title}
+                          {subItem.title}
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                     ))}

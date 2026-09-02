@@ -1,17 +1,13 @@
 import React from "react";
 import { SessionProvider } from "next-auth/react";
 
-import { auth } from "@/features/auth/auth";
-
-const AdminLayout = async ({
+const AdminLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  const session = await auth();
-
   return (
-    <SessionProvider session={session}>
+    <SessionProvider session={null} refetchOnWindowFocus={false}>
       <main>{children}</main>
     </SessionProvider>
   );

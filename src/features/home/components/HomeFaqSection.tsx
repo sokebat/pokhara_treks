@@ -24,30 +24,40 @@ const HomeFaqSection = () => {
               description="The ten questions we are asked most, answered plainly. Prices, permits and rules are the ones on this page and on every trip page."
             />
 
+            <div className="mt-6 flex flex-col gap-2.5">
+              <Button
+                nativeButton={false}
+                render={<Link href="/faq" />}
+                variant="accent"
+                size="xl"
+                className="w-full"
+              >
+                View all FAQs
+              </Button>
+
+              <Button
+                nativeButton={false}
+                render={
+                  <a
+                    href={`https://wa.me/${siteInfo.phone.replace(/\D/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
+                variant="whatsapp"
+                size="xl"
+                className="w-full"
+              >
+                <FaWhatsapp className="size-4" />
+                WhatsApp Us
+              </Button>
+            </div>
+
             <div className="mt-6 border-t border-border pt-6">
               <p className="text-sm text-muted-foreground">
                 Not answered here? Ask the office directly. A person replies,
                 usually the same day.
               </p>
-
-              <div className="mt-4 flex flex-wrap gap-3">
-                <Button
-                  nativeButton={false}
-                  render={
-                    <a
-                      href={`https://wa.me/${siteInfo.phone.replace(/\D/g, "")}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    />
-                  }
-                  variant="whatsapp"
-                  size="xl"
-                  className="w-full"
-                >
-                  <FaWhatsapp className="size-4" />
-                  WhatsApp Us
-                </Button>
-              </div>
             </div>
           </div>
 
