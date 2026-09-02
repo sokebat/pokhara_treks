@@ -1,8 +1,19 @@
 "use client";
 
+import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
-import { LogOutIcon, UserIcon } from "lucide-react";
+import { ChevronsUpDownIcon, LogInIcon, LogOutIcon } from "lucide-react";
 
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   SidebarFooter,
   SidebarMenu,
@@ -10,37 +21,83 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
+const getInitials = (name: string) =>
+  name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
 const SidebarUserMenu = () => {
   const { data: session } = useSession();
+  const user = session?.user;
 
-  if (!session?.user) return null;
+  const name = user?.name ?? user?.email ?? "Admin";
+  const email = user?.email ?? "Not signed in";
 
   return (
     <SidebarFooter>
       <SidebarMenu>
         <SidebarMenuItem>
-          <SidebarMenuButton size="lg" className="cursor-default">
-            <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-              <UserIcon className="size-4" />
-            </div>
-            <div className="flex min-w-0 flex-col gap-0.5 leading-none">
-              <span className="truncate font-medium">
-                {session.user.name ?? session.user.email}
-              </span>
-              <span className="truncate text-xs text-muted-foreground">
-                {session.user.email}
-              </span>
-            </div>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-        <SidebarMenuItem>
-          <SidebarMenuButton
-            onClick={() => signOut({ callbackUrl: "/login" })}
-            className="cursor-pointer text-destructive hover:text-destructive"
-          >
-            <LogOutIcon className="size-4" />
-            Sign Out
-          </SidebarMenuButton>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              render={
+                <SidebarMenuButton
+                  size="lg"
+                  className="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
+                />
+              }
+            >
+              <Avatar size="sm" className="rounded-lg">
+                <AvatarFallback className="rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                  {getInitials(name)}
+                </AvatarFallback>
+              </Avatar>
+              <div className="flex min-w-0 flex-col gap-0.5 leading-none">
+                <span className="truncate font-medium">{name}</span>
+                <span className="truncate text-xs text-sidebar-foreground/60">
+                  {email}
+                </span>
+              </div>
+              <ChevronsUpDownIcon className="ml-auto size-4 text-sidebar-foreground/60" />
+            </DropdownMenuTrigger>
+
+            <DropdownMenuContent
+              align="end"
+              side="top"
+              className="w-(--anchor-width) min-w-56 rounded-lg"
+            >
+              <DropdownMenuGroup>
+                <DropdownMenuLabel className="font-normal">
+                  <div className="flex flex-col gap-0.5">
+                    <span className="truncate font-medium text-foreground">
+                      {name}
+                    </span>
+                    <span className="truncate text-xs text-muted-foreground">
+                      {email}
+                    </span>
+                  </div>
+                </DropdownMenuLabel>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                {user ? (
+                  <DropdownMenuItem
+                    onClick={() => signOut({ callbackUrl: "/login" })}
+                  >
+                    <LogOutIcon />
+                    Sign Out
+                  </DropdownMenuItem>
+                ) : (
+                  <DropdownMenuItem render={<Link href="/login" />}>
+                    <LogInIcon />
+                    Sign In
+                  </DropdownMenuItem>
+                )}
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </SidebarMenuItem>
       </SidebarMenu>
     </SidebarFooter>

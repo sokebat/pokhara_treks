@@ -13,7 +13,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Pokhara Treks & Expeditions",
+  title: {
+    default: "Pokhara Treks & Expeditions | Women-Led Nepal Trekking",
+    template: "%s | Pokhara Treks & Expeditions",
+  },
   description:
     "Women-led Nepal adventures, trekking and expeditions from Pokhara.",
 };
