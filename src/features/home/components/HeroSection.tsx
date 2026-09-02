@@ -1,23 +1,16 @@
+import { TbArrowRight, TbCompass, TbHeartHandshake, TbLeaf, TbShieldCheck, TbUsersGroup } from "react-icons/tb";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRightIcon,
-  CompassIcon,
-  HeartHandshakeIcon,
-  LeafIcon,
-  ShieldCheckIcon,
-  UsersRoundIcon,
-} from "lucide-react";
 
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
 import { siteInfo } from "@/constant/site";
 
 const trustPoints = [
-  { icon: CompassIcon, label: "Local Expertise" },
-  { icon: HeartHandshakeIcon, label: "Women-Led Guides" },
-  { icon: UsersRoundIcon, label: "Small Groups" },
-  { icon: LeafIcon, label: "Responsible Travel" },
+  { icon: TbCompass, label: "Local Expertise" },
+  { icon: TbHeartHandshake, label: "Women-Led Guides" },
+  { icon: TbUsersGroup, label: "Small Groups" },
+  { icon: TbLeaf, label: "Responsible Travel" },
 ];
 
 const HeroSection = () => {
@@ -48,7 +41,7 @@ const HeroSection = () => {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-3 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 py-1.5 pr-5 pl-1.5 shadow-sm backdrop-blur-md">
               <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent">
-                <ShieldCheckIcon className="size-4 text-accent-foreground" />
+                <TbShieldCheck className="size-4 text-accent-foreground" />
               </span>
 
               <span className="text-left">
@@ -84,7 +77,7 @@ const HeroSection = () => {
                 size="xl"
               >
                 Plan Your Trip
-                <ArrowRightIcon className="size-4" />
+                <TbArrowRight className="size-4" />
               </Button>
 
               <Button
@@ -94,7 +87,7 @@ const HeroSection = () => {
                 className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
               >
                 Explore Treks
-                <ArrowRightIcon className="size-4" />
+                <TbArrowRight className="size-4" />
               </Button>
             </div>
 
@@ -144,7 +137,7 @@ const HeroSection = () => {
             <div className="absolute right-5 bottom-5 w-64 rounded-xl border border-border/50 bg-background/95 p-4 shadow-xl backdrop-blur-md">
               <div className="flex items-start gap-3">
                 <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent/15">
-                  <HeartHandshakeIcon className="size-4 text-accent" />
+                  <TbHeartHandshake className="size-4 text-accent" />
                 </span>
 
                 <div>

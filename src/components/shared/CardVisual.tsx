@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
@@ -10,7 +10,7 @@ const tones = {
 };
 
 type CardVisualProps = {
-  icon: LucideIcon;
+  icon: IconType;
   tone?: keyof typeof tones;
   /** A real photo to show instead of the illustrated placeholder. Omit to
    *  fall back to the tone-colored mountain silhouette below. */

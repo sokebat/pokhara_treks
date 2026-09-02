@@ -1,23 +1,5 @@
-import type { LucideIcon } from "lucide-react";
-import {
-  Camera,
-  Compass,
-  CreditCard,
-  FileText,
-  Flag,
-  Footprints,
-  HeartHandshake,
-  Helicopter,
-  MapPin,
-  Mountain,
-  MountainSnow,
-  Route,
-  ShieldCheck,
-  Sunrise,
-  Tent,
-  UsersRound,
-  Wallet,
-} from "lucide-react";
+import { TbCamera, TbCompass, TbCreditCard, TbFileText, TbFlag, TbHeartHandshake, TbHelicopter, TbMapPin, TbMountain, TbRoute, TbShieldCheck, TbSunrise, TbTent, TbUsersGroup, TbWalk, TbWallet } from "react-icons/tb";
+import type { IconType } from "react-icons";
 
 // Reused across cards until each item has its own photo.
 const TREK_PHOTO = "/images/collage-trekking.jpg";
@@ -28,7 +10,7 @@ export type Activity = {
   title: string;
   count: string;
   href: string;
-  icon: LucideIcon;
+  icon: IconType;
 };
 
 export const activities: Activity[] = [
@@ -36,37 +18,37 @@ export const activities: Activity[] = [
     title: "Trekking",
     count: "18 treks",
     href: "/trekking-and-hiking",
-    icon: Mountain,
+    icon: TbMountain,
   },
   {
     title: "Short Treks & Day Hikes",
     count: "4 hikes",
     href: "/day-hike-in-nepal",
-    icon: Footprints,
+    icon: TbWalk,
   },
   {
     title: "Peak Climbing",
     count: "8 peaks",
     href: "/peak-climbing",
-    icon: MountainSnow,
+    icon: TbMountain,
   },
   {
-    title: "Helicopter Tours",
+    title: "TbHelicopter Tours",
     count: "5 tours",
     href: "/heli-tours",
-    icon: Helicopter,
+    icon: TbHelicopter,
   },
   {
     title: "Adventure Activities",
     count: "6 activities",
     href: "/adventures",
-    icon: Compass,
+    icon: TbCompass,
   },
   {
     title: "Tours",
     count: "5 tours",
     href: "/tours",
-    icon: Camera,
+    icon: TbCamera,
   },
 ];
 
@@ -80,7 +62,7 @@ export type Trek = {
   altitude: string;
   season: string;
   price: number;
-  icon: LucideIcon;
+  icon: IconType;
   image: string;
 };
 
@@ -95,7 +77,7 @@ export const popularTreks: Trek[] = [
     altitude: "4,130 m",
     season: "Mar to May, Sep to Nov",
     price: 475,
-    icon: MountainSnow,
+    icon: TbMountain,
     image: TREK_PHOTO,
   },
   {
@@ -108,7 +90,7 @@ export const popularTreks: Trek[] = [
     altitude: "4,500 m",
     season: "Mar to May, Oct to Dec",
     price: 385,
-    icon: Mountain,
+    icon: TbMountain,
     image: WOMEN_TREK_PHOTO,
   },
   {
@@ -121,7 +103,7 @@ export const popularTreks: Trek[] = [
     altitude: "3,210 m",
     season: "All year",
     price: 295,
-    icon: Sunrise,
+    icon: TbSunrise,
     image: TREK_PHOTO,
   },
   {
@@ -134,7 +116,7 @@ export const popularTreks: Trek[] = [
     altitude: "4,660 m",
     season: "Mar to May, Sep to Nov",
     price: 550,
-    icon: Tent,
+    icon: TbTent,
     image: WOMEN_TREK_PHOTO,
   },
   {
@@ -147,7 +129,7 @@ export const popularTreks: Trek[] = [
     altitude: "5,416 m",
     season: "Mar to May, Sep to Nov",
     price: 850,
-    icon: Route,
+    icon: TbRoute,
     image: TREK_PHOTO,
   },
   {
@@ -160,7 +142,7 @@ export const popularTreks: Trek[] = [
     altitude: "3,840 m",
     season: "Mar to Nov",
     price: 990,
-    icon: Flag,
+    icon: TbFlag,
     image: WOMEN_TREK_PHOTO,
   },
 ];
@@ -176,7 +158,7 @@ export const shortTreks: Trek[] = [
     altitude: "3,210 m",
     season: "All year",
     price: 295,
-    icon: Sunrise,
+    icon: TbSunrise,
     image: TREK_PHOTO,
   },
   {
@@ -189,7 +171,7 @@ export const shortTreks: Trek[] = [
     altitude: "4,500 m",
     season: "Mar to Dec",
     price: 385,
-    icon: Mountain,
+    icon: TbMountain,
     image: WOMEN_TREK_PHOTO,
   },
   {
@@ -202,11 +184,11 @@ export const shortTreks: Trek[] = [
     altitude: "2,060 m",
     season: "All year",
     price: 145,
-    icon: Footprints,
+    icon: TbWalk,
     image: TREK_PHOTO,
   },
   {
-    title: "Sarangkot Sunrise & Paragliding",
+    title: "Sarangkot TbSunrise & Paragliding",
     days: "1 Day",
     href: "/paragliding-in-pokhara-1",
     rating: 4.8,
@@ -215,7 +197,7 @@ export const shortTreks: Trek[] = [
     altitude: "1,600 m",
     season: "All year",
     price: 120,
-    icon: Compass,
+    icon: TbCompass,
     image: WOMEN_TREK_PHOTO,
   },
   {
@@ -228,7 +210,7 @@ export const shortTreks: Trek[] = [
     altitude: "1,100 m",
     season: "All year",
     price: 65,
-    icon: Flag,
+    icon: TbFlag,
     image: TREK_PHOTO,
   },
   {
@@ -241,7 +223,7 @@ export const shortTreks: Trek[] = [
     altitude: "2,517 m",
     season: "Oct to May",
     price: 95,
-    icon: Tent,
+    icon: TbTent,
     image: WOMEN_TREK_PHOTO,
   },
   {
@@ -254,7 +236,7 @@ export const shortTreks: Trek[] = [
     altitude: "1,000 m",
     season: "All year",
     price: 55,
-    icon: MapPin,
+    icon: TbMapPin,
     image: TREK_PHOTO,
   },
   {
@@ -267,7 +249,7 @@ export const shortTreks: Trek[] = [
     altitude: "1,500 m",
     season: "All year",
     price: 60,
-    icon: Camera,
+    icon: TbCamera,
     image: WOMEN_TREK_PHOTO,
   },
 ];
@@ -373,7 +355,7 @@ export const guides: Guide[] = [
 export type Reason = {
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: IconType;
 };
 
 export const reasons: Reason[] = [
@@ -381,37 +363,37 @@ export const reasons: Reason[] = [
     title: "Based in Lakeside, not an agent",
     description:
       "Our office is a ten minute walk from your hotel and the trail starts at our door. Nobody in another country is reselling us.",
-    icon: MapPin,
+    icon: TbMapPin,
   },
   {
     title: "Women-led and women-staffed",
     description:
       "Owned by women, guided by women, and the office you email is run by the same people who walk with you.",
-    icon: UsersRound,
+    icon: TbUsersGroup,
   },
   {
     title: "Small groups and private departures",
     description:
       "Maximum eight walkers on a group departure. Private and family departures on any date you choose.",
-    icon: Tent,
+    icon: TbTent,
   },
   {
     title: "Licensed guides, insured, first-aid trained",
     description:
       "Every guide carries a government licence number, and we publish it on their profile page.",
-    icon: ShieldCheck,
+    icon: TbShieldCheck,
   },
   {
     title: "Every rupee stays with local women",
     description:
       "Wages, training and insurance go to women from these valleys and their families. Nothing leaves the district.",
-    icon: Wallet,
+    icon: TbWallet,
   },
   {
     title: "Book direct and pay less",
     description:
       "The same trek booked through an overseas agent commonly costs 30 to 60 per cent more. Here, no one takes a cut.",
-    icon: CreditCard,
+    icon: TbCreditCard,
   },
 ];
 
@@ -485,7 +467,7 @@ export type BlogPost = {
   excerpt: string;
   tag: string;
   href: string;
-  icon: LucideIcon;
+  icon: IconType;
   image: string;
 };
 
@@ -496,16 +478,16 @@ export const blogPosts: BlogPost[] = [
       "Teahouse etiquette, sleeping arrangements, periods on the trail, and the three things every solo woman asks us.",
     tag: "Solo Women",
     href: "/blog/first-trek-alone-what-i-wish-i-knew",
-    icon: HeartHandshake,
+    icon: TbHeartHandshake,
     image: WOMEN_TREK_PHOTO,
   },
   {
     title: "Poon Hill or Mardi Himal? An honest comparison",
     excerpt:
       "Two four to five day treks from Pokhara. One is busy and gentle, the other is quiet and steep. Which one suits you.",
-    tag: "Route Guide",
+    tag: "TbRoute Guide",
     href: "/blog/poon-hill-or-mardi-himal",
-    icon: Route,
+    icon: TbRoute,
     image: TREK_PHOTO,
   },
   {
@@ -514,7 +496,7 @@ export const blogPosts: BlogPost[] = [
       "Permits, guides, teahouses, tips and the things quotes leave out. With the real numbers, line by line.",
     tag: "Money",
     href: "/blog/annapurna-trek-cost-2026",
-    icon: Wallet,
+    icon: TbWallet,
     image: WOMEN_TREK_PHOTO,
   },
   {
@@ -523,7 +505,7 @@ export const blogPosts: BlogPost[] = [
       "ACAP, TIMS, and the rules that keep changing. What you need, what we arrange for you, and what to bring.",
     tag: "Permits",
     href: "/blog/annapurna-permits-explained",
-    icon: FileText,
+    icon: TbFileText,
     image: TREK_PHOTO,
   },
 ];

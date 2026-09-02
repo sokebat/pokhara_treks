@@ -1,12 +1,6 @@
+import { TbBackpack, TbCreditCard, TbFileText, TbHelpCircle, TbMessageCircleQuestion } from "react-icons/tb";
+import type { IconType } from "react-icons";
 import type { Metadata } from "next";
-import {
-  BackpackIcon,
-  CircleHelpIcon,
-  CreditCardIcon,
-  FileTextIcon,
-  MessageCircleQuestionIcon,
-  type LucideIcon,
-} from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
 
 import Container from "@/components/shared/Container";
@@ -27,10 +21,10 @@ export const metadata: Metadata = {
     "Answers to common questions about trekking in Nepal with Pokhara Treks & Expeditions — gear, permits, visas, safety, and more.",
 };
 
-const categoryIcons: Record<(typeof faqCategories)[number], LucideIcon> = {
-  "Trip Preparation": BackpackIcon,
-  "Booking & Payments": CreditCardIcon,
-  "Documents & Permits": FileTextIcon,
+const categoryIcons: Record<(typeof faqCategories)[number], IconType> = {
+  "Trip Preparation": TbBackpack,
+  "Booking & Payments": TbCreditCard,
+  "Documents & Permits": TbFileText,
 };
 
 function FaqAnswer({ sections }: { sections: FaqSection[] }) {
@@ -69,7 +63,7 @@ export default function FaqPage() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-accent/10 text-accent">
-            <CircleHelpIcon className="size-6" />
+            <TbHelpCircle className="size-6" />
           </span>
           <p className="mt-5 text-sm font-semibold tracking-wide text-accent uppercase">
             Got Questions?
@@ -143,7 +137,7 @@ export default function FaqPage() {
             <div className="flex flex-col items-center gap-4 rounded-xl border border-border bg-muted/30 p-8 text-center sm:flex-row sm:justify-between sm:text-left">
               <div className="flex items-center gap-4">
                 <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                  <MessageCircleQuestionIcon className="size-5" />
+                  <TbMessageCircleQuestion className="size-5" />
                 </span>
                 <div>
                   <p className="font-semibold text-foreground">

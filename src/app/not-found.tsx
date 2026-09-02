@@ -1,6 +1,6 @@
+import { TbCompass, TbHome, TbMountain } from "react-icons/tb";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CompassIcon, HomeIcon, MountainSnowIcon } from "lucide-react";
 
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
@@ -35,7 +35,7 @@ export default function NotFound() {
                 404
               </span>
               <span className="absolute flex size-16 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg sm:size-20">
-                <MountainSnowIcon className="size-8 sm:size-10" />
+                <TbMountain className="size-8 sm:size-10" />
               </span>
             </div>
 
@@ -57,7 +57,7 @@ export default function NotFound() {
                 size="lg"
                 className="rounded-md"
               >
-                <HomeIcon className="size-4" />
+                <TbHome className="size-4" />
                 Back to Home
               </Button>
               <Button
@@ -67,7 +67,7 @@ export default function NotFound() {
                 size="lg"
                 className="rounded-md"
               >
-                <CompassIcon className="size-4" />
+                <TbCompass className="size-4" />
                 Explore Treks
               </Button>
             </div>

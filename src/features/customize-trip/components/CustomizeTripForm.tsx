@@ -1,22 +1,9 @@
 "use client";
 
+import { TbCalendar, TbCircleCheck, TbLoader2, TbMail, TbMessage, TbMoonStars, TbPhoneCall, TbSend, TbTag, TbUser, TbUsers, TbWorld } from "react-icons/tb";
 import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
-import {
-  CalendarIcon,
-  CheckCircle2Icon,
-  GlobeIcon,
-  Loader2Icon,
-  MailIcon,
-  MessageSquareIcon,
-  MoonStarIcon,
-  PhoneCallIcon,
-  SendIcon,
-  TagIcon,
-  UserIcon,
-  UsersIcon,
-} from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
 
 import {
@@ -76,7 +63,7 @@ const CustomizeTripForm = () => {
     return (
       <div className="flex flex-col items-center gap-3 py-16 text-center">
         <span className="flex size-16 items-center justify-center rounded-full bg-accent/10 text-accent ring-8 ring-accent/5">
-          <CheckCircle2Icon className="size-8" />
+          <TbCircleCheck className="size-8" />
         </span>
         <h3 className="mt-1 text-xl font-bold text-foreground">Enquiry sent</h3>
         <p className="max-w-sm text-sm text-muted-foreground">
@@ -120,7 +107,7 @@ const CustomizeTripForm = () => {
                     id="tripType"
                     className="h-14 w-full rounded-md"
                   >
-                    <TagIcon className="size-4 text-muted-foreground" />
+                    <TbTag className="size-4 text-muted-foreground" />
                     <SelectValue placeholder="Select trip type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -143,7 +130,7 @@ const CustomizeTripForm = () => {
           <div className="flex flex-col gap-1.5">
             <Label htmlFor="arrivalDate">Planned Arrival Date</Label>
             <div className="relative">
-              <CalendarIcon className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
+              <TbCalendar className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 id="arrivalDate"
                 type="date"
@@ -164,7 +151,7 @@ const CustomizeTripForm = () => {
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">
             <Label htmlFor="persons">
-              <UsersIcon className="size-4 text-muted-foreground" />
+              <TbUsers className="size-4 text-muted-foreground" />
               Number of Persons
             </Label>
             <Controller
@@ -195,7 +182,7 @@ const CustomizeTripForm = () => {
 
           <div className="flex flex-col gap-1.5">
             <Label htmlFor="duration">
-              <MoonStarIcon className="size-4 text-muted-foreground" />
+              <TbMoonStars className="size-4 text-muted-foreground" />
               Duration of Stay (Days)
             </Label>
             <Controller
@@ -239,7 +226,7 @@ const CustomizeTripForm = () => {
           <FormField
             id="fullName"
             label="Full Name"
-            icon={UserIcon}
+            icon={TbUser}
             placeholder="Jane Doe"
             error={errors.fullName?.message}
             registration={register("fullName")}
@@ -247,7 +234,7 @@ const CustomizeTripForm = () => {
           <FormField
             id="email"
             label="Email Address"
-            icon={MailIcon}
+            icon={TbMail}
             type="email"
             placeholder="jane@example.com"
             error={errors.email?.message}
@@ -268,7 +255,7 @@ const CustomizeTripForm = () => {
                   value={field.value || null}
                   onValueChange={field.onChange}
                   placeholder="Search your country..."
-                  icon={GlobeIcon}
+                  icon={TbWorld}
                   aria-invalid={!!errors.country}
                 />
               )}
@@ -283,7 +270,7 @@ const CustomizeTripForm = () => {
           <FormField
             id="phone"
             label="Contact Number"
-            icon={PhoneCallIcon}
+            icon={TbPhoneCall}
             type="tel"
             placeholder="+977 98XXXXXXXX"
             error={errors.phone?.message}
@@ -299,7 +286,7 @@ const CustomizeTripForm = () => {
             </span>
           </Label>
           <div className="relative">
-            <MessageSquareIcon className="pointer-events-none absolute top-4 left-4 size-4 text-muted-foreground" />
+            <TbMessage className="pointer-events-none absolute top-4 left-4 size-4 text-muted-foreground" />
             <Textarea
               id="message"
               rows={4}
@@ -336,12 +323,12 @@ const CustomizeTripForm = () => {
           >
             {isSubmitting ? (
               <>
-                <Loader2Icon className="size-4 animate-spin" />
+                <TbLoader2 className="size-4 animate-spin" />
                 Sending...
               </>
             ) : (
               <>
-                <SendIcon className="size-4" />
+                <TbSend className="size-4" />
                 Send Your Enquiry
               </>
             )}

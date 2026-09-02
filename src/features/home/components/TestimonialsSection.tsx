@@ -1,9 +1,9 @@
 "use client";
 
+import { TbQuote } from "react-icons/tb";
 import { useState } from "react";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
-import { QuoteIcon } from "lucide-react";
 
 import Avatar from "@/components/shared/Avatar";
 import Container from "@/components/shared/Container";
@@ -151,7 +151,7 @@ const FeaturedTestimonialCard = () => (
       aria-hidden
       className="flex size-14 items-center justify-center rounded-full bg-accent/10"
     >
-      <QuoteIcon className="size-6 fill-accent text-accent" />
+      <TbQuote className="size-6 fill-accent text-accent" />
     </span>
 
     <div className="mt-4">
@@ -198,7 +198,7 @@ const TestimonialCard = ({
       cardTint[index % cardTint.length],
     )}
   >
-    <QuoteIcon
+    <TbQuote
       aria-hidden
       className="absolute top-5 right-5 size-8 fill-current text-foreground/5"
     />

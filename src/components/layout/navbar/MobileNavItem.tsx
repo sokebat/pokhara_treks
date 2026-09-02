@@ -1,8 +1,8 @@
 "use client";
 
+import { TbChevronDown } from "react-icons/tb";
 import * as React from "react";
 import Link from "next/link";
-import { ChevronDownIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { type NavItem } from "@/constant/nav";
@@ -36,7 +36,7 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
         className="flex w-full cursor-pointer items-center justify-between px-4 py-3 text-left text-sm font-semibold text-foreground"
       >
         {item.label}
-        <ChevronDownIcon
+        <TbChevronDown
           className={cn(
             "size-4 shrink-0 text-muted-foreground transition-transform",
             open && "rotate-180",

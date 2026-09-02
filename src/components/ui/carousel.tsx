@@ -1,5 +1,6 @@
 "use client";
 
+import { TbChevronLeft, TbChevronRight } from "react-icons/tb";
 import * as React from "react";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
@@ -7,7 +8,6 @@ import useEmblaCarousel, {
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -196,7 +196,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeftIcon className="size-5" />
+      <TbChevronLeft className="size-5" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -227,7 +227,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRightIcon className="size-5" />
+      <TbChevronRight className="size-5" />
       <span className="sr-only">Next slide</span>
     </Button>
   );

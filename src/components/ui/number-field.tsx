@@ -1,8 +1,8 @@
 "use client";
 
+import { TbMinus, TbPlus } from "react-icons/tb";
 import * as React from "react";
 import { NumberField as NumberFieldPrimitive } from "@base-ui/react/number-field";
-import { MinusIcon, PlusIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -37,7 +37,7 @@ function NumberFieldDecrement({
       )}
       {...props}
     >
-      <MinusIcon className="size-4" />
+      <TbMinus className="size-4" />
     </NumberFieldPrimitive.Decrement>
   );
 }
@@ -55,7 +55,7 @@ function NumberFieldIncrement({
       )}
       {...props}
     >
-      <PlusIcon className="size-4" />
+      <TbPlus className="size-4" />
     </NumberFieldPrimitive.Increment>
   );
 }

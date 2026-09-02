@@ -1,11 +1,6 @@
+import { TbArrowRight, TbBuildingBank, TbCompass, TbMountain } from "react-icons/tb";
+import type { IconType } from "react-icons";
 import Link from "next/link";
-import {
-  ArrowRightIcon,
-  CompassIcon,
-  LandmarkIcon,
-  MountainSnowIcon,
-  type LucideIcon,
-} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -16,10 +11,10 @@ import {
 import { Button, buttonVariants } from "@/components/ui/button";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 
-const destinationIcons: Record<DestinationIconKey, LucideIcon> = {
-  mountain: MountainSnowIcon,
-  landmark: LandmarkIcon,
-  compass: CompassIcon,
+const destinationIcons: Record<DestinationIconKey, IconType> = {
+  mountain: TbMountain,
+  landmark: TbBuildingBank,
+  compass: TbCompass,
 };
 
 const DestinationsMenu = () => {
@@ -57,7 +52,7 @@ const DestinationsMenu = () => {
                 )}
               >
                 View all
-                <ArrowRightIcon className="size-3.5" />
+                <TbArrowRight className="size-3.5" />
               </NavigationMenuLink>
             </div>
           );
@@ -65,7 +60,7 @@ const DestinationsMenu = () => {
       </div>
 
       <div className="relative m-3 flex w-64 shrink-0 flex-col justify-end overflow-hidden rounded-lg bg-linear-to-br from-primary to-[oklch(0.33_0.07_253)] p-5 text-primary-foreground">
-        <MountainSnowIcon className="absolute -top-6 -right-6 size-32 text-white/10" />
+        <TbMountain className="absolute -top-6 -right-6 size-32 text-white/10" />
         <span className="w-fit rounded-md bg-accent px-2.5 py-1 text-xs font-semibold tracking-wide text-accent-foreground uppercase">
           {featuredDestination.badge}
         </span>
@@ -83,7 +78,7 @@ const DestinationsMenu = () => {
           className="mt-4 w-fit rounded-md"
         >
           Explore the trek
-          <ArrowRightIcon className="size-3.5" />
+          <TbArrowRight className="size-3.5" />
         </Button>
       </div>
     </div>

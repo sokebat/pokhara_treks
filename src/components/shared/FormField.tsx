@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
 import type { UseFormRegisterReturn } from "react-hook-form";
 
 import { Input } from "@/components/ui/input";
@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 interface FormFieldProps {
   id: string;
   label: string;
-  icon: LucideIcon;
+  icon: IconType;
   placeholder?: string;
   type?: string;
   error?: string;

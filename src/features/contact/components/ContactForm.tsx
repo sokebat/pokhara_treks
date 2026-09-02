@@ -1,18 +1,9 @@
 "use client";
 
+import { TbCircleCheck, TbLoader2, TbMail, TbMessage, TbPhoneCall, TbSend, TbTag, TbUser } from "react-icons/tb";
 import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import {
-  CheckCircle2Icon,
-  Loader2Icon,
-  MailIcon,
-  MessageSquareIcon,
-  PhoneCallIcon,
-  SendIcon,
-  TagIcon,
-  UserIcon,
-} from "lucide-react";
 
 import {
   contactFormDefaultValues,
@@ -49,7 +40,7 @@ const ContactForm = () => {
     return (
       <div className="flex flex-col items-center gap-3 py-14 text-center">
         <span className="flex size-16 items-center justify-center rounded-full bg-accent/10 text-accent ring-8 ring-accent/5">
-          <CheckCircle2Icon className="size-8" />
+          <TbCircleCheck className="size-8" />
         </span>
         <h3 className="mt-1 text-xl font-bold text-foreground">Message sent</h3>
         <p className="max-w-sm text-sm text-muted-foreground">
@@ -85,7 +76,7 @@ const ContactForm = () => {
         <FormField
           id="name"
           label="Full Name"
-          icon={UserIcon}
+          icon={TbUser}
           placeholder="Jane Doe"
           error={errors.name?.message}
           registration={register("name")}
@@ -93,7 +84,7 @@ const ContactForm = () => {
         <FormField
           id="email"
           label="Email"
-          icon={MailIcon}
+          icon={TbMail}
           type="email"
           placeholder="jane@example.com"
           error={errors.email?.message}
@@ -105,7 +96,7 @@ const ContactForm = () => {
         <FormField
           id="phone"
           label="Phone (optional)"
-          icon={PhoneCallIcon}
+          icon={TbPhoneCall}
           type="tel"
           placeholder="+977 98XXXXXXXX"
           error={errors.phone?.message}
@@ -114,7 +105,7 @@ const ContactForm = () => {
         <FormField
           id="subject"
           label="Subject"
-          icon={TagIcon}
+          icon={TbTag}
           placeholder="Trip enquiry"
           error={errors.subject?.message}
           registration={register("subject")}
@@ -124,7 +115,7 @@ const ContactForm = () => {
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="message">Message</Label>
         <div className="relative">
-          <MessageSquareIcon className="pointer-events-none absolute top-4 left-4 size-4 text-muted-foreground" />
+          <TbMessage className="pointer-events-none absolute top-4 left-4 size-4 text-muted-foreground" />
           <Textarea
             id="message"
             rows={6}
@@ -147,12 +138,12 @@ const ContactForm = () => {
       >
         {isSubmitting ? (
           <>
-            <Loader2Icon className="size-4 animate-spin" />
+            <TbLoader2 className="size-4 animate-spin" />
             Sending...
           </>
         ) : (
           <>
-            <SendIcon className="size-4" />
+            <TbSend className="size-4" />
             Send Message
           </>
         )}

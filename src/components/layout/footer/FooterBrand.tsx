@@ -1,4 +1,4 @@
-import { MailIcon, PhoneCallIcon } from "lucide-react";
+import { TbMail, TbPhoneCall } from "react-icons/tb";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
 
 import Logo from "@/components/shared/Logo";
@@ -19,14 +19,14 @@ const FooterBrand = () => {
           href={`tel:${siteInfo.phone}`}
           className="flex items-center gap-2 text-primary-foreground/80 transition-colors hover:text-accent"
         >
-          <PhoneCallIcon className="size-4 shrink-0" />
+          <TbPhoneCall className="size-4 shrink-0" />
           {siteInfo.phoneDisplay}
         </a>
         <a
           href={`mailto:${siteInfo.email}`}
           className="flex items-center gap-2 text-primary-foreground/80 transition-colors hover:text-accent"
         >
-          <MailIcon className="size-4 shrink-0" />
+          <TbMail className="size-4 shrink-0" />
           {siteInfo.email}
         </a>
       </div>

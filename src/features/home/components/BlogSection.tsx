@@ -1,5 +1,5 @@
+import { TbArrowRight } from "react-icons/tb";
 import Link from "next/link";
-import { ArrowRightIcon } from "lucide-react";
 
 import CardVisual from "@/components/shared/CardVisual";
 import Container from "@/components/shared/Container";
@@ -77,7 +77,7 @@ const BlogSection = () => {
                       )}
                     >
                       Read article
-                      <ArrowRightIcon className="size-3.5 transition-transform group-hover:translate-x-1" />
+                      <TbArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                     </span>
                   </CardContent>
                 </Card>

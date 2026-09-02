@@ -1,8 +1,8 @@
 "use client";
 
+import { TbLogin, TbLogout, TbSelector } from "react-icons/tb";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
-import { ChevronsUpDownIcon, LogInIcon, LogOutIcon } from "lucide-react";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
@@ -60,7 +60,7 @@ const SidebarUserMenu = () => {
                   {email}
                 </span>
               </div>
-              <ChevronsUpDownIcon className="ml-auto size-4 text-sidebar-foreground/60" />
+              <TbSelector className="ml-auto size-4 text-sidebar-foreground/60" />
             </DropdownMenuTrigger>
 
             <DropdownMenuContent
@@ -86,12 +86,12 @@ const SidebarUserMenu = () => {
                   <DropdownMenuItem
                     onClick={() => signOut({ callbackUrl: "/login" })}
                   >
-                    <LogOutIcon />
+                    <TbLogout />
                     Sign Out
                   </DropdownMenuItem>
                 ) : (
                   <DropdownMenuItem render={<Link href="/login" />}>
-                    <LogInIcon />
+                    <TbLogin />
                     Sign In
                   </DropdownMenuItem>
                 )}

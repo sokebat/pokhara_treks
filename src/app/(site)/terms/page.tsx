@@ -1,5 +1,5 @@
+import { TbFileText } from "react-icons/tb";
 import type { Metadata } from "next";
-import { ScrollTextIcon } from "lucide-react";
 
 import Container from "@/components/shared/Container";
 import LegalContent from "@/features/legal/components/LegalContent";
@@ -18,7 +18,7 @@ export default function TermsPage() {
     <div className="py-14 sm:py-20">
       <Container>
         <LegalPageHeader
-          icon={ScrollTextIcon}
+          icon={TbFileText}
           title={termsContent.title}
           effectiveDate={termsContent.effectiveDate}
         />

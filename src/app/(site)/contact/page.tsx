@@ -1,5 +1,5 @@
+import { TbMail, TbMapPin, TbPhoneCall } from "react-icons/tb";
 import type { Metadata } from "next";
-import { MailIcon, MapPinIcon, PhoneCallIcon } from "lucide-react";
 import {
   FaFacebook,
   FaInstagram,
@@ -45,7 +45,7 @@ export default function ContactPage() {
               <ul className="mt-4 flex flex-col gap-4">
                 <li className="flex items-start gap-3">
                   <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                    <PhoneCallIcon className="size-4" />
+                    <TbPhoneCall className="size-4" />
                   </span>
                   <div>
                     <p className="text-sm font-medium text-foreground">
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                    <MailIcon className="size-4" />
+                    <TbMail className="size-4" />
                   </span>
                   <div>
                     <p className="text-sm font-medium text-foreground">
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                    <MapPinIcon className="size-4" />
+                    <TbMapPin className="size-4" />
                   </span>
                   <div>
                     <p className="text-sm font-medium text-foreground">

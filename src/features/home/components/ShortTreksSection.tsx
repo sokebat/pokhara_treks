@@ -1,5 +1,5 @@
+import { TbCalendar, TbMountain } from "react-icons/tb";
 import Link from "next/link";
-import { CalendarDaysIcon, MountainIcon } from "lucide-react";
 
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
@@ -46,9 +46,9 @@ const ShortTreksSection = () => {
                 difficulty: trek.difficulty,
               }}
               facts={[
-                { icon: MountainIcon, label: "Altitude", value: trek.altitude },
+                { icon: TbMountain, label: "Altitude", value: trek.altitude },
                 {
-                  icon: CalendarDaysIcon,
+                  icon: TbCalendar,
                   label: "Best season",
                   value: trek.season,
                 },

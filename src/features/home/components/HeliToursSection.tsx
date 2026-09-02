@@ -1,5 +1,5 @@
+import { TbClock, TbCompass, TbHelicopter, TbMountain } from "react-icons/tb";
 import Link from "next/link";
-import { ClockIcon, CompassIcon, HelicopterIcon, MountainIcon } from "lucide-react";
 
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
@@ -34,15 +34,15 @@ const HeliToursSection = () => {
               key={tour.title}
               href={tour.href}
               title={tour.title}
-              icon={HelicopterIcon}
+              icon={TbHelicopter}
               tone={tones[index % tones.length]}
               image={tour.image}
               price={tour.price}
               ctaLabel="View Tour"
               facts={[
-                { icon: ClockIcon, label: "Flight", value: tour.flight },
-                { icon: MountainIcon, label: "Lands at", value: tour.landsAt },
-                { icon: CompassIcon, label: "Departs", value: tour.departs },
+                { icon: TbClock, label: "Flight", value: tour.flight },
+                { icon: TbMountain, label: "Lands at", value: tour.landsAt },
+                { icon: TbCompass, label: "Departs", value: tour.departs },
               ]}
             />
           ))}

@@ -1,15 +1,5 @@
-import type { LucideIcon } from "lucide-react";
-import {
-  CalendarCheckIcon,
-  HelpCircleIcon,
-  LayoutDashboardIcon,
-  MapPinIcon,
-  MountainSnowIcon,
-  NewspaperIcon,
-  SettingsIcon,
-  StarIcon,
-  UsersRoundIcon,
-} from "lucide-react";
+import { TbCalendarCheck, TbHelpCircle, TbLayoutDashboard, TbMapPin, TbMountain, TbNews, TbSettings, TbStar, TbUsersGroup } from "react-icons/tb";
+import type { IconType } from "react-icons";
 
 export type NavSubItem = {
   title: string;
@@ -21,7 +11,7 @@ export type NavGroup = "content" | "operations" | "admin";
 export type NavItem = {
   title: string;
   url: string;
-  icon: LucideIcon;
+  icon: IconType;
   group?: NavGroup;
   items: NavSubItem[];
 };
@@ -36,13 +26,13 @@ export const navItems: NavItem[] = [
   {
     title: "Overview",
     url: "/dashboard",
-    icon: LayoutDashboardIcon,
+    icon: TbLayoutDashboard,
     items: [],
   },
   {
     title: "Trips & Tours",
     url: "/dashboard/trips",
-    icon: MountainSnowIcon,
+    icon: TbMountain,
     group: "content",
     items: [
       { title: "Treks", url: "/dashboard/trips/treks" },
@@ -56,14 +46,14 @@ export const navItems: NavItem[] = [
   {
     title: "Destinations",
     url: "/dashboard/destinations",
-    icon: MapPinIcon,
+    icon: TbMapPin,
     group: "content",
     items: [],
   },
   {
     title: "Blog",
     url: "/dashboard/blog",
-    icon: NewspaperIcon,
+    icon: TbNews,
     group: "content",
     items: [
       { title: "All Posts", url: "/dashboard/blog" },
@@ -73,14 +63,14 @@ export const navItems: NavItem[] = [
   {
     title: "FAQs",
     url: "/dashboard/faqs",
-    icon: HelpCircleIcon,
+    icon: TbHelpCircle,
     group: "content",
     items: [],
   },
   {
     title: "Bookings & Enquiries",
     url: "/dashboard/bookings",
-    icon: CalendarCheckIcon,
+    icon: TbCalendarCheck,
     group: "operations",
     items: [
       { title: "Trip Enquiries", url: "/dashboard/bookings/enquiries" },
@@ -90,21 +80,21 @@ export const navItems: NavItem[] = [
   {
     title: "Guides & Team",
     url: "/dashboard/guides",
-    icon: UsersRoundIcon,
+    icon: TbUsersGroup,
     group: "operations",
     items: [],
   },
   {
     title: "Reviews & Testimonials",
     url: "/dashboard/reviews",
-    icon: StarIcon,
+    icon: TbStar,
     group: "operations",
     items: [],
   },
   {
     title: "Site Settings",
     url: "/dashboard/settings",
-    icon: SettingsIcon,
+    icon: TbSettings,
     group: "admin",
     items: [
       { title: "Contact & Office Info", url: "/dashboard/settings/contact" },

@@ -1,8 +1,8 @@
 "use client";
 
+import { TbChevronRight } from "react-icons/tb";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronRightIcon } from "lucide-react";
 
 import {
   Collapsible,
@@ -62,7 +62,7 @@ const NavItemRow = ({ item, pathname }: { item: NavItem; pathname: string }) => 
         >
           <item.icon className="size-4" />
           {item.title}
-          <ChevronRightIcon className="ml-auto size-4 transition-transform group-data-open/collapsible:rotate-90" />
+          <TbChevronRight className="ml-auto size-4 transition-transform group-data-open/collapsible:rotate-90" />
         </CollapsibleTrigger>
 
         <CollapsibleContent>

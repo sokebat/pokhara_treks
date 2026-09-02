@@ -1,11 +1,11 @@
 "use client";
 
+import { TbLock, TbLogin, TbMail } from "react-icons/tb";
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
-import { LockIcon, LogInIcon, MailIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -58,7 +58,7 @@ const LoginForm = () => {
       <FormField
         id="email"
         label="Email"
-        icon={MailIcon}
+        icon={TbMail}
         type="email"
         placeholder="you@pokharatreks.com"
         error={errors.email?.message}
@@ -68,7 +68,7 @@ const LoginForm = () => {
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="password">Password</Label>
         <div className="relative">
-          <LockIcon className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
+          <TbLock className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
           <input
             id="password"
             type="password"
@@ -92,7 +92,7 @@ const LoginForm = () => {
         disabled={isSubmitting}
         className="rounded-md"
       >
-        <LogInIcon className="size-4" />
+        <TbLogin className="size-4" />
         {isSubmitting ? "Signing in..." : "Sign In"}
       </Button>
     </form>

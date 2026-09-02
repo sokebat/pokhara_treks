@@ -1,11 +1,5 @@
+import { TbArrowUpRight, TbClock, TbMail, TbMapPin, TbPhoneCall } from "react-icons/tb";
 import Link from "next/link";
-import {
-  ArrowUpRightIcon,
-  ClockIcon,
-  MailIcon,
-  MapPinIcon,
-  PhoneCallIcon,
-} from "lucide-react";
 
 import { siteInfo } from "@/constant/site";
 
@@ -19,7 +13,7 @@ const FooterContactStrip = () => {
       <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-accent/40 hover:bg-primary-foreground/10">
         <div className="flex items-center gap-3">
           <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent/15">
-            <MapPinIcon className="size-4.5 text-accent" />
+            <TbMapPin className="size-4.5 text-accent" />
           </span>
           <div>
             <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
@@ -37,14 +31,14 @@ const FooterContactStrip = () => {
           className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent/80"
         >
           Get Directions
-          <ArrowUpRightIcon className="size-3.5" />
+          <TbArrowUpRight className="size-3.5" />
         </Link>
       </div>
 
       <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-accent/40 hover:bg-primary-foreground/10">
         <div className="flex items-center gap-3">
           <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent/15">
-            <PhoneCallIcon className="size-4.5 text-accent" />
+            <TbPhoneCall className="size-4.5 text-accent" />
           </span>
           <div>
             <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
@@ -66,7 +60,7 @@ const FooterContactStrip = () => {
       <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-accent/40 hover:bg-primary-foreground/10">
         <div className="flex items-center gap-3">
           <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent/15">
-            <MailIcon className="size-4.5 text-accent" />
+            <TbMail className="size-4.5 text-accent" />
           </span>
           <div>
             <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
@@ -88,7 +82,7 @@ const FooterContactStrip = () => {
       <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-accent/40 hover:bg-primary-foreground/10">
         <div className="flex items-center gap-3">
           <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent/15">
-            <ClockIcon className="size-4.5 text-accent" />
+            <TbClock className="size-4.5 text-accent" />
           </span>
           <div>
             <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">

@@ -1,5 +1,5 @@
+import { TbClock, TbMail, TbMapPin, TbPhoneCall } from "react-icons/tb";
 import Link from "next/link";
-import { ClockIcon, MailIcon, MapPinIcon, PhoneCallIcon } from "lucide-react";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
 
 import Container from "@/components/shared/Container";
@@ -16,12 +16,12 @@ const socialLinks = [
 
 const infoRows = [
   {
-    icon: MapPinIcon,
+    icon: TbMapPin,
     label: "Address",
     value: siteInfo.address,
   },
   {
-    icon: ClockIcon,
+    icon: TbClock,
     label: "Open",
     value: (
       <>
@@ -32,13 +32,13 @@ const infoRows = [
     ),
   },
   {
-    icon: PhoneCallIcon,
+    icon: TbPhoneCall,
     label: "Call or WhatsApp",
     value: siteInfo.phoneDisplay,
     href: `tel:${siteInfo.phone}`,
   },
   {
-    icon: MailIcon,
+    icon: TbMail,
     label: "Email",
     value: siteInfo.email,
     href: `mailto:${siteInfo.email}`,

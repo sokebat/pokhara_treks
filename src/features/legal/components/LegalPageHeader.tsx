@@ -1,7 +1,7 @@
-import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
 
 type LegalPageHeaderProps = {
-  icon: LucideIcon;
+  icon: IconType;
   title: string;
   effectiveDate: string;
 };

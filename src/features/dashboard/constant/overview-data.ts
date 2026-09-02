@@ -1,17 +1,11 @@
-import type { LucideIcon } from "lucide-react";
-import {
-  CalendarCheckIcon,
-  MailIcon,
-  MountainSnowIcon,
-  NewspaperIcon,
-  StarIcon,
-} from "lucide-react";
+import { TbCalendarCheck, TbMail, TbMountain, TbNews, TbStar } from "react-icons/tb";
+import type { IconType } from "react-icons";
 
 export type Stat = {
   label: string;
   value: string;
   helper: string;
-  icon: LucideIcon;
+  icon: IconType;
 };
 
 export const stats: Stat[] = [
@@ -19,25 +13,25 @@ export const stats: Stat[] = [
     label: "Trip Enquiries",
     value: "18",
     helper: "This month",
-    icon: CalendarCheckIcon,
+    icon: TbCalendarCheck,
   },
   {
     label: "Published Treks",
     value: "24",
     helper: "Across all categories",
-    icon: MountainSnowIcon,
+    icon: TbMountain,
   },
   {
     label: "Average Rating",
     value: "4.9",
     helper: "From 202 reviews",
-    icon: StarIcon,
+    icon: TbStar,
   },
   {
     label: "Contact Messages",
     value: "5",
     helper: "Unread",
-    icon: MailIcon,
+    icon: TbMail,
   },
 ];
 
@@ -86,23 +80,23 @@ export const recentEnquiries: Enquiry[] = [
 export type QuickAction = {
   label: string;
   href: string;
-  icon: LucideIcon;
+  icon: IconType;
 };
 
 export const quickActions: QuickAction[] = [
   {
     label: "View All Enquiries",
     href: "/dashboard/bookings/enquiries",
-    icon: CalendarCheckIcon,
+    icon: TbCalendarCheck,
   },
   {
     label: "Manage Treks",
     href: "/dashboard/trips/treks",
-    icon: MountainSnowIcon,
+    icon: TbMountain,
   },
   {
     label: "Write a Blog Post",
     href: "/dashboard/blog",
-    icon: NewspaperIcon,
+    icon: TbNews,
   },
 ];

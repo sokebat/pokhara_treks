@@ -1,15 +1,6 @@
+import { TbBolt, TbClipboardList, TbCompass, TbConfetti, TbHeartHandshake, TbRoute, TbShieldCheck, TbSparkles } from "react-icons/tb";
 import type { Metadata } from "next";
 import Image from "next/image";
-import {
-  ClipboardListIcon,
-  CompassIcon,
-  HeartHandshakeIcon,
-  PartyPopperIcon,
-  RouteIcon,
-  ShieldCheckIcon,
-  SparklesIcon,
-  ZapIcon,
-} from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
 
 import Container from "@/components/shared/Container";
@@ -30,26 +21,26 @@ const colorVariants = [
 ];
 
 const trustPoints = [
-  { icon: CompassIcon, label: "Local Expertise" },
-  { icon: HeartHandshakeIcon, label: "Women-Led Guides" },
-  { icon: ZapIcon, label: "Fast, No-Pressure Reply" },
+  { icon: TbCompass, label: "Local Expertise" },
+  { icon: TbHeartHandshake, label: "Women-Led Guides" },
+  { icon: TbBolt, label: "Fast, No-Pressure Reply" },
 ];
 
 const steps = [
   {
-    icon: ClipboardListIcon,
+    icon: TbClipboardList,
     title: "Share your preferences",
     description:
       "Dates, group size, and the kind of trip you're picturing — the form takes under two minutes.",
   },
   {
-    icon: RouteIcon,
+    icon: TbRoute,
     title: "We design your itinerary",
     description:
       "A local trip planner builds a route, pace, and price around what you told us — no templates.",
   },
   {
-    icon: PartyPopperIcon,
+    icon: TbConfetti,
     title: "Confirm & get set",
     description:
       "Approve the plan, we handle permits and logistics, and you land in Pokhara ready to go.",
@@ -58,17 +49,17 @@ const steps = [
 
 const sidebarHighlights = [
   {
-    icon: HeartHandshakeIcon,
+    icon: TbHeartHandshake,
     title: "Planned by local women",
     description: "Every itinerary is shaped by guides who grew up on these trails.",
   },
   {
-    icon: ShieldCheckIcon,
+    icon: TbShieldCheck,
     title: "Nothing fixed in stone",
     description: "Swap routes, dates, or pace anytime before you confirm — free of charge.",
   },
   {
-    icon: SparklesIcon,
+    icon: TbSparkles,
     title: "Built around you",
     description: "Solo, family, or a group of twelve — the plan is sized to fit.",
   },
@@ -101,7 +92,7 @@ export default function CustomizeMyTripPage() {
         <Container>
           <div className="relative flex flex-col items-center py-16 text-center sm:py-20">
             <span className="flex size-12 items-center justify-center rounded-full bg-accent text-accent-foreground ring-8 ring-accent/15">
-              <SparklesIcon className="size-5" />
+              <TbSparkles className="size-5" />
             </span>
 
             <p className="mt-5 text-sm font-semibold tracking-wide text-accent uppercase">
@@ -204,7 +195,7 @@ export default function CustomizeMyTripPage() {
               />
               <div className="absolute right-4 bottom-4 left-4 flex items-start gap-3 rounded-md border border-white/15 bg-black/40 p-4 backdrop-blur-md">
                 <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent/25">
-                  <HeartHandshakeIcon className="size-4 text-accent" />
+                  <TbHeartHandshake className="size-4 text-accent" />
                 </span>
                 <p className="text-sm leading-snug text-white">
                   Guided and planned by Pokhara-trained women, start to

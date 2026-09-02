@@ -1,8 +1,8 @@
 "use client";
 
+import { TbChevronRight } from "react-icons/tb";
 import * as React from "react";
 import Link from "next/link";
-import { ChevronRightIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { type NavGroup } from "@/constant/nav";
@@ -49,7 +49,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
                 >
                   {group.children.length}
                 </span>
-                <ChevronRightIcon className="size-3.5 text-muted-foreground" />
+                <TbChevronRight className="size-3.5 text-muted-foreground" />
               </span>
             </button>
           </li>

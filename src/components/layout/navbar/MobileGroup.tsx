@@ -1,8 +1,8 @@
 "use client";
 
+import { TbChevronRight } from "react-icons/tb";
 import * as React from "react";
 import Link from "next/link";
-import { ChevronRightIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { type NavGroup } from "@/constant/nav";
@@ -23,7 +23,7 @@ const MobileGroup = ({ group, onNavigate }: MobileGroupProps) => {
         className="flex w-full cursor-pointer items-center justify-between px-6 py-2 text-left text-sm font-medium text-foreground"
       >
         {group.label}
-        <ChevronRightIcon
+        <TbChevronRight
           className={cn(
             "size-3.5 shrink-0 text-muted-foreground transition-transform",
             open && "rotate-90",

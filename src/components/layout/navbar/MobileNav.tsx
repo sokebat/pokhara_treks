@@ -1,8 +1,8 @@
 "use client";
 
+import { TbMenu2 } from "react-icons/tb";
 import * as React from "react";
 import Link from "next/link";
-import { MenuIcon } from "lucide-react";
 
 import { navItems } from "@/constant/nav";
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,7 @@ const MobileNav = () => {
         render={<Button variant="ghost" size="icon" aria-label="Open menu" />}
         className="md:hidden"
       >
-        <MenuIcon className="size-5" />
+        <TbMenu2 className="size-5" />
       </SheetTrigger>
       <SheetContent side="right" className="w-5/6 gap-0 p-0">
         <SheetHeader className="flex-row items-center border-b border-border py-5">

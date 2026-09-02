@@ -1,5 +1,5 @@
+import { TbShieldCheck } from "react-icons/tb";
 import type { Metadata } from "next";
-import { ShieldCheckIcon } from "lucide-react";
 
 import Container from "@/components/shared/Container";
 import LegalContent from "@/features/legal/components/LegalContent";
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
     <div className="py-14 sm:py-20">
       <Container>
         <LegalPageHeader
-          icon={ShieldCheckIcon}
+          icon={TbShieldCheck}
           title={privacyContent.title}
           effectiveDate={privacyContent.effectiveDate}
         />

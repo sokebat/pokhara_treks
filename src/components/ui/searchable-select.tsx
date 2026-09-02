@@ -1,6 +1,6 @@
 "use client";
 
-import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
 
 import {
   Combobox,
@@ -20,7 +20,7 @@ type SearchableSelectProps = {
   onValueChange: (value: string | null) => void;
   placeholder?: string;
   emptyText?: string;
-  icon?: LucideIcon;
+  icon?: IconType;
   className?: string;
   "aria-invalid"?: boolean;
 };

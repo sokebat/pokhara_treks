@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
 import Link from "next/link";
 
 import CardVisual from "@/components/shared/CardVisual";
@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 type Fact = {
-  icon: LucideIcon;
+  icon: IconType;
   label: string;
   value: string;
 };
@@ -16,7 +16,7 @@ type TripCardProps = {
   href: string;
   title: string;
   subtitle?: string;
-  icon: LucideIcon;
+  icon: IconType;
   tone?: "primary" | "accent" | "chart-3";
   image: string;
   price: number;

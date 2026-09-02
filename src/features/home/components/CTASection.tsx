@@ -1,5 +1,5 @@
+import { TbArrowRight } from "react-icons/tb";
 import Link from "next/link";
-import { ArrowRightIcon } from "lucide-react";
 
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
@@ -28,7 +28,7 @@ const CTASection = () => {
             className="mt-8"
           >
             Plan Your Trip
-            <ArrowRightIcon className="size-4" />
+            <TbArrowRight className="size-4" />
           </Button>
         </div>
       </Container>
