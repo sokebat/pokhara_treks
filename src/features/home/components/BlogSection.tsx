@@ -24,7 +24,6 @@ const BlogSection = () => {
     <section className="bg-secondary py-12 sm:py-16">
       <Container>
         <SectionHeader
-          eyebrow="From the Trail"
           title="Trekking guides and stories"
           action={
             <Button

@@ -7,7 +7,6 @@ const WhyUsSection = () => {
     <section className="bg-secondary py-12 sm:py-16">
       <Container>
         <SectionHeader
-          eyebrow="Why Us"
           title="Why travel with us"
           description="Six reasons, and every one of them is checkable."
         />

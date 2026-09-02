@@ -13,6 +13,7 @@ import {
   MoonStarIcon,
   PhoneCallIcon,
   SendIcon,
+  TagIcon,
   UserIcon,
   UsersIcon,
 } from "lucide-react";
@@ -43,6 +44,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import SearchableSelect from "@/components/ui/searchable-select";
 import { Textarea } from "@/components/ui/textarea";
 import FormField from "@/components/shared/FormField";
 
@@ -76,12 +78,10 @@ const CustomizeTripForm = () => {
         <span className="flex size-16 items-center justify-center rounded-full bg-accent/10 text-accent ring-8 ring-accent/5">
           <CheckCircle2Icon className="size-8" />
         </span>
-        <h3 className="mt-1 text-xl font-bold text-foreground">
-          Enquiry sent
-        </h3>
+        <h3 className="mt-1 text-xl font-bold text-foreground">Enquiry sent</h3>
         <p className="max-w-sm text-sm text-muted-foreground">
-          Thanks for sharing your trip details — one of our trip planners
-          will reach out within 24 hours with a tailored itinerary.
+          Thanks for sharing your trip details — one of our trip planners will
+          reach out within 24 hours with a tailored itinerary.
         </p>
         <Button
           type="button"
@@ -116,7 +116,11 @@ const CustomizeTripForm = () => {
               name="tripType"
               render={({ field }) => (
                 <Select value={field.value} onValueChange={field.onChange}>
-                  <SelectTrigger id="tripType" className="h-14 w-full">
+                  <SelectTrigger
+                    id="tripType"
+                    className="h-14 w-full rounded-md"
+                  >
+                    <TagIcon className="size-4 text-muted-foreground" />
                     <SelectValue placeholder="Select trip type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -258,22 +262,15 @@ const CustomizeTripForm = () => {
               control={control}
               name="country"
               render={({ field }) => (
-                <Select
+                <SearchableSelect
+                  id="country"
+                  items={countries}
                   value={field.value || null}
                   onValueChange={field.onChange}
-                >
-                  <SelectTrigger id="country" className="h-14 w-full">
-                    <GlobeIcon className="size-4 text-muted-foreground" />
-                    <SelectValue placeholder="Select your country" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {countries.map((country) => (
-                      <SelectItem key={country} value={country}>
-                        {country}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                  placeholder="Search your country..."
+                  icon={GlobeIcon}
+                  aria-invalid={!!errors.country}
+                />
               )}
             />
             {errors.country && (
@@ -313,9 +310,7 @@ const CustomizeTripForm = () => {
             />
           </div>
           {errors.message && (
-            <p className="text-xs text-destructive">
-              {errors.message.message}
-            </p>
+            <p className="text-xs text-destructive">{errors.message.message}</p>
           )}
         </div>
       </div>
@@ -335,9 +330,9 @@ const CustomizeTripForm = () => {
 
           <Button
             type="submit"
-            size="lg"
             disabled={isSubmitting}
-            className="w-full rounded-md sm:w-fit"
+            size="xl"
+            className="hidden rounded-md sm:inline-flex"
           >
             {isSubmitting ? (
               <>

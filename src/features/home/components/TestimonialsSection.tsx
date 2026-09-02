@@ -237,7 +237,6 @@ const TestimonialsSection = () => {
     <section className="bg-background py-12 sm:py-16">
       <Container>
         <SectionHeader
-          eyebrow="Reviews and Press"
           title="Your words, not ours"
           description="Every review names the guide, so you can ask for them by name."
           action={

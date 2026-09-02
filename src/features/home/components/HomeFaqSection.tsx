@@ -20,7 +20,6 @@ const HomeFaqSection = () => {
         <div className="grid gap-10 lg:grid-cols-[20rem_1fr]">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <SectionHeader
-              eyebrow="Questions"
               title="Things to know before you book"
               description="The ten questions we are asked most, answered plainly. Prices, permits and rules are the ones on this page and on every trip page."
             />
@@ -41,8 +40,9 @@ const HomeFaqSection = () => {
                       rel="noopener noreferrer"
                     />
                   }
+                  variant="whatsapp"
                   size="xl"
-                  className="w-full bg-whatsapp text-white hover:bg-whatsapp/85"
+                  className="w-full"
                 >
                   <FaWhatsapp className="size-4" />
                   WhatsApp Us

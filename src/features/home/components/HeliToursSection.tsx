@@ -14,7 +14,6 @@ const HeliToursSection = () => {
     <section className="bg-secondary py-12 sm:py-16">
       <Container>
         <SectionHeader
-          eyebrow="Fly In, Walk Out"
           title="Helicopter tours from Pokhara"
           description="The Himalayas in a morning. Back in Lakeside for lunch."
           action={

@@ -6,8 +6,6 @@ import { siteInfo } from "@/constant/site";
 const policyLinks = [
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms and Conditions", href: "/terms" },
-  { label: "Booking and Payment", href: "/booking-and-payment" },
-  { label: "Cancellation and Refund", href: "/cancellation-and-refund" },
 ];
 
 const FooterBottom = () => {

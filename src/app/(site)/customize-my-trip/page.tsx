@@ -136,27 +136,39 @@ export default function CustomizeMyTripPage() {
       </section>
 
       {/* How it works */}
-      <section className="border-b border-border bg-secondary/40 py-14">
+      <section className="border-b border-border bg-secondary/40 py-14 sm:py-20">
         <Container>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+              How it works
+            </p>
+            <h2 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl">
+              Three steps, no back-and-forth
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {steps.map((step, index) => {
               const variant = colorVariants[index % colorVariants.length];
               return (
                 <div
                   key={step.title}
-                  className="flex flex-col gap-3 rounded-md border border-border bg-card p-6"
+                  className="group relative flex flex-col gap-3 rounded-md border border-border bg-card p-6 transition-shadow hover:shadow-md"
                 >
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute top-4 right-5 text-4xl font-bold text-foreground/5 select-none"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
                   <div className="flex items-center gap-3">
                     <span
-                      className={`flex size-11 shrink-0 items-center justify-center rounded-full ${variant.chip}`}
+                      className={`flex size-12 shrink-0 items-center justify-center rounded-full ${variant.chip}`}
                     >
                       <step.icon className="size-5" />
                     </span>
-                    <span className="flex items-center gap-1.5 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-                      <span
-                        aria-hidden
-                        className={`size-1.5 rounded-full ${variant.dot}`}
-                      />
+                    <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
                       Step {index + 1}
                     </span>
                   </div>
@@ -225,15 +237,19 @@ export default function CustomizeMyTripPage() {
             </div>
 
             <div className="rounded-md bg-linear-to-br from-primary to-[oklch(0.33_0.07_253)] p-6 text-primary-foreground">
-              <span className="flex size-11 items-center justify-center rounded-full bg-whatsapp/15 text-whatsapp">
-                <FaWhatsapp className="size-5" />
-              </span>
-              <p className="mt-4 text-sm font-semibold tracking-wide text-accent uppercase">
-                Rather just chat?
-              </p>
-              <p className="mt-2 text-sm text-primary-foreground/80">
-                Message us on WhatsApp and plan your trip in real time.
-              </p>
+              <div className="flex items-start gap-3">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-whatsapp/15 text-whatsapp">
+                  <FaWhatsapp className="size-5" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+                    Rather just chat?
+                  </p>
+                  <p className="mt-1 text-sm text-primary-foreground/80">
+                    Message us on WhatsApp and plan your trip in real time.
+                  </p>
+                </div>
+              </div>
               <Button
                 nativeButton={false}
                 render={
@@ -243,8 +259,9 @@ export default function CustomizeMyTripPage() {
                     rel="noopener noreferrer"
                   />
                 }
-                size="lg"
-                className="mt-5 w-full rounded-md bg-whatsapp text-white hover:bg-whatsapp/85"
+                variant="whatsapp"
+                size="xl"
+                className="mt-5 w-full rounded-md"
               >
                 <FaWhatsapp className="size-4" />
                 Message us on WhatsApp

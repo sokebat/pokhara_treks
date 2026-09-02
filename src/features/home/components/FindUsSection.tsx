@@ -50,7 +50,6 @@ const FindUsSection = () => {
     <section className="bg-secondary py-12 sm:py-16">
       <Container>
         <SectionHeader
-          eyebrow="Come and See Us"
           title="Find us in Lakeside"
           description="Ten minutes from most Lakeside hotels, two minutes from Barahi Chowk."
         />

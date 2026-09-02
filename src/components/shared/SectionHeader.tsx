@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type SectionHeaderProps = {
-  eyebrow: string;
   title: string;
   description?: string;
   action?: ReactNode;
@@ -11,7 +10,6 @@ type SectionHeaderProps = {
 };
 
 const SectionHeader = ({
-  eyebrow,
   title,
   description,
   action,
@@ -24,13 +22,6 @@ const SectionHeader = ({
     )}
   >
     <div>
-      <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-1.5">
-        <span className="size-1.5 rounded-full bg-accent" aria-hidden />
-        <span className="text-xs font-semibold tracking-widest text-accent uppercase">
-          {eyebrow}
-        </span>
-      </div>
-
       <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl">
         {title}
       </h2>

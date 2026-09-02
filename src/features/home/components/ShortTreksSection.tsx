@@ -14,7 +14,6 @@ const ShortTreksSection = () => {
     <section className="bg-background py-12 sm:py-16">
       <Container>
         <SectionHeader
-          eyebrow="The Pokhara Advantage"
           title="Short treks and day hikes from Pokhara"
           description="Under a week, starting from our office in Lakeside."
           action={

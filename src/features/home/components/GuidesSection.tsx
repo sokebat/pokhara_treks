@@ -11,7 +11,6 @@ const GuidesSection = () => {
     <section className="bg-background py-12 sm:py-16">
       <Container>
         <SectionHeader
-          eyebrow="The People You Walk With"
           title="Meet the guides"
           description="Every guide has a name, a face and a licence number."
           action={

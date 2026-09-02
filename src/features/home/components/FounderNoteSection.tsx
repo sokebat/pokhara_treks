@@ -26,7 +26,6 @@ const FounderNoteSection = () => {
 
           <div>
             <SectionHeader
-              eyebrow="From the Office in Lakeside"
               title="A note from our founders"
             />
 

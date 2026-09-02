@@ -139,8 +139,9 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                   />
                 }
+                variant="whatsapp"
                 size="lg"
-                className="mt-5 w-full rounded-md bg-whatsapp text-white hover:bg-whatsapp/85"
+                className="mt-5 w-full rounded-md"
               >
                 <FaWhatsapp className="size-4" />
                 Message us on WhatsApp
