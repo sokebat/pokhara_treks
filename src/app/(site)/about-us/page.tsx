@@ -4,12 +4,13 @@ import FindUsSection from "@/components/shared/FindUsSection";
 import FounderNoteSection from "@/components/shared/FounderNoteSection";
 import GuidesSection from "@/components/shared/GuidesSection";
 import WhyUsSection from "@/components/shared/WhyUsSection";
+import AboutHeroSection from "@/features/site/about/components/AboutHero";
  
-import React from "react";
 
 const AboutUs = () => {
   return (
     <div>
+      <AboutHeroSection />
       <WhyUsSection />
       <GuidesSection isactionactive={false} />
       <FounderNoteSection />
