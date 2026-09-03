@@ -7,7 +7,7 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { blogPosts } from "@/features/home/constant/home-data";
+import { blogPosts } from "@/features/site/home/constant/home-data";
 
 const postTint = [
   { tone: "accent", tag: "bg-accent/10 text-accent", link: "text-accent" },

@@ -10,7 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { homeFaqs } from "@/features/home/constant/faq";
+import { homeFaqs } from "@/features/site/home/constant/faq";
 import { siteInfo } from "@/constant/site";
 
 const HomeFaqSection = () => {

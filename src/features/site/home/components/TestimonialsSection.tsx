@@ -26,7 +26,7 @@ import {
   testimonials,
   type ReviewPlatform,
   type Testimonial,
-} from "@/features/home/constant/testimonials";
+} from "@/features/site/home/constant/testimonials";
 
 const platformMeta: Record<ReviewPlatform, { label: string; letter: string }> =
   {

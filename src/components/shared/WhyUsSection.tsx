@@ -1,6 +1,6 @@
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
-import { reasons, whyUsStats } from "@/features/home/constant/home-data";
+import { reasons, whyUsStats } from "@/features/site/home/constant/home-data";
 
 const WhyUsSection = () => {
   return (

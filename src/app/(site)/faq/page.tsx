@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/accordion";
 import { slugify } from "@/lib/utils";
 import { siteInfo } from "@/constant/site";
-import { faqCategories, faqItems, type FaqSection } from "@/features/faq/constant/faq";
+import { faqCategories, faqItems, type FaqSection } from "@/features/site/faq/constant/faq";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",

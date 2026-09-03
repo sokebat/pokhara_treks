@@ -3,10 +3,14 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
-import { guides } from "@/features/home/constant/home-data";
-import GuideCard from "@/features/home/components/GuideCard";
+import { guides } from "@/features/site/home/constant/home-data";
+import GuideCard from "@/components/shared/GuideCard";
 
-const GuidesSection = () => {
+interface GuidesSectionProps {
+  isactionactive: boolean;
+}
+
+const GuidesSection = ({ isactionactive }: GuidesSectionProps) => {
   return (
     <section className="bg-background py-12 sm:py-16">
       <Container>
@@ -14,14 +18,16 @@ const GuidesSection = () => {
           title="Meet the guides"
           description="Every guide has a name, a face and a licence number."
           action={
-            <Button
-              nativeButton={false}
-              render={<Link href="/our-team" />}
-              variant="accent"
-              size="xl"
-            >
-              Meet the whole team
-            </Button>
+            isactionactive ? (
+              <Button
+                nativeButton={false}
+                render={<Link href="/our-team" />}
+                variant="accent"
+                size="xl"
+              >
+                Meet the whole team
+              </Button>
+            ) : null
           }
         />
 

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Avatar from "@/components/shared/Avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import type { Guide } from "@/features/home/constant/home-data";
+import type { Guide } from "@/features/site/home/constant/home-data";
 
 type GuideCardProps = {
   guide: Guide;

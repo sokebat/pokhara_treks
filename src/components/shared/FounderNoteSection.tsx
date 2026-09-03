@@ -10,24 +10,9 @@ const FounderNoteSection = () => {
     <section className="bg-secondary py-12 sm:py-16">
       <Container>
         <div className="grid items-stretch gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-md lg:aspect-auto lg:min-h-full">
-            <Image
-              src="/images/hero-women-trekking.jpg"
-              alt="A woman trekker looking out over a snow-capped Himalayan mountain range"
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover object-[68%_center]"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"
-            />
-          </div>
 
-          <div>
-            <SectionHeader
-              title="A note from our founders"
-            />
+             <div>
+            <SectionHeader title="A note from our founders" />
 
             <div className="mt-6 flex flex-col gap-4 text-muted-foreground">
               <p className="leading-7">
@@ -61,15 +46,30 @@ const FounderNoteSection = () => {
               </p>
             </div>
 
-            <Button
+            {/* <Button
               nativeButton={false}
               render={<Link href="/our-story" />}
               size="xl"
               className="mt-6"
             >
               Read our story
-            </Button>
+            </Button> */}
           </div>
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-md lg:aspect-auto lg:min-h-full">
+            <Image
+              src="/images/hero-women-trekking.jpg"
+              alt="A woman trekker looking out over a snow-capped Himalayan mountain range"
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover object-[68%_center]"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"
+            />
+          </div>
+
+       
         </div>
       </Container>
     </section>
