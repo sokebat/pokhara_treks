@@ -21,7 +21,7 @@ const GuidesSection = ({ isactionactive }: GuidesSectionProps) => {
             isactionactive ? (
               <Button
                 nativeButton={false}
-                render={<Link href="/our-team" />}
+                render={<Link href="/about-us" />}
                 variant="accent"
                 size="xl"
               >

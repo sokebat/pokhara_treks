@@ -508,6 +508,11 @@ export const navItems: NavItem[] = [
   },
   {
     type: "link",
+    label: "About Us",
+    href: "/about-us",
+  },
+  {
+    type: "link",
     label: "Blogs",
     href: "/blogs",
   },

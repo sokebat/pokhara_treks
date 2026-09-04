@@ -48,7 +48,7 @@ const FounderNoteSection = () => {
 
             {/* <Button
               nativeButton={false}
-              render={<Link href="/our-story" />}
+              render={<Link href="/about-us" />}
               size="xl"
               className="mt-6"
             >

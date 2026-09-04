@@ -29,14 +29,11 @@ const alsoWithUsLinks = [
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Our Story", href: "/our-story" },
-  { label: "Our Team and Guides", href: "/our-team-and-guides" },
-  { label: "Our Female Guides", href: "/our-female-guides" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Blogs", href: "/blogs" },
   { label: "Why Book With Us", href: "/why-book-with-us" },
   { label: "Our Promises", href: "/our-promises" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Blogs", href: "/blogs" },
 ];
 
 const travelInfoLinks = [

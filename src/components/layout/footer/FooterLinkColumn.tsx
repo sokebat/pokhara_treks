@@ -18,7 +18,7 @@ const FooterLinkColumn = ({ title, links }: FooterLinkColumnProps) => {
       </h3>
       <ul className="mt-4 flex flex-col gap-2.5">
         {links.map((link) => (
-          <li key={link.href}>
+          <li key={link.label}>
             <Link
               href={link.href}
               className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
