@@ -87,4 +87,15 @@ export const testimonials: Testimonial[] = [
     guide: "Hira",
     platform: "google",
   },
+  {
+    name: "Sushmita P.",
+    context: "Nepal · Solo, 26, first time in the Himalaya",
+    rating: 4,
+    quote:
+      "I wanted to walk, see and experience Nepal without a guide. I was very nervous, but it turned out to be a fantastic experience.",
+    trek: "Annapurna Base Camp Trek, 7 Days",
+    date: "October 2025",
+    guide: "Pushpa",
+    platform: "tripadvisor",
+  },
 ];
