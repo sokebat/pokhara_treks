@@ -1,6 +1,6 @@
 import { slugify } from "@/lib/utils";
-import type { LegalPage } from "@/features/legal/constant/legal";
-
+import { LegalPage } from "../constant/legal";
+ 
 interface LegalContentProps {
   page: LegalPage;
 }

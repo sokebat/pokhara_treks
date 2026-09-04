@@ -2,11 +2,11 @@ import { TbFileText } from "react-icons/tb";
 import type { Metadata } from "next";
 
 import Container from "@/components/shared/Container";
-import LegalContent from "@/features/legal/components/LegalContent";
-import LegalPageHeader from "@/features/legal/components/LegalPageHeader";
-import LegalToc from "@/features/legal/components/LegalToc";
-import { termsContent } from "@/features/legal/constant/legal";
-
+import LegalPageHeader from "@/features/site/legal/components/LegalPageHeader";
+import { termsContent } from "@/features/site/legal/constant/legal";
+import LegalToc from "@/features/site/legal/components/LegalToc";
+import LegalContent from "@/features/site/legal/components/LegalContent";
+ 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
