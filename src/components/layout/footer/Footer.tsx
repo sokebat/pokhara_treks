@@ -36,7 +36,7 @@ const companyLinks = [
   { label: "Why Book With Us", href: "/why-book-with-us" },
   { label: "Our Promises", href: "/our-promises" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Blog", href: "/blog" },
+  { label: "Blogs", href: "/blogs" },
 ];
 
 const travelInfoLinks = [

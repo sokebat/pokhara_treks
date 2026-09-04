@@ -9,7 +9,7 @@ const FounderNoteSection = () => {
   return (
     <section className="bg-secondary py-12 sm:py-16">
       <Container>
-        <div className="grid items-stretch gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        <div className="grid items-stretch gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
 
              <div>
             <SectionHeader title="A note from our founders" />
@@ -55,7 +55,7 @@ const FounderNoteSection = () => {
               Read our story
             </Button> */}
           </div>
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-md lg:aspect-auto lg:min-h-full">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border-2 border-border lg:aspect-auto lg:min-h-full">
             <Image
               src="/images/hero-women-trekking.jpg"
               alt="A woman trekker looking out over a snow-capped Himalayan mountain range"

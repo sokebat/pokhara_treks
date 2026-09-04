@@ -6,7 +6,7 @@ const Container = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <section className="mx-auto max-w-[1600px] px-2 md:px-4">
+    <section className="mx-auto max-w-[1600px] px-4 md:px-6">
       {children}
     </section>
   );

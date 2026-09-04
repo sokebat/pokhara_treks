@@ -15,7 +15,7 @@ const trustPoints = [
 
 const HeroSection = () => {
   return (
-    <section className="relative isolate min-h-150 overflow-hidden bg-primary sm:min-h-160 lg:min-h-175">
+    <section className="relative isolate min-h-[32rem] overflow-hidden bg-primary sm:min-h-160 lg:min-h-175">
       {/* Background image */}
       <Image
         src="/images/hero-women-trekking.jpg"
@@ -35,11 +35,11 @@ const HeroSection = () => {
       />
 
       <Container>
-        <div className="relative grid min-h-150 items-center gap-10 py-14 sm:min-h-160 sm:py-16 lg:min-h-175 lg:grid-cols-[1.3fr_0.7fr] lg:gap-8 lg:py-20">
+        <div className="relative grid min-h-[32rem] items-center gap-10 py-12 sm:min-h-160 sm:py-16 lg:min-h-175 lg:grid-cols-[1.3fr_0.7fr] lg:gap-8 lg:py-20">
           {/* Left content */}
           <div className="flex w-full flex-col items-start">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-3 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 py-1.5 pr-5 pl-1.5 shadow-sm backdrop-blur-md">
+            <div className="inline-flex max-w-full items-center gap-3 rounded-full border-2 border-primary-foreground/20 bg-primary-foreground/10 py-1.5 pr-5 pl-1.5 backdrop-blur-md">
               <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent">
                 <TbShieldCheck className="size-4 text-accent-foreground" />
               </span>
@@ -56,7 +56,7 @@ const HeroSection = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="mt-7 w-full text-4xl leading-[1.08] font-bold tracking-tight text-primary-foreground sm:text-5xl xl:text-[3.8rem]">
+            <h1 className="mt-7 w-full text-3xl leading-[1.08] font-bold tracking-tight text-primary-foreground sm:text-5xl xl:text-[3.8rem]">
               The Himalaya, led by the{" "}
               <span className="text-accent">women</span> who know her best.
             </h1>
@@ -69,12 +69,13 @@ const HeroSection = () => {
             </p>
 
             {/* CTA buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Button
                 nativeButton={false}
                 render={<Link href="/customize-my-trip" />}
                 variant="accent"
                 size="xl"
+                className="w-full sm:w-auto"
               >
                 Plan Your Trip
                 <TbArrowRight className="size-4" />
@@ -84,7 +85,7 @@ const HeroSection = () => {
                 nativeButton={false}
                 render={<Link href="/trekking-and-hiking" />}
                 size="xl"
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 sm:w-auto"
               >
                 Explore Treks
                 <TbArrowRight className="size-4" />
@@ -96,7 +97,7 @@ const HeroSection = () => {
               {trustPoints.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/15 bg-primary-foreground/10 px-3.5 py-2 backdrop-blur-md"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground/15 bg-primary-foreground/10 px-3.5 py-2 backdrop-blur-md"
                 >
                   <Icon className="size-3.5 shrink-0 text-accent" />
 
@@ -113,11 +114,11 @@ const HeroSection = () => {
             {/* Decorative frame */}
             <div
               aria-hidden
-              className="absolute -inset-3 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-sm"
+              className="absolute -inset-3 rounded-md border-2 border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-sm"
             />
 
             {/* Main image */}
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl border border-primary-foreground/15 shadow-2xl">
+            <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border-2 border-primary-foreground/15">
               <Image
                 src="/images/collage-trekking.jpg"
                 alt="A trekking group led along a Himalayan mountain trail"
@@ -134,7 +135,7 @@ const HeroSection = () => {
             </div>
 
             {/* Floating information card */}
-            <div className="absolute right-5 bottom-5 w-64 rounded-xl border border-border/50 bg-background/95 p-4 shadow-xl backdrop-blur-md">
+            <div className="absolute right-5 bottom-5 w-64 rounded-md border-2 border-border bg-background/95 p-4 backdrop-blur-md">
               <div className="flex items-start gap-3">
                 <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent/15">
                   <TbHeartHandshake className="size-4 text-accent" />

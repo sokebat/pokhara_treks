@@ -41,7 +41,7 @@ const TripCard = ({
   facts,
   rating,
 }: TripCardProps) => (
-  <Card className="h-full gap-0 overflow-hidden rounded-md py-0">
+  <Card className="h-full gap-0 overflow-hidden rounded-md border-2 border-border bg-card py-0 shadow-none ring-0">
     <CardVisual
       icon={icon}
       tone={tone}
@@ -50,7 +50,7 @@ const TripCard = ({
       className="aspect-4/3"
     />
 
-    <CardContent className="flex flex-1 flex-col py-5">
+    <CardContent className="flex flex-1 flex-col px-4 py-4 sm:py-5">
       <h3 className="text-base leading-snug font-semibold text-balance text-foreground">
         {title}
         {subtitle && `, ${subtitle}`}
@@ -74,7 +74,7 @@ const TripCard = ({
         </div>
       )}
 
-      <ul className="mt-3 flex flex-1 flex-col gap-1.5 border-t border-border pt-3 text-xs">
+      <ul className="mt-3 flex flex-1 flex-col gap-1.5 border-t-2 border-border pt-3 text-xs">
         {facts.map((fact) => (
           <li
             key={fact.label}
@@ -91,7 +91,7 @@ const TripCard = ({
         ))}
       </ul>
 
-      <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
+      <div className="mt-4 flex flex-wrap items-end justify-between gap-3 border-t-2 border-border pt-4">
         <div>
           <p className="text-[0.65rem] font-medium tracking-wide text-muted-foreground uppercase">
             From

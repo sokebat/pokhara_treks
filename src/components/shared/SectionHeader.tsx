@@ -17,12 +17,12 @@ const SectionHeader = ({
 }: SectionHeaderProps) => (
   <div
     className={cn(
-      "flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end",
+      "flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end sm:gap-6",
       className,
     )}
   >
-    <div>
-      <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl">
+    <div className="min-w-0">
+      <h2 className="text-3xl font-bold text-balance text-primary sm:text-4xl">
         {title}
       </h2>
 
@@ -31,7 +31,11 @@ const SectionHeader = ({
       )}
     </div>
 
-    {action && <div className="shrink-0">{action}</div>}
+    {action && (
+      <div className="flex w-full shrink-0 sm:w-auto sm:justify-end [&>*]:w-full sm:[&>*]:w-auto">
+        {action}
+      </div>
+    )}
   </div>
 );
 

@@ -8,7 +8,7 @@ const CTASection = () => {
   return (
     <section className="py-12 sm:py-16">
       <Container>
-        <div className="rounded-md bg-primary px-6 py-14 text-center text-primary-foreground sm:py-16">
+        <div className="rounded-md bg-primary px-5 py-10 text-center text-primary-foreground sm:px-6 sm:py-16">
           <p className="text-sm font-semibold tracking-wide text-accent uppercase">
             Start Your Journey
           </p>
@@ -25,7 +25,7 @@ const CTASection = () => {
             render={<Link href="/customize-my-trip" />}
             variant="accent"
             size="xl"
-            className="mt-8"
+            className="mt-8 w-full sm:w-auto"
           >
             Plan Your Trip
             <TbArrowRight className="size-4" />

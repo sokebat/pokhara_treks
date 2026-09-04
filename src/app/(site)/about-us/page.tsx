@@ -15,9 +15,7 @@ const AboutUs = () => {
       <GuidesSection isactionactive={false} />
       <FounderNoteSection />
       <FaqSection />
-
       <FindUsSection />
-
       <CTASection />
     </div>
   );

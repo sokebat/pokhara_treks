@@ -509,6 +509,6 @@ export const navItems: NavItem[] = [
   {
     type: "link",
     label: "Blogs",
-    href: "/blog",
+    href: "/blogs",
   },
 ];

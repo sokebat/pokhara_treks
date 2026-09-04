@@ -15,7 +15,7 @@ const GoogleMap = ({ label = siteInfo.name, className }: GoogleMapProps) => {
   return (
     <div
       className={cn(
-        "aspect-video overflow-hidden rounded-md border border-border",
+        "aspect-video overflow-hidden rounded-md border-2 border-border",
         className,
       )}
     >

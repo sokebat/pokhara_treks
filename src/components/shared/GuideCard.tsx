@@ -10,7 +10,7 @@ type GuideCardProps = {
 };
 
 const GuideCard = ({ guide, index }: GuideCardProps) => (
-  <Card className="h-full gap-0 overflow-hidden rounded-md py-0">
+  <Card className="h-full gap-0 overflow-hidden rounded-md border-2 border-border bg-card py-0 shadow-none ring-0">
     <div className="relative aspect-4/3">
       <Image
         src={guide.image}
@@ -22,39 +22,39 @@ const GuideCard = ({ guide, index }: GuideCardProps) => (
       <Avatar
         name={guide.name}
         index={index}
-        className="absolute bottom-3 left-3 ring-2 ring-background"
+        className="absolute bottom-3 left-3 ring-2 ring-card"
       />
     </div>
 
-    <CardContent className="py-5">
-      <p className="font-semibold text-foreground">{guide.name}</p>
-      <p className="text-xs font-medium text-accent">{guide.role}</p>
+    <CardContent className="border-none px-4 pt-4 pb-4">
+      <p className="font-semibold text-primary">{guide.name}</p>
+      <p className="mt-0.5 text-sm font-medium text-accent">{guide.role}</p>
 
-      <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-3 border-t border-border pt-4 text-xs">
+      <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2.5 border-t-2 border-border pt-3">
         <div>
-          <dt className="text-muted-foreground">Licence</dt>
-          <dd className="mt-0.5 font-semibold text-foreground">
+          <dt className="text-sm text-muted-foreground">Licence</dt>
+          <dd className="mt-0.5 text-sm font-semibold text-primary">
             {guide.licence}
           </dd>
         </div>
 
         <div>
-          <dt className="text-muted-foreground">Guiding</dt>
-          <dd className="mt-0.5 font-semibold text-foreground">
+          <dt className="text-sm text-muted-foreground">Guiding</dt>
+          <dd className="mt-0.5 text-sm font-semibold text-primary">
             {guide.years}
           </dd>
         </div>
 
         <div className="col-span-2">
-          <dt className="text-muted-foreground">Routes</dt>
-          <dd className="mt-0.5 font-semibold text-foreground">
+          <dt className="text-sm text-muted-foreground">Routes</dt>
+          <dd className="mt-0.5 text-sm font-semibold text-primary">
             {guide.routes}
           </dd>
         </div>
 
         <div className="col-span-2">
-          <dt className="text-muted-foreground">Speaks</dt>
-          <dd className="mt-0.5 font-semibold text-foreground">
+          <dt className="text-sm text-muted-foreground">Speaks</dt>
+          <dd className="mt-0.5 text-sm font-semibold text-primary">
             {guide.languages}
           </dd>
         </div>

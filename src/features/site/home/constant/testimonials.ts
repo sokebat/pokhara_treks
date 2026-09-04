@@ -28,13 +28,6 @@ export const platformSummaries: PlatformSummary[] = [
 export const reviewSummary = {
   average: 4.9,
   totalReviews: 202,
-  breakdown: [
-    { stars: 5, percent: 86 },
-    { stars: 4, percent: 11 },
-    { stars: 3, percent: 2 },
-    { stars: 2, percent: 1 },
-    { stars: 1, percent: 0 },
-  ],
 };
 
 export type Testimonial = {

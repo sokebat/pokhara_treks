@@ -1,6 +1,8 @@
 "use client";
 
 import { TbQuote } from "react-icons/tb";
+import { FcGoogle } from "react-icons/fc";
+import { SiTripadvisor } from "react-icons/si";
 import { useState } from "react";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
@@ -28,31 +30,40 @@ import {
   type Testimonial,
 } from "@/features/site/home/constant/testimonials";
 
-const platformMeta: Record<ReviewPlatform, { label: string; letter: string }> =
-  {
-    tripadvisor: { label: "TripAdvisor", letter: "T" },
-    google: { label: "Google", letter: "G" },
-  };
+const platformMeta: Record<
+  ReviewPlatform,
+  { label: string; note: string }
+> = {
+  tripadvisor: {
+    label: "TripAdvisor",
+    note: "Independent traveller reviews",
+  },
+  google: {
+    label: "Google",
+    note: "Verified Google reviews",
+  },
+};
+
+const PlatformLogo = ({
+  platform,
+  className,
+}: {
+  platform: ReviewPlatform;
+  className?: string;
+}) =>
+  platform === "google" ? (
+    <FcGoogle className={cn("size-5", className)} />
+  ) : (
+    <SiTripadvisor className={cn("size-5 text-[#00AF87]", className)} />
+  );
 
 const PlatformBadge = ({ platform }: { platform: ReviewPlatform }) => {
   const meta = platformMeta[platform];
 
   return (
-    <span
-      className={cn(
-        "inline-flex items-center gap-1.5 rounded-full py-1 pr-2.5 pl-1 text-[0.7rem] font-semibold",
-        platform === "tripadvisor"
-          ? "bg-primary/10 text-primary"
-          : "bg-chart-3/15 text-chart-3",
-      )}
-    >
-      <span
-        className={cn(
-          "flex size-4 shrink-0 items-center justify-center rounded-full text-[0.6rem] font-bold text-white",
-          platform === "tripadvisor" ? "bg-primary" : "bg-chart-3",
-        )}
-      >
-        {meta.letter}
+    <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary py-1 pr-2.5 pl-1 text-[0.7rem] font-semibold text-secondary-foreground">
+      <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-card">
+        <PlatformLogo platform={platform} className="size-2.5" />
       </span>
       {meta.label}
     </span>
@@ -60,7 +71,7 @@ const PlatformBadge = ({ platform }: { platform: ReviewPlatform }) => {
 };
 
 const TestimonialMeta = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-border pt-4">
+  <div className="mt-4 flex flex-wrap items-center gap-2 border-t-2 border-border pt-4">
     <span className="rounded-full bg-secondary px-2.5 py-1 text-[0.7rem] font-semibold text-secondary-foreground">
       {testimonial.trek}
     </span>
@@ -79,15 +90,17 @@ const TestimonialMeta = ({ testimonial }: { testimonial: Testimonial }) => (
 );
 
 const RatingSummaryCard = () => (
-  <div className="flex flex-col gap-6 rounded-md bg-primary p-6 text-primary-foreground sm:p-7">
+  <div className="flex flex-col gap-5 rounded-md bg-primary p-6 text-primary-foreground sm:p-7">
     <div>
       <div className="flex items-end gap-3">
         <p className="text-5xl font-bold">{reviewSummary.average}</p>
         <StarRating rating={reviewSummary.average} className="mb-1.5" />
       </div>
 
-      <p className="mt-1.5 text-sm text-primary-foreground/70">
-        {reviewSummary.totalReviews} reviews across TripAdvisor and Google
+      <p className="mt-2 text-sm leading-6 text-primary-foreground/75">
+        {reviewSummary.totalReviews} reviews across TripAdvisor and Google.
+        Every one names the guide, the trek, and the dates — written by people
+        who actually walked it with us.
       </p>
     </div>
 
@@ -98,91 +111,72 @@ const RatingSummaryCard = () => (
           href={platform.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-md bg-primary-foreground/10 p-3 ring-1 ring-primary-foreground/10 transition-colors hover:bg-primary-foreground/15"
+          className="rounded-md border-2 border-primary-foreground/20 bg-primary-foreground/10 p-3 transition-colors hover:bg-primary-foreground/15"
         >
-          <span
-            className={cn(
-              "flex size-6 items-center justify-center rounded-md text-xs font-bold text-white",
-              platform.platform === "tripadvisor" ? "bg-accent" : "bg-chart-5",
-            )}
-          >
-            {platformMeta[platform.platform].letter}
+          <span className="flex size-8 items-center justify-center rounded-md bg-white">
+            <PlatformLogo platform={platform.platform} />
           </span>
 
-          <p className="mt-2 text-lg font-bold">{platform.rating}</p>
+          <p className="mt-3 text-lg font-bold">{platform.rating}</p>
 
           <p className="text-xs font-medium text-primary-foreground/80">
             {platform.label} · {platform.reviews} reviews
           </p>
 
-          <span className="mt-1.5 inline-block text-[0.7rem] font-semibold text-accent">
+          <p className="mt-1 text-[0.7rem] leading-4 text-primary-foreground/60">
+            {platformMeta[platform.platform].note}
+          </p>
+
+          <span className="mt-2 inline-block text-[0.7rem] font-semibold text-accent">
             Read on {platform.label} &rarr;
           </span>
         </Link>
-      ))}
-    </div>
-
-    <div className="flex flex-col gap-1.5">
-      {reviewSummary.breakdown.map(({ stars, percent }) => (
-        <div key={stars} className="flex items-center gap-2 text-xs">
-          <span className="w-8 shrink-0 text-primary-foreground/70">
-            {stars} &#9733;
-          </span>
-
-          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-primary-foreground/15">
-            <div
-              className="h-full rounded-full bg-accent"
-              style={{ width: `${percent}%` }}
-            />
-          </div>
-
-          <span className="w-8 shrink-0 text-right text-primary-foreground/70">
-            {percent}%
-          </span>
-        </div>
       ))}
     </div>
   </div>
 );
 
 const FeaturedTestimonialCard = () => (
-  <div className="relative flex flex-col justify-between rounded-md border border-border bg-card p-6 sm:p-8">
-    <span
-      aria-hidden
-      className="flex size-14 items-center justify-center rounded-full bg-accent/10"
-    >
-      <TbQuote className="size-6 fill-accent text-accent" />
-    </span>
-
-    <div className="mt-4">
-      <StarRating rating={featuredTestimonial.rating} />
-
-      <p className="mt-4 max-w-xl text-xl leading-snug font-semibold text-balance text-foreground sm:text-2xl">
-        {featuredTestimonial.quote}
-      </p>
-    </div>
-
-    <div className="mt-6 flex items-center gap-3">
-      <Avatar name={featuredTestimonial.name} index={0} />
-
-      <div>
-        <p className="text-sm font-semibold text-foreground">
-          {featuredTestimonial.name}
-        </p>
-        <p className="text-xs text-muted-foreground">
-          {featuredTestimonial.context}
+  <div className="flex h-full flex-col rounded-md border-2 border-border bg-card p-6 sm:p-8">
+    <div className="flex items-start justify-between gap-4">
+      <div className="min-w-0 flex-1">
+        <StarRating rating={featuredTestimonial.rating} />
+        <p className="mt-1 text-xl leading-snug font-semibold text-primary sm:text-2xl">
+          {featuredTestimonial.quote}
         </p>
       </div>
+
+      <span
+        aria-hidden
+        className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent/10 sm:size-12"
+      >
+        <TbQuote className="size-5 fill-accent text-accent" />
+      </span>
     </div>
 
-    <TestimonialMeta testimonial={featuredTestimonial} />
+    <div className="mt-auto pt-6">
+      <div className="flex items-center gap-3">
+        <Avatar name={featuredTestimonial.name} index={0} />
+
+        <div>
+          <p className="text-sm font-semibold text-primary">
+            {featuredTestimonial.name}
+          </p>
+          <p className="text-xs text-muted-foreground">
+            {featuredTestimonial.context}
+          </p>
+        </div>
+      </div>
+
+      <TestimonialMeta testimonial={featuredTestimonial} />
+    </div>
   </div>
 );
 
 const cardTint = [
-  "border-accent/20 hover:border-accent/40",
-  "border-primary/15 hover:border-primary/30",
-  "border-chart-3/20 hover:border-chart-3/40",
+  "border-2 border-accent/20 hover:border-accent/40",
+  "border-2 border-primary/15 hover:border-primary/30",
+  "border-2 border-chart-3/20 hover:border-chart-3/40",
 ];
 
 const TestimonialCard = ({
@@ -194,27 +188,31 @@ const TestimonialCard = ({
 }) => (
   <Card
     className={cn(
-      "relative h-full rounded-md transition-colors",
+      "relative h-full rounded-md shadow-none ring-0 transition-colors",
       cardTint[index % cardTint.length],
     )}
   >
-    <TbQuote
-      aria-hidden
-      className="absolute top-5 right-5 size-8 fill-current text-foreground/5"
-    />
-
     <CardContent className="flex flex-1 flex-col">
-      <div className="flex items-center gap-3">
-        <Avatar name={testimonial.name} index={index} />
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-3">
+          <Avatar name={testimonial.name} index={index} />
 
-        <div>
-          <p className="text-sm font-semibold text-foreground">
-            {testimonial.name}
-          </p>
-          <p className="text-xs text-muted-foreground">
-            {testimonial.context}
-          </p>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-primary">
+              {testimonial.name}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {testimonial.context}
+            </p>
+          </div>
         </div>
+
+        <span
+          aria-hidden
+          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10"
+        >
+          <TbQuote className="size-4 fill-accent text-accent" />
+        </span>
       </div>
 
       <StarRating rating={testimonial.rating} className="mt-3.5" />
@@ -251,7 +249,7 @@ const TestimonialsSection = () => {
           }
         />
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[22rem_1fr]">
+        <div className="mt-8 grid gap-3 lg:grid-cols-[22rem_1fr]">
           <RatingSummaryCard />
           <FeaturedTestimonialCard />
         </div>
