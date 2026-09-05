@@ -16,7 +16,7 @@ function NumberFieldGroup({
     <NumberFieldPrimitive.Group
       data-slot="number-field-group"
       className={cn(
-        "flex h-14 items-center overflow-hidden rounded-md border border-input bg-transparent transition-colors focus-within:border-ring focus-within:ring-3 focus-within:ring-ring/50",
+        "flex h-14 items-center overflow-hidden rounded-md border-2 border-input bg-transparent transition-colors focus-within:border-ring focus-within:ring-3 focus-within:ring-ring/50",
         className,
       )}
       {...props}
@@ -68,7 +68,7 @@ function NumberFieldInput({
     <NumberFieldPrimitive.Input
       data-slot="number-field-input"
       className={cn(
-        "h-full w-full border-x border-input bg-transparent text-center text-base font-semibold text-foreground outline-none md:text-sm",
+        "h-full w-full border-x-2 border-input bg-transparent text-center text-base font-semibold text-foreground outline-none md:text-sm",
         className,
       )}
       {...props}

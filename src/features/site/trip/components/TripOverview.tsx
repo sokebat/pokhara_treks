@@ -93,7 +93,7 @@ const TripOverview = () => (
       </div>
     </section>
 
-    <section className="border-t border-border pt-10 pb-4">
+    <section className="border-t-2 border-border pt-10 pb-4">
       <SectionHeader title="Why people book this one" />
       <ul className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-x-8">
         {highlights.map((item) => (

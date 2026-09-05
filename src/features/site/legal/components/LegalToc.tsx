@@ -11,7 +11,7 @@ const LegalToc = ({ page }: LegalTocProps) => {
     .filter((heading): heading is string => Boolean(heading));
 
   return (
-    <nav className="sticky top-24 hidden w-full self-start rounded-md border border-border bg-card p-5 lg:block">
+    <nav className="sticky top-24 hidden w-full self-start rounded-md border-2 border-border bg-card p-5 lg:block">
       <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
         On This Page
       </p>

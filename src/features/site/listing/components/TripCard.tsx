@@ -37,7 +37,7 @@ const TripCard = ({
   facts,
   rating,
 }: TripCardProps) => (
-  <Card className="h-full gap-0 overflow-hidden rounded-md border border-border bg-card py-0 shadow-none ring-0">
+  <Card className="h-full gap-0 overflow-hidden rounded-md border-2 border-primary/20 bg-card py-0 shadow-none ring-0">
     <CardVisual
       icon={icon}
       tone={tone}
@@ -70,7 +70,7 @@ const TripCard = ({
         </div>
       )}
 
-      <ul className="mt-3 flex flex-col gap-1.5 border-t border-border pt-3 text-xs">
+      <ul className="mt-3 flex flex-col gap-1.5 border-t-2 border-border pt-3 text-xs">
         {facts.map((fact) => (
           <li
             key={fact.label}
@@ -85,7 +85,7 @@ const TripCard = ({
         ))}
       </ul>
 
-      <div className="mt-auto flex flex-wrap items-end justify-between gap-3 border-t border-border pt-3">
+      <div className="mt-auto flex flex-wrap items-end justify-between gap-3 border-t-2 border-border pt-3">
         <ListingPrice price={price} />
 
         <Button

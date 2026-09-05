@@ -35,21 +35,21 @@ const FooterBrand = () => {
         <a
           href={siteInfo.social.facebook}
           aria-label="Facebook"
-          className="flex size-9 items-center justify-center rounded-md border border-primary-foreground/15 text-primary-foreground transition-colors hover:border-sky hover:bg-sky hover:text-navy"
+          className="flex size-9 items-center justify-center rounded-md border-2 border-primary-foreground/15 text-primary-foreground transition-colors hover:border-sky hover:bg-sky hover:text-navy"
         >
           <FaFacebook className="size-4" />
         </a>
         <a
           href={siteInfo.social.instagram}
           aria-label="Instagram"
-          className="flex size-9 items-center justify-center rounded-md border border-primary-foreground/15 text-primary-foreground transition-colors hover:border-sky hover:bg-sky hover:text-navy"
+          className="flex size-9 items-center justify-center rounded-md border-2 border-primary-foreground/15 text-primary-foreground transition-colors hover:border-sky hover:bg-sky hover:text-navy"
         >
           <FaInstagram className="size-4" />
         </a>
         <a
           href={siteInfo.social.youtube}
           aria-label="YouTube"
-          className="flex size-9 items-center justify-center rounded-md border border-primary-foreground/15 text-primary-foreground transition-colors hover:border-sky hover:bg-sky hover:text-navy"
+          className="flex size-9 items-center justify-center rounded-md border-2 border-primary-foreground/15 text-primary-foreground transition-colors hover:border-sky hover:bg-sky hover:text-navy"
         >
           <FaYoutube className="size-4" />
         </a>

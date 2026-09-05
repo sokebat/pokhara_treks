@@ -6,7 +6,7 @@ import { TREK_PHOTO } from "@/constant/photos";
 
 const TripTrailAndRoute = () => (
   <>
-    <section id="detail" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+    <section id="detail" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
       <SectionHeader title="What the walking is actually like" />
 
       <div className="mt-6 max-w-3xl">
@@ -91,11 +91,11 @@ const TripTrailAndRoute = () => (
       </div>
     </section>
 
-    <section id="route" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+    <section id="route" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
       <SectionHeader title="Route and altitude" />
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <figure>
-          <div className="relative aspect-4/3 overflow-hidden rounded-md border border-border">
+          <div className="relative aspect-4/3 overflow-hidden rounded-md border-2 border-border">
             <Image
               src={TREK_PHOTO}
               alt="Route map of the Annapurna Base Camp trek showing the overnight stops"

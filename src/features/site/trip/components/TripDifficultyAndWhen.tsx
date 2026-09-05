@@ -37,7 +37,7 @@ const seasons = [
 
 const TripDifficultyAndWhen = () => (
   <>
-    <section id="difficulty" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+    <section id="difficulty" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
       <SectionHeader title="How hard is it, honestly" />
 
       <div className="mt-6 mb-6 flex flex-wrap items-center gap-4">
@@ -101,7 +101,7 @@ const TripDifficultyAndWhen = () => (
       </div>
     </section>
 
-    <section id="when" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+    <section id="when" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
       <SectionHeader
         title="When to walk this one"
         description="Four seasons, and the honest version of each."

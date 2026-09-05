@@ -14,7 +14,7 @@ const LegalContent = ({ page }: LegalContentProps) => {
         <div
           key={section.heading ?? index}
           id={section.heading ? slugify(section.heading) : undefined}
-          className="scroll-mt-24 border-b border-border pb-10 last:border-b-0 last:pb-0"
+          className="scroll-mt-24 border-b-2 border-border pb-10 last:border-b-0 last:pb-0"
         >
           {section.heading && (
             <h2 className="mb-4 text-lg font-bold text-foreground sm:text-xl">

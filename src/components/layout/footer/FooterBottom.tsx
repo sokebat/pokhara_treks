@@ -12,7 +12,7 @@ const FooterBottom = () => {
   const year = new Date().getFullYear();
 
   return (
-    <div className="border-t border-primary-foreground/10 bg-footer-deep">
+    <div className="border-t-2 border-primary-foreground/10 bg-footer-deep">
       <Container>
         <div className="flex flex-col items-center justify-between gap-3 py-5 text-center text-xs text-primary-foreground/60 sm:flex-row sm:text-left">
           <p>

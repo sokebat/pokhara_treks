@@ -1,160 +1,111 @@
-import { TbArrowRight, TbCompass, TbHeartHandshake, TbLeaf, TbShieldCheck, TbUsersGroup } from "react-icons/tb";
+import { TbArrowRight } from "react-icons/tb";
 import Image from "next/image";
 import Link from "next/link";
 
-import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
+import { WOMEN_TREK_PHOTO } from "@/constant/photos";
 import { siteInfo } from "@/constant/site";
 
-const trustPoints = [
-  { icon: TbCompass, label: "Local Expertise" },
-  { icon: TbHeartHandshake, label: "Women-Led Guides" },
-  { icon: TbUsersGroup, label: "Small Groups" },
-  { icon: TbLeaf, label: "Responsible Travel" },
+const proofs = [
+  { kicker: "Home base", value: "Lakeside, Pokhara" },
+  { kicker: "Who leads", value: "Licensed local women" },
+  { kicker: "Group size", value: "Never more than eight" },
+];
+
+const routes = [
+  { name: "Annapurna", href: "/region/annapurna-region" },
+  { name: "Everest", href: "/region/everest-region" },
+  { name: "Manaslu", href: "/region/manaslu-region" },
+  { name: "Mustang", href: "/upper-mustang-trek-nepal" },
 ];
 
 const HeroSection = () => {
   return (
-    <section className="relative isolate min-h-[32rem] overflow-hidden bg-foreground sm:min-h-160 lg:min-h-175">
-      {/* Background image */}
-      <Image
-        src="/images/hero-women-trekking.jpg"
-        alt="A woman trekker with a backpack looking out over a snow-capped Himalayan mountain range"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[68%_center]"
-      />
+    <section className="overflow-hidden bg-foreground">
+      <div className="grid items-stretch lg:grid-cols-[minmax(22rem,40rem)_minmax(0,1fr)]">
+        <div className="order-2 flex flex-col justify-center px-4 py-10 md:px-6 lg:order-1 lg:py-16 lg:pr-10 lg:pl-[max(1.5rem,calc((100vw-1600px)/2+1.5rem))] xl:pr-14">
+          <p className="flex items-center gap-3 text-sm font-semibold tracking-[0.18em] text-sky uppercase">
+            <span aria-hidden className="h-px w-8 bg-gold" />
+            Women-led · Pokhara, Nepal
+          </p>
 
-      {/* Background overlays — keep the photo’s colour, darken only for type */}
-      <div aria-hidden className="absolute inset-0 bg-foreground/20" />
+          <h1 className="mt-5 text-3xl leading-[1.12] font-bold tracking-tight text-primary-foreground sm:text-5xl sm:leading-[1.08] lg:text-[3.25rem] xl:text-[3.75rem] xl:leading-[1.05]">
+            The Himalaya, led by the{" "}
+            <span className="text-sky">women</span> who know her best.
+          </h1>
 
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-linear-to-r from-foreground/80 via-foreground/45 to-transparent"
-      />
+          <p className="mt-5 max-w-xl text-base leading-7 text-primary-foreground/80 sm:text-lg sm:leading-8">
+            {siteInfo.name} puts trained local women at the front of every
+            journey — from Everest&apos;s high passes to Annapurna&apos;s
+            sanctuary trails.
+          </p>
 
-      <Container>
-        <div className="relative grid min-h-[32rem] items-center gap-10 py-12 sm:min-h-160 sm:py-16 lg:min-h-175 lg:grid-cols-[1.3fr_0.7fr] lg:gap-8 lg:py-20">
-          {/* Left content */}
-          <div className="flex w-full flex-col items-start">
-            {/* Eyebrow */}
-            <div className="inline-flex max-w-full items-center gap-3 rounded-md border border-primary-foreground/20 bg-foreground/50 py-1.5 pr-5 pl-1.5">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-sky">
-                <TbShieldCheck className="size-4 text-navy" />
-              </span>
+          <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <Button
+              nativeButton={false}
+              render={<Link href="/customize-my-trip" />}
+              size="xl"
+              className="bg-card text-foreground hover:bg-card/90"
+            >
+              Plan Your Trip
+              <TbArrowRight className="size-4" />
+            </Button>
 
-              <span className="text-left">
-                <span className="block text-sm leading-tight font-semibold text-primary-foreground">
-                  Women-Led Trekking Company
-                </span>
-
-                <span className="mt-0.5 block text-xs leading-tight text-primary-foreground/70">
-                  Locally Owned in Pokhara, Nepal
-                </span>
-              </span>
-            </div>
-
-            {/* Heading */}
-            <h1 className="mt-7 w-full text-2xl leading-[1.15] font-bold tracking-tight text-primary-foreground sm:text-4xl sm:leading-[1.1] lg:text-5xl xl:text-[3.8rem] xl:leading-[1.08]">
-              The Himalaya, led by the women who know her best.
-            </h1>
-
-            {/* Description */}
-            <p className="mt-6 max-w-2xl text-base leading-7 text-primary-foreground/85 sm:text-lg sm:leading-8">
-              {siteInfo.name} puts trained local women at the front of every
-              journey — from Everest&apos;s high passes to Annapurna&apos;s
-              sanctuary trails.
-            </p>
-
-            {/* CTA buttons */}
-            <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-              <Button
-                nativeButton={false}
-                render={<Link href="/customize-my-trip" />}
-                size="xl"
-                className="bg-card text-foreground hover:bg-card/90"
-              >
-                Plan Your Trip
-                <TbArrowRight className="size-4" />
-              </Button>
-
-              <Button
-                nativeButton={false}
-                render={<Link href="/trip" />}
-                size="xl"
-                variant="outline"
-                className="border-primary-foreground/35 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-foreground"
-              >
-                Explore Treks
-                <TbArrowRight className="size-4" />
-              </Button>
-            </div>
-
-            {/* Trust points */}
-            <div className="mt-8 flex flex-wrap items-center gap-2">
-              {trustPoints.map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="inline-flex items-center gap-2 rounded-md border border-primary-foreground/20 px-3 py-1.5"
-                >
-                  <Icon className="size-3.5 shrink-0 text-primary-foreground" />
-
-                  <span className="text-xs font-medium whitespace-nowrap text-primary-foreground/90">
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <Button
+              nativeButton={false}
+              render={<Link href="/trip" />}
+              size="xl"
+              variant="outline"
+              className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-foreground"
+            >
+              Explore Treks
+              <TbArrowRight className="size-4" />
+            </Button>
           </div>
 
-          {/* Right image */}
-          <div className="relative hidden w-full justify-self-end lg:flex lg:items-center">
-            {/* Decorative frame */}
-            <div
-              aria-hidden
-              className="absolute -inset-3 rounded-md border border-primary-foreground/20 bg-primary-foreground/5 backdrop-blur-sm"
-            />
-
-            {/* Main image */}
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border border-primary-foreground/20">
-              <Image
-                src="/images/collage-trekking.jpg"
-                alt="A trekking group led along a Himalayan mountain trail"
-                fill
-                sizes="45vw"
-                className="object-cover"
-              />
-
-              {/* Image gradient */}
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-linear-to-t from-foreground/50 via-transparent to-transparent"
-              />
-            </div>
-
-            {/* Floating information card */}
-            <div className="absolute right-5 bottom-5 w-64 rounded-md border border-border bg-background/95 p-4 backdrop-blur-md">
-              <div className="flex items-start gap-3">
-                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md bg-primary">
-                  <TbHeartHandshake className="size-4 text-primary-foreground" />
-                </span>
-
-                <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    Led By Local Women
-                  </p>
-
-                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">
-                    Every itinerary is planned and guided by Pokhara-trained
-                    women.
-                  </p>
-                </div>
+          <dl className="mt-10 grid gap-5 sm:grid-cols-3">
+            {proofs.map((proof) => (
+              <div key={proof.kicker}>
+                <dt className="text-xs font-semibold tracking-wide text-sky uppercase">
+                  {proof.kicker}
+                </dt>
+                <dd className="mt-1.5 text-sm font-semibold text-primary-foreground">
+                  {proof.value}
+                </dd>
               </div>
-            </div>
+            ))}
+          </dl>
+
+          <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
+            {routes.map((route) => (
+              <Link
+                key={route.name}
+                href={route.href}
+                className="inline-flex items-center gap-1 text-sm font-semibold text-primary-foreground/75 hover:text-sky"
+              >
+                {route.name}
+                <TbArrowRight className="size-3.5" />
+              </Link>
+            ))}
           </div>
         </div>
-      </Container>
+
+        <div className="relative order-1 min-h-72 overflow-hidden sm:min-h-96 lg:order-2 lg:min-h-[38rem] xl:min-h-[42rem]">
+          <Image
+            src={WOMEN_TREK_PHOTO}
+            alt="A woman trekker with a backpack looking out over a snow-capped Himalayan mountain range"
+            fill
+            priority
+            sizes="(min-width: 1024px) 60vw, 100vw"
+            className="object-cover object-[68%_center]"
+          />
+
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-linear-to-t from-foreground/35 via-transparent to-transparent lg:bg-linear-to-r lg:from-foreground/25 lg:via-transparent lg:to-transparent"
+          />
+        </div>
+      </div>
     </section>
   );
 };

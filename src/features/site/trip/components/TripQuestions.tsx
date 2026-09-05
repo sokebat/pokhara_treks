@@ -88,7 +88,7 @@ const groups = [
 const TripQuestions = () => (
   <section
     id="questions"
-    className="scroll-mt-32 border-t border-border py-10 sm:py-12"
+    className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12"
   >
     <SectionHeader title="Questions about this trek" />
 
@@ -97,7 +97,7 @@ const TripQuestions = () => (
         <p className="mb-2.5 text-[11px] font-semibold tracking-[0.09em] text-muted-foreground uppercase">
           {group.title}
         </p>
-        <div className="rounded-md border border-border bg-card px-4 sm:px-5">
+        <div className="rounded-md border-2 border-border bg-card px-4 sm:px-5">
           <Accordion
             multiple
             defaultValue={group.items.filter((item) => item.open).map((item) => item.q)}

@@ -31,7 +31,7 @@ const TripTitleAndNav = () => (
             <b className="text-2xl leading-none font-bold tracking-tight sm:text-[1.75rem]">
               7
             </b>
-            <span className="mt-1.5 w-full border-t border-primary-foreground/30 pt-1.5 text-[11px] font-semibold tracking-wider uppercase">
+            <span className="mt-1.5 w-full border-t-2 border-primary-foreground/30 pt-1.5 text-[11px] font-semibold tracking-wider uppercase">
               Days
             </span>
           </span>
@@ -65,7 +65,7 @@ const TripTitleAndNav = () => (
 
     <nav
       aria-label="On this page"
-      className="sticky top-16 z-30 border-y border-border bg-secondary/90 backdrop-blur-md"
+      className="sticky top-16 z-30 border-y-2 border-border bg-secondary/90 backdrop-blur-md"
     >
       <Container>
         <div className="flex items-center gap-4">

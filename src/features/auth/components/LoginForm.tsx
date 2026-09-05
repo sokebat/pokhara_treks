@@ -75,7 +75,7 @@ const LoginForm = () => {
             placeholder="••••••••"
             autoComplete="current-password"
             aria-invalid={!!errors.password}
-            className="h-14 w-full rounded-md border border-input bg-transparent pr-4 pl-11 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm"
+            className="h-14 w-full rounded-md border-2 border-input bg-transparent pr-4 pl-11 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm"
             {...register("password")}
           />
         </div>

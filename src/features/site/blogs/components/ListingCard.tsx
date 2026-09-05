@@ -58,7 +58,7 @@ const ListingCard = ({
     >
       <Card
         className={cn(
-          "h-full gap-0 overflow-hidden rounded-md border border-border bg-card py-0 shadow-none ring-0",
+          "h-full gap-0 overflow-hidden rounded-md border-2 border-primary/20 bg-card py-0 shadow-none ring-0",
           featured && "lg:flex lg:flex-row",
         )}
       >
@@ -110,7 +110,7 @@ const ListingCard = ({
           {footer ? (
             <div
               className={cn(
-                "flex items-end justify-between gap-3 border-t border-border pt-3",
+                "flex items-end justify-between gap-3 border-t-2 border-border pt-3",
                 featured ? "mt-6" : "mt-auto",
               )}
             >

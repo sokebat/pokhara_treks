@@ -35,7 +35,7 @@ export default function ContactPage() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_1.5fr]">
           <div className="flex flex-col gap-6">
-            <div className="rounded-md border border-border bg-muted/30 p-6">
+            <div className="rounded-md border-2 border-border bg-muted/30 p-6">
               <h2 className="text-sm font-semibold tracking-wide text-primary uppercase">
                 Contact Details
               </h2>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                 </li>
               </ul>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-border pt-6">
+              <div className="mt-6 flex items-center gap-3 border-t-2 border-border pt-6">
                 <a
                   href={siteInfo.social.facebook}
                   aria-label="Facebook"
@@ -145,7 +145,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-md border border-border bg-card p-6 sm:p-8">
+          <div className="rounded-md border-2 border-border bg-card p-6 sm:p-8">
             <ContactForm />
           </div>
         </div>

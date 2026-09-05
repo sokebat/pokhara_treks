@@ -55,7 +55,7 @@ const FounderNoteSection = () => {
               Read our story
             </Button> */}
           </div>
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border border-border lg:aspect-auto lg:min-h-full">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border-2 border-border lg:aspect-auto lg:min-h-full">
             <Image
               src="/images/hero-women-trekking.jpg"
               alt="A woman trekker looking out over a snow-capped Himalayan mountain range"

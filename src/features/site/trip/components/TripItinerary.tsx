@@ -61,13 +61,13 @@ const days = [
 ];
 
 const TripItinerary = () => (
-  <section id="itinerary" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+  <section id="itinerary" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
     <SectionHeader
       title="Day by day"
       description="Day 1 is open. The rest expand. Nothing collapses again on its own."
     />
 
-    <div className="mt-6 rounded-md border border-border bg-card px-4 sm:px-5">
+    <div className="mt-6 rounded-md border-2 border-border bg-card px-4 sm:px-5">
       <Accordion multiple defaultValue={[days[0].id]}>
         {days.map((day) => (
           <AccordionItem key={day.id} value={day.id}>
@@ -92,7 +92,7 @@ const TripItinerary = () => (
                       {paragraph}
                     </p>
                   ))}
-                  <p className="mt-4 flex flex-wrap items-center gap-3 border-t border-border pt-3.5 text-[13px] text-muted-foreground">
+                  <p className="mt-4 flex flex-wrap items-center gap-3 border-t-2 border-border pt-3.5 text-[13px] text-muted-foreground">
                     <span
                       className="inline-flex gap-1"
                       role="img"

@@ -77,7 +77,7 @@ export default function FaqPage() {
         </div>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[220px_1fr]">
-          <nav className="sticky top-24 hidden w-full self-start rounded-md border border-border bg-card p-5 lg:block">
+          <nav className="sticky top-24 hidden w-full self-start rounded-md border-2 border-border bg-card p-5 lg:block">
             <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
               Categories
             </p>
@@ -115,7 +115,7 @@ export default function FaqPage() {
                     </h2>
                   </div>
 
-                  <div className="rounded-md border border-border bg-card px-6 sm:px-8">
+                  <div className="rounded-md border-2 border-border bg-card px-6 sm:px-8">
                     <Accordion>
                       {items.map((item) => (
                         <AccordionItem key={item.id} value={item.id}>
@@ -133,7 +133,7 @@ export default function FaqPage() {
               );
             })}
 
-            <div className="flex flex-col items-center gap-4 rounded-md border border-border bg-muted/30 p-8 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex flex-col items-center gap-4 rounded-md border-2 border-border bg-muted/30 p-8 text-center sm:flex-row sm:justify-between sm:text-left">
               <div className="flex items-center gap-4">
                 <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-secondary text-chart-2">
                   <TbMessageCircleQuestion className="size-5" />

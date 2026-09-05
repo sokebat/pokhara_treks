@@ -62,10 +62,10 @@ const reviews = [
 ];
 
 const TripReviews = () => (
-  <section id="reviews" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+  <section id="reviews" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
     <SectionHeader title="What 46 people said about this trek" />
 
-    <div className="mt-6 grid items-center gap-6 border-b border-border pb-6 sm:grid-cols-[auto_1fr_auto]">
+    <div className="mt-6 grid items-center gap-6 border-b-2 border-border pb-6 sm:grid-cols-[auto_1fr_auto]">
       <div>
         <p className="text-5xl font-bold tracking-tight">4.9</p>
         <StarRating rating={5} className="mt-1" />

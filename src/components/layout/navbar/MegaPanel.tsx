@@ -26,7 +26,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
       className={cn("flex max-w-[92vw]", panelWidth)}
       onClick={(event) => event.stopPropagation()}
     >
-      <ul className="flex w-60 shrink-0 flex-col gap-0.5 border-r border-border bg-muted/30 p-2">
+      <ul className="flex w-60 shrink-0 flex-col gap-0.5 border-r-2 border-border bg-muted/30 p-2">
         {groups.map((group, index) => {
           const isRegion = Boolean(group.href?.startsWith("/region/"));
           const itemClassName = cn(

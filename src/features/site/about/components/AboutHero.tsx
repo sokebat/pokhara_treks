@@ -87,7 +87,7 @@ const AboutHeroSection = () => {
             </div>
           </div>
 
-          <div className="relative min-h-56 overflow-hidden rounded-md border border-border sm:min-h-72">
+          <div className="relative min-h-56 overflow-hidden rounded-md border-2 border-border sm:min-h-72">
             <Image
               src="/images/collage-trekking.jpg"
               alt="A trekking group looking out over the Himalayan mountains of Nepal"
@@ -121,7 +121,7 @@ const AboutHeroSection = () => {
                   </p>
                 </div>
 
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-primary-foreground/25 bg-primary-foreground/10 backdrop-blur-md">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full border-2 border-primary-foreground/25 bg-primary-foreground/10 backdrop-blur-md">
                   <TbArrowUpRight className="size-4 text-primary-foreground" />
                 </span>
               </div>
@@ -133,7 +133,7 @@ const AboutHeroSection = () => {
           {stats.map(({ value, label, description, icon: Icon }) => (
             <div
               key={label}
-              className="rounded-md border border-border bg-card p-3 sm:p-5"
+              className="rounded-md border-2 border-border bg-card p-3 sm:p-5"
             >
               <div className="flex items-start justify-between gap-3">
                 <span className="text-xl font-bold tracking-tight text-primary sm:text-2xl lg:text-3xl">

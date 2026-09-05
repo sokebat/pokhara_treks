@@ -64,14 +64,14 @@ const items: ContactItem[] = [
 
 const FooterContactStrip = () => {
   return (
-    <div className="grid grid-cols-1 gap-3 border-b border-primary-foreground/10 pt-12 pb-10 sm:grid-cols-2 sm:gap-4 sm:pt-14 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-3 border-b-2 border-primary-foreground/10 pt-12 pb-10 sm:grid-cols-2 sm:gap-4 sm:pt-14 lg:grid-cols-4">
       {items.map(({ icon: Icon, label, value, note }) => (
         <div
           key={label}
-          className="flex h-full flex-col gap-3 rounded-lg border border-primary-foreground/12 bg-primary-foreground/[0.07] p-5"
+          className="flex h-full flex-col gap-3 rounded-lg border-2 border-primary-foreground/12 bg-primary-foreground/[0.07] p-5"
         >
           <div className="flex items-start gap-3.5">
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-md border border-primary-foreground/12 bg-primary-foreground/[0.06]">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-primary-foreground/12 bg-primary-foreground/[0.06]">
               <Icon className="size-4 text-sky" strokeWidth={1.75} />
             </span>
             <div className="min-w-0">

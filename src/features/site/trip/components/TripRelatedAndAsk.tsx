@@ -62,7 +62,7 @@ const variants = [
 
 const TripRelatedAndAsk = () => (
   <>
-    <section id="other" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+    <section id="other" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
       <SectionHeader title="Same mountain, different lengths" />
 
       <Card className="mt-6 gap-0 py-0 shadow-none">
@@ -141,7 +141,7 @@ const TripRelatedAndAsk = () => (
       </div>
     </section>
 
-    <section id="ask" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+    <section id="ask" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
       <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
         <div>
           <SectionHeader
@@ -210,7 +210,7 @@ const TripRelatedAndAsk = () => (
               <Button type="button" size="xl" className="w-full">
                 Send it
               </Button>
-              <p className="mt-4 border-t border-border pt-4 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-4 border-t-2 border-border pt-4 text-sm leading-relaxed text-muted-foreground">
                 Not ready to ask anything yet?{" "}
                 <a href="#itinerary" className="font-semibold text-primary hover:underline">
                   Send me the full itinerary and price list

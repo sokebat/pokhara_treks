@@ -56,7 +56,7 @@ const notIncluded = [
 const TripIncluded = () => (
   <section
     id="included"
-    className="scroll-mt-32 border-t border-border py-10 sm:py-12"
+    className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12"
   >
     <SectionHeader
       title="What the USD 475 covers"
@@ -65,14 +65,14 @@ const TripIncluded = () => (
 
     <div className="mt-8 grid gap-8 lg:grid-cols-2">
       <div>
-        <h3 className="border-b border-border pb-3 text-base font-semibold">
+        <h3 className="border-b-2 border-border pb-3 text-base font-semibold">
           Included
         </h3>
         <ul>
           {included.map((item) => (
             <li
               key={item}
-              className="flex gap-3 border-b border-border py-3 text-[15px] leading-relaxed text-muted-foreground last:border-b-0"
+              className="flex gap-3 border-b-2 border-border py-3 text-[15px] leading-relaxed text-muted-foreground last:border-b-0"
             >
               <TbCheck className="mt-0.5 size-4 shrink-0 text-primary" />
               {item}
@@ -81,14 +81,14 @@ const TripIncluded = () => (
         </ul>
       </div>
       <div>
-        <h3 className="border-b border-border pb-3 text-base font-semibold">
+        <h3 className="border-b-2 border-border pb-3 text-base font-semibold">
           Not included, and what it costs
         </h3>
         <ul>
           {notIncluded.map((item) => (
             <li
               key={item.label}
-              className="flex gap-3 border-b border-border py-3 text-[15px] leading-relaxed text-muted-foreground last:border-b-0"
+              className="flex gap-3 border-b-2 border-border py-3 text-[15px] leading-relaxed text-muted-foreground last:border-b-0"
             >
               <span aria-hidden className="text-border">
                 —

@@ -29,7 +29,7 @@ const MobileNav = () => {
         <TbMenu2 className="size-5" />
       </SheetTrigger>
       <SheetContent side="right" className="w-5/6 gap-0 p-0">
-        <SheetHeader className="flex-row items-center border-b border-border py-5">
+        <SheetHeader className="flex-row items-center border-b-2 border-border py-5">
           <Logo className="h-16 w-auto" onClick={close} />
           <SheetTitle className="sr-only">Site navigation</SheetTitle>
         </SheetHeader>
@@ -38,7 +38,7 @@ const MobileNav = () => {
             <MobileNavItem key={item.label} item={item} onNavigate={close} />
           ))}
         </nav>
-        <div className="border-t border-border p-4">
+        <div className="border-t-2 border-border p-4">
           <Button
             nativeButton={false}
             render={<Link href="/customize-my-trip" onClick={close} />}

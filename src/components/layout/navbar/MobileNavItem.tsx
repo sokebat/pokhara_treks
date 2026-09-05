@@ -21,7 +21,7 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
       <Link
         href={item.href}
         onClick={onNavigate}
-        className="block border-b border-border px-4 py-3 text-sm font-semibold text-foreground"
+        className="block border-b-2 border-border px-4 py-3 text-sm font-semibold text-foreground"
       >
         {item.label}
       </Link>
@@ -29,7 +29,7 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
   }
 
   return (
-    <div className="border-b border-border">
+    <div className="border-b-2 border-border">
       <div className="flex items-center justify-between gap-2 px-4 py-3">
         <Link
           href={item.href}

@@ -213,7 +213,7 @@ const CustomizeTripForm = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 border-t border-border pt-8">
+      <div className="flex flex-col gap-5 border-t-2 border-border pt-8">
         <h2 className="flex items-center gap-2 text-sm font-semibold tracking-wide text-primary uppercase">
           <span
             aria-hidden
@@ -302,7 +302,7 @@ const CustomizeTripForm = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 border-t border-border pt-8">
+      <div className="flex flex-col gap-5 border-t-2 border-border pt-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
             <FaWhatsapp className="size-4 shrink-0 text-whatsapp" />

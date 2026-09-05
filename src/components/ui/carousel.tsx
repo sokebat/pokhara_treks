@@ -196,7 +196,7 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "absolute touch-manipulation rounded-full border-border",
+        "absolute touch-manipulation rounded-full border-2 border-border",
         "cursor-pointer transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground disabled:cursor-not-allowed",
         orientation === "horizontal"
           ? "inset-y-0 -left-12 my-auto"
@@ -228,7 +228,7 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        "absolute touch-manipulation rounded-full border-border",
+        "absolute touch-manipulation rounded-full border-2 border-border",
         "cursor-pointer transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground disabled:cursor-not-allowed",
         orientation === "horizontal"
           ? "inset-y-0 -right-12 my-auto"

@@ -110,7 +110,7 @@ export default function CustomizeMyTripPage() {
               {trustPoints.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/15 bg-primary-foreground/10 px-3.5 py-2 backdrop-blur-md"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground/15 bg-primary-foreground/10 px-3.5 py-2 backdrop-blur-md"
                 >
                   <Icon className="size-3.5 shrink-0 text-sky" />
                   <span className="text-xs font-medium whitespace-nowrap text-primary-foreground/90">
@@ -124,7 +124,7 @@ export default function CustomizeMyTripPage() {
       </section>
 
       {/* How it works */}
-      <section className="border-b border-border bg-secondary/40 py-14 sm:py-20">
+      <section className="border-b-2 border-border bg-secondary/40 py-14 sm:py-20">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold tracking-wide text-primary uppercase">
@@ -141,7 +141,7 @@ export default function CustomizeMyTripPage() {
               return (
                 <div
                   key={step.title}
-                  className="group relative flex flex-col gap-3 rounded-md border border-border bg-card p-6"
+                  className="group relative flex flex-col gap-3 rounded-md border-2 border-border bg-card p-6"
                 >
                   <span
                     aria-hidden
@@ -178,7 +178,7 @@ export default function CustomizeMyTripPage() {
         <div className="grid gap-8 pt-14 lg:grid-cols-[1fr_1.6fr] sm:pt-20">
           {/* Sidebar */}
           <div className="flex flex-col gap-6 lg:sticky lg:top-24 lg:self-start">
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border border-border">
+            <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border-2 border-border">
               <Image
                 src="/images/hero-women-trekking.jpg"
                 alt="A woman trekker looking out over a snow-capped Himalayan mountain range"
@@ -190,7 +190,7 @@ export default function CustomizeMyTripPage() {
                 aria-hidden
                 className="absolute inset-0 bg-linear-to-t from-primary/60 via-transparent to-transparent"
               />
-              <div className="absolute right-4 bottom-4 left-4 flex items-start gap-3 rounded-md border border-border bg-card/95 p-4">
+              <div className="absolute right-4 bottom-4 left-4 flex items-start gap-3 rounded-md border-2 border-border bg-card/95 p-4">
                 <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-primary">
                   <TbHeartHandshake className="size-4 text-primary-foreground" />
                 </span>
@@ -201,7 +201,7 @@ export default function CustomizeMyTripPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-5 rounded-md border border-border bg-card p-6">
+            <div className="flex flex-col gap-5 rounded-md border-2 border-border bg-card p-6">
               {sidebarHighlights.map((item, index) => {
                 const variant = colorVariants[index % colorVariants.length];
                 return (
@@ -257,7 +257,7 @@ export default function CustomizeMyTripPage() {
           </div>
 
           {/* Form */}
-          <div className="overflow-hidden rounded-md border border-border bg-card">
+          <div className="overflow-hidden rounded-md border-2 border-border bg-card">
             <div
               aria-hidden
               className="h-1.5 bg-linear-to-r from-accent via-accent to-primary"

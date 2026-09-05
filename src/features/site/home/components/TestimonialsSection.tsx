@@ -51,7 +51,7 @@ const TestimonialMeta = ({ testimonial }: { testimonial: Testimonial }) => {
   if (!platform) return null;
 
   return (
-    <div className="mt-4 flex flex-col gap-3 border-t border-border pt-4 sm:flex-row sm:items-center sm:justify-between">
+    <div className="mt-4 flex flex-col gap-3 border-t-2 border-border pt-4 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex flex-wrap items-center gap-2">
         <span className="rounded-md bg-secondary px-2.5 py-1 text-[0.7rem] font-semibold text-secondary-foreground">
           {testimonial.trek}
@@ -105,7 +105,7 @@ const RatingSummaryCard = () => (
       {platformSummaries.map((platform) => (
         <div
           key={platform.platform}
-          className="flex flex-col rounded-md border border-primary-foreground/20 bg-primary-foreground/10 p-3"
+          className="flex flex-col rounded-md border-2 border-primary-foreground/20 bg-primary-foreground/10 p-3"
         >
           <div className="flex items-center gap-2.5">
             <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-card">
@@ -139,7 +139,7 @@ const RatingSummaryCard = () => (
 );
 
 const FeaturedTestimonialCard = () => (
-  <div className="flex h-full flex-col rounded-md border border-border bg-card p-6 sm:p-8">
+  <div className="flex h-full flex-col rounded-md border-2 border-primary/20 bg-card p-6 sm:p-8">
     <div className="flex items-start justify-between gap-3">
       <div className="flex min-w-0 items-center gap-3">
         <Avatar name={featuredTestimonial.name} index={0} />
@@ -173,9 +173,9 @@ const FeaturedTestimonialCard = () => (
 );
 
 const cardTint = [
-  "border border-accent/35 hover:border-accent",
-  "border border-primary/25 hover:border-primary/45",
-  "border border-sky/55 hover:border-sky",
+  "border-2 border-accent/35 hover:border-accent",
+  "border-2 border-primary/25 hover:border-primary/45",
+  "border-2 border-sky/55 hover:border-sky",
 ];
 
 const TestimonialCard = ({

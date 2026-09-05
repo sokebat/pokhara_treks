@@ -10,7 +10,7 @@ type GuideCardProps = {
 };
 
 const GuideCard = ({ guide, index }: GuideCardProps) => (
-  <Card className="h-full gap-0 overflow-hidden rounded-md border border-border bg-card py-0 shadow-none ring-0">
+  <Card className="h-full gap-0 overflow-hidden rounded-md border-2 border-primary/20 bg-card py-0 shadow-none ring-0">
     <div className="relative aspect-4/3">
       <Image
         src={guide.image}
@@ -30,7 +30,7 @@ const GuideCard = ({ guide, index }: GuideCardProps) => (
       <p className="font-semibold text-primary">{guide.name}</p>
       <p className="mt-0.5 text-sm font-medium text-chart-2">{guide.role}</p>
 
-      <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2.5 border-t border-border pt-3">
+      <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2.5 border-t-2 border-border pt-3">
         <div>
           <dt className="text-sm text-muted-foreground">Licence</dt>
           <dd className="mt-0.5 text-sm font-semibold text-primary">

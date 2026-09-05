@@ -106,7 +106,7 @@ const kitItems = [
 
 const TripBookingSafetyKit = () => (
   <>
-    <section id="booking" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+    <section id="booking" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
       <SectionHeader
         title="How you book, pay and cancel"
         description="Twenty per cent holds the place. The rest is paid in Pokhara. Date changes are free up to 30 days out."
@@ -179,7 +179,7 @@ const TripBookingSafetyKit = () => (
       </Card>
     </section>
 
-    <section id="safety" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+    <section id="safety" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
       <SectionHeader title="If something goes wrong up there" />
       <ul className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-x-8">
         {safety.map((item) => (
@@ -208,7 +208,7 @@ const TripBookingSafetyKit = () => (
       </Card>
     </section>
 
-    <section id="kit" className="scroll-mt-32 border-t border-border py-10 sm:py-12">
+    <section id="kit" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
       <SectionHeader
         title="What to bring"
         description="10 kg maximum for your porter to carry, plus what you carry yourself. Everything else stays in our office in Lakeside, free."
@@ -226,7 +226,7 @@ const TripBookingSafetyKit = () => (
         </CardContent>
       </Card>
 
-      <div className="mt-5 rounded-md border border-border bg-card px-4 sm:px-5">
+      <div className="mt-5 rounded-md border-2 border-border bg-card px-4 sm:px-5">
         <Accordion multiple defaultValue={["footwear"]}>
           {kitItems.map((item) => (
             <AccordionItem key={item.id} value={item.id}>

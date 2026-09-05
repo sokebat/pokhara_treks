@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/breadcrumb";
 
 const TripBreadcrumb = () => (
-  <div className="border-b border-border bg-background">
+  <div className="border-b-2 border-border bg-background">
     <Container>
       <Breadcrumb className="py-3">
         <BreadcrumbList>
