@@ -1,9 +1,11 @@
-import CTASection from "@/components/shared/CTASection";
-import FaqSection from "@/components/shared/FaqSection";
-import FindUsSection from "@/components/shared/FindUsSection";
-import FounderNoteSection from "@/components/shared/FounderNoteSection";
-import GuidesSection from "@/components/shared/GuidesSection";
-import WhyUsSection from "@/components/shared/WhyUsSection";
+import {
+  CTASection,
+  FaqSection,
+  FindUsSection,
+} from "@/features/site/sections";
+import FounderNoteSection from "@/features/site/home/components/FounderNoteSection";
+import GuidesSection from "@/features/site/home/components/GuidesSection";
+import WhyUsSection from "@/features/site/home/components/WhyUsSection";
 import AboutHeroSection from "@/features/site/about/components/AboutHero";
  
 

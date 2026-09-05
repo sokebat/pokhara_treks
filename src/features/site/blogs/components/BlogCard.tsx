@@ -1,4 +1,4 @@
-import { ListingCard } from "@/components/shared/listing";
+import { ListingCard } from "@/features/site/listing";
 import type { BlogPost } from "@/features/site/blogs/constant/blog-posts";
 
 type BlogCardProps = {

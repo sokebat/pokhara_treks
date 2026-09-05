@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import PeakClimbingView from "@/features/site/trips/components/PeakClimbingView";
+import PeakClimbingView from "@/features/site/peak-climbing/components/PeakClimbingView";
 
 export const metadata: Metadata = {
   title: "Peak Climbing in Nepal",

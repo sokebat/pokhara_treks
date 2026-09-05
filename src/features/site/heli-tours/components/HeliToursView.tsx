@@ -1,4 +1,4 @@
-import { ListingPage } from "@/components/shared/listing";
+import { ListingPage } from "@/features/site/listing";
 import HeliTourCard from "@/features/site/heli-tours/components/HeliTourCard";
 import { heliTours } from "@/features/site/heli-tours/constant/heli-tours";
 

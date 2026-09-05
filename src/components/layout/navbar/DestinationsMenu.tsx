@@ -7,7 +7,7 @@ import {
   destinationColumns,
   featuredDestination,
   type DestinationIconKey,
-} from "@/constant/destinations";
+} from "@/features/site/destinations/constant/menu";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 

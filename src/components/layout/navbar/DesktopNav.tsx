@@ -10,7 +10,6 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import {
-  AdventureMenu,
   DestinationsMenu,
   MegaPanel,
   SimplePanel,
@@ -45,8 +44,6 @@ const DesktopNav = ({ className }: DesktopNavProps) => {
               <NavigationMenuContent>
                 {item.href === "/destinations" ? (
                   <DestinationsMenu />
-                ) : item.href === "/activity" ? (
-                  <AdventureMenu />
                 ) : item.type === "mega" ? (
                   <MegaPanel groups={item.groups} />
                 ) : (

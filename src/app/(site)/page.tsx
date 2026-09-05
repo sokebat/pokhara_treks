@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 
 import HeroSection from "@/features/site/home/components/HeroSection";
-import WhyUsSection from "@/components/shared/WhyUsSection";
+import WhyUsSection from "@/features/site/home/components/WhyUsSection";
 import ShortTreksSection from "@/features/site/home/components/ShortTreksSection";
 import HeliToursSection from "@/features/site/heli-tours/components/HeliToursSection";
-import GuidesSection from "@/components/shared/GuidesSection";
-import FounderNoteSection from "@/components/shared/FounderNoteSection";
+import GuidesSection from "@/features/site/home/components/GuidesSection";
+import FounderNoteSection from "@/features/site/home/components/FounderNoteSection";
 import TestimonialsSection from "@/features/site/home/components/TestimonialsSection";
 import BlogSection from "@/features/site/home/components/BlogSection";
-import FaqSection from "@/components/shared/FaqSection";
-import FindUsSection from "@/components/shared/FindUsSection";
-import CTASection from "@/components/shared/CTASection";
+import {
+  CTASection,
+  FaqSection,
+  FindUsSection,
+} from "@/features/site/sections";
 
 export const metadata: Metadata = {
   description:

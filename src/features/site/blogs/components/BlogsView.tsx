@@ -1,4 +1,4 @@
-import { ListingPage } from "@/components/shared/listing";
+import { ListingPage } from "@/features/site/listing";
 import BlogCard from "@/features/site/blogs/components/BlogCard";
 import { blogPosts } from "@/features/site/blogs/constant/blog-posts";
 

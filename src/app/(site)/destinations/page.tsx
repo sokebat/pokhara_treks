@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import DestinationsView from "@/features/site/trips/components/DestinationsView";
+import DestinationsView from "@/features/site/destinations/components/DestinationsView";
 
 export const metadata: Metadata = {
   title: "Destinations — Nepal, Tibet and Bhutan",

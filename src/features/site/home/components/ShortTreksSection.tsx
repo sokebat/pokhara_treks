@@ -4,7 +4,7 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
-import TripCard from "@/components/shared/TripCard";
+import { TripCard } from "@/features/site/listing";
 import { shortTreks } from "@/features/site/home/constant/treks";
 
 const tones = ["primary", "accent", "chart-3"] as const;

@@ -1,4 +1,4 @@
-import { ListingPage } from "@/components/shared/listing";
+import { ListingPage } from "@/features/site/listing";
 import ActivityCard from "@/features/site/adventures/components/ActivityCard";
 import { adventureActivities } from "@/features/site/adventures/constant/adventures";
 

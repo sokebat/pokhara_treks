@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import ToursView from "@/features/site/trips/components/ToursView";
+import ToursView from "@/features/site/tours/components/ToursView";
 
 export const metadata: Metadata = {
   title: "Tours in Nepal",

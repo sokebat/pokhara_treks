@@ -1,4 +1,4 @@
-import TripCard from "@/components/shared/TripCard";
+import { TripCard } from "@/features/site/listing";
 import type { AdventureActivity } from "@/features/site/adventures/constant/adventures";
 import { getActivityTripFacts } from "@/features/site/adventures/lib/activities";
 

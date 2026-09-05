@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 import { type NavGroup } from "@/constant/nav";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 
-interface MegaPanelProps {
+type MegaPanelProps = {
   groups: NavGroup[];
-}
+};
 
 const MegaPanel = ({ groups }: MegaPanelProps) => {
   const [active, setActive] = React.useState(0);
@@ -55,6 +55,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
           </li>
         ))}
       </ul>
+
       <div className="max-h-[75vh] min-w-0 flex-1 overflow-y-auto p-5">
         <div
           className={cn(

@@ -1,6 +1,6 @@
 import { TbHelicopter } from "react-icons/tb";
 
-import TripCard from "@/components/shared/TripCard";
+import { TripCard } from "@/features/site/listing";
 import type { HeliTour } from "@/features/site/heli-tours/constant/heli-tours";
 import { getHeliTourTripFacts } from "@/features/site/heli-tours/lib/heli-tours";
 
