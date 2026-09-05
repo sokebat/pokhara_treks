@@ -16,7 +16,7 @@ const LegalPageHeader = ({
       <Icon className="size-6" />
     </span>
 
-    <h1 className="mt-5 text-3xl font-bold text-foreground sm:text-4xl">
+    <h1 className="mt-5 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
       {title}
     </h1>
 

@@ -17,7 +17,7 @@ const LegalContent = ({ page }: LegalContentProps) => {
           className="scroll-mt-24 border-b border-border pb-10 last:border-b-0 last:pb-0"
         >
           {section.heading && (
-            <h2 className="mb-4 text-xl font-bold text-foreground">
+            <h2 className="mb-4 text-lg font-bold text-foreground sm:text-xl">
               {section.heading}
             </h2>
           )}

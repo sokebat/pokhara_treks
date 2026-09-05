@@ -14,7 +14,7 @@ const WhyUsSection = () => {
         <div className="mt-8 grid grid-cols-2 divide-x-2 divide-y-2 divide-border rounded-md border-2 border-border bg-card sm:grid-cols-4 sm:divide-y-0">
           {whyUsStats.map((stat) => (
             <div key={stat.label} className="p-3 sm:p-5 lg:p-6">
-              <p className="text-2xl font-bold text-primary sm:text-3xl lg:text-4xl">
+              <p className="text-xl font-bold text-primary sm:text-3xl lg:text-4xl">
                 {stat.value}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">

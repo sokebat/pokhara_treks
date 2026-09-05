@@ -22,7 +22,7 @@ const SectionHeader = ({
     )}
   >
     <div className="min-w-0">
-      <h2 className="text-3xl font-bold text-balance text-primary sm:text-4xl">
+      <h2 className="text-2xl font-bold text-balance text-primary sm:text-3xl lg:text-4xl">
         {title}
       </h2>
 

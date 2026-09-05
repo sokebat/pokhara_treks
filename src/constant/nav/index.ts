@@ -25,28 +25,6 @@ export const navItems: NavItem[] = [
   },
   {
     type: "simple",
-    label: "Peak Climbing",
-    href: "/peak-climbing",
-    children: [
-      { label: "Mera Peak Climb", href: "/mera-peak-expedition" },
-      { label: "Island Peak Climbing", href: "/island-peak-expedition" },
-      { label: "Lobuche Peak Climbing", href: "/lobuche-peak-climbing" },
-      {
-        label: "Mardi Himal Peak Climbing",
-        href: "/mardi-himal-peak-climbing-a-close-up-view-of-machhapuchhre",
-      },
-      {
-        label: "Yala Peak Climbing",
-        href: "/yala-peak-climbing-a-perfect-climbing-peak-for-beginners",
-      },
-      {
-        label: "Chulu Far East Peak Climbing",
-        href: "/chulu-far-east-peak-climbing",
-      },
-    ],
-  },
-  {
-    type: "simple",
     label: "Heli Tour",
     href: "/heli-tours",
     allLabel: "All helicopter tours",
@@ -75,16 +53,6 @@ export const navItems: NavItem[] = [
     label: "Tours",
     href: "/tours",
     groups: tourNavGroups,
-  },
-  {
-    type: "simple",
-    label: "Destinations",
-    href: "/destinations",
-    children: [
-      { label: "Nepal", href: "/nepal-tour-package" },
-      { label: "Tibet", href: "/tibet-tour-package-from-nepal" },
-      { label: "Bhutan", href: "/bhutan-tour-package" },
-    ],
   },
   {
     type: "link",

@@ -87,7 +87,7 @@ const RatingSummaryCard = () => (
   <div className="flex flex-col gap-5 rounded-md bg-primary p-6 text-primary-foreground sm:p-7">
     <div>
       <div className="flex items-end gap-3">
-        <p className="text-5xl font-bold">{reviewSummary.average}</p>
+        <p className="text-4xl font-bold sm:text-5xl">{reviewSummary.average}</p>
         <StarRating rating={reviewSummary.average} className="mb-1.5" />
       </div>
 
@@ -108,7 +108,7 @@ const RatingSummaryCard = () => (
             <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-white">
               <PlatformLogo platform={platform.platform} />
             </span>
-            <p className="text-2xl font-bold leading-none">{platform.rating}</p>
+            <p className="text-xl font-bold leading-none sm:text-2xl">{platform.rating}</p>
           </div>
 
           <p className="mt-2 text-xs text-primary-foreground/75">

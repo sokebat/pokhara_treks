@@ -42,7 +42,7 @@ const ContactForm = () => {
         <span className="flex size-16 items-center justify-center rounded-full bg-accent/10 text-accent ring-8 ring-accent/5">
           <TbCircleCheck className="size-8" />
         </span>
-        <h3 className="mt-1 text-xl font-bold text-foreground">Message sent</h3>
+        <h3 className="mt-1 text-lg font-bold text-foreground sm:text-xl">Message sent</h3>
         <p className="max-w-sm text-sm text-muted-foreground">
           Thanks for reaching out — we&apos;ll get back to you within 24 hours.
         </p>
@@ -66,7 +66,7 @@ const ContactForm = () => {
       className="flex flex-col gap-6"
     >
       <div>
-        <h2 className="text-lg font-bold text-foreground">Send us a message</h2>
+        <h2 className="text-base font-bold text-foreground sm:text-lg">Send us a message</h2>
         <p className="mt-1 text-sm text-muted-foreground">
           Fill in the form below and we&apos;ll be in touch shortly.
         </p>

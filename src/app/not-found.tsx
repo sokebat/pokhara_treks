@@ -86,7 +86,7 @@ export default function NotFound() {
                 <p className="text-sm font-semibold tracking-wide text-accent uppercase">
                   Error 404
                 </p>
-                <h1 className="mt-2 text-3xl font-bold tracking-tight text-primary-foreground sm:text-5xl">
+                <h1 className="mt-2 text-2xl font-bold tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl">
                   This trail doesn&apos;t exist.
                 </h1>
                 <p className="mt-4 max-w-lg text-primary-foreground/80">
@@ -134,7 +134,7 @@ export default function NotFound() {
                   <p className="text-sm font-semibold tracking-wide text-accent uppercase">
                     Pokhara Treks
                   </p>
-                  <p className="mt-1 text-lg font-semibold text-primary-foreground">
+                  <p className="mt-1 text-base font-semibold text-primary-foreground sm:text-lg">
                     The Himalaya is still this way.
                   </p>
                 </div>
@@ -148,7 +148,7 @@ export default function NotFound() {
             <p className="text-sm font-semibold tracking-wide text-accent uppercase">
               Useful paths
             </p>
-            <h2 className="mt-2 text-2xl font-bold text-primary sm:text-3xl">
+            <h2 className="mt-2 text-xl font-bold text-primary sm:text-2xl lg:text-3xl">
               Pick a trail and keep walking.
             </h2>
 

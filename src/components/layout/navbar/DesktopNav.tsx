@@ -9,7 +9,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import DestinationsMenu from "./DestinationsMenu";
 import MegaPanel from "./MegaPanel";
 import NavParentTrigger from "./NavParentTrigger";
 import SimplePanel from "./SimplePanel";
@@ -28,7 +27,7 @@ const DesktopNav = ({ className }: DesktopNavProps) => {
               <NavigationMenuItem key={item.label}>
                 <NavigationMenuLink
                   render={<Link href={item.href} />}
-                  className="inline-flex h-9 cursor-pointer items-center rounded-lg px-2.5 py-1.5 text-sm font-semibold tracking-wide uppercase hover:bg-muted hover:text-accent"
+                  className="inline-flex h-8 cursor-pointer items-center rounded-lg px-2 py-1.5 text-xs font-semibold tracking-wide uppercase hover:bg-muted hover:text-accent lg:h-9 lg:px-2.5 lg:text-sm"
                 >
                   {item.label}
                 </NavigationMenuLink>
@@ -40,9 +39,7 @@ const DesktopNav = ({ className }: DesktopNavProps) => {
             <NavigationMenuItem key={item.label}>
               <NavParentTrigger href={item.href}>{item.label}</NavParentTrigger>
               <NavigationMenuContent>
-                {item.href === "/destinations" ? (
-                  <DestinationsMenu />
-                ) : item.type === "mega" ? (
+                {item.type === "mega" ? (
                   <MegaPanel groups={item.groups} />
                 ) : (
                   <SimplePanel

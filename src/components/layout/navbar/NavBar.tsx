@@ -28,8 +28,7 @@ const NavBar = () => {
               <Button
                 nativeButton={false}
                 render={<Link href="/customize-my-trip" />}
-                size="xl"
-                className="hidden rounded-md sm:inline-flex"
+                className="hidden h-8 rounded-md px-3 text-xs font-semibold sm:inline-flex lg:h-9 lg:px-4 lg:text-sm xl:h-10 xl:px-5"
               >
                 Plan Your Trip
               </Button>

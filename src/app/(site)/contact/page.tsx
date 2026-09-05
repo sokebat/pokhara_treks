@@ -27,7 +27,7 @@ export default function ContactPage() {
           <p className="text-sm font-semibold tracking-wide text-accent uppercase">
             Get in Touch
           </p>
-          <h1 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
+          <h1 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
             Let&apos;s plan your Nepal adventure
           </h1>
           <p className="mt-4 text-muted-foreground">

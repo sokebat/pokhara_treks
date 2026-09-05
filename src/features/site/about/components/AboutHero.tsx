@@ -47,7 +47,7 @@ const AboutHeroSection = () => {
               Our Story
             </p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+            <h1 className="mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl lg:text-4xl">
               From Lakeside Pokhara to 8,000-Meter Giants.
             </h1>
 
@@ -112,7 +112,7 @@ const AboutHeroSection = () => {
                     </span>
                   </div>
 
-                  <p className="mt-1.5 text-lg font-semibold text-primary-foreground">
+                  <p className="mt-1.5 text-base font-semibold text-primary-foreground sm:text-lg">
                     Where every journey begins.
                   </p>
 
@@ -136,7 +136,7 @@ const AboutHeroSection = () => {
               className="rounded-md border-2 border-border bg-card p-3 sm:p-5"
             >
               <div className="flex items-start justify-between gap-3">
-                <span className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+                <span className="text-xl font-bold tracking-tight text-primary sm:text-2xl lg:text-3xl">
                   {value}
                 </span>
                 <Icon

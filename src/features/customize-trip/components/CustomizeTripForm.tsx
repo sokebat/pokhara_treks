@@ -65,7 +65,7 @@ const CustomizeTripForm = () => {
         <span className="flex size-16 items-center justify-center rounded-full bg-accent/10 text-accent ring-8 ring-accent/5">
           <TbCircleCheck className="size-8" />
         </span>
-        <h3 className="mt-1 text-xl font-bold text-foreground">Enquiry sent</h3>
+        <h3 className="mt-1 text-lg font-bold text-foreground sm:text-xl">Enquiry sent</h3>
         <p className="max-w-sm text-sm text-muted-foreground">
           Thanks for sharing your trip details — one of our trip planners will
           reach out within 24 hours with a tailored itinerary.

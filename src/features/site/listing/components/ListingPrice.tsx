@@ -7,7 +7,7 @@ const ListingPrice = ({ price }: ListingPriceProps) => (
     <p className="text-[0.65rem] font-medium tracking-wide text-muted-foreground uppercase">
       From
     </p>
-    <p className="text-lg font-bold text-accent">
+    <p className="text-base font-bold text-accent sm:text-lg">
       {price && price > 0 ? `USD ${price}` : "On request"}
     </p>
   </div>

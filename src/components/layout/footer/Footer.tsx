@@ -19,7 +19,6 @@ const trekkingLinks = [
 ];
 
 const alsoWithUsLinks = [
-  { label: "Peak Climbing", href: "/peak-climbing" },
   { label: "Helicopter Tours", href: "/heli-tours" },
   { label: "Paragliding", href: "/paragliding-in-pokhara-1" },
   { label: "River Rafting", href: "/rafting-in-nepal" },

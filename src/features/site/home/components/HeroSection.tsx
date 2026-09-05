@@ -56,7 +56,7 @@ const HeroSection = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="mt-7 w-full text-3xl leading-[1.08] font-bold tracking-tight text-primary-foreground sm:text-5xl xl:text-[3.8rem]">
+            <h1 className="mt-7 w-full text-2xl leading-[1.15] font-bold tracking-tight text-primary-foreground sm:text-4xl sm:leading-[1.1] lg:text-5xl xl:text-[3.8rem] xl:leading-[1.08]">
               The Himalaya, led by the{" "}
               <span className="text-accent">women</span> who know her best.
             </h1>

@@ -15,7 +15,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm rounded-xl border border-border bg-card p-8">
         <div className="flex flex-col items-center text-center">
           <Logo className="h-12 w-auto" />
-          <h1 className="mt-6 text-xl font-bold text-foreground">
+          <h1 className="mt-6 text-lg font-bold text-foreground sm:text-xl">
             Admin Login
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">

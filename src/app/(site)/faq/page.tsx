@@ -68,7 +68,7 @@ export default function FaqPage() {
           <p className="mt-5 text-sm font-semibold tracking-wide text-accent uppercase">
             Got Questions?
           </p>
-          <h1 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
+          <h1 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
             Frequently Asked Questions
           </h1>
           <p className="mt-4 text-muted-foreground">
@@ -111,7 +111,7 @@ export default function FaqPage() {
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
                       <Icon className="size-5" />
                     </span>
-                    <h2 className="text-lg font-bold text-foreground">
+                    <h2 className="text-base font-bold text-foreground sm:text-lg">
                       {category}
                     </h2>
                   </div>
@@ -120,7 +120,7 @@ export default function FaqPage() {
                     <Accordion>
                       {items.map((item) => (
                         <AccordionItem key={item.id} value={item.id}>
-                          <AccordionTrigger className="py-5 text-base font-semibold text-foreground">
+                          <AccordionTrigger className="py-4 text-left text-sm font-semibold text-foreground sm:py-5 sm:text-base">
                             {item.question}
                           </AccordionTrigger>
                           <AccordionContent>

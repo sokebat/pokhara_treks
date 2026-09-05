@@ -99,7 +99,7 @@ export default function CustomizeMyTripPage() {
               Tailor-Made Journeys
             </p>
 
-            <h1 className="mt-3 max-w-2xl text-3xl font-bold text-primary-foreground sm:text-4xl lg:text-5xl">
+            <h1 className="mt-3 max-w-2xl text-2xl font-bold text-primary-foreground sm:text-4xl lg:text-5xl">
               Design your own Nepal adventure
             </h1>
 
@@ -133,7 +133,7 @@ export default function CustomizeMyTripPage() {
             <p className="text-sm font-semibold tracking-wide text-accent uppercase">
               How it works
             </p>
-            <h2 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl">
+            <h2 className="mt-2 text-xl font-bold text-foreground sm:text-2xl lg:text-3xl">
               Three steps, no back-and-forth
             </h2>
           </div>
@@ -163,7 +163,7 @@ export default function CustomizeMyTripPage() {
                       Step {index + 1}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground">
+                  <h3 className="text-base font-bold text-foreground sm:text-lg">
                     {step.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
@@ -267,7 +267,7 @@ export default function CustomizeMyTripPage() {
               className="h-1.5 bg-linear-to-r from-accent via-accent to-primary"
             />
             <div className="p-6 sm:p-10">
-              <h2 className="text-xl font-bold text-foreground">
+              <h2 className="text-lg font-bold text-foreground sm:text-xl">
                 Plan your trip
               </h2>
               <p className="mt-1.5 text-sm text-muted-foreground">

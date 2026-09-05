@@ -47,7 +47,7 @@ const TripCard = ({
     />
 
     <CardContent className="flex flex-1 flex-col px-4 py-4 sm:py-5">
-      <h3 className="text-base leading-snug font-semibold text-balance text-foreground">
+      <h3 className="text-sm leading-snug font-semibold text-balance text-foreground sm:text-base">
         {title}
         {subtitle && `, ${subtitle}`}
       </h3>

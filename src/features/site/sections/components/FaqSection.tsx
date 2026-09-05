@@ -65,7 +65,7 @@ const FaqSection = () => {
             <Accordion defaultValue={[homeFaqs[0].id]}>
               {homeFaqs.map((item) => (
                 <AccordionItem key={item.id} value={item.id}>
-                  <AccordionTrigger className="py-4 text-left text-base font-semibold text-foreground sm:py-5">
+                  <AccordionTrigger className="py-4 text-left text-sm font-semibold text-foreground sm:py-5 sm:text-base">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent>

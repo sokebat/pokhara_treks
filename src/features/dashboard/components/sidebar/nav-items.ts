@@ -1,4 +1,4 @@
-import { TbCalendarCheck, TbHelpCircle, TbLayoutDashboard, TbMapPin, TbMountain, TbNews, TbSettings, TbStar, TbUsersGroup } from "react-icons/tb";
+import { TbCalendarCheck, TbHelpCircle, TbLayoutDashboard, TbMountain, TbNews, TbSettings, TbStar, TbUsersGroup } from "react-icons/tb";
 import type { IconType } from "react-icons";
 
 export type NavSubItem = {
@@ -37,18 +37,10 @@ export const navItems: NavItem[] = [
     items: [
       { title: "Treks", url: "/dashboard/trips/treks" },
       { title: "Short Treks & Day Hikes", url: "/dashboard/trips/short-treks" },
-      { title: "Peak Climbing", url: "/dashboard/trips/peak-climbing" },
       { title: "Helicopter Tours", url: "/dashboard/trips/heli-tours" },
       { title: "Adventure Activities", url: "/dashboard/trips/adventures" },
       { title: "Tours", url: "/dashboard/trips/tours" },
     ],
-  },
-  {
-    title: "Destinations",
-    url: "/dashboard/destinations",
-    icon: TbMapPin,
-    group: "content",
-    items: [],
   },
   {
     title: "Blog",

@@ -12,7 +12,7 @@ const CTASection = () => {
           <p className="text-sm font-semibold tracking-wide text-accent uppercase">
             Start Your Journey
           </p>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+          <h2 className="mt-3 text-2xl font-bold sm:text-3xl lg:text-4xl">
             Ready for your Nepal adventure?
           </h2>
           <p className="mx-auto mt-3 max-w-md text-primary-foreground/80">

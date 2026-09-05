@@ -34,7 +34,7 @@ export default function OverviewPage() {
   return (
     <div className="flex flex-1 flex-col gap-6">
       <div>
-        <h1 className="text-2xl font-bold text-foreground">Overview</h1>
+        <h1 className="text-xl font-bold text-foreground sm:text-2xl">Overview</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           A quick look at enquiries, trips, and reviews.
         </p>
@@ -46,7 +46,7 @@ export default function OverviewPage() {
             <CardContent className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-sm text-muted-foreground">{stat.label}</p>
-                <p className="mt-1 text-2xl font-bold text-foreground">
+                <p className="mt-1 text-xl font-bold text-foreground sm:text-2xl">
                   {stat.value}
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">
