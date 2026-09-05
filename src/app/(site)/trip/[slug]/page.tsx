@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import TripDetailView from "@/features/site/trip/components/TripDetailView";
+import TripDetailView from "@/features/site/trip";
 import { pageMetadata } from "@/lib/seo";
 
 type TripDetailPageProps = {

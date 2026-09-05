@@ -1,53 +1,21 @@
 "use client";
 
 import { TbLock, TbLogin, TbMail } from "react-icons/tb";
-import * as React from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { signIn } from "next-auth/react";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import FormField from "@/components/shared/FormField";
-import {
-  loginFormDefaultValues,
-  loginFormSchema,
-  type LoginFormValues,
-} from "@/features/auth/validation/login.validation";
+
+import { useLoginForm } from "../hooks/use-login-form";
 
 const LoginForm = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const [formError, setFormError] = React.useState<string | null>(null);
-
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<LoginFormValues>({
-    resolver: zodResolver(loginFormSchema),
-    defaultValues: loginFormDefaultValues,
-  });
-
-  const onSubmit = async (values: LoginFormValues) => {
-    setFormError(null);
-
-    const result = await signIn("credentials", {
-      email: values.email,
-      password: values.password,
-      redirect: false,
-    });
-
-    if (result?.error) {
-      setFormError("Invalid email or password.");
-      return;
-    }
-
-    const callbackUrl = searchParams.get("callbackUrl") ?? "/dashboard";
-    router.push(callbackUrl);
-    router.refresh();
-  };
+    formError,
+    onSubmit,
+  } = useLoginForm();
 
   return (
     <form

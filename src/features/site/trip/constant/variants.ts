@@ -1,0 +1,35 @@
+export const variants = [
+  {
+    name: "Annapurna Base Camp Trek",
+    note: "this page",
+    days: "7",
+    alt: "4,130 m",
+    difficulty: "4 of 7",
+    price: "USD 435",
+    current: true,
+  },
+  {
+    name: "Short Annapurna Base Camp Trek",
+    days: "5",
+    alt: "4,130 m",
+    difficulty: "5 of 7, harder because it is faster",
+    price: "USD 385",
+    href: "/trip/short-annapurna-base-camp",
+  },
+  {
+    name: "Annapurna Base Camp with Poon Hill",
+    days: "10",
+    alt: "4,130 m",
+    difficulty: "4 of 7",
+    price: "USD 625",
+    href: "/trip/annapurna-base-camp-poon-hill",
+  },
+  {
+    name: "Annapurna Base Camp Helicopter Tour",
+    days: "1",
+    alt: "4,130 m, landing",
+    difficulty: "Easy, no walking",
+    price: "USD 490",
+    href: "/heli-tours",
+  },
+];

@@ -4,7 +4,7 @@ import { reasons, whyUsStats } from "@/features/site/home/constant/why-us";
 
 const WhyUsSection = () => {
   return (
-    <section className="bg-secondary py-12 sm:py-16">
+    <section className="bg-secondary pt-6 pb-12 sm:pt-8 sm:pb-16">
       <Container>
         <SectionHeader
           title="Why travel with us"
@@ -24,12 +24,12 @@ const WhyUsSection = () => {
           ))}
         </div>
 
-        <div className="mt-6 overflow-hidden rounded-md pt-0.5 pl-0.5">
+        <div className="mt-6 overflow-hidden rounded-md border-2 border-primary/20 bg-card">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3">
             {reasons.map(({ title, description, icon: Icon }) => (
               <div
                 key={title}
-                className="-mt-0.5 -ml-0.5 flex gap-3 border-2 border-primary/20 bg-card p-4 sm:p-6"
+                className="flex gap-3 p-4 shadow-[2px_2px_0_0_color-mix(in_srgb,var(--primary)_20%,transparent)] sm:p-6"
               >
                 <Icon className="mt-0.5 size-5 shrink-0 text-primary" />
 

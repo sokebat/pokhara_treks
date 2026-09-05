@@ -2,22 +2,27 @@ import Container from "@/components/shared/Container";
 import { CTASection, FindUsSection } from "@/features/site/sections";
 import { siteInfo } from "@/constant/site";
 
+import TripAsk from "./TripAsk";
+import TripBooking from "./TripBooking";
 import TripBookingCard from "./TripBookingCard";
-import TripBookingSafetyKit from "./TripBookingSafetyKit";
 import TripBreadcrumb from "./TripBreadcrumb";
 import TripDepartures from "./TripDepartures";
-import TripDifficultyAndWhen from "./TripDifficultyAndWhen";
+import TripDifficulty from "./TripDifficulty";
 import TripFacts from "./TripFacts";
 import TripGallery from "./TripGallery";
 import TripIncluded from "./TripIncluded";
 import TripItinerary from "./TripItinerary";
+import TripKit from "./TripKit";
 import TripMobileBar from "./TripMobileBar";
 import TripOverview from "./TripOverview";
 import TripQuestions from "./TripQuestions";
-import TripRelatedAndAsk from "./TripRelatedAndAsk";
+import TripRelated from "./TripRelated";
 import TripReviews from "./TripReviews";
+import TripRoute from "./TripRoute";
+import TripSafety from "./TripSafety";
 import TripTitleAndNav from "./TripTitleAndNav";
-import TripTrailAndRoute from "./TripTrailAndRoute";
+import TripTrail from "./TripTrail";
+import TripWhen from "./TripWhen";
 
 const TripDetailView = () => (
   <div className="pb-24 lg:pb-0">
@@ -36,14 +41,19 @@ const TripDetailView = () => (
         </div>
         <div className="order-3 lg:col-span-2">
           <TripItinerary />
-          <TripTrailAndRoute />
+          <TripTrail />
+          <TripRoute />
           <TripIncluded />
-          <TripDifficultyAndWhen />
+          <TripDifficulty />
+          <TripWhen />
           <TripDepartures />
-          <TripBookingSafetyKit />
+          <TripBooking />
+          <TripSafety />
+          <TripKit />
           <TripReviews />
           <TripQuestions />
-          <TripRelatedAndAsk />
+          <TripRelated />
+          <TripAsk />
         </div>
       </div>
     </Container>

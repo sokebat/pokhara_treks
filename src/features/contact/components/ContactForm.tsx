@@ -1,62 +1,27 @@
 "use client";
 
-import { TbCircleCheck, TbLoader2, TbMail, TbMessage, TbPhoneCall, TbSend, TbTag, TbUser } from "react-icons/tb";
-import * as React from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { TbLoader2, TbMail, TbMessage, TbPhoneCall, TbSend, TbTag, TbUser } from "react-icons/tb";
 
-import {
-  contactFormDefaultValues,
-  contactFormSchema,
-  type ContactFormValues,
-} from "@/features/contact/validation/contact.validation";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import FormField from "@/components/shared/FormField";
 
-const ContactForm = () => {
-  const [submitted, setSubmitted] = React.useState(false);
+import { useContactForm } from "../hooks/use-contact-form";
+import ContactSuccess from "./ContactSuccess";
 
+const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors, isSubmitting },
-  } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: contactFormDefaultValues,
-  });
-
-  const onSubmit = async (values: ContactFormValues) => {
-    // TODO: wire up to the backend once the contact endpoint exists.
-    console.log("Contact form submission:", values);
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    setSubmitted(true);
-    reset();
-  };
+    submitted,
+    setSubmitted,
+    onSubmit,
+  } = useContactForm();
 
   if (submitted) {
-    return (
-      <div className="flex flex-col items-center gap-3 py-14 text-center">
-        <span className="flex size-16 items-center justify-center rounded-full bg-secondary text-chart-2 ring-8 ring-secondary/50">
-          <TbCircleCheck className="size-8" />
-        </span>
-        <h3 className="mt-1 text-lg font-bold text-foreground sm:text-xl">Message sent</h3>
-        <p className="max-w-sm text-sm text-muted-foreground">
-          Thanks for reaching out — we&apos;ll get back to you within 24 hours.
-        </p>
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          className="mt-3 rounded-md"
-          onClick={() => setSubmitted(false)}
-        >
-          Send another message
-        </Button>
-      </div>
-    );
+    return <ContactSuccess onReset={() => setSubmitted(false)} />;
   }
 
   return (
@@ -66,7 +31,9 @@ const ContactForm = () => {
       className="flex flex-col gap-6"
     >
       <div>
-        <h2 className="text-base font-bold text-foreground sm:text-lg">Send us a message</h2>
+        <h2 className="text-base font-bold text-foreground sm:text-lg">
+          Send us a message
+        </h2>
         <p className="mt-1 text-sm text-muted-foreground">
           Fill in the form below and we&apos;ll be in touch shortly.
         </p>
@@ -130,11 +97,7 @@ const ContactForm = () => {
         )}
       </div>
 
-      <Button
-        type="submit"
-        size="lg"
-        disabled={isSubmitting}
-      >
+      <Button type="submit" size="lg" disabled={isSubmitting}>
         {isSubmitting ? (
           <>
             <TbLoader2 className="size-4 animate-spin" />
