@@ -30,34 +30,33 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
 
   return (
     <div className="border-b border-border">
-      <button
-        type="button"
-        onClick={() => setOpen((prev) => !prev)}
-        className="flex w-full cursor-pointer items-center justify-between px-4 py-3 text-left text-sm font-semibold text-foreground"
-      >
-        {item.label}
-        <TbChevronDown
-          className={cn(
-            "size-4 shrink-0 text-muted-foreground transition-transform",
-            open && "rotate-180",
-          )}
-        />
-      </button>
+      <div className="flex items-center justify-between gap-2 px-4 py-3">
+        <Link
+          href={item.href}
+          onClick={onNavigate}
+          className="min-w-0 flex-1 text-left text-sm font-semibold text-foreground hover:text-accent"
+        >
+          {item.label}
+        </Link>
+        <button
+          type="button"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-expanded={open}
+          aria-label={`${open ? "Collapse" : "Expand"} ${item.label}`}
+          className="flex size-8 shrink-0 cursor-pointer items-center justify-center text-muted-foreground"
+        >
+          <TbChevronDown
+            className={cn(
+              "size-4 transition-transform",
+              open && "rotate-180",
+            )}
+          />
+        </button>
+      </div>
       {open && (
         <div className="pb-2">
           {item.type === "simple" ? (
             <ul className="flex flex-col">
-              {item.href === "/heli-tours" && (
-                <li>
-                  <Link
-                    href={item.href}
-                    onClick={onNavigate}
-                    className="block px-6 py-2 text-sm font-medium text-accent"
-                  >
-                    All helicopter tours
-                  </Link>
-                </li>
-              )}
               {item.children.map((leaf) => (
                 <li key={leaf.href}>
                   <Link
@@ -72,13 +71,6 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
             </ul>
           ) : (
             <div className="flex flex-col">
-              <Link
-                href={item.href}
-                onClick={onNavigate}
-                className="px-6 py-2 text-sm font-medium text-accent"
-              >
-                All {item.label.toLowerCase()}
-              </Link>
               {item.groups.map((group) => (
                 <MobileGroup
                   key={group.label}

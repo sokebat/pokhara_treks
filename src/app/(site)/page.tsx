@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import HeroSection from "@/features/site/home/components/HeroSection";
 import WhyUsSection from "@/components/shared/WhyUsSection";
 import ShortTreksSection from "@/features/site/home/components/ShortTreksSection";
-import HeliToursSection from "@/features/site/home/components/HeliToursSection";
+import HeliToursSection from "@/features/site/heli-tours/components/HeliToursSection";
 import GuidesSection from "@/components/shared/GuidesSection";
 import FounderNoteSection from "@/components/shared/FounderNoteSection";
 import TestimonialsSection from "@/features/site/home/components/TestimonialsSection";

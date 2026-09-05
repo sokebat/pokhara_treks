@@ -2,6 +2,7 @@ import type { IconType } from "react-icons";
 import Link from "next/link";
 
 import CardVisual from "@/components/shared/CardVisual";
+import { ListingPrice } from "@/components/shared/listing";
 import StarRating from "@/components/shared/StarRating";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -84,20 +85,13 @@ const TripCard = ({
               <fact.icon className="size-3.5" />
               {fact.label}
             </span>
-            <span className="font-semibold text-foreground">
-              {fact.value}
-            </span>
+            <span className="font-semibold text-foreground">{fact.value}</span>
           </li>
         ))}
       </ul>
 
       <div className="mt-4 flex flex-wrap items-end justify-between gap-3 border-t-2 border-border pt-4">
-        <div>
-          <p className="text-[0.65rem] font-medium tracking-wide text-muted-foreground uppercase">
-            From
-          </p>
-          <p className="text-lg font-bold text-accent">USD {price}</p>
-        </div>
+        <ListingPrice price={price} />
 
         <Button
           nativeButton={false}

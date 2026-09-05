@@ -4,7 +4,7 @@ import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
 import BlogCard from "@/features/site/blogs/components/BlogCard";
-import { blogPosts } from "@/features/site/home/constant/home-data";
+import { blogPosts } from "@/features/site/blogs/constant/blog-posts";
 
 const BlogSection = () => {
   return (

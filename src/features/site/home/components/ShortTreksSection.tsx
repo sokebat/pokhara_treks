@@ -4,8 +4,8 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
-import { shortTreks } from "@/features/site/home/constant/home-data";
-import TripCard from "@/features/site/home/components/TripCard";
+import TripCard from "@/components/shared/TripCard";
+import { shortTreks } from "@/features/site/home/constant/treks";
 
 const tones = ["primary", "accent", "chart-3"] as const;
 

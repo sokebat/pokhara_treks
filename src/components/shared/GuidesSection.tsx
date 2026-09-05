@@ -3,7 +3,7 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
-import { guides } from "@/features/site/home/constant/home-data";
+import { guides } from "@/features/site/home/constant/guides";
 import GuideCard from "@/components/shared/GuideCard";
 
 interface GuidesSectionProps {

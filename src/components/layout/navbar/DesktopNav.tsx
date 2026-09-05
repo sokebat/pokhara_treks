@@ -8,7 +8,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import {
   AdventureMenu,
@@ -16,6 +15,7 @@ import {
   MegaPanel,
   SimplePanel,
 } from "@/components/layout/navbar";
+import NavParentTrigger from "@/components/layout/navbar/NavParentTrigger";
 
 interface DesktopNavProps {
   className?: string;
@@ -41,9 +41,7 @@ const DesktopNav = ({ className }: DesktopNavProps) => {
 
           return (
             <NavigationMenuItem key={item.label}>
-              <NavigationMenuTrigger className="cursor-pointer text-sm font-semibold tracking-wide uppercase hover:text-accent">
-                {item.label}
-              </NavigationMenuTrigger>
+              <NavParentTrigger href={item.href}>{item.label}</NavParentTrigger>
               <NavigationMenuContent>
                 {item.href === "/destinations" ? (
                   <DestinationsMenu />
@@ -54,13 +52,9 @@ const DesktopNav = ({ className }: DesktopNavProps) => {
                 ) : (
                   <SimplePanel
                     items={item.children}
-                    allHref={
-                      item.href === "/heli-tours" ? item.href : undefined
-                    }
+                    allHref={item.href}
                     allLabel={
-                      item.href === "/heli-tours"
-                        ? "All helicopter tours"
-                        : undefined
+                      item.allLabel ?? `All ${item.label.toLowerCase()}`
                     }
                   />
                 )}
