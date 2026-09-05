@@ -53,13 +53,13 @@ export const destinationColumns: DestinationColumn[] = [
   {
     title: "Adventure",
     icon: "compass",
-    viewAllHref: "/adventures",
+    viewAllHref: "/activity",
     links: [
-      { label: "Paragliding in Pokhara", href: "/paragliding-in-pokhara-1" },
-      { label: "Rafting in Nepal", href: "/rafting-in-nepal" },
-      { label: "Zipline in Pokhara", href: "/zip-flyer-pokhara" },
-      { label: "Bungee Jump Pokhara", href: "/bungee-jump-pokhara" },
-      { label: "Cycling in Pokhara", href: "/cycling-in-pokhara" },
+      { label: "Paragliding in Pokhara", href: "/activity#paragliding-in-pokhara" },
+      { label: "Rafting in Nepal", href: "/activity#rafting" },
+      { label: "Zipline in Pokhara", href: "/activity#zip-flyer-pokhara" },
+      { label: "Bungee Jump Pokhara", href: "/activity#bungee-spots" },
+      { label: "Cycling in Pokhara", href: "/activity#cycling" },
     ],
   },
 ];

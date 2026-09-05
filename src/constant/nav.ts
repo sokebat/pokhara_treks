@@ -1,3 +1,9 @@
+import {
+  adventureActivities,
+  adventureCategories,
+} from "@/features/site/adventures/constant/adventures";
+import { heliTours } from "@/features/site/heli-tours/constant/heli-tours";
+
 export interface NavLeaf {
   label: string;
   href: string;
@@ -297,131 +303,25 @@ export const navItems: NavItem[] = [
     type: "simple",
     label: "Heli Tour",
     href: "/heli-tours",
-    children: [
-      {
-        label: "North Annapurna Base Camp Heli Landing Tour",
-        href: "/heli-tour-north-annapurna-base-camp",
-      },
-      { label: "Mardi Himal Helicopter Tour", href: "/mardi-heli-tour" },
-      {
-        label: "Annapurna Base Camp Helicopter Tour",
-        href: "/annapurna-base-camp-heli-landing-tour",
-      },
-      {
-        label: "Kapuche Helicopter Landing Tour",
-        href: "/kapuche-helicopter-tour",
-      },
-      {
-        label: "Kori Himal Helicopter Landing Tour",
-        href: "/kori-helicopter-tour",
-      },
-      {
-        label: "Rescue Flight & Medical Evacuation",
-        href: "/rescue-flight-medical-evacuation-and-other-services",
-      },
-      { label: "Everest Helicopter Tour", href: "/everest-helicopter-tour" },
-      {
-        label: "Muktinath Helicopter Tour from Pokhara",
-        href: "/muktinath-helicopter-tour",
-      },
-      {
-        label: "PoonHill-Ghandruk Helicopter Landing Tour",
-        href: "/poonhill-ghandruk-helicopter-tour",
-      },
-    ],
+    children: heliTours.map((tour) => ({
+      label: tour.title,
+      href: tour.href,
+    })),
   },
   {
     type: "mega",
-    label: "Adventure",
-    href: "/adventures",
-    groups: [
-      {
-        label: "Bungee Spots",
-        href: "/bungee-spots",
-        children: [
-          { label: "Kushma Bungee Jump", href: "/kushma-bungge-jump-1" },
-          { label: "Bungee Jump Pokhara", href: "/bungee-jump-pokhara" },
-        ],
-      },
-      {
-        label: "Ultralight Flying in Pokhara",
-        href: "/ultralight-flying-in-pokhara",
-        children: [
-          {
-            label: "Ultralight Flight Price (15-90 Min)",
-            href: "/ultralight-in-pokhara",
-          },
-        ],
-      },
-      {
-        label: "Paragliding in Pokhara",
-        href: "/paragliding-in-pokhara",
-        children: [
-          {
-            label: "Paragliding in Pokhara",
-            href: "/paragliding-in-pokhara-1",
-          },
-        ],
-      },
-      {
-        label: "Zip Flyer - Pokhara",
-        href: "/zip-flyer-pokhara-1",
-        children: [{ label: "Zipline in Pokhara", href: "/zip-flyer-pokhara" }],
-      },
-      {
-        label: "Rafting",
-        href: "/rafting-in-pokhara",
-        children: [
-          { label: "Rafting in Nepal", href: "/rafting-in-nepal" },
-          { label: "Trishuli River Rafting", href: "/trishuli-river-rafting" },
-          {
-            label: "Upper Seti River Rafting",
-            href: "/upper-seti-river-rafting",
-          },
-          {
-            label: "Kali Gandaki River Rafting",
-            href: "/kali-gandaki-river-rafting",
-          },
-          {
-            label: "Lower Seti River Rafting",
-            href: "/lower-seti-river-rafting",
-          },
-          {
-            label: "Marsyangdi River Rafting",
-            href: "/marsyangdi-river-rafting",
-          },
-        ],
-      },
-      {
-        label: "Cycling",
-        href: "/pokhara-cycling",
-        children: [
-          { label: "Cycling in Pokhara", href: "/cycling-in-pokhara" },
-          {
-            label: "Upper Mustang Mountain Biking Tour",
-            href: "/uppermustang-biking-mtb-tour",
-          },
-          {
-            label: "Annapurna Circuit Mountain Bike Tour",
-            href: "/annapurna-bike-tour",
-          },
-        ],
-      },
-      {
-        label: "Canyoning",
-        href: "/canyoning",
-        children: [
-          {
-            label: "Pokhara Canyoning in Lwang Village",
-            href: "/canyoning-in-pokhara",
-          },
-          {
-            label: "Canyoning in Jalbire Jharana",
-            href: "/canyoning-in-jalbire",
-          },
-        ],
-      },
-    ],
+    label: "Activity",
+    href: "/activity",
+    groups: adventureCategories.map((category) => ({
+      label: category.label,
+      href: category.href,
+      children: adventureActivities
+        .filter((activity) => activity.category === category.slug)
+        .map((activity) => ({
+          label: activity.title,
+          href: activity.href,
+        })),
+    })),
   },
   {
     type: "mega",

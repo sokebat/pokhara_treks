@@ -11,6 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import {
+  AdventureMenu,
   DestinationsMenu,
   MegaPanel,
   SimplePanel,
@@ -46,10 +47,22 @@ const DesktopNav = ({ className }: DesktopNavProps) => {
               <NavigationMenuContent>
                 {item.href === "/destinations" ? (
                   <DestinationsMenu />
+                ) : item.href === "/activity" ? (
+                  <AdventureMenu />
                 ) : item.type === "mega" ? (
                   <MegaPanel groups={item.groups} />
                 ) : (
-                  <SimplePanel items={item.children} />
+                  <SimplePanel
+                    items={item.children}
+                    allHref={
+                      item.href === "/heli-tours" ? item.href : undefined
+                    }
+                    allLabel={
+                      item.href === "/heli-tours"
+                        ? "All helicopter tours"
+                        : undefined
+                    }
+                  />
                 )}
               </NavigationMenuContent>
             </NavigationMenuItem>

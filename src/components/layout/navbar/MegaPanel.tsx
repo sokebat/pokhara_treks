@@ -55,7 +55,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
           </li>
         ))}
       </ul>
-      <div className="max-h-[75vh] flex-1 overflow-y-auto p-5">
+      <div className="max-h-[75vh] min-w-0 flex-1 overflow-y-auto p-5">
         <div
           className={cn(
             "grid gap-x-6 gap-y-1",

@@ -34,14 +34,14 @@ export const activities: Activity[] = [
   },
   {
     title: "TbHelicopter Tours",
-    count: "5 tours",
+    count: "9 tours",
     href: "/heli-tours",
     icon: TbHelicopter,
   },
   {
-    title: "Adventure Activities",
-    count: "6 activities",
-    href: "/adventures",
+    title: "Activities",
+    count: "16 activities",
+    href: "/activity",
     icon: TbCompass,
   },
   {
@@ -251,55 +251,6 @@ export const shortTreks: Trek[] = [
     price: 60,
     icon: TbCamera,
     image: WOMEN_TREK_PHOTO,
-  },
-];
-
-export type HeliTour = {
-  title: string;
-  href: string;
-  flight: string;
-  landsAt: string;
-  departs: string;
-  price: number;
-  image: string;
-};
-
-export const heliTours: HeliTour[] = [
-  {
-    title: "Annapurna Base Camp Heli Tour",
-    href: "/annapurna-base-camp-heli-landing-tour",
-    flight: "1 hour",
-    landsAt: "4,130 m",
-    departs: "06:30",
-    price: 450,
-    image: HELI_PHOTO,
-  },
-  {
-    title: "Mardi Himal Heli Tour",
-    href: "/mardi-heli-tour",
-    flight: "55 minutes",
-    landsAt: "4,200 m",
-    departs: "07:00",
-    price: 420,
-    image: HELI_PHOTO,
-  },
-  {
-    title: "Kapuche Glacier Lake Heli Tour",
-    href: "/kapuche-helicopter-tour",
-    flight: "1 hr 10 min",
-    landsAt: "2,546 m",
-    departs: "07:30",
-    price: 490,
-    image: HELI_PHOTO,
-  },
-  {
-    title: "Poon Hill & Ghandruk Heli Tour",
-    href: "/poonhill-ghandruk-helicopter-tour",
-    flight: "1 hour",
-    landsAt: "3,210 m",
-    departs: "06:45",
-    price: 400,
-    image: HELI_PHOTO,
   },
 ];
 

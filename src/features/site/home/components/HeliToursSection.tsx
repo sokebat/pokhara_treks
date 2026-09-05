@@ -4,7 +4,7 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
-import { heliTours } from "@/features/site/home/constant/home-data";
+import { featuredHeliTours } from "@/features/site/heli-tours/constant/heli-tours";
 import TripCard from "@/features/site/home/components/TripCard";
 
 const tones = ["accent", "primary", "chart-3", "primary"] as const;
@@ -29,7 +29,7 @@ const HeliToursSection = () => {
         />
 
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {heliTours.map((tour, index) => (
+          {featuredHeliTours.map((tour, index) => (
             <TripCard
               key={tour.title}
               href={tour.href}

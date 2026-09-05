@@ -47,6 +47,17 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
         <div className="pb-2">
           {item.type === "simple" ? (
             <ul className="flex flex-col">
+              {item.href === "/heli-tours" && (
+                <li>
+                  <Link
+                    href={item.href}
+                    onClick={onNavigate}
+                    className="block px-6 py-2 text-sm font-medium text-accent"
+                  >
+                    All helicopter tours
+                  </Link>
+                </li>
+              )}
               {item.children.map((leaf) => (
                 <li key={leaf.href}>
                   <Link
@@ -61,6 +72,13 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
             </ul>
           ) : (
             <div className="flex flex-col">
+              <Link
+                href={item.href}
+                onClick={onNavigate}
+                className="px-6 py-2 text-sm font-medium text-accent"
+              >
+                All {item.label.toLowerCase()}
+              </Link>
               {item.groups.map((group) => (
                 <MobileGroup
                   key={group.label}

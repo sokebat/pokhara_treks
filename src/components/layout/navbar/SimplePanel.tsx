@@ -6,9 +6,11 @@ import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 
 interface SimplePanelProps {
   items: NavLeaf[];
+  allHref?: string;
+  allLabel?: string;
 }
 
-const SimplePanel = ({ items }: SimplePanelProps) => {
+const SimplePanel = ({ items, allHref, allLabel }: SimplePanelProps) => {
   const wide = items.length > 8;
 
   return (
@@ -18,6 +20,18 @@ const SimplePanel = ({ items }: SimplePanelProps) => {
         wide ? "w-[30rem] grid-cols-2" : "w-64 grid-cols-1",
       )}
     >
+      {allHref && allLabel && (
+        <NavigationMenuLink
+          closeOnClick
+          render={<Link href={allHref} />}
+          className={cn(
+            "rounded-md px-2 py-1.5 text-sm font-semibold text-accent hover:bg-muted hover:text-accent",
+            wide && "col-span-2",
+          )}
+        >
+          {allLabel}
+        </NavigationMenuLink>
+      )}
       {items.map((leaf) => (
         <NavigationMenuLink
           key={leaf.href}
