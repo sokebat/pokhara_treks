@@ -7,7 +7,10 @@ import FounderNoteSection from "@/features/site/home/components/FounderNoteSecti
 import GuidesSection from "@/features/site/home/components/GuidesSection";
 import WhyUsSection from "@/features/site/home/components/WhyUsSection";
 import AboutHeroSection from "@/features/site/about/components/AboutHero";
- 
+import { getPageSeo } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = getPageSeo("/about-us"); 
 
 const AboutUs = () => {
   return (

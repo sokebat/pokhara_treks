@@ -17,14 +17,14 @@ const FooterBrand = () => {
       <div className="mt-5 flex flex-col gap-2 text-sm">
         <a
           href={`tel:${siteInfo.phone}`}
-          className="flex items-center gap-2 text-primary-foreground/80 transition-colors hover:text-accent"
+          className="flex items-center gap-2 text-primary-foreground/80 transition-colors hover:text-primary-foreground"
         >
           <TbPhoneCall className="size-4 shrink-0" />
           {siteInfo.phoneDisplay}
         </a>
         <a
           href={`mailto:${siteInfo.email}`}
-          className="flex items-center gap-2 text-primary-foreground/80 transition-colors hover:text-accent"
+          className="flex items-center gap-2 text-primary-foreground/80 transition-colors hover:text-primary-foreground"
         >
           <TbMail className="size-4 shrink-0" />
           {siteInfo.email}
@@ -35,21 +35,21 @@ const FooterBrand = () => {
         <a
           href={siteInfo.social.facebook}
           aria-label="Facebook"
-          className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-primary"
         >
           <FaFacebook className="size-4" />
         </a>
         <a
           href={siteInfo.social.instagram}
           aria-label="Instagram"
-          className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-primary"
         >
           <FaInstagram className="size-4" />
         </a>
         <a
           href={siteInfo.social.youtube}
           aria-label="YouTube"
-          className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-primary"
         >
           <FaYoutube className="size-4" />
         </a>

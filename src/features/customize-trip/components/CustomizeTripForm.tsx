@@ -62,7 +62,7 @@ const CustomizeTripForm = () => {
   if (submitted) {
     return (
       <div className="flex flex-col items-center gap-3 py-16 text-center">
-        <span className="flex size-16 items-center justify-center rounded-full bg-accent/10 text-accent ring-8 ring-accent/5">
+        <span className="flex size-16 items-center justify-center rounded-full bg-secondary text-chart-2 ring-8 ring-secondary/50">
           <TbCircleCheck className="size-8" />
         </span>
         <h3 className="mt-1 text-lg font-bold text-foreground sm:text-xl">Enquiry sent</h3>
@@ -90,7 +90,7 @@ const CustomizeTripForm = () => {
       className="flex flex-col gap-8"
     >
       <div className="flex flex-col gap-5">
-        <h2 className="flex items-center gap-2 text-sm font-semibold tracking-wide text-accent uppercase">
+        <h2 className="flex items-center gap-2 text-sm font-semibold tracking-wide text-chart-2 uppercase">
           <span aria-hidden className="size-1.5 rounded-full bg-accent" />
           Trip Details
         </h2>
@@ -217,7 +217,7 @@ const CustomizeTripForm = () => {
         <h2 className="flex items-center gap-2 text-sm font-semibold tracking-wide text-primary uppercase">
           <span
             aria-hidden
-            className="size-1.5 rounded-full bg-[oklch(0.55_0.09_245)]"
+            className="size-1.5 rounded-full bg-accent"
           />
           Your Details
         </h2>
@@ -309,7 +309,7 @@ const CustomizeTripForm = () => {
             Have questions? Call or WhatsApp us at{" "}
             <a
               href={`tel:${siteInfo.phone}`}
-              className="font-medium text-foreground hover:text-accent"
+              className="font-medium text-foreground hover:text-chart-2"
             >
               {siteInfo.phoneDisplay}
             </a>
@@ -318,8 +318,9 @@ const CustomizeTripForm = () => {
           <Button
             type="submit"
             disabled={isSubmitting}
+            variant="accent"
             size="xl"
-            className="hidden rounded-md sm:inline-flex"
+            className="hidden sm:inline-flex"
           >
             {isSubmitting ? (
               <>

@@ -3,7 +3,7 @@ import { TbClock, TbMapPin, TbMountain } from "react-icons/tb";
 import TripCard from "@/features/site/listing/components/TripCard";
 import type { TripListingItem } from "@/features/site/listing/types";
 
-const tones = ["accent", "primary", "chart-3"] as const;
+const tones = ["primary", "accent", "chart-2"] as const;
 
 type TripListingCardProps = {
   trip: TripListingItem;

@@ -22,6 +22,10 @@ const SectionHeader = ({
     )}
   >
     <div className="min-w-0">
+      <span
+        aria-hidden
+        className="mb-3 block h-1 w-9 rounded-full bg-accent"
+      />
       <h2 className="text-2xl font-bold text-balance text-primary sm:text-3xl lg:text-4xl">
         {title}
       </h2>
@@ -32,7 +36,7 @@ const SectionHeader = ({
     </div>
 
     {action && (
-      <div className="flex w-full shrink-0 sm:w-auto sm:justify-end [&>*]:w-full sm:[&>*]:w-auto">
+      <div className="flex shrink-0 sm:justify-end">
         {action}
       </div>
     )}

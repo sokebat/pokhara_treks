@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 
 const avatarPalette = [
-  "bg-accent text-accent-foreground",
   "bg-primary text-primary-foreground",
-  "bg-chart-3 text-white",
+  "bg-accent text-accent-foreground",
+  "bg-foreground text-background",
 ];
 
 const getInitials = (name: string) =>

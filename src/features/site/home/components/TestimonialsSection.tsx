@@ -40,7 +40,7 @@ const PlatformLogo = ({
   platform === "google" ? (
     <FcGoogle className={cn("size-5", className)} />
   ) : (
-    <SiTripadvisor className={cn("size-5 text-[#00AF87]", className)} />
+    <SiTripadvisor className={cn("size-5 text-chart-2", className)} />
   );
 
 const TestimonialMeta = ({ testimonial }: { testimonial: Testimonial }) => {
@@ -51,7 +51,7 @@ const TestimonialMeta = ({ testimonial }: { testimonial: Testimonial }) => {
   if (!platform) return null;
 
   return (
-    <div className="mt-4 flex flex-col gap-3 border-t-2 border-border pt-4 sm:flex-row sm:items-center sm:justify-between">
+    <div className="mt-4 flex flex-col gap-3 border-t border-border pt-4 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex flex-wrap items-center gap-2">
         <span className="rounded-md bg-secondary px-2.5 py-1 text-[0.7rem] font-semibold text-secondary-foreground">
           {testimonial.trek}
@@ -63,7 +63,7 @@ const TestimonialMeta = ({ testimonial }: { testimonial: Testimonial }) => {
 
         <span className="text-[0.7rem] text-muted-foreground">
           Guided by{" "}
-          <span className="font-semibold text-accent">{testimonial.guide}</span>
+        <span className="font-semibold text-chart-2">{testimonial.guide}</span>
         </span>
       </div>
 
@@ -74,7 +74,6 @@ const TestimonialMeta = ({ testimonial }: { testimonial: Testimonial }) => {
         }
         variant="outline"
         size="sm"
-        className="w-fit rounded-md"
       >
         <PlatformLogo platform={platform.platform} className="size-3.5" />
         {platform.label}
@@ -84,7 +83,11 @@ const TestimonialMeta = ({ testimonial }: { testimonial: Testimonial }) => {
 };
 
 const RatingSummaryCard = () => (
-  <div className="flex flex-col gap-5 rounded-md bg-primary p-6 text-primary-foreground sm:p-7">
+  <div className="relative flex flex-col gap-5 overflow-hidden rounded-md bg-primary p-6 text-primary-foreground sm:p-7">
+    <div
+      aria-hidden
+      className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-transparent via-primary-foreground to-transparent"
+    />
     <div>
       <div className="flex items-end gap-3">
         <p className="text-4xl font-bold sm:text-5xl">{reviewSummary.average}</p>
@@ -102,10 +105,10 @@ const RatingSummaryCard = () => (
       {platformSummaries.map((platform) => (
         <div
           key={platform.platform}
-          className="flex flex-col rounded-md border-2 border-primary-foreground/20 bg-primary-foreground/10 p-3"
+          className="flex flex-col rounded-md border border-primary-foreground/20 bg-primary-foreground/10 p-3"
         >
           <div className="flex items-center gap-2.5">
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-white">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-card">
               <PlatformLogo platform={platform.platform} />
             </span>
             <p className="text-xl font-bold leading-none sm:text-2xl">{platform.rating}</p>
@@ -124,9 +127,8 @@ const RatingSummaryCard = () => (
                 rel="noopener noreferrer"
               />
             }
-            variant="accent"
             size="lg"
-            className="mt-3 w-full rounded-md"
+            className="mt-3 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
           >
             Read reviews
           </Button>
@@ -137,7 +139,7 @@ const RatingSummaryCard = () => (
 );
 
 const FeaturedTestimonialCard = () => (
-  <div className="flex h-full flex-col rounded-md border-2 border-border bg-card p-6 sm:p-8">
+  <div className="flex h-full flex-col rounded-md border border-border bg-card p-6 sm:p-8">
     <div className="flex items-start justify-between gap-3">
       <div className="flex min-w-0 items-center gap-3">
         <Avatar name={featuredTestimonial.name} index={0} />
@@ -154,9 +156,9 @@ const FeaturedTestimonialCard = () => (
 
       <span
         aria-hidden
-        className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10"
+        className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10"
       >
-        <TbQuote className="size-4 fill-accent text-accent" />
+        <TbQuote className="size-4 fill-chart-2 text-chart-2" />
       </span>
     </div>
 
@@ -171,9 +173,9 @@ const FeaturedTestimonialCard = () => (
 );
 
 const cardTint = [
-  "border-2 border-accent/20 hover:border-accent/40",
-  "border-2 border-primary/15 hover:border-primary/30",
-  "border-2 border-chart-3/20 hover:border-chart-3/40",
+  "border border-accent/25 hover:border-accent/50",
+  "border border-primary/20 hover:border-primary/35",
+  "border border-chart-2/25 hover:border-chart-2/45",
 ];
 
 const TestimonialCard = ({
@@ -185,7 +187,7 @@ const TestimonialCard = ({
 }) => (
   <Card
     className={cn(
-      "relative h-full rounded-md shadow-none ring-0 transition-colors",
+      "relative h-full rounded-md shadow-none ring-0",
       cardTint[index % cardTint.length],
     )}
   >
@@ -206,9 +208,9 @@ const TestimonialCard = ({
 
         <span
           aria-hidden
-          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10"
+          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10"
         >
-          <TbQuote className="size-4 fill-accent text-accent" />
+          <TbQuote className="size-4 fill-chart-2 text-chart-2" />
         </span>
       </div>
 

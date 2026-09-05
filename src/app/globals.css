@@ -38,6 +38,8 @@
 
   --color-whatsapp: var(--whatsapp);
 
+  --color-success: var(--success);
+
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
 
@@ -76,65 +78,69 @@
    ======================================== */
 
 :root {
-  --background: oklch(0.979 0 0);
-  --foreground: oklch(0.24 0.076 257);
+  /* Palette — dark teals on cream. Mint is a whisper only. */
+  --background: #F2E9D8;
+  --foreground: #1C1F2A;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.076 257);
+  --card: #F2E9D8;
+  --card-foreground: #1C1F2A;
 
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.076 257);
+  --popover: #F2E9D8;
+  --popover-foreground: #1C1F2A;
 
-  /* Primary — Deep Himalayan Navy */
-  --primary: oklch(0.24 0.076 257);
-  --primary-foreground: oklch(1 0 0);
+  /* Primary — deep teal */
+  --primary: #0B5D67;
+  --primary-foreground: #F2E9D8;
 
-  /* Secondary — Soft Mountain Blue */
-  --secondary: oklch(0.952 0.009 243);
-  --secondary-foreground: oklch(0.24 0.076 257);
+  /* Secondary — cream with a hint of deep teal, not mint */
+  --secondary: color-mix(in oklab, #F2E9D8 92%, #0B5D67 8%);
+  --secondary-foreground: #1C1F2A;
 
-  /* Muted — Light Blue Gray */
-  --muted: oklch(0.959 0.007 248);
-  --muted-foreground: oklch(0.521 0.062 245);
+  /* Muted — slightly cooler cream */
+  --muted: color-mix(in oklab, #F2E9D8 94%, #0B5D67 6%);
+  --muted-foreground: color-mix(in oklab, #1C1F2A 72%, #0B5D67 28%);
 
-  /* Accent — Expedition Orange */
-  --accent: oklch(0.69 0.19 46);
-  --accent-foreground: oklch(1 0 0);
+  /* Accent — mid teal, the action colour on light pages */
+  --accent: #0F8A8B;
+  --accent-foreground: #F2E9D8;
 
-  /* Destructive */
-  --destructive: oklch(0.529 0.182 26);
+  /* Destructive — error only */
+  --destructive: oklch(0.55 0.19 25);
 
-  /* WhatsApp brand green — used for WhatsApp CTAs only */
+  /* Success — status only */
+  --success: #2f9e6b;
+
+  /* WhatsApp brand green — WhatsApp CTAs only */
   --whatsapp: #25d366;
 
   /* Borders & Inputs */
-  --border: oklch(0.9 0.01 245);
-  --input: oklch(0.9 0.01 245);
+  --border: color-mix(in oklab, #0B5D67 14%, #F2E9D8 86%);
+  --input: color-mix(in oklab, #0B5D67 14%, #F2E9D8 86%);
 
   /* Focus Ring */
-  --ring: oklch(0.69 0.19 46);
+  --ring: #0F8A8B;
 
   /* Charts */
-  --chart-1: oklch(0.24 0.076 257);
-  --chart-2: oklch(0.69 0.19 46);
-  --chart-3: oklch(0.521 0.062 245);
-  --chart-4: oklch(0.33 0.07 253);
-  --chart-5: oklch(0.8 0.055 245);
+  --chart-1: #0B5D67;
+  --chart-2: #0F8A8B;
+  --chart-3: #8FD6C8;
+  --chart-4: #1C1F2A;
+  --chart-5: #F2E9D8;
 
   --radius: 0.625rem;
 
   /* Sidebar */
-  --sidebar: oklch(0.979 0 0);
-  --sidebar-foreground: oklch(0.24 0.076 257);
+  --sidebar: #F2E9D8;
+  --sidebar-foreground: #1C1F2A;
 
-  --sidebar-primary: oklch(0.24 0.076 257);
-  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-primary: #0B5D67;
+  --sidebar-primary-foreground: #F2E9D8;
 
-  --sidebar-accent: oklch(0.952 0.009 243);
-  --sidebar-accent-foreground: oklch(0.24 0.076 257);
+  --sidebar-accent: color-mix(in oklab, #F2E9D8 92%, #0B5D67 8%);
+  --sidebar-accent-foreground: #1C1F2A;
 
-  --sidebar-border: oklch(0.9 0.01 245);
-  --sidebar-ring: oklch(0.69 0.19 46);
+  --sidebar-border: color-mix(in oklab, #0B5D67 14%, #F2E9D8 86%);
+  --sidebar-ring: #0F8A8B;
 }
 
 /* ========================================
@@ -161,6 +167,6 @@
   h4,
   h5,
   h6 {
-    @apply font-heading tracking-tight text-balance;
+    @apply font-heading tracking-tight text-balance text-primary;
   }
 }

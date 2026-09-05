@@ -26,12 +26,12 @@ const HeroSection = () => {
         className="object-cover object-[68%_center]"
       />
 
-      {/* Background overlays */}
-      <div aria-hidden className="absolute inset-0 bg-primary/45" />
+      {/* Background overlays — keep the photo’s colour, darken only for type */}
+      <div aria-hidden className="absolute inset-0 bg-primary/25" />
 
       <div
         aria-hidden
-        className="absolute inset-0 bg-linear-to-r from-primary via-primary/80 to-primary/20"
+        className="absolute inset-0 bg-linear-to-r from-primary/90 via-primary/55 to-primary/10"
       />
 
       <Container>
@@ -39,9 +39,9 @@ const HeroSection = () => {
           {/* Left content */}
           <div className="flex w-full flex-col items-start">
             {/* Eyebrow */}
-            <div className="inline-flex max-w-full items-center gap-3 rounded-full border-2 border-primary-foreground/20 bg-primary-foreground/10 py-1.5 pr-5 pl-1.5 backdrop-blur-md">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent">
-                <TbShieldCheck className="size-4 text-accent-foreground" />
+            <div className="inline-flex max-w-full items-center gap-3 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 py-1.5 pr-5 pl-1.5 backdrop-blur-md">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary-foreground">
+                <TbShieldCheck className="size-4 text-primary" />
               </span>
 
               <span className="text-left">
@@ -69,13 +69,12 @@ const HeroSection = () => {
             </p>
 
             {/* CTA buttons */}
-            <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Button
                 nativeButton={false}
                 render={<Link href="/customize-my-trip" />}
                 variant="accent"
                 size="xl"
-                className="w-full sm:w-auto"
               >
                 Plan Your Trip
                 <TbArrowRight className="size-4" />
@@ -83,9 +82,9 @@ const HeroSection = () => {
 
               <Button
                 nativeButton={false}
-                render={<Link href="/trekking-and-hiking" />}
+                render={<Link href="/trip" />}
                 size="xl"
-                className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 sm:w-auto"
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
               >
                 Explore Treks
                 <TbArrowRight className="size-4" />
@@ -97,7 +96,7 @@ const HeroSection = () => {
               {trustPoints.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground/15 bg-primary-foreground/10 px-3.5 py-2 backdrop-blur-md"
+                  className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3.5 py-2 backdrop-blur-md"
                 >
                   <Icon className="size-3.5 shrink-0 text-accent" />
 
@@ -114,11 +113,11 @@ const HeroSection = () => {
             {/* Decorative frame */}
             <div
               aria-hidden
-              className="absolute -inset-3 rounded-md border-2 border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-sm"
+              className="absolute -inset-3 rounded-md border border-primary-foreground/20 bg-primary-foreground/5 backdrop-blur-sm"
             />
 
             {/* Main image */}
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border-2 border-primary-foreground/15">
+            <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border border-primary-foreground/20">
               <Image
                 src="/images/collage-trekking.jpg"
                 alt="A trekking group led along a Himalayan mountain trail"
@@ -130,15 +129,15 @@ const HeroSection = () => {
               {/* Image gradient */}
               <div
                 aria-hidden
-                className="absolute inset-0 bg-linear-to-t from-black/45 via-transparent to-transparent"
+                className="absolute inset-0 bg-linear-to-t from-primary/50 via-transparent to-transparent"
               />
             </div>
 
             {/* Floating information card */}
-            <div className="absolute right-5 bottom-5 w-64 rounded-md border-2 border-border bg-background/95 p-4 backdrop-blur-md">
+            <div className="absolute right-5 bottom-5 w-64 rounded-md border border-border bg-background/95 p-4 backdrop-blur-md">
               <div className="flex items-start gap-3">
-                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent/15">
-                  <TbHeartHandshake className="size-4 text-accent" />
+                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent">
+                  <TbHeartHandshake className="size-4 text-accent-foreground" />
                 </span>
 
                 <div>

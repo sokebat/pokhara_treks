@@ -2,7 +2,7 @@ import type { NavGroup } from "@/constant/nav/types";
 
 export const annapurnaTrekkingGroup: NavGroup = {
   label: "Annapurna Region",
-  href: "/annapurna-trekking",
+  href: "/region/annapurna-region",
   children: [
     {
       label: "Upper Mustang Trek - 14 Days",

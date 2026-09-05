@@ -23,13 +23,13 @@ export const destinationColumns: DestinationColumn[] = [
   {
     title: "Trekking Regions",
     icon: "mountain",
-    viewAllHref: "/trekking-and-hiking",
+    viewAllHref: "/trip",
     links: [
-      { label: "Everest Region", href: "/everest-trekking" },
-      { label: "Annapurna Region", href: "/annapurna-trekking" },
-      { label: "Manaslu Region", href: "/manaslu-trekking" },
-      { label: "Langtang Region", href: "/langtang-trekking" },
-      { label: "Kanchenjunga Region", href: "/kanchenjunga-region" },
+      { label: "Everest Region", href: "/region/everest-region" },
+      { label: "Annapurna Region", href: "/region/annapurna-region" },
+      { label: "Manaslu Region", href: "/region/manaslu-region" },
+      { label: "Langtang Region", href: "/region/langtang-region" },
+      { label: "Kanchenjunga Region", href: "/region/kanchenjunga-region" },
     ],
   },
   {

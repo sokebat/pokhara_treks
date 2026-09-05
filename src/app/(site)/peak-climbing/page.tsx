@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 
 import PeakClimbingView from "@/features/site/peak-climbing/components/PeakClimbingView";
+import { getPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Peak Climbing in Nepal",
-  description:
-    "Mera, Island, Lobuche, Mardi Himal, Yala and Chulu Far East — guided trekking peaks from Pokhara Treks.",
-};
+export const metadata: Metadata = getPageSeo("/peak-climbing");
 
 export default function PeakClimbingPage() {
   return <PeakClimbingView />;

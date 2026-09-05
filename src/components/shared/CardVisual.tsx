@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils";
 const tones = {
   primary: { bg: "bg-primary", icon: "text-primary" },
   accent: { bg: "bg-accent", icon: "text-accent" },
-  "chart-3": { bg: "bg-chart-3", icon: "text-chart-3" },
+  "chart-2": { bg: "bg-accent", icon: "text-accent" },
+  "chart-3": { bg: "bg-primary", icon: "text-primary" },
 };
 
 type CardVisualProps = {

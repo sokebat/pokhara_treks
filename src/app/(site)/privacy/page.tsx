@@ -7,11 +7,9 @@ import LegalToc from "@/features/site/legal/components/LegalToc";
 import LegalContent from "@/features/site/legal/components/LegalContent";
 import LegalPageHeader from "@/features/site/legal/components/LegalPageHeader";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "How Pokhara Treks & Expeditions collects, uses, and protects your personal information.",
-};
+import { getPageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = getPageSeo("/privacy");
 
 export default function PrivacyPage() {
   return (

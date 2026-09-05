@@ -10,10 +10,10 @@ const FooterContactStrip = () => {
 
   return (
     <div className="grid grid-cols-1 gap-4 border-b border-primary-foreground/10 pt-12 pb-10 sm:grid-cols-2 sm:pt-14 lg:grid-cols-4">
-      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-accent/40 hover:bg-primary-foreground/10">
+      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-primary-foreground/25 hover:bg-primary-foreground/10">
         <div className="flex items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent/15">
-            <TbMapPin className="size-4.5 text-accent" />
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary-foreground/15">
+            <TbMapPin className="size-4.5 text-primary-foreground" />
           </span>
           <div>
             <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
@@ -28,17 +28,17 @@ const FooterContactStrip = () => {
           href={mapsHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent/80"
+          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary-foreground hover:text-primary-foreground/80"
         >
           Get Directions
           <TbArrowUpRight className="size-3.5" />
         </Link>
       </div>
 
-      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-accent/40 hover:bg-primary-foreground/10">
+      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-primary-foreground/25 hover:bg-primary-foreground/10">
         <div className="flex items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent/15">
-            <TbPhoneCall className="size-4.5 text-accent" />
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary-foreground/15">
+            <TbPhoneCall className="size-4.5 text-primary-foreground" />
           </span>
           <div>
             <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
@@ -46,7 +46,7 @@ const FooterContactStrip = () => {
             </p>
             <a
               href={`tel:${siteInfo.phone}`}
-              className="mt-0.5 block text-sm font-semibold text-primary-foreground hover:text-accent"
+              className="mt-0.5 block text-sm font-semibold text-primary-foreground hover:text-primary-foreground"
             >
               {siteInfo.phoneDisplay}
             </a>
@@ -57,10 +57,10 @@ const FooterContactStrip = () => {
         </p>
       </div>
 
-      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-accent/40 hover:bg-primary-foreground/10">
+      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-primary-foreground/25 hover:bg-primary-foreground/10">
         <div className="flex items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent/15">
-            <TbMail className="size-4.5 text-accent" />
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary-foreground/15">
+            <TbMail className="size-4.5 text-primary-foreground" />
           </span>
           <div>
             <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
@@ -68,7 +68,7 @@ const FooterContactStrip = () => {
             </p>
             <a
               href={`mailto:${siteInfo.email}`}
-              className="mt-0.5 block text-sm font-semibold text-primary-foreground hover:text-accent"
+              className="mt-0.5 block text-sm font-semibold text-primary-foreground hover:text-primary-foreground"
             >
               {siteInfo.email}
             </a>
@@ -79,10 +79,10 @@ const FooterContactStrip = () => {
         </p>
       </div>
 
-      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-accent/40 hover:bg-primary-foreground/10">
+      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-primary-foreground/25 hover:bg-primary-foreground/10">
         <div className="flex items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent/15">
-            <TbClock className="size-4.5 text-accent" />
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary-foreground/15">
+            <TbClock className="size-4.5 text-primary-foreground" />
           </span>
           <div>
             <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">

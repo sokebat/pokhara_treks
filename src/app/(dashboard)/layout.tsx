@@ -16,6 +16,11 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 
+export const metadata: Metadata = {
+  title: "Dashboard",
+  robots: { index: false, follow: false },
+};
+
 const AdminLayout = ({
   children,
 }: Readonly<{

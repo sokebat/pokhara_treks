@@ -16,10 +16,14 @@ import { Button } from "@/components/ui/button";
 import { NavBar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
-export const metadata: Metadata = {
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
   title: "Page Not Found",
   description: "This trail doesn't exist. Let's get you back on the path.",
-};
+  path: "/404",
+  noIndex: true,
+});
 
 const trails = [
   {
@@ -29,7 +33,7 @@ const trails = [
     icon: TbHome,
   },
   {
-    href: "/trekking-and-hiking",
+    href: "/trip",
     label: "Treks",
     description: "Routes across Nepal.",
     icon: TbMountain,
@@ -95,22 +99,21 @@ export default function NotFound() {
                   does.
                 </p>
 
-                <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
                   <Button
                     nativeButton={false}
                     render={<Link href="/" />}
                     variant="accent"
                     size="xl"
-                    className="w-full sm:w-auto"
                   >
                     <TbHome className="size-4" />
                     Back to Home
                   </Button>
                   <Button
                     nativeButton={false}
-                    render={<Link href="/trekking-and-hiking" />}
+                    render={<Link href="/trip" />}
                     size="xl"
-                    className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 sm:w-auto"
+                    className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
                   >
                     <TbCompass className="size-4" />
                     Explore Treks
@@ -160,7 +163,7 @@ export default function NotFound() {
                   className="group flex items-start justify-between gap-4 rounded-md border-2 border-border bg-card p-4 transition-colors hover:border-accent sm:p-5"
                 >
                   <div className="flex min-w-0 items-start gap-3">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-secondary text-chart-2">
                       <Icon className="size-5" />
                     </span>
                     <div className="min-w-0">
@@ -170,7 +173,7 @@ export default function NotFound() {
                       </p>
                     </div>
                   </div>
-                  <TbArrowRight className="mt-2 size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-accent" />
+                  <TbArrowRight className="mt-2 size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-chart-2" />
                 </Link>
               ))}
             </div>

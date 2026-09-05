@@ -16,7 +16,7 @@ export const navItems: NavItem[] = [
   {
     type: "mega",
     label: "Trekking",
-    href: "/trekking-and-hiking",
+    href: "/trip",
     groups: [
       everestTrekkingGroup,
       annapurnaTrekkingGroup,

@@ -39,7 +39,7 @@ const ContactForm = () => {
   if (submitted) {
     return (
       <div className="flex flex-col items-center gap-3 py-14 text-center">
-        <span className="flex size-16 items-center justify-center rounded-full bg-accent/10 text-accent ring-8 ring-accent/5">
+        <span className="flex size-16 items-center justify-center rounded-full bg-secondary text-chart-2 ring-8 ring-secondary/50">
           <TbCircleCheck className="size-8" />
         </span>
         <h3 className="mt-1 text-lg font-bold text-foreground sm:text-xl">Message sent</h3>
@@ -134,7 +134,6 @@ const ContactForm = () => {
         type="submit"
         size="lg"
         disabled={isSubmitting}
-        className="w-full rounded-md sm:w-fit"
       >
         {isSubmitting ? (
           <>

@@ -57,8 +57,8 @@ const FindUsSection = () => {
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_20rem]">
           <GoogleMap className="aspect-auto h-64 sm:min-h-80 lg:h-full" />
 
-          <div className="flex flex-col rounded-md border-2 border-border bg-card p-5">
-            <dl className="flex flex-col divide-y-2 divide-border">
+          <div className="flex flex-col rounded-md border border-border bg-card p-5">
+            <dl className="flex flex-col divide-y divide-border">
               {infoRows.map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0">
                   <Icon className="mt-0.5 size-[18px] shrink-0 text-foreground" />
@@ -71,7 +71,7 @@ const FindUsSection = () => {
                       {href ? (
                         <a
                           href={href}
-                          className="text-accent transition-colors hover:text-accent/80"
+                          className="text-chart-2 transition-colors hover:text-primary"
                         >
                           {value}
                         </a>
@@ -95,7 +95,6 @@ const FindUsSection = () => {
                   />
                 }
                 size="xl"
-                className="w-full"
               >
                 Get directions
               </Button>
@@ -105,13 +104,12 @@ const FindUsSection = () => {
                 render={<Link href="/customize-my-trip" />}
                 variant="accent"
                 size="xl"
-                className="w-full"
               >
                 Book a free trip consultation
               </Button>
             </div>
 
-            <div className="mt-5 flex items-center justify-between border-t-2 border-border pt-5">
+            <div className="mt-5 flex items-center justify-between border-t border-border pt-5">
               <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
                 Follow us
               </p>

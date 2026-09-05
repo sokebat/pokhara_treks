@@ -14,12 +14,10 @@ import {
 import { slugify } from "@/lib/utils";
 import { siteInfo } from "@/constant/site";
 import { faqCategories, faqItems, type FaqSection } from "@/features/site/faq/constant/faq";
+import { getPageSeo, faqJsonLd } from "@/lib/seo";
+import JsonLd from "@/components/shared/JsonLd";
 
-export const metadata: Metadata = {
-  title: "Frequently Asked Questions",
-  description:
-    "Answers to common questions about trekking in Nepal with Pokhara Treks & Expeditions — gear, permits, visas, safety, and more.",
-};
+export const metadata: Metadata = getPageSeo("/faq");
 
 const categoryIcons: Record<(typeof faqCategories)[number], IconType> = {
   "Trip Preparation": TbBackpack,
@@ -60,12 +58,13 @@ function FaqAnswer({ sections }: { sections: FaqSection[] }) {
 export default function FaqPage() {
   return (
     <div className="py-14 sm:py-20">
+      <JsonLd data={faqJsonLd(faqItems)} />
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+          <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-secondary text-chart-2">
             <TbHelpCircle className="size-6" />
           </span>
-          <p className="mt-5 text-sm font-semibold tracking-wide text-accent uppercase">
+          <p className="mt-5 text-sm font-semibold tracking-wide text-chart-2 uppercase">
             Got Questions?
           </p>
           <h1 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
@@ -89,7 +88,7 @@ export default function FaqPage() {
                   <li key={category}>
                     <a
                       href={`#${slugify(category)}`}
-                      className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-accent"
+                      className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-chart-2"
                     >
                       <Icon className="size-4 shrink-0" />
                       {category}
@@ -108,7 +107,7 @@ export default function FaqPage() {
               return (
                 <div key={category} id={slugify(category)} className="scroll-mt-24">
                   <div className="mb-4 flex items-center gap-3">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary text-chart-2">
                       <Icon className="size-5" />
                     </span>
                     <h2 className="text-base font-bold text-foreground sm:text-lg">
@@ -116,7 +115,7 @@ export default function FaqPage() {
                     </h2>
                   </div>
 
-                  <div className="rounded-xl border border-border bg-card px-6 sm:px-8">
+                  <div className="rounded-md border border-border bg-card px-6 sm:px-8">
                     <Accordion>
                       {items.map((item) => (
                         <AccordionItem key={item.id} value={item.id}>
@@ -134,9 +133,9 @@ export default function FaqPage() {
               );
             })}
 
-            <div className="flex flex-col items-center gap-4 rounded-xl border border-border bg-muted/30 p-8 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex flex-col items-center gap-4 rounded-md border border-border bg-muted/30 p-8 text-center sm:flex-row sm:justify-between sm:text-left">
               <div className="flex items-center gap-4">
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-secondary text-chart-2">
                   <TbMessageCircleQuestion className="size-5" />
                 </span>
                 <div>
@@ -150,7 +149,7 @@ export default function FaqPage() {
               </div>
               <Button
                 nativeButton={false}
-                size={'xl'}
+                size="xl"
                 render={
                   <a
                     href={`https://wa.me/${siteInfo.phone.replace(/\D/g, "")}`}
@@ -159,7 +158,6 @@ export default function FaqPage() {
                   />
                 }
                 variant="whatsapp"
-                className="w-full rounded-md sm:w-fit"
               >
                 <FaWhatsapp className="size-4" />
                 WhatsApp Us

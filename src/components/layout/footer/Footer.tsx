@@ -8,10 +8,10 @@ import {
 } from "@/components/layout/footer";
 
 const trekkingLinks = [
-  { label: "Annapurna Region", href: "/annapurna-trekking" },
-  { label: "Everest Region", href: "/everest-trekking" },
+  { label: "Annapurna Region", href: "/region/annapurna-region" },
+  { label: "Everest Region", href: "/region/everest-region" },
   { label: "Mustang Region", href: "/upper-mustang-trek-nepal" },
-  { label: "Manaslu Region", href: "/manaslu-trekking" },
+  { label: "Manaslu Region", href: "/region/manaslu-region" },
   { label: "Short Treks from Pokhara", href: "/short-treks-from-pokhara" },
   { label: "Browse by Difficulty", href: "/browse-treks-by-difficulty" },
   { label: "Women Only Treks", href: "/women-only-treks" },
@@ -48,7 +48,7 @@ const travelInfoLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-foreground text-white">
       <Container>
         <FooterContactStrip />
 

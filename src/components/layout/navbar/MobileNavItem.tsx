@@ -34,7 +34,7 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
         <Link
           href={item.href}
           onClick={onNavigate}
-          className="min-w-0 flex-1 text-left text-sm font-semibold text-foreground hover:text-accent"
+          className="min-w-0 flex-1 text-left text-sm font-semibold text-foreground hover:text-chart-2"
         >
           {item.label}
         </Link>
@@ -62,7 +62,7 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
                   <Link
                     href={leaf.href}
                     onClick={onNavigate}
-                    className="block px-6 py-2 text-sm text-muted-foreground hover:text-accent"
+                    className="block px-6 py-2 text-sm text-muted-foreground hover:text-chart-2"
                   >
                     {leaf.label}
                   </Link>

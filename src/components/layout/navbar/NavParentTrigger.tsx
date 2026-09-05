@@ -18,7 +18,7 @@ const NavParentTrigger = ({ href, children }: NavParentTriggerProps) => {
     <NavigationMenuTrigger
       nativeButton={false}
       render={<Link href={href} />}
-      className="cursor-pointer text-xs font-semibold tracking-wide uppercase hover:text-accent lg:text-sm"
+      className="cursor-pointer text-xs font-semibold tracking-wide uppercase hover:text-chart-2 lg:text-sm"
       onClick={(event) => {
         if (event.button !== 0) return;
 

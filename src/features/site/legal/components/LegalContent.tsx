@@ -45,7 +45,7 @@ const LegalContent = ({ page }: LegalContentProps) => {
           )}
 
           {section.list && (
-            <ol className="flex list-decimal flex-col gap-4 pl-5 text-muted-foreground marker:font-semibold marker:text-accent">
+            <ol className="flex list-decimal flex-col gap-4 pl-5 text-muted-foreground marker:font-semibold marker:text-chart-2">
               {section.list.map((item) => (
                 <li key={item} className="pl-1.5">
                   {item}

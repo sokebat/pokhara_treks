@@ -30,7 +30,6 @@ const FaqSection = () => {
                 render={<Link href="/faq" />}
                 variant="accent"
                 size="xl"
-                className="w-full"
               >
                 View all FAQs
               </Button>
@@ -46,14 +45,13 @@ const FaqSection = () => {
                 }
                 variant="whatsapp"
                 size="xl"
-                className="w-full"
               >
                 <FaWhatsapp className="size-4" />
                 WhatsApp Us
               </Button>
             </div>
 
-            <div className="mt-6 border-t-2 border-border pt-6">
+            <div className="mt-6 border-t border-border pt-6">
               <p className="text-sm text-muted-foreground">
                 Not answered here? Ask the office directly. A person replies,
                 usually the same day.
@@ -61,7 +59,7 @@ const FaqSection = () => {
             </div>
           </div>
 
-          <div className="rounded-md border-2 border-border bg-card px-4 sm:px-8">
+          <div className="rounded-md border border-border bg-card px-4 sm:px-8">
             <Accordion defaultValue={[homeFaqs[0].id]}>
               {homeFaqs.map((item) => (
                 <AccordionItem key={item.id} value={item.id}>

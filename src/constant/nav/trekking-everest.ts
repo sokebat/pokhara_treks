@@ -2,7 +2,7 @@ import type { NavGroup } from "@/constant/nav/types";
 
 export const everestTrekkingGroup: NavGroup = {
   label: "Everest Region",
-  href: "/everest-trekking",
+  href: "/region/everest-region",
   children: [
     {
       label: "Everest Base Camp Trek (12 Days)",

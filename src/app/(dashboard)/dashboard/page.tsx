@@ -54,7 +54,7 @@ export default function OverviewPage() {
                 </p>
               </div>
 
-              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-chart-2">
                 <stat.icon className="size-4" />
               </span>
             </CardContent>

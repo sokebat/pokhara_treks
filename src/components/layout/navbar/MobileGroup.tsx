@@ -22,7 +22,7 @@ const MobileGroup = ({ group, onNavigate }: MobileGroupProps) => {
           <Link
             href={group.href}
             onClick={onNavigate}
-            className="min-w-0 flex-1 text-left text-sm font-medium text-foreground hover:text-accent"
+            className="min-w-0 flex-1 text-left text-sm font-medium text-foreground hover:text-chart-2"
           >
             {group.label}
           </Link>
@@ -53,7 +53,7 @@ const MobileGroup = ({ group, onNavigate }: MobileGroupProps) => {
               <Link
                 href={leaf.href}
                 onClick={onNavigate}
-                className="block px-8 py-1.5 text-sm text-muted-foreground hover:text-accent"
+                className="block px-8 py-1.5 text-sm text-muted-foreground hover:text-chart-2"
               >
                 {leaf.label}
               </Link>

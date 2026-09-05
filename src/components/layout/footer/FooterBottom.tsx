@@ -12,7 +12,7 @@ const FooterBottom = () => {
   const year = new Date().getFullYear();
 
   return (
-    <div className="border-t border-primary-foreground/10">
+    <div className="border-t border-primary-foreground/10 bg-foreground/20">
       <Container>
         <div className="flex flex-col items-center justify-between gap-3 py-5 text-center text-xs text-primary-foreground/60 sm:flex-row sm:text-left">
           <p>
@@ -23,7 +23,7 @@ const FooterBottom = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="transition-colors hover:text-accent"
+                className="transition-colors hover:text-primary-foreground"
               >
                 {link.label}
               </Link>

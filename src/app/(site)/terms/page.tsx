@@ -7,11 +7,9 @@ import { termsContent } from "@/features/site/legal/constant/legal";
 import LegalToc from "@/features/site/legal/components/LegalToc";
 import LegalContent from "@/features/site/legal/components/LegalContent";
  
-export const metadata: Metadata = {
-  title: "Terms & Conditions",
-  description:
-    "The terms and conditions that apply to bookings and trips with Pokhara Treks & Expeditions.",
-};
+import { getPageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = getPageSeo("/terms");
 
 export default function TermsPage() {
   return (

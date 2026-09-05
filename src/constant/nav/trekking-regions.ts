@@ -3,7 +3,7 @@ import type { NavGroup } from "@/constant/nav/types";
 export const otherTrekkingGroups: NavGroup[] = [
   {
     label: "Manaslu Region",
-    href: "/manaslu-trekking",
+    href: "/region/manaslu-region",
     children: [
       { label: "8 Days Tsum Valley Trek", href: "/tsum-valley-trek" },
       {
@@ -20,7 +20,7 @@ export const otherTrekkingGroups: NavGroup[] = [
   },
   {
     label: "West Nepal",
-    href: "/west-nepal-trekking",
+    href: "/region/west-nepal",
     children: [
       {
         label: "Dhorpatan Trek with Gurja Khani",
@@ -36,7 +36,7 @@ export const otherTrekkingGroups: NavGroup[] = [
   },
   {
     label: "Langtang Region",
-    href: "/langtang-trekking",
+    href: "/region/langtang-region",
     children: [
       { label: "Gosaikunda Lake Trek", href: "/gosaikunda-trek-nepal" },
       { label: "Helambu Trek", href: "/helambu-trek" },
@@ -56,7 +56,7 @@ export const otherTrekkingGroups: NavGroup[] = [
   },
   {
     label: "Dhaulagiri Region",
-    href: "/dhaulagiri-trek",
+    href: "/region/dhaulagiri-region",
     children: [
       {
         label: "Dhaulagiri Circuit Trek - 16 Days",
@@ -66,7 +66,7 @@ export const otherTrekkingGroups: NavGroup[] = [
   },
   {
     label: "Tibet Region",
-    href: "/tibet-region",
+    href: "/region/tibet-region",
     children: [
       {
         label: "Kailash Mansarovar Yatra - 11 Days",
@@ -92,7 +92,7 @@ export const otherTrekkingGroups: NavGroup[] = [
   },
   {
     label: "Kanchenjunga Region",
-    href: "/kanchenjunga-region",
+    href: "/region/kanchenjunga-region",
     children: [
       {
         label: "Kanchenjunga Circuit Trek - 17 Days",

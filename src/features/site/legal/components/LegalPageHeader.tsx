@@ -12,7 +12,7 @@ const LegalPageHeader = ({
   effectiveDate,
 }: LegalPageHeaderProps) => (
   <div className="flex flex-col items-center text-center">
-    <span className="flex size-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+    <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-chart-2">
       <Icon className="size-6" />
     </span>
 

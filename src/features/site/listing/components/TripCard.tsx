@@ -13,7 +13,7 @@ type TripCardProps = {
   title: string;
   subtitle?: string;
   icon: IconType;
-  tone?: "primary" | "accent" | "chart-3";
+  tone?: "primary" | "accent" | "chart-2" | "chart-3";
   image: string;
   price?: number;
   ctaLabel: string;
@@ -37,7 +37,7 @@ const TripCard = ({
   facts,
   rating,
 }: TripCardProps) => (
-  <Card className="h-full gap-0 overflow-hidden rounded-md border-2 border-border bg-card py-0 shadow-none ring-0">
+  <Card className="h-full gap-0 overflow-hidden rounded-md border border-border bg-card py-0 shadow-none ring-0">
     <CardVisual
       icon={icon}
       tone={tone}
@@ -46,8 +46,8 @@ const TripCard = ({
       className="aspect-4/3"
     />
 
-    <CardContent className="flex flex-1 flex-col px-4 py-4 sm:py-5">
-      <h3 className="text-sm leading-snug font-semibold text-balance text-foreground sm:text-base">
+    <CardContent className="flex flex-1 flex-col px-4 py-4">
+      <h3 className="line-clamp-2 min-h-12 text-sm font-semibold leading-6 text-pretty text-foreground sm:text-base">
         {title}
         {subtitle && `, ${subtitle}`}
       </h3>
@@ -70,7 +70,7 @@ const TripCard = ({
         </div>
       )}
 
-      <ul className="mt-3 flex flex-1 flex-col gap-1.5 border-t-2 border-border pt-3 text-xs">
+      <ul className="mt-3 flex flex-col gap-1.5 border-t border-border pt-3 text-xs">
         {facts.map((fact) => (
           <li
             key={fact.label}
@@ -85,14 +85,13 @@ const TripCard = ({
         ))}
       </ul>
 
-      <div className="mt-4 flex flex-wrap items-end justify-between gap-3 border-t-2 border-border pt-4">
+      <div className="mt-auto flex flex-wrap items-end justify-between gap-3 border-t border-border pt-3">
         <ListingPrice price={price} />
 
         <Button
           nativeButton={false}
           render={<Link href={href} />}
           size="lg"
-          className="rounded-md"
         >
           {ctaLabel}
         </Button>

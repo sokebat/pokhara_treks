@@ -20,7 +20,7 @@ const LegalToc = ({ page }: LegalTocProps) => {
           <li key={heading}>
             <a
               href={`#${slugify(heading)}`}
-              className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-accent"
+              className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-chart-2"
             >
               {heading}
             </a>

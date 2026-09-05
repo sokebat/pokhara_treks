@@ -24,7 +24,7 @@ const ListingPage = ({
     <section className="bg-background pt-8 pb-8 sm:pt-12 sm:pb-10">
       <Container>
         <div>
-          <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+          <p className="text-sm font-semibold tracking-wide text-chart-2 uppercase">
             {eyebrow}
           </p>
           <h1 className="mt-2 text-2xl font-bold tracking-tight text-balance text-primary sm:text-3xl lg:text-4xl">

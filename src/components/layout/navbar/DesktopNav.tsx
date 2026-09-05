@@ -27,7 +27,7 @@ const DesktopNav = ({ className }: DesktopNavProps) => {
               <NavigationMenuItem key={item.label}>
                 <NavigationMenuLink
                   render={<Link href={item.href} />}
-                  className="inline-flex h-8 cursor-pointer items-center rounded-lg px-2 py-1.5 text-xs font-semibold tracking-wide uppercase hover:bg-muted hover:text-accent lg:h-9 lg:px-2.5 lg:text-sm"
+                  className="inline-flex h-8 cursor-pointer items-center rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide uppercase hover:bg-muted hover:text-chart-2 lg:h-9 lg:px-2.5 lg:text-sm"
                 >
                   {item.label}
                 </NavigationMenuLink>

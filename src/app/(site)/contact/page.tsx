@@ -12,22 +12,19 @@ import { Button } from "@/components/ui/button";
 import GoogleMap from "@/components/shared/GoogleMap";
 import ContactForm from "@/features/contact/components/ContactForm";
 import { siteInfo } from "@/constant/site";
+import { getPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Get in touch with Pokhara Treks & Expeditions to plan your next Nepal adventure.",
-};
+export const metadata: Metadata = getPageSeo("/contact");
 
 export default function ContactPage() {
   return (
     <div className="py-14 sm:py-20">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+          <p className="text-sm font-semibold tracking-wide text-chart-2 uppercase">
             Get in Touch
           </p>
-          <h1 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+          <h1 className="mt-2 text-2xl font-bold text-primary sm:text-3xl lg:text-4xl">
             Let&apos;s plan your Nepal adventure
           </h1>
           <p className="mt-4 text-muted-foreground">
@@ -38,13 +35,13 @@ export default function ContactPage() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_1.5fr]">
           <div className="flex flex-col gap-6">
-            <div className="rounded-xl border border-border bg-muted/30 p-6">
-              <h2 className="text-sm font-semibold tracking-wide text-accent uppercase">
+            <div className="rounded-md border border-border bg-muted/30 p-6">
+              <h2 className="text-sm font-semibold tracking-wide text-chart-2 uppercase">
                 Contact Details
               </h2>
               <ul className="mt-4 flex flex-col gap-4">
                 <li className="flex items-start gap-3">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-chart-2">
                     <TbPhoneCall className="size-4" />
                   </span>
                   <div>
@@ -53,14 +50,14 @@ export default function ContactPage() {
                     </p>
                     <a
                       href={`tel:${siteInfo.phone}`}
-                      className="text-sm text-muted-foreground transition-colors hover:text-accent"
+                      className="text-sm text-muted-foreground transition-colors hover:text-chart-2"
                     >
                       {siteInfo.phoneDisplay}
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-chart-2">
                     <TbMail className="size-4" />
                   </span>
                   <div>
@@ -69,14 +66,14 @@ export default function ContactPage() {
                     </p>
                     <a
                       href={`mailto:${siteInfo.email}`}
-                      className="text-sm text-muted-foreground transition-colors hover:text-accent"
+                      className="text-sm text-muted-foreground transition-colors hover:text-chart-2"
                     >
                       {siteInfo.email}
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-chart-2">
                     <TbMapPin className="size-4" />
                   </span>
                   <div>
@@ -87,7 +84,7 @@ export default function ContactPage() {
                       href={siteInfo.mapsLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-muted-foreground transition-colors hover:text-accent"
+                      className="text-sm text-muted-foreground transition-colors hover:text-chart-2"
                     >
                       Lakeside, Pokhara, Nepal
                     </a>
@@ -120,7 +117,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-xl bg-linear-to-br from-primary to-[oklch(0.33_0.07_253)] p-6 text-primary-foreground">
+            <div className="rounded-md bg-linear-to-br from-primary to-chart-4 p-6 text-primary-foreground">
               <span className="flex size-11 items-center justify-center rounded-full bg-whatsapp/15 text-whatsapp">
                 <FaWhatsapp className="size-5" />
               </span>
@@ -141,7 +138,7 @@ export default function ContactPage() {
                 }
                 variant="whatsapp"
                 size="lg"
-                className="mt-5 w-full rounded-md"
+                className="mt-5"
               >
                 <FaWhatsapp className="size-4" />
                 Message us on WhatsApp
@@ -149,7 +146,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-6 sm:p-8">
+          <div className="rounded-md border border-border bg-card p-6 sm:p-8">
             <ContactForm />
           </div>
         </div>

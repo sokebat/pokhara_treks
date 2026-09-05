@@ -12,14 +12,14 @@ const NavBar = () => {
     <>
       <div
         aria-hidden
-        className="h-1 w-full bg-linear-to-r from-accent via-primary to-accent"
+        className="h-[3px] w-full bg-linear-to-r from-primary via-accent to-primary"
       />
 
       <TopBar />
 
-      <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
+      <header className="sticky top-0 z-40 w-full border-b border-border bg-background/90 backdrop-blur supports-backdrop-filter:bg-background/80">
         <Container>
-          <div className="flex items-center gap-3 py-1 lg:gap-6">
+          <div className="flex items-center gap-3 py-2 lg:gap-6">
             <Logo priority className="h-12 w-auto" />
 
             <DesktopNav className="hidden xl:flex" />
@@ -28,7 +28,9 @@ const NavBar = () => {
               <Button
                 nativeButton={false}
                 render={<Link href="/customize-my-trip" />}
-                className="hidden h-8 rounded-md px-3 text-xs font-semibold sm:inline-flex lg:h-9 lg:px-4 lg:text-sm xl:h-10 xl:px-5"
+                variant="accent"
+                size="lg"
+                className="hidden sm:inline-flex"
               >
                 Plan Your Trip
               </Button>

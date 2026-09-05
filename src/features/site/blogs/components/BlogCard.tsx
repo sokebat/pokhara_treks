@@ -19,7 +19,7 @@ const BlogCard = ({ post, index, featured = false }: BlogCardProps) => (
     featured={featured}
     ctaLabel="Read article"
     meta={
-      <p className="mt-1.5 text-sm text-muted-foreground">
+      <p className="mt-2.5 text-sm leading-5 text-muted-foreground">
         {post.date} · {post.readTime}
       </p>
     }

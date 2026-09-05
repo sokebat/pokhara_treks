@@ -25,7 +25,7 @@ const SimplePanel = ({ items, allHref, allLabel }: SimplePanelProps) => {
           closeOnClick
           render={<Link href={allHref} />}
           className={cn(
-            "rounded-md px-2 py-1.5 text-sm font-semibold text-accent hover:bg-muted hover:text-accent",
+            "rounded-md px-2 py-1.5 text-sm font-semibold text-chart-2 hover:bg-muted hover:text-primary",
             wide && "col-span-2",
           )}
         >
@@ -37,7 +37,7 @@ const SimplePanel = ({ items, allHref, allLabel }: SimplePanelProps) => {
           key={leaf.href}
           closeOnClick
           render={<Link href={leaf.href} />}
-          className="rounded-md px-2 py-1.5 text-sm leading-snug text-foreground/80 hover:bg-muted hover:text-accent"
+          className="rounded-md px-2 py-1.5 text-sm leading-snug text-foreground/80 hover:bg-muted hover:text-chart-2"
         >
           {leaf.label}
         </NavigationMenuLink>

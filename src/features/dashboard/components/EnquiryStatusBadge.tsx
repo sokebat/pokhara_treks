@@ -2,9 +2,9 @@ import { cn } from "@/lib/utils";
 import type { EnquiryStatus } from "@/features/dashboard/constant/overview-data";
 
 const statusStyles: Record<EnquiryStatus, string> = {
-  New: "bg-accent/10 text-accent",
-  Contacted: "bg-chart-3/15 text-chart-3",
-  Confirmed: "bg-primary/10 text-primary",
+  New: "bg-secondary text-chart-2",
+  Contacted: "bg-secondary text-primary",
+  Confirmed: "bg-success/10 text-success",
 };
 
 const EnquiryStatusBadge = ({ status }: { status: EnquiryStatus }) => (

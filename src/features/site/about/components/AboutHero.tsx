@@ -43,7 +43,7 @@ const AboutHeroSection = () => {
       <Container>
         <div className="grid items-stretch gap-5 lg:grid-cols-2 lg:gap-6">
           <div>
-            <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+            <p className="text-sm font-semibold tracking-wide text-chart-2 uppercase">
               Our Story
             </p>
 
@@ -87,7 +87,7 @@ const AboutHeroSection = () => {
             </div>
           </div>
 
-          <div className="relative min-h-56 overflow-hidden rounded-md border-2 border-border sm:min-h-72">
+          <div className="relative min-h-56 overflow-hidden rounded-md border border-border sm:min-h-72">
             <Image
               src="/images/collage-trekking.jpg"
               alt="A trekking group looking out over the Himalayan mountains of Nepal"
@@ -99,7 +99,7 @@ const AboutHeroSection = () => {
 
             <div
               aria-hidden
-              className="absolute inset-0 bg-linear-to-t from-primary via-primary/35 to-transparent"
+              className="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/25 to-transparent"
             />
 
             <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
@@ -133,14 +133,14 @@ const AboutHeroSection = () => {
           {stats.map(({ value, label, description, icon: Icon }) => (
             <div
               key={label}
-              className="rounded-md border-2 border-border bg-card p-3 sm:p-5"
+              className="rounded-md border border-border bg-card p-3 sm:p-5"
             >
               <div className="flex items-start justify-between gap-3">
                 <span className="text-xl font-bold tracking-tight text-primary sm:text-2xl lg:text-3xl">
                   {value}
                 </span>
                 <Icon
-                  className="size-5 shrink-0 text-accent"
+                  className="size-5 shrink-0 text-chart-2"
                   strokeWidth={1.75}
                 />
               </div>

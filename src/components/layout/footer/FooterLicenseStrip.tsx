@@ -4,7 +4,7 @@ const FooterLicenseStrip = () => {
   return (
     <div className="rounded-md border border-primary-foreground/15 bg-primary-foreground/5 px-5 py-4">
       <div className="flex flex-wrap items-baseline gap-x-8 gap-y-2 text-xs text-primary-foreground/70">
-        <span className="text-xs font-semibold tracking-wide text-accent uppercase">
+        <span className="text-xs font-semibold tracking-wide text-primary-foreground uppercase">
           Licensed and Registered
         </span>
         <span>

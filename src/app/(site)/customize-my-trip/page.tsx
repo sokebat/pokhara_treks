@@ -7,17 +7,14 @@ import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
 import CustomizeTripForm from "@/features/customize-trip/components/CustomizeTripForm";
 import { siteInfo } from "@/constant/site";
+import { getPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Customize My Trip",
-  description:
-    "Tell us your dates, group size, and interests and our local trip planners will build a custom Nepal itinerary around them.",
-};
+export const metadata: Metadata = getPageSeo("/customize-my-trip");
 
 const colorVariants = [
-  { chip: "bg-accent/10 text-accent", dot: "bg-accent" },
+  { chip: "bg-secondary text-chart-2", dot: "bg-chart-2" },
   { chip: "bg-primary text-primary-foreground", dot: "bg-primary" },
-  { chip: "bg-secondary text-primary", dot: "bg-[oklch(0.55_0.09_245)]" },
+  { chip: "bg-secondary text-primary", dot: "bg-accent" },
 ];
 
 const trustPoints = [
@@ -86,7 +83,7 @@ export default function CustomizeMyTripPage() {
 
         <div
           aria-hidden
-          className="absolute top-10 left-1/2 size-72 -translate-x-1/2 rounded-full bg-accent/20 blur-3xl"
+          className="absolute top-10 left-1/2 size-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
         />
 
         <Container>
@@ -144,7 +141,7 @@ export default function CustomizeMyTripPage() {
               return (
                 <div
                   key={step.title}
-                  className="group relative flex flex-col gap-3 rounded-md border border-border bg-card p-6 transition-shadow hover:shadow-md"
+                  className="group relative flex flex-col gap-3 rounded-md border border-border bg-card p-6"
                 >
                   <span
                     aria-hidden
@@ -191,13 +188,13 @@ export default function CustomizeMyTripPage() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent"
+                className="absolute inset-0 bg-linear-to-t from-primary/60 via-transparent to-transparent"
               />
-              <div className="absolute right-4 bottom-4 left-4 flex items-start gap-3 rounded-md border border-white/15 bg-black/40 p-4 backdrop-blur-md">
-                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent/25">
-                  <TbHeartHandshake className="size-4 text-accent" />
+              <div className="absolute right-4 bottom-4 left-4 flex items-start gap-3 rounded-md border border-border bg-card/95 p-4">
+                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent">
+                  <TbHeartHandshake className="size-4 text-accent-foreground" />
                 </span>
-                <p className="text-sm leading-snug text-white">
+                <p className="text-sm leading-snug text-foreground">
                   Guided and planned by Pokhara-trained women, start to
                   finish.
                 </p>
@@ -227,7 +224,7 @@ export default function CustomizeMyTripPage() {
               })}
             </div>
 
-            <div className="rounded-md bg-linear-to-br from-primary to-[oklch(0.33_0.07_253)] p-6 text-primary-foreground">
+            <div className="rounded-md bg-linear-to-br from-primary to-chart-4 p-6 text-primary-foreground">
               <div className="flex items-start gap-3">
                 <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-whatsapp/15 text-whatsapp">
                   <FaWhatsapp className="size-5" />
@@ -252,7 +249,7 @@ export default function CustomizeMyTripPage() {
                 }
                 variant="whatsapp"
                 size="xl"
-                className="mt-5 w-full rounded-md"
+                className="mt-5"
               >
                 <FaWhatsapp className="size-4" />
                 Message us on WhatsApp

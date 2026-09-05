@@ -8,7 +8,7 @@ import { TripCard, cardGridClass } from "@/features/site/listing";
 import { shortTreks } from "@/features/site/home/constant/treks";
 import { cn } from "@/lib/utils";
 
-const tones = ["primary", "accent", "chart-3"] as const;
+const tones = ["primary", "accent", "chart-2"] as const;
 
 const ShortTreksSection = () => {
   return (

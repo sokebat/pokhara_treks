@@ -22,28 +22,28 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
     columns === 3 ? "w-[68rem]" : columns === 2 ? "w-[46rem]" : "w-[32rem]";
 
   return (
-    <div className={cn("flex max-w-[92vw]", panelWidth)}>
+    <div
+      className={cn("flex max-w-[92vw]", panelWidth)}
+      onClick={(event) => event.stopPropagation()}
+    >
       <ul className="flex w-60 shrink-0 flex-col gap-0.5 border-r border-border bg-muted/30 p-2">
-        {groups.map((group, index) => (
-          <li key={group.label}>
-            <button
-              type="button"
-              onMouseEnter={() => setActive(index)}
-              onFocus={() => setActive(index)}
-              className={cn(
-                "flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors",
-                active === index
-                  ? "bg-accent/10 text-accent"
-                  : "text-foreground hover:bg-background",
-              )}
-            >
+        {groups.map((group, index) => {
+          const isRegion = Boolean(group.href?.startsWith("/region/"));
+          const itemClassName = cn(
+            "flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors",
+            active === index
+              ? "bg-accent text-accent-foreground"
+              : "text-foreground hover:bg-background",
+          );
+          const itemContent = (
+            <>
               <span>{group.label}</span>
               <span className="flex shrink-0 items-center gap-1.5">
                 <span
                   className={cn(
                     "text-xs tabular-nums",
                     active === index
-                      ? "text-accent/70"
+                      ? "text-accent-foreground/70"
                       : "text-muted-foreground",
                   )}
                 >
@@ -51,12 +51,47 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
                 </span>
                 <TbChevronRight className="size-3.5 text-muted-foreground" />
               </span>
-            </button>
-          </li>
-        ))}
+            </>
+          );
+
+          return (
+            <li key={group.label}>
+              {isRegion && group.href ? (
+                <Link
+                  href={group.href}
+                  onMouseEnter={() => setActive(index)}
+                  onFocus={() => setActive(index)}
+                  onClick={(event) => event.stopPropagation()}
+                  className={itemClassName}
+                >
+                  {itemContent}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onMouseEnter={() => setActive(index)}
+                  onFocus={() => setActive(index)}
+                  className={itemClassName}
+                >
+                  {itemContent}
+                </button>
+              )}
+            </li>
+          );
+        })}
       </ul>
 
       <div className="max-h-[75vh] min-w-0 flex-1 overflow-y-auto p-5">
+        {current.href?.startsWith("/region/") && (
+          <Link
+            href={current.href}
+            onClick={(event) => event.stopPropagation()}
+            className="mb-3 flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm font-semibold text-foreground hover:bg-muted hover:text-chart-2"
+          >
+            <span>About {current.label}</span>
+            <TbChevronRight className="size-3.5" />
+          </Link>
+        )}
         <div
           className={cn(
             "grid gap-x-6 gap-y-1",
@@ -72,7 +107,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
               key={leaf.href}
               closeOnClick
               render={<Link href={leaf.href} />}
-              className="rounded-md px-2 py-1.5 text-sm leading-snug text-foreground/80 hover:bg-muted hover:text-accent"
+              className="rounded-md px-2 py-1.5 text-sm leading-snug text-foreground/80 hover:bg-muted hover:text-chart-2"
             >
               {leaf.label}
             </NavigationMenuLink>

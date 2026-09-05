@@ -13,11 +13,9 @@ import {
   FaqSection,
   FindUsSection,
 } from "@/features/site/sections";
+import { getPageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  description:
-    "Book treks, peak climbs and heli tours in Nepal with a women-led, locally owned team based in Lakeside, Pokhara — licensed guides, small groups, book direct.",
-};
+export const metadata: Metadata = getPageSeo("/");
 
 export default function Home() {
   return (

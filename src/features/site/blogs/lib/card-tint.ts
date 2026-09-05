@@ -3,7 +3,7 @@ export const cardTint = [
   { tone: "primary", tag: "bg-primary/10 text-primary", link: "text-primary" },
   {
     tone: "chart-3",
-    tag: "bg-chart-3/15 text-chart-3",
-    link: "text-chart-3",
+    tag: "bg-secondary text-primary",
+    link: "text-primary",
   },
 ] as const;
