@@ -38,8 +38,6 @@
 
   --color-whatsapp: var(--whatsapp);
 
-  --color-success: var(--success);
-
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
 
@@ -62,14 +60,6 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-
-  /* Fluid type — scales on small screens without shrinking body/input text */
-  --text-lg: clamp(1.05rem, 0.95rem + 0.4vw, 1.125rem);
-  --text-xl: clamp(1.125rem, 1rem + 0.55vw, 1.25rem);
-  --text-2xl: clamp(1.25rem, 1.05rem + 0.9vw, 1.5rem);
-  --text-3xl: clamp(1.375rem, 1.05rem + 1.5vw, 1.875rem);
-  --text-4xl: clamp(1.5rem, 1.1rem + 2.1vw, 2.25rem);
-  --text-5xl: clamp(1.75rem, 1.15rem + 3vw, 3rem);
 }
 
 /* ========================================
@@ -78,69 +68,65 @@
    ======================================== */
 
 :root {
-  /* Palette — dark teals on cream. Mint is a whisper only. */
-  --background: #F2E9D8;
-  --foreground: #1C1F2A;
+  --background: oklch(0.979 0 0);
+  --foreground: oklch(0.24 0.076 257);
 
-  --card: #F2E9D8;
-  --card-foreground: #1C1F2A;
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.076 257);
 
-  --popover: #F2E9D8;
-  --popover-foreground: #1C1F2A;
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.076 257);
 
-  /* Primary — deep teal */
-  --primary: #0B5D67;
-  --primary-foreground: #F2E9D8;
+  /* Primary — Deep Himalayan Navy */
+  --primary: oklch(0.24 0.076 257);
+  --primary-foreground: oklch(1 0 0);
 
-  /* Secondary — cream with a hint of deep teal, not mint */
-  --secondary: color-mix(in oklab, #F2E9D8 92%, #0B5D67 8%);
-  --secondary-foreground: #1C1F2A;
+  /* Secondary — Soft Mountain Blue */
+  --secondary: oklch(0.952 0.009 243);
+  --secondary-foreground: oklch(0.24 0.076 257);
 
-  /* Muted — slightly cooler cream */
-  --muted: color-mix(in oklab, #F2E9D8 94%, #0B5D67 6%);
-  --muted-foreground: color-mix(in oklab, #1C1F2A 72%, #0B5D67 28%);
+  /* Muted — Light Blue Gray */
+  --muted: oklch(0.959 0.007 248);
+  --muted-foreground: oklch(0.521 0.062 245);
 
-  /* Accent — mid teal, the action colour on light pages */
-  --accent: #0F8A8B;
-  --accent-foreground: #F2E9D8;
+  /* Accent — Expedition Orange */
+  --accent: oklch(0.69 0.19 46);
+  --accent-foreground: oklch(1 0 0);
 
-  /* Destructive — error only */
-  --destructive: oklch(0.55 0.19 25);
+  /* Destructive */
+  --destructive: oklch(0.529 0.182 26);
 
-  /* Success — status only */
-  --success: #2f9e6b;
-
-  /* WhatsApp brand green — WhatsApp CTAs only */
+  /* WhatsApp brand green — used for WhatsApp CTAs only */
   --whatsapp: #25d366;
 
   /* Borders & Inputs */
-  --border: color-mix(in oklab, #0B5D67 14%, #F2E9D8 86%);
-  --input: color-mix(in oklab, #0B5D67 14%, #F2E9D8 86%);
+  --border: oklch(0.9 0.01 245);
+  --input: oklch(0.9 0.01 245);
 
   /* Focus Ring */
-  --ring: #0F8A8B;
+  --ring: oklch(0.69 0.19 46);
 
   /* Charts */
-  --chart-1: #0B5D67;
-  --chart-2: #0F8A8B;
-  --chart-3: #8FD6C8;
-  --chart-4: #1C1F2A;
-  --chart-5: #F2E9D8;
+  --chart-1: oklch(0.24 0.076 257);
+  --chart-2: oklch(0.69 0.19 46);
+  --chart-3: oklch(0.521 0.062 245);
+  --chart-4: oklch(0.33 0.07 253);
+  --chart-5: oklch(0.8 0.055 245);
 
   --radius: 0.625rem;
 
   /* Sidebar */
-  --sidebar: #F2E9D8;
-  --sidebar-foreground: #1C1F2A;
+  --sidebar: oklch(0.979 0 0);
+  --sidebar-foreground: oklch(0.24 0.076 257);
 
-  --sidebar-primary: #0B5D67;
-  --sidebar-primary-foreground: #F2E9D8;
+  --sidebar-primary: oklch(0.24 0.076 257);
+  --sidebar-primary-foreground: oklch(1 0 0);
 
-  --sidebar-accent: color-mix(in oklab, #F2E9D8 92%, #0B5D67 8%);
-  --sidebar-accent-foreground: #1C1F2A;
+  --sidebar-accent: oklch(0.952 0.009 243);
+  --sidebar-accent-foreground: oklch(0.24 0.076 257);
 
-  --sidebar-border: color-mix(in oklab, #0B5D67 14%, #F2E9D8 86%);
-  --sidebar-ring: #0F8A8B;
+  --sidebar-border: oklch(0.9 0.01 245);
+  --sidebar-ring: oklch(0.69 0.19 46);
 }
 
 /* ========================================
@@ -167,6 +153,6 @@
   h4,
   h5,
   h6 {
-    @apply font-heading tracking-tight text-balance text-primary;
+    @apply font-heading tracking-tight text-balance;
   }
 }

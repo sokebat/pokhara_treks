@@ -15,7 +15,6 @@ const trekkingLinks = [
   { label: "Short Treks from Pokhara", href: "/short-treks-from-pokhara" },
   { label: "Browse by Difficulty", href: "/browse-treks-by-difficulty" },
   { label: "Women Only Treks", href: "/women-only-treks" },
-
 ];
 
 const alsoWithUsLinks = [
@@ -48,7 +47,7 @@ const travelInfoLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-white">
+    <footer className="bg-foreground text-primary-foreground">
       <Container>
         <FooterContactStrip />
 
@@ -63,7 +62,7 @@ const Footer = () => {
           />
         </div>
 
-        <div className="pb-14">
+        <div className="pb-8">
           <FooterLicenseStrip />
         </div>
       </Container>

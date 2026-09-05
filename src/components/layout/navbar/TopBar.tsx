@@ -5,7 +5,7 @@ import { siteInfo } from "@/constant/site";
 
 const TopBar = () => {
   return (
-    <div className="hidden bg-primary text-primary-foreground sm:block">
+    <div className="hidden bg-foreground text-primary-foreground sm:block">
       <Container>
         <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 text-xs">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">

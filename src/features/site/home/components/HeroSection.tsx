@@ -15,7 +15,7 @@ const trustPoints = [
 
 const HeroSection = () => {
   return (
-    <section className="relative isolate min-h-[32rem] overflow-hidden bg-primary sm:min-h-160 lg:min-h-175">
+    <section className="relative isolate min-h-[32rem] overflow-hidden bg-foreground sm:min-h-160 lg:min-h-175">
       {/* Background image */}
       <Image
         src="/images/hero-women-trekking.jpg"
@@ -27,11 +27,11 @@ const HeroSection = () => {
       />
 
       {/* Background overlays — keep the photo’s colour, darken only for type */}
-      <div aria-hidden className="absolute inset-0 bg-primary/25" />
+      <div aria-hidden className="absolute inset-0 bg-foreground/20" />
 
       <div
         aria-hidden
-        className="absolute inset-0 bg-linear-to-r from-primary/90 via-primary/55 to-primary/10"
+        className="absolute inset-0 bg-linear-to-r from-foreground/80 via-foreground/45 to-transparent"
       />
 
       <Container>
@@ -39,9 +39,9 @@ const HeroSection = () => {
           {/* Left content */}
           <div className="flex w-full flex-col items-start">
             {/* Eyebrow */}
-            <div className="inline-flex max-w-full items-center gap-3 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 py-1.5 pr-5 pl-1.5 backdrop-blur-md">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary-foreground">
-                <TbShieldCheck className="size-4 text-primary" />
+            <div className="inline-flex max-w-full items-center gap-3 rounded-md border border-primary-foreground/20 bg-foreground/40 py-1.5 pr-5 pl-1.5">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary">
+                <TbShieldCheck className="size-4 text-primary-foreground" />
               </span>
 
               <span className="text-left">
@@ -57,8 +57,7 @@ const HeroSection = () => {
 
             {/* Heading */}
             <h1 className="mt-7 w-full text-2xl leading-[1.15] font-bold tracking-tight text-primary-foreground sm:text-4xl sm:leading-[1.1] lg:text-5xl xl:text-[3.8rem] xl:leading-[1.08]">
-              The Himalaya, led by the{" "}
-              <span className="text-accent">women</span> who know her best.
+              The Himalaya, led by the women who know her best.
             </h1>
 
             {/* Description */}
@@ -73,7 +72,7 @@ const HeroSection = () => {
               <Button
                 nativeButton={false}
                 render={<Link href="/customize-my-trip" />}
-                variant="accent"
+                variant="default"
                 size="xl"
               >
                 Plan Your Trip
@@ -84,7 +83,8 @@ const HeroSection = () => {
                 nativeButton={false}
                 render={<Link href="/trip" />}
                 size="xl"
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                variant="outline"
+                className="border-primary-foreground/35 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-foreground"
               >
                 Explore Treks
                 <TbArrowRight className="size-4" />
@@ -96,9 +96,9 @@ const HeroSection = () => {
               {trustPoints.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3.5 py-2 backdrop-blur-md"
+                  className="inline-flex items-center gap-2 rounded-md border border-primary-foreground/20 px-3 py-1.5"
                 >
-                  <Icon className="size-3.5 shrink-0 text-accent" />
+                  <Icon className="size-3.5 shrink-0 text-primary-foreground" />
 
                   <span className="text-xs font-medium whitespace-nowrap text-primary-foreground/90">
                     {label}
@@ -129,15 +129,15 @@ const HeroSection = () => {
               {/* Image gradient */}
               <div
                 aria-hidden
-                className="absolute inset-0 bg-linear-to-t from-primary/50 via-transparent to-transparent"
+                className="absolute inset-0 bg-linear-to-t from-foreground/50 via-transparent to-transparent"
               />
             </div>
 
             {/* Floating information card */}
             <div className="absolute right-5 bottom-5 w-64 rounded-md border border-border bg-background/95 p-4 backdrop-blur-md">
               <div className="flex items-start gap-3">
-                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent">
-                  <TbHeartHandshake className="size-4 text-accent-foreground" />
+                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md bg-primary">
+                  <TbHeartHandshake className="size-4 text-primary-foreground" />
                 </span>
 
                 <div>

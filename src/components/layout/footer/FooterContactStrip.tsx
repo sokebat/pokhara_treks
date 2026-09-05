@@ -1,102 +1,86 @@
-import { TbArrowUpRight, TbClock, TbMail, TbMapPin, TbPhoneCall } from "react-icons/tb";
+import type { ReactNode } from "react";
+import {
+  TbArrowUpRight,
+  TbClock,
+  TbMail,
+  TbMapPin,
+  TbPhoneCall,
+} from "react-icons/tb";
 import Link from "next/link";
 
 import { siteInfo } from "@/constant/site";
 
+type ContactItem = {
+  icon: typeof TbMapPin;
+  label: string;
+  value: ReactNode;
+  note: ReactNode;
+};
+
+const items: ContactItem[] = [
+  {
+    icon: TbMapPin,
+    label: "Our Office",
+    value: siteInfo.address,
+    note: (
+      <Link
+        href={siteInfo.mapsLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 font-medium text-primary-foreground/80 hover:text-primary-foreground"
+      >
+        Get Directions
+        <TbArrowUpRight className="size-3.5" />
+      </Link>
+    ),
+  },
+  {
+    icon: TbPhoneCall,
+    label: "Call or WhatsApp",
+    value: (
+      <a href={`tel:${siteInfo.phone}`} className="hover:text-primary-foreground">
+        {siteInfo.phoneDisplay}
+      </a>
+    ),
+    note: "Answered by the office, not a call centre",
+  },
+  {
+    icon: TbMail,
+    label: "Email Us",
+    value: (
+      <a href={`mailto:${siteInfo.email}`} className="hover:text-primary-foreground">
+        {siteInfo.email}
+      </a>
+    ),
+    note: "We reply within one working day",
+  },
+  {
+    icon: TbClock,
+    label: "Office Hours",
+    value: "7:00 AM – 8:00 PM, seven days",
+    note: "Reachable 24/7 while you're on trek",
+  },
+];
+
 const FooterContactStrip = () => {
-  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    siteInfo.address,
-  )}`;
-
   return (
-    <div className="grid grid-cols-1 gap-4 border-b border-primary-foreground/10 pt-12 pb-10 sm:grid-cols-2 sm:pt-14 lg:grid-cols-4">
-      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-primary-foreground/25 hover:bg-primary-foreground/10">
-        <div className="flex items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary-foreground/15">
-            <TbMapPin className="size-4.5 text-primary-foreground" />
-          </span>
-          <div>
+    <div className="grid grid-cols-1 gap-8 border-b border-primary-foreground/12 pt-12 pb-10 sm:grid-cols-2 sm:pt-14 lg:grid-cols-4 lg:gap-6">
+      {items.map(({ icon: Icon, label, value, note }) => (
+        <div key={label}>
+          <div className="flex items-center gap-2.5">
+            <Icon className="size-4 shrink-0 text-primary" />
             <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
-              Our Office
-            </p>
-            <p className="mt-0.5 text-sm leading-relaxed text-primary-foreground/85">
-              {siteInfo.address}
+              {label}
             </p>
           </div>
+          <p className="mt-2 text-sm font-semibold text-primary-foreground">
+            {value}
+          </p>
+          <p className="mt-1.5 text-xs leading-relaxed text-primary-foreground/55">
+            {note}
+          </p>
         </div>
-        <Link
-          href={mapsHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary-foreground hover:text-primary-foreground/80"
-        >
-          Get Directions
-          <TbArrowUpRight className="size-3.5" />
-        </Link>
-      </div>
-
-      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-primary-foreground/25 hover:bg-primary-foreground/10">
-        <div className="flex items-center gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary-foreground/15">
-            <TbPhoneCall className="size-4.5 text-primary-foreground" />
-          </span>
-          <div>
-            <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
-              Call or WhatsApp
-            </p>
-            <a
-              href={`tel:${siteInfo.phone}`}
-              className="mt-0.5 block text-sm font-semibold text-primary-foreground hover:text-primary-foreground"
-            >
-              {siteInfo.phoneDisplay}
-            </a>
-          </div>
-        </div>
-        <p className="mt-3 text-sm leading-relaxed text-primary-foreground/60">
-          Answered by the office, not a call centre
-        </p>
-      </div>
-
-      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-primary-foreground/25 hover:bg-primary-foreground/10">
-        <div className="flex items-center gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary-foreground/15">
-            <TbMail className="size-4.5 text-primary-foreground" />
-          </span>
-          <div>
-            <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
-              Email Us
-            </p>
-            <a
-              href={`mailto:${siteInfo.email}`}
-              className="mt-0.5 block text-sm font-semibold text-primary-foreground hover:text-primary-foreground"
-            >
-              {siteInfo.email}
-            </a>
-          </div>
-        </div>
-        <p className="mt-3 text-sm leading-relaxed text-primary-foreground/60">
-          We reply within one working day
-        </p>
-      </div>
-
-      <div className="rounded-md border border-primary-foreground/10 bg-primary-foreground/5 p-5 transition-colors hover:border-primary-foreground/25 hover:bg-primary-foreground/10">
-        <div className="flex items-center gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-primary-foreground/15">
-            <TbClock className="size-4.5 text-primary-foreground" />
-          </span>
-          <div>
-            <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
-              Office Hours
-            </p>
-            <p className="mt-0.5 text-sm font-semibold text-primary-foreground">
-              7:00 AM – 8:00 PM, seven days
-            </p>
-          </div>
-        </div>
-        <p className="mt-3 text-sm leading-relaxed text-primary-foreground/60">
-          Reachable 24/7 while you&apos;re on trek
-        </p>
-      </div>
+      ))}
     </div>
   );
 };

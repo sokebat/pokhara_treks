@@ -8,8 +8,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-accent",
-        accent: "bg-accent text-accent-foreground hover:bg-primary",
+        default:
+          "bg-primary text-primary-foreground hover:bg-[color-mix(in_oklab,var(--primary)_88%,var(--foreground)_12%)]",
+        accent:
+          "bg-primary text-primary-foreground hover:bg-[color-mix(in_oklab,var(--primary)_88%,var(--foreground)_12%)]",
         whatsapp: "bg-whatsapp text-white hover:bg-whatsapp/85",
 
         outline:

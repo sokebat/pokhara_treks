@@ -10,14 +10,9 @@ import TopBar from "./TopBar";
 const NavBar = () => {
   return (
     <>
-      <div
-        aria-hidden
-        className="h-[3px] w-full bg-linear-to-r from-primary via-accent to-primary"
-      />
-
       <TopBar />
 
-      <header className="sticky top-0 z-40 w-full border-b border-border bg-background/90 backdrop-blur supports-backdrop-filter:bg-background/80">
+      <header className="sticky top-0 z-40 w-full border-b border-border bg-background">
         <Container>
           <div className="flex items-center gap-3 py-2 lg:gap-6">
             <Logo priority className="h-12 w-auto" />
@@ -28,7 +23,6 @@ const NavBar = () => {
               <Button
                 nativeButton={false}
                 render={<Link href="/customize-my-trip" />}
-                variant="accent"
                 size="lg"
                 className="hidden sm:inline-flex"
               >

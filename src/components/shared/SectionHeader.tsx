@@ -24,9 +24,9 @@ const SectionHeader = ({
     <div className="min-w-0">
       <span
         aria-hidden
-        className="mb-3 block h-1 w-9 rounded-full bg-accent"
+        className="mb-3 block h-0.5 w-8 rounded-md bg-primary"
       />
-      <h2 className="text-2xl font-bold text-balance text-primary sm:text-3xl lg:text-4xl">
+      <h2 className="text-2xl font-bold text-balance text-foreground sm:text-3xl lg:text-4xl">
         {title}
       </h2>
 

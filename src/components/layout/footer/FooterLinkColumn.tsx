@@ -21,7 +21,7 @@ const FooterLinkColumn = ({ title, links }: FooterLinkColumnProps) => {
           <li key={link.label}>
             <Link
               href={link.href}
-              className="text-sm text-primary-foreground/70 transition-colors hover:text-accent"
+              className="text-sm text-primary-foreground/75 transition-colors hover:text-primary-foreground"
             >
               {link.label}
             </Link>

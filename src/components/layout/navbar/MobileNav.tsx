@@ -42,7 +42,6 @@ const MobileNav = () => {
           <Button
             nativeButton={false}
             render={<Link href="/customize-my-trip" onClick={close} />}
-            variant="accent"
             size="lg"
             className="w-full"
           >
