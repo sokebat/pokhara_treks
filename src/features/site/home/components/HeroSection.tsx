@@ -23,7 +23,7 @@ const routes = [
 const HeroSection = () => {
   return (
     <section className="bg-secondary">
-      <div className="relative isolate min-h-[30rem] overflow-hidden bg-foreground sm:min-h-[36rem] lg:min-h-[42rem]">
+      <div className="relative isolate flex h-[70svh] min-h-[36rem] items-center justify-center overflow-hidden bg-foreground px-4 pb-36 md:px-6 sm:pb-40 lg:min-h-[42rem]">
         <Image
           src={WOMEN_TREK_PHOTO}
           alt="A woman trekker with a backpack looking out over a snow-capped Himalayan mountain range"
@@ -32,81 +32,61 @@ const HeroSection = () => {
           sizes="100vw"
           className="object-cover object-[68%_center]"
         />
-
-        <div aria-hidden className="absolute inset-0 bg-footer/35" />
         <div
           aria-hidden
-          className="absolute inset-0 bg-linear-to-t from-footer-deep from-[8%] via-footer/75 via-[42%] to-footer/15"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(ellipse_75%_60%_at_50%_40%,color-mix(in_srgb,var(--footer-deep)_70%,transparent)_0%,transparent_68%)]"
+          className="absolute inset-0 bg-linear-to-t from-footer-deep from-[10%] via-footer/70 via-45% to-footer/25"
         />
 
-        <Container>
-          <div className="relative flex min-h-[30rem] items-center justify-center py-14 pb-36 text-center sm:min-h-[36rem] sm:py-16 sm:pb-44 lg:min-h-[42rem] lg:py-20 lg:pb-48">
-            <div className="w-full max-w-3xl -translate-y-6 sm:-translate-y-8 lg:-translate-y-10">
-              <p className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground/40 bg-foreground/25 px-3.5 py-1 text-xs font-semibold tracking-[0.18em] text-primary-foreground uppercase [text-shadow:0_1px_12px_rgb(0_0_0_/_0.4)]">
-                Women-led · Pokhara, Nepal
-              </p>
+        <div className="relative z-10 w-full max-w-3xl text-center">
+          <p className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground/40 bg-foreground/25 px-3.5 py-1 text-xs font-semibold tracking-[0.18em] text-primary-foreground uppercase [text-shadow:0_1px_12px_rgb(0_0_0_/_0.4)]">
+            Women-led · Pokhara, Nepal
+          </p>
 
-              <h1 className="mt-5 text-3xl leading-[1.15] font-bold tracking-tight text-primary-foreground [text-shadow:0_2px_20px_rgb(0_0_0_/_0.5)] sm:text-4xl sm:leading-[1.12] lg:text-5xl lg:leading-[1.1]">
-                The Himalaya, led by the{" "}
-                <span className="relative inline-block whitespace-nowrap px-1">
-                  <span
-                    aria-hidden
-                    className="absolute inset-x-0 bottom-[0.08em] h-[0.34em] bg-sky"
-                  />
-                  <span className="relative">women</span>
-                </span>{" "}
-                who know her best.
-              </h1>
+          <h1 className="mt-5 text-3xl leading-[1.15] font-bold tracking-tight text-primary-foreground [text-shadow:0_2px_20px_rgb(0_0_0_/_0.5)] sm:text-4xl sm:leading-[1.12] lg:text-5xl lg:leading-[1.1]">
+            The Himalaya, led by the women who know her best.
+          </h1>
 
-              <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-primary-foreground [text-shadow:0_2px_16px_rgb(0_0_0_/_0.5)] sm:text-lg sm:leading-8">
-                {siteInfo.name} puts trained local women at the front of every
-                journey — from Everest&apos;s high passes to Annapurna&apos;s
-                sanctuary trails.
-              </p>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-primary-foreground [text-shadow:0_2px_16px_rgb(0_0_0_/_0.5)] sm:text-lg sm:leading-8">
+            {siteInfo.name} puts trained local women at the front of every
+            journey — from Everest&apos;s high passes to Annapurna&apos;s
+            sanctuary trails.
+          </p>
 
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-                <Button
-                  nativeButton={false}
-                  render={<Link href="/customize-my-trip" />}
-                  size="xl"
-                  className="bg-card text-foreground shadow-none hover:bg-card/90"
-                >
-                  Plan Your Trip
-                  <TbArrowRight className="size-4" />
-                </Button>
+          <div className="mt-8 flex flex-col items-center justify-center gap-2.5 sm:flex-row sm:flex-wrap">
+            <Button
+              nativeButton={false}
+              render={<Link href="/customize-my-trip" />}
+              size="xl"
+            >
+              Plan Your Trip
+              <TbArrowRight className="size-4" />
+            </Button>
 
-                <Button
-                  nativeButton={false}
-                  render={<Link href="/trip" />}
-                  size="xl"
-                  variant="outline"
-                  className="border-primary-foreground/70 bg-foreground/15 text-primary-foreground hover:bg-primary-foreground hover:text-foreground"
-                >
-                  Explore Treks
-                  <TbArrowRight className="size-4" />
-                </Button>
-              </div>
-
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-primary-foreground [text-shadow:0_1px_12px_rgb(0_0_0_/_0.45)]">
-                <span>Licensed women guides</span>
-                <span
-                  aria-hidden
-                  className="hidden size-1.5 rounded-full bg-sky sm:block"
-                />
-                <span>Groups of eight</span>
-                <span
-                  aria-hidden
-                  className="hidden size-1.5 rounded-full bg-sky sm:block"
-                />
-                <span>Based in Lakeside</span>
-              </div>
-            </div>
+            <Button
+              nativeButton={false}
+              render={<Link href="/trip" />}
+              variant="accent"
+              size="xl"
+            >
+              Explore Treks
+              <TbArrowRight className="size-4" />
+            </Button>
           </div>
-        </Container>
+
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-primary-foreground [text-shadow:0_1px_12px_rgb(0_0_0_/_0.45)]">
+            <span>Licensed women guides</span>
+            <span
+              aria-hidden
+              className="hidden size-1.5 rounded-full bg-sky sm:block"
+            />
+            <span>Groups of eight</span>
+            <span
+              aria-hidden
+              className="hidden size-1.5 rounded-full bg-sky sm:block"
+            />
+            <span>Based in Lakeside</span>
+          </div>
+        </div>
       </div>
 
       <Container>
@@ -121,13 +101,7 @@ const HeroSection = () => {
                   sizes="(min-width: 1024px) 22rem, 100vw"
                   className="object-cover"
                 />
-
-                <div
-                  aria-hidden
-                  className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-foreground/70 to-transparent"
-                />
-
-                <p className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-md bg-foreground/80 px-3 py-1.5 text-sm font-semibold text-primary-foreground">
+                <p className="absolute inset-x-0 bottom-0 flex items-center gap-2 bg-linear-to-t from-foreground/80 to-transparent px-4 pt-10 pb-4 text-sm font-semibold text-primary-foreground">
                   <TbMapPin className="size-4 text-sky" />
                   On the trail, Nepal
                 </p>
