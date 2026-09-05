@@ -3,8 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
-import HeliTourCard from "@/features/site/heli-tours/components/HeliTourCard";
+import { TripListingCard, cardGridClass } from "@/features/site/listing";
 import { featuredHeliTours } from "@/features/site/heli-tours/constant/heli-tours";
+import { toHeliListingItem } from "@/features/site/heli-tours/lib/heli-tours";
+import { cn } from "@/lib/utils";
 
 const HeliToursSection = () => {
   return (
@@ -25,9 +27,14 @@ const HeliToursSection = () => {
           }
         />
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={cn("mt-8", cardGridClass)}>
           {featuredHeliTours.map((tour, index) => (
-            <HeliTourCard key={tour.href} tour={tour} index={index} />
+            <TripListingCard
+              key={tour.href}
+              trip={toHeliListingItem(tour)}
+              index={index}
+              ctaLabel="View Tour"
+            />
           ))}
         </div>
       </Container>

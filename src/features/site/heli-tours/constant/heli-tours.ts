@@ -164,8 +164,6 @@ const featuredHrefs = [
   "/mardi-heli-tour",
   "/poonhill-ghandruk-helicopter-tour",
   "/kapuche-helicopter-tour",
-  "/kori-helicopter-tour",
-  "/muktinath-helicopter-tour",
 ] as const;
 
 export const featuredHeliTours = featuredHrefs.map((href) => {

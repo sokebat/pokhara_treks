@@ -1,50 +1,35 @@
-import { TbClock, TbMapPin } from "react-icons/tb";
+import { TbClock, TbMapPin, TbMountain } from "react-icons/tb";
 
+import TripCard from "@/features/site/listing/components/TripCard";
 import type { TripListingItem } from "@/features/site/listing/types";
 
-import ListingCard from "./ListingCard";
-import ListingFacts from "./ListingFacts";
-import ListingPrice from "./ListingPrice";
+const tones = ["accent", "primary", "chart-3"] as const;
 
 type TripListingCardProps = {
   trip: TripListingItem;
   index: number;
   ctaLabel: string;
-  featured?: boolean;
-  showPrice?: boolean;
 };
 
-const TripListingCard = ({
-  trip,
-  index,
-  ctaLabel,
-  featured = false,
-  showPrice = true,
-}: TripListingCardProps) => (
-  <ListingCard
+const defaultFacts = (trip: TripListingItem) => [
+  { icon: TbClock, label: "Duration", value: trip.duration },
+  { icon: TbMapPin, label: "Location", value: trip.location },
+  ...(trip.difficulty
+    ? [{ icon: TbMountain, label: "Difficulty", value: trip.difficulty }]
+    : []),
+];
+
+const TripListingCard = ({ trip, index, ctaLabel }: TripListingCardProps) => (
+  <TripCard
     href={trip.href}
     title={trip.title}
-    excerpt={trip.excerpt}
-    image={trip.image}
     icon={trip.icon}
-    tag={trip.tag}
-    index={index}
-    featured={featured}
+    tone={tones[index % tones.length]}
+    image={trip.image}
+    price={trip.price}
     ctaLabel={ctaLabel}
-    footer={showPrice ? <ListingPrice price={trip.price} /> : undefined}
-  >
-    <ListingFacts
-      facts={[
-        { icon: TbClock, text: trip.duration },
-        { icon: TbMapPin, text: trip.location },
-      ]}
-    />
-    {trip.difficulty ? (
-      <span className="mt-2 inline-flex w-fit rounded-full bg-secondary px-2 py-0.5 text-[0.65rem] font-semibold text-secondary-foreground">
-        {trip.difficulty}
-      </span>
-    ) : null}
-  </ListingCard>
+    facts={trip.facts ?? defaultFacts(trip)}
+  />
 );
 
 export default TripListingCard;

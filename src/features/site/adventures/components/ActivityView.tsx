@@ -1,19 +1,15 @@
-import { ListingPage } from "@/features/site/listing";
-import ActivityCard from "@/features/site/adventures/components/ActivityCard";
+import { GridListingView } from "@/features/site/listing";
 import { adventureActivities } from "@/features/site/adventures/constant/adventures";
+import { toActivityListingItem } from "@/features/site/adventures/lib/activities";
 
 const ActivityView = () => (
-  <ListingPage
+  <GridListingView
     eyebrow="Pokhara Activities"
     title="Activities from Lakeside"
     description="Bungee, paragliding, ultralight, zipline, rafting, cycling and canyoning — booked from the same office that runs our treks."
-  >
-    <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3 xl:grid-cols-4">
-      {adventureActivities.map((activity, index) => (
-        <ActivityCard key={activity.href} activity={activity} index={index} />
-      ))}
-    </div>
-  </ListingPage>
+    trips={adventureActivities.map(toActivityListingItem)}
+    ctaLabel="View Activity"
+  />
 );
 
 export default ActivityView;

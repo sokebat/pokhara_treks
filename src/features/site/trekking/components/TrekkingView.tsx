@@ -1,18 +1,13 @@
-import { SectionedListingView } from "@/features/site/listing";
-import TrekkingSectionNav from "@/features/site/trekking/components/TrekkingSectionNav";
+import { GridListingView } from "@/features/site/listing";
 import { trekkingSections } from "@/features/site/trekking/constant/trekking";
 
 const TrekkingView = () => (
-  <SectionedListingView
+  <GridListingView
     eyebrow="Trekking & Hiking"
     title="Treks from Pokhara"
-    description="Annapurna, Everest, Manaslu, Langtang and the quieter west. Lodge treks run by the same Lakeside team — click a region or browse the full list."
-    headerId="trekking-top"
-    nav={<TrekkingSectionNav />}
-    sections={trekkingSections}
-    singular="trek"
-    plural="treks"
-    ctaLabel="View trek"
+    description="Annapurna, Everest, Manaslu, Langtang and the quieter west. Lodge treks run by the same Lakeside team."
+    trips={trekkingSections.flatMap((section) => section.items)}
+    ctaLabel="View Trek"
   />
 );
 

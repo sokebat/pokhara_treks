@@ -3,15 +3,10 @@ import Link from "next/link";
 
 import CardVisual from "@/components/shared/CardVisual";
 import ListingPrice from "@/features/site/listing/components/ListingPrice";
+import type { TripFact } from "@/features/site/listing/types";
 import StarRating from "@/components/shared/StarRating";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-
-type Fact = {
-  icon: IconType;
-  label: string;
-  value: string;
-};
 
 type TripCardProps = {
   href: string;
@@ -20,9 +15,9 @@ type TripCardProps = {
   icon: IconType;
   tone?: "primary" | "accent" | "chart-3";
   image: string;
-  price: number;
+  price?: number;
   ctaLabel: string;
-  facts: Fact[];
+  facts: TripFact[];
   rating?: {
     value: number;
     reviews: number;

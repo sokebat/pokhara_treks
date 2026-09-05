@@ -4,8 +4,9 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
-import { TripCard } from "@/features/site/listing";
+import { TripCard, cardGridClass } from "@/features/site/listing";
 import { shortTreks } from "@/features/site/home/constant/treks";
+import { cn } from "@/lib/utils";
 
 const tones = ["primary", "accent", "chart-3"] as const;
 
@@ -28,7 +29,7 @@ const ShortTreksSection = () => {
           }
         />
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className={cn("mt-8", cardGridClass)}>
           {shortTreks.map((trek, index) => (
             <TripCard
               key={trek.title}

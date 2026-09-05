@@ -1,5 +1,11 @@
 import type { IconType } from "react-icons";
 
+export type TripFact = {
+  icon: IconType;
+  label: string;
+  value: string;
+};
+
 export type TripListingItem = {
   title: string;
   excerpt: string;
@@ -11,6 +17,7 @@ export type TripListingItem = {
   image: string;
   tag: string;
   icon: IconType;
+  facts?: TripFact[];
 };
 
 export type SectionMeta = {

@@ -1,7 +1,7 @@
-import type { TripListingItem } from "@/features/site/listing/types";
-
 import ListingPage from "./ListingPage";
 import TripListingCard from "./TripListingCard";
+import { listingCardGridClass } from "@/features/site/listing/lib/grid";
+import type { TripListingItem } from "@/features/site/listing/types";
 
 type GridListingViewProps = {
   eyebrow: string;
@@ -9,8 +9,6 @@ type GridListingViewProps = {
   description: string;
   trips: TripListingItem[];
   ctaLabel: string;
-  featuredFirst?: boolean;
-  showPrice?: boolean;
 };
 
 const GridListingView = ({
@@ -19,19 +17,15 @@ const GridListingView = ({
   description,
   trips,
   ctaLabel,
-  featuredFirst = true,
-  showPrice = true,
 }: GridListingViewProps) => (
   <ListingPage eyebrow={eyebrow} title={title} description={description}>
-    <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:mt-8">
+    <div className={listingCardGridClass}>
       {trips.map((trip, index) => (
         <TripListingCard
           key={trip.href}
           trip={trip}
           index={index}
           ctaLabel={ctaLabel}
-          featured={featuredFirst && index === 0}
-          showPrice={showPrice}
         />
       ))}
     </div>

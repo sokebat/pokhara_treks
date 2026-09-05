@@ -8,7 +8,6 @@ const DestinationsView = () => (
     description="Himalayan treks and tours from Pokhara, plus Kailash and Bhutan itineraries arranged with the same local team."
     trips={destinationTrips}
     ctaLabel="Explore"
-    showPrice={false}
   />
 );
 

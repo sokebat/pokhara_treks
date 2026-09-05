@@ -1,11 +1,19 @@
-import { TbClock, TbMapPin, TbMountain } from "react-icons/tb";
-
 import type { AdventureActivity } from "@/features/site/adventures/constant/types";
+import type { TripListingItem } from "@/features/site/listing/types";
 
-export function getActivityTripFacts(activity: AdventureActivity) {
-  return [
-    { icon: TbClock, label: "Duration", value: activity.duration },
-    { icon: TbMapPin, label: "Location", value: activity.location },
-    { icon: TbMountain, label: "Difficulty", value: activity.difficulty },
-  ];
+export function toActivityListingItem(
+  activity: AdventureActivity,
+): TripListingItem {
+  return {
+    title: activity.title,
+    excerpt: activity.excerpt,
+    href: activity.href,
+    duration: activity.duration,
+    location: activity.location,
+    difficulty: activity.difficulty,
+    price: activity.price,
+    image: activity.image,
+    tag: activity.location,
+    icon: activity.icon,
+  };
 }
