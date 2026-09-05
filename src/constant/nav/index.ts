@@ -1,7 +1,7 @@
 import {
   adventureActivities,
   adventureCategories,
-} from "@/features/site/adventures/constant/adventures";
+} from "@/features/site/activity/constant/activities";
 import { heliTours } from "@/features/site/heli-tours/constant/heli-tours";
 
 import { annapurnaTrekkingGroup } from "@/constant/nav/trekking-annapurna";

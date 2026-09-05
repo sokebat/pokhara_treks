@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import ActivityView from "@/features/site/adventures/components/ActivityView";
+import ActivityView from "@/features/site/activity/components/ActivityView";
 
 export const metadata: Metadata = {
   title: "Activities in Pokhara",

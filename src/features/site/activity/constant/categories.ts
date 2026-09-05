@@ -8,7 +8,7 @@ import {
   TbRoute,
 } from "react-icons/tb";
 
-import type { AdventureCategory } from "@/features/site/adventures/constant/types";
+import type { AdventureCategory } from "@/features/site/activity/constant/types";
 
 export const adventureCategories: AdventureCategory[] = [
   {

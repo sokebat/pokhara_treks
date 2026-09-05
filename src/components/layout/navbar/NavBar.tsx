@@ -1,13 +1,11 @@
 import Link from "next/link";
 
 import Container from "@/components/shared/Container";
+import Logo from "@/components/shared/Logo";
 import { Button } from "@/components/ui/button";
-import {
-  DesktopNav,
-  Logo,
-  MobileNav,
-  TopBar,
-} from "@/components/layout/navbar";
+import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
+import TopBar from "./TopBar";
 
 const NavBar = () => {
   return (

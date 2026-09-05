@@ -6,7 +6,7 @@ import {
 } from "react-icons/tb";
 
 import { BUNGEE_PHOTO, PARA_PHOTO } from "@/constant/photos";
-import type { AdventureActivity } from "@/features/site/adventures/constant/types";
+import type { AdventureActivity } from "@/features/site/activity/constant/types";
 
 export const airActivities: AdventureActivity[] = [
   {

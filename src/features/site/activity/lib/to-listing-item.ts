@@ -1,4 +1,4 @@
-import type { AdventureActivity } from "@/features/site/adventures/constant/types";
+import type { AdventureActivity } from "@/features/site/activity/constant/types";
 import type { TripListingItem } from "@/features/site/listing/types";
 
 export function toActivityListingItem(

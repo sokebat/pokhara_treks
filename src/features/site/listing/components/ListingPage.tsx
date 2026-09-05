@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 import Container from "@/components/shared/Container";
-import ListingPageHeader from "./ListingPageHeader";
 import {
   CTASection,
   FaqSection,
@@ -12,8 +11,6 @@ type ListingPageProps = {
   eyebrow: string;
   title: string;
   description: string;
-  headerId?: string;
-  headerClassName?: string;
   children: ReactNode;
 };
 
@@ -21,20 +18,22 @@ const ListingPage = ({
   eyebrow,
   title,
   description,
-  headerId,
-  headerClassName,
   children,
 }: ListingPageProps) => (
   <div>
     <section className="bg-background pt-8 pb-8 sm:pt-12 sm:pb-10">
       <Container>
-        <ListingPageHeader
-          id={headerId}
-          className={headerClassName}
-          eyebrow={eyebrow}
-          title={title}
-          description={description}
-        />
+        <div>
+          <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+            {eyebrow}
+          </p>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-balance text-primary sm:text-4xl">
+            {title}
+          </h1>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base">
+            {description}
+          </p>
+        </div>
         {children}
       </Container>
     </section>

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { type NavItem } from "@/constant/nav";
-import { MobileGroup } from "@/components/layout/navbar";
+import MobileGroup from "./MobileGroup";
 
 interface MobileNavItemProps {
   item: NavItem;

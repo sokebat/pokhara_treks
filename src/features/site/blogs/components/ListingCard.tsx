@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 
 import CardVisual from "@/components/shared/CardVisual";
-import { cardTint } from "@/features/site/listing/lib/card-tint";
+import { cardTint } from "@/features/site/blogs/lib/card-tint";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 

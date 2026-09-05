@@ -13,7 +13,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Logo, MobileNavItem } from "@/components/layout/navbar";
+import Logo from "@/components/shared/Logo";
+import MobileNavItem from "./MobileNavItem";
 
 const MobileNav = () => {
   const [open, setOpen] = React.useState(false);

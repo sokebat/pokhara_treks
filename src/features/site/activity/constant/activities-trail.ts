@@ -1,7 +1,7 @@
 import { TbBike, TbDroplet, TbRipple } from "react-icons/tb";
 
 import { BUNGEE_PHOTO, TREK_PHOTO } from "@/constant/photos";
-import type { AdventureActivity } from "@/features/site/adventures/constant/types";
+import type { AdventureActivity } from "@/features/site/activity/constant/types";
 
 export const trailActivities: AdventureActivity[] = [
   {

@@ -10,10 +10,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { homeFaqs } from "@/features/site/home/constant/faq";
+import { homeFaqs } from "@/features/site/sections/constant/faq";
 import { siteInfo } from "@/constant/site";
 
-const HomeFaqSection = () => {
+const FaqSection = () => {
   return (
     <section className="bg-background py-12 sm:py-16">
       <Container>
@@ -81,4 +81,4 @@ const HomeFaqSection = () => {
   );
 };
 
-export default HomeFaqSection;
+export default FaqSection;

@@ -15,7 +15,7 @@ const trekkingLinks = [
   { label: "Short Treks from Pokhara", href: "/short-treks-from-pokhara" },
   { label: "Browse by Difficulty", href: "/browse-treks-by-difficulty" },
   { label: "Women Only Treks", href: "/women-only-treks" },
-  { label: "All 30 Treks", href: "/trekking-and-hiking" },
+
 ];
 
 const alsoWithUsLinks = [

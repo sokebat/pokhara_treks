@@ -1,6 +1,6 @@
 import { GridListingView } from "@/features/site/listing";
-import { adventureActivities } from "@/features/site/adventures/constant/adventures";
-import { toActivityListingItem } from "@/features/site/adventures/lib/activities";
+import { adventureActivities } from "@/features/site/activity/constant/activities";
+import { toActivityListingItem } from "@/features/site/activity/lib/to-listing-item";
 
 const ActivityView = () => (
   <GridListingView
