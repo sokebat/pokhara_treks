@@ -47,7 +47,7 @@ const travelInfoLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-primary-foreground">
+    <footer className="bg-footer text-primary-foreground">
       <Container>
         <FooterContactStrip />
 

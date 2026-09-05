@@ -151,7 +151,7 @@ export default function NotFound() {
             <p className="text-sm font-semibold tracking-wide text-accent uppercase">
               Useful paths
             </p>
-            <h2 className="mt-2 text-xl font-bold text-primary sm:text-2xl lg:text-3xl">
+            <h2 className="mt-2 text-xl font-bold text-foreground sm:text-2xl lg:text-3xl">
               Pick a trail and keep walking.
             </h2>
 

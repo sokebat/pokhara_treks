@@ -90,7 +90,7 @@ const ListingCard = ({
 
           <h3
             className={cn(
-              "mt-2.5 font-semibold text-pretty text-primary",
+              "mt-2.5 font-semibold text-pretty text-foreground",
               featured
                 ? "text-xl leading-7 sm:text-2xl sm:leading-8"
                 : "line-clamp-2 min-h-12 text-base leading-6",

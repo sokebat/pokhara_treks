@@ -20,21 +20,21 @@ const TopBar = () => {
             <a
               href={siteInfo.social.facebook}
               aria-label="Facebook"
-              className="text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+              className="text-primary-foreground/70 transition-colors hover:text-sky"
             >
               <FaFacebook className="size-3.5" />
             </a>
             <a
               href={siteInfo.social.instagram}
               aria-label="Instagram"
-              className="text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+              className="text-primary-foreground/70 transition-colors hover:text-sky"
             >
               <FaInstagram className="size-3.5" />
             </a>
             <a
               href={siteInfo.social.youtube}
               aria-label="YouTube"
-              className="text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+              className="text-primary-foreground/70 transition-colors hover:text-sky"
             >
               <FaYoutube className="size-3.5" />
             </a>

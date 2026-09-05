@@ -43,11 +43,11 @@ const AboutHeroSection = () => {
       <Container>
         <div className="grid items-stretch gap-5 lg:grid-cols-2 lg:gap-6">
           <div>
-            <p className="text-sm font-semibold tracking-wide text-chart-2 uppercase">
+            <p className="text-sm font-semibold tracking-wide text-primary uppercase">
               Our Story
             </p>
 
-            <h1 className="mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl lg:text-4xl">
+            <h1 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
               From Lakeside Pokhara to 8,000-Meter Giants.
             </h1>
 
@@ -106,8 +106,8 @@ const AboutHeroSection = () => {
               <div className="flex items-end justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2">
-                    <TbMountain className="size-4 text-accent" />
-                    <span className="text-sm font-semibold tracking-wide text-accent uppercase">
+                    <TbMountain className="size-4 text-sky" />
+                    <span className="text-sm font-semibold tracking-wide text-sky uppercase">
                       The Himalaya
                     </span>
                   </div>

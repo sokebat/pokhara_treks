@@ -39,9 +39,9 @@ const HeroSection = () => {
           {/* Left content */}
           <div className="flex w-full flex-col items-start">
             {/* Eyebrow */}
-            <div className="inline-flex max-w-full items-center gap-3 rounded-md border border-primary-foreground/20 bg-foreground/40 py-1.5 pr-5 pl-1.5">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary">
-                <TbShieldCheck className="size-4 text-primary-foreground" />
+            <div className="inline-flex max-w-full items-center gap-3 rounded-md border border-primary-foreground/20 bg-foreground/50 py-1.5 pr-5 pl-1.5">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-sky">
+                <TbShieldCheck className="size-4 text-navy" />
               </span>
 
               <span className="text-left">
@@ -72,8 +72,8 @@ const HeroSection = () => {
               <Button
                 nativeButton={false}
                 render={<Link href="/customize-my-trip" />}
-                variant="default"
                 size="xl"
+                className="bg-card text-foreground hover:bg-card/90"
               >
                 Plan Your Trip
                 <TbArrowRight className="size-4" />

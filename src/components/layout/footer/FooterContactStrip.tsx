@@ -27,7 +27,7 @@ const items: ContactItem[] = [
         href={siteInfo.mapsLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1 font-medium text-primary-foreground/80 hover:text-primary-foreground"
+        className="inline-flex items-center gap-1 font-medium text-sky transition-colors hover:text-primary-foreground"
       >
         Get Directions
         <TbArrowUpRight className="size-3.5" />
@@ -64,19 +64,27 @@ const items: ContactItem[] = [
 
 const FooterContactStrip = () => {
   return (
-    <div className="grid grid-cols-1 gap-8 border-b border-primary-foreground/12 pt-12 pb-10 sm:grid-cols-2 sm:pt-14 lg:grid-cols-4 lg:gap-6">
+    <div className="grid grid-cols-1 gap-3 border-b border-primary-foreground/10 pt-12 pb-10 sm:grid-cols-2 sm:gap-4 sm:pt-14 lg:grid-cols-4">
       {items.map(({ icon: Icon, label, value, note }) => (
-        <div key={label}>
-          <div className="flex items-center gap-2.5">
-            <Icon className="size-4 shrink-0 text-primary" />
-            <p className="text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
-              {label}
-            </p>
+        <div
+          key={label}
+          className="flex h-full flex-col gap-3 rounded-lg border border-primary-foreground/12 bg-primary-foreground/[0.07] p-5"
+        >
+          <div className="flex items-start gap-3.5">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-md border border-primary-foreground/12 bg-primary-foreground/[0.06]">
+              <Icon className="size-4 text-sky" strokeWidth={1.75} />
+            </span>
+            <div className="min-w-0">
+              <p className="text-[11px] font-semibold tracking-[0.14em] text-sky/80 uppercase">
+                {label}
+              </p>
+              <p className="mt-1 text-[15px] leading-snug font-semibold text-primary-foreground">
+                {value}
+              </p>
+            </div>
           </div>
-          <p className="mt-2 text-sm font-semibold text-primary-foreground">
-            {value}
-          </p>
-          <p className="mt-1.5 text-xs leading-relaxed text-primary-foreground/55">
+
+          <p className="text-[13px] leading-relaxed text-primary-foreground/55">
             {note}
           </p>
         </div>

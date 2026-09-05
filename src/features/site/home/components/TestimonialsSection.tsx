@@ -164,7 +164,7 @@ const FeaturedTestimonialCard = () => (
 
     <StarRating rating={featuredTestimonial.rating} className="mt-4" />
 
-    <p className="mt-2 flex-1 text-base leading-7 text-primary sm:text-lg">
+    <p className="mt-2 flex-1 text-base leading-7 text-foreground sm:text-lg">
       {featuredTestimonial.quote}
     </p>
 
@@ -173,9 +173,9 @@ const FeaturedTestimonialCard = () => (
 );
 
 const cardTint = [
-  "border border-accent/25 hover:border-accent/50",
-  "border border-primary/20 hover:border-primary/35",
-  "border border-chart-2/25 hover:border-chart-2/45",
+  "border border-accent/35 hover:border-accent",
+  "border border-primary/25 hover:border-primary/45",
+  "border border-sky/55 hover:border-sky",
 ];
 
 const TestimonialCard = ({

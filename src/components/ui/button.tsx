@@ -9,15 +9,16 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-[color-mix(in_oklab,var(--primary)_88%,var(--foreground)_12%)]",
+          "bg-primary text-primary-foreground hover:bg-[color-mix(in_srgb,var(--navy)_82%,var(--ocean)_18%)]",
         accent:
-          "bg-primary text-primary-foreground hover:bg-[color-mix(in_oklab,var(--primary)_88%,var(--foreground)_12%)]",
-        whatsapp: "bg-whatsapp text-white hover:bg-whatsapp/85",
+          "bg-accent text-accent-foreground hover:bg-[color-mix(in_srgb,var(--ocean)_82%,var(--navy)_18%)]",
+        whatsapp:
+          "border-2 border-whatsapp bg-whatsapp text-whatsapp-foreground hover:border-[var(--whatsapp-hover)] hover:bg-[var(--whatsapp-hover)]",
 
         outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+          "border-border bg-card hover:bg-secondary hover:text-foreground aria-expanded:bg-secondary aria-expanded:text-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+          "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_srgb,var(--sky)_32%,var(--paper)_68%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         ghost:
           "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
         destructive:

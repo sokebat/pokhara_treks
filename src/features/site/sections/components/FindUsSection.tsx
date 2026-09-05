@@ -71,7 +71,7 @@ const FindUsSection = () => {
                       {href ? (
                         <a
                           href={href}
-                          className="text-chart-2 transition-colors hover:text-primary"
+                          className="text-primary transition-colors hover:text-foreground"
                         >
                           {value}
                         </a>

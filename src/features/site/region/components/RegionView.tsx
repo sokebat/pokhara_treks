@@ -31,11 +31,11 @@ const RegionView = ({ region }: RegionViewProps) => {
         <Container>
           <div className="grid items-stretch gap-5 lg:grid-cols-2 lg:gap-6">
             <div>
-              <p className="text-sm font-semibold tracking-wide text-chart-2 uppercase">
+              <p className="text-sm font-semibold tracking-wide text-primary uppercase">
                 Trekking Region
               </p>
 
-              <h1 className="mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl lg:text-4xl">
+              <h1 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
                 {region.title}
               </h1>
 
@@ -80,8 +80,8 @@ const RegionView = ({ region }: RegionViewProps) => {
                 <div className="flex items-end justify-between gap-4">
                   <div>
                     <div className="flex items-center gap-2">
-                      <Icon className="size-4 text-accent" />
-                      <span className="text-sm font-semibold tracking-wide text-accent uppercase">
+                      <Icon className="size-4 text-sky" />
+                      <span className="text-sm font-semibold tracking-wide text-sky uppercase">
                         {region.shortLabel}
                       </span>
                     </div>

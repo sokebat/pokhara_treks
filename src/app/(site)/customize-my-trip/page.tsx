@@ -75,10 +75,10 @@ export default function CustomizeMyTripPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div aria-hidden className="absolute inset-0 bg-primary/80" />
+        <div aria-hidden className="absolute inset-0 bg-foreground/80" />
         <div
           aria-hidden
-          className="absolute inset-0 bg-linear-to-t from-primary via-primary/70 to-primary/40"
+          className="absolute inset-0 bg-linear-to-t from-foreground via-foreground/70 to-foreground/40"
         />
 
         <div
@@ -88,11 +88,11 @@ export default function CustomizeMyTripPage() {
 
         <Container>
           <div className="relative flex flex-col items-center py-16 text-center sm:py-20">
-            <span className="flex size-12 items-center justify-center rounded-full bg-accent text-accent-foreground ring-8 ring-accent/15">
+            <span className="flex size-12 items-center justify-center rounded-full bg-sky text-navy ring-8 ring-sky/20">
               <TbSparkles className="size-5" />
             </span>
 
-            <p className="mt-5 text-sm font-semibold tracking-wide text-accent uppercase">
+            <p className="mt-5 text-sm font-semibold tracking-wide text-sky uppercase">
               Tailor-Made Journeys
             </p>
 
@@ -112,7 +112,7 @@ export default function CustomizeMyTripPage() {
                   key={label}
                   className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/15 bg-primary-foreground/10 px-3.5 py-2 backdrop-blur-md"
                 >
-                  <Icon className="size-3.5 shrink-0 text-accent" />
+                  <Icon className="size-3.5 shrink-0 text-sky" />
                   <span className="text-xs font-medium whitespace-nowrap text-primary-foreground/90">
                     {label}
                   </span>
@@ -127,7 +127,7 @@ export default function CustomizeMyTripPage() {
       <section className="border-b border-border bg-secondary/40 py-14 sm:py-20">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+            <p className="text-sm font-semibold tracking-wide text-primary uppercase">
               How it works
             </p>
             <h2 className="mt-2 text-xl font-bold text-foreground sm:text-2xl lg:text-3xl">
@@ -191,8 +191,8 @@ export default function CustomizeMyTripPage() {
                 className="absolute inset-0 bg-linear-to-t from-primary/60 via-transparent to-transparent"
               />
               <div className="absolute right-4 bottom-4 left-4 flex items-start gap-3 rounded-md border border-border bg-card/95 p-4">
-                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent">
-                  <TbHeartHandshake className="size-4 text-accent-foreground" />
+                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-primary">
+                  <TbHeartHandshake className="size-4 text-primary-foreground" />
                 </span>
                 <p className="text-sm leading-snug text-foreground">
                   Guided and planned by Pokhara-trained women, start to
@@ -224,13 +224,13 @@ export default function CustomizeMyTripPage() {
               })}
             </div>
 
-            <div className="rounded-md bg-linear-to-br from-primary to-chart-4 p-6 text-primary-foreground">
+            <div className="rounded-md bg-foreground p-6 text-primary-foreground">
               <div className="flex items-start gap-3">
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-whatsapp/15 text-whatsapp">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-sky/20 text-sky">
                   <FaWhatsapp className="size-5" />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+                  <p className="text-sm font-semibold tracking-wide text-sky uppercase">
                     Rather just chat?
                   </p>
                   <p className="mt-1 text-sm text-primary-foreground/80">
@@ -247,9 +247,8 @@ export default function CustomizeMyTripPage() {
                     rel="noopener noreferrer"
                   />
                 }
-                variant="whatsapp"
                 size="xl"
-                className="mt-5"
+                className="mt-5 bg-card text-foreground hover:bg-card/90"
               >
                 <FaWhatsapp className="size-4" />
                 Message us on WhatsApp

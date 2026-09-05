@@ -61,10 +61,10 @@ export default function FaqPage() {
       <JsonLd data={faqJsonLd(faqItems)} />
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-secondary text-chart-2">
+          <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-secondary text-accent">
             <TbHelpCircle className="size-6" />
           </span>
-          <p className="mt-5 text-sm font-semibold tracking-wide text-chart-2 uppercase">
+          <p className="mt-5 text-sm font-semibold tracking-wide text-primary uppercase">
             Got Questions?
           </p>
           <h1 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">

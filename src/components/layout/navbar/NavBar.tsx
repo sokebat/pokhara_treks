@@ -12,7 +12,7 @@ const NavBar = () => {
     <>
       <TopBar />
 
-      <header className="sticky top-0 z-40 w-full border-b border-border bg-background">
+      <header className="sticky top-0 z-40 w-full border-b border-border bg-card">
         <Container>
           <div className="flex items-center gap-3 py-2 lg:gap-6">
             <Logo priority className="h-12 w-auto" />

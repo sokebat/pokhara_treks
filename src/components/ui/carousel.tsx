@@ -171,6 +171,16 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
+function useHydrated() {
+  const [hydrated, setHydrated] = React.useState(false);
+
+  React.useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  return hydrated;
+}
+
 function CarouselPrevious({
   className,
   variant = "outline",
@@ -178,6 +188,7 @@ function CarouselPrevious({
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+  const hydrated = useHydrated();
 
   return (
     <Button
@@ -192,7 +203,7 @@ function CarouselPrevious({
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className,
       )}
-      disabled={!canScrollPrev}
+      {...(hydrated ? { disabled: !canScrollPrev } : {})}
       onClick={scrollPrev}
       {...props}
     >
@@ -209,6 +220,7 @@ function CarouselNext({
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
+  const hydrated = useHydrated();
 
   return (
     <Button
@@ -223,7 +235,7 @@ function CarouselNext({
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className,
       )}
-      disabled={!canScrollNext}
+      {...(hydrated ? { disabled: !canScrollNext } : {})}
       onClick={scrollNext}
       {...props}
     >

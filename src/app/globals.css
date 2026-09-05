@@ -9,7 +9,16 @@
   --font-mono:
     ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-  /* Colors */
+  /* Palette */
+  --color-navy: var(--navy);
+  --color-ocean: var(--ocean);
+  --color-sky: var(--sky);
+  --color-gold: var(--gold);
+  --color-mist: var(--mist);
+  --color-footer: var(--footer);
+  --color-footer-deep: var(--footer-deep);
+
+  /* Semantic */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -37,6 +46,7 @@
   --color-accent: var(--accent);
 
   --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
 
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
@@ -64,69 +74,71 @@
 
 /* ========================================
    LIGHT MODE
-   Pokhara Treks & Expeditions
+   #2F4858 Navy  ·  #33658A Ocean  ·  #86BBD8 Sky
+   #F6AE2D Gold  ·  #F3F4F6 Mist
    ======================================== */
 
 :root {
-  --background: oklch(0.979 0 0);
-  --foreground: oklch(0.24 0.076 257);
+  --navy: #2f4858;
+  --ocean: #33658a;
+  --sky: #86bbd8;
+  --gold: #f6ae2d;
+  --mist: #f3f4f6;
+  --paper: #ffffff;
+  --footer: color-mix(in srgb, var(--navy) 46%, #000000);
+  --footer-deep: color-mix(in srgb, var(--navy) 30%, #000000);
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.076 257);
+  --background: var(--mist);
+  --foreground: var(--navy);
 
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.076 257);
+  --card: var(--paper);
+  --card-foreground: var(--navy);
 
-  /* Primary — Deep Himalayan Navy */
-  --primary: oklch(0.24 0.076 257);
-  --primary-foreground: oklch(1 0 0);
+  --popover: var(--paper);
+  --popover-foreground: var(--navy);
 
-  /* Secondary — Soft Mountain Blue */
-  --secondary: oklch(0.952 0.009 243);
-  --secondary-foreground: oklch(0.24 0.076 257);
+  --primary: var(--navy);
+  --primary-foreground: var(--paper);
 
-  /* Muted — Light Blue Gray */
-  --muted: oklch(0.959 0.007 248);
-  --muted-foreground: oklch(0.521 0.062 245);
+  --secondary: color-mix(in srgb, var(--sky) 18%, var(--paper));
+  --secondary-foreground: var(--navy);
 
-  /* Accent — Expedition Orange */
-  --accent: oklch(0.69 0.19 46);
-  --accent-foreground: oklch(1 0 0);
+  --muted: color-mix(in srgb, var(--sky) 10%, var(--mist));
+  --muted-foreground: color-mix(in srgb, var(--navy) 72%, var(--ocean));
 
-  /* Destructive */
-  --destructive: oklch(0.529 0.182 26);
+  --accent: var(--ocean);
+  --accent-foreground: var(--paper);
 
-  /* WhatsApp brand green — used for WhatsApp CTAs only */
+  --destructive: var(--ocean);
+
   --whatsapp: #25d366;
+  --whatsapp-foreground: #ffffff;
+  --whatsapp-hover: #128c7e;
 
-  /* Borders & Inputs */
-  --border: oklch(0.9 0.01 245);
-  --input: oklch(0.9 0.01 245);
+  --border: color-mix(in srgb, var(--navy) 14%, var(--mist));
+  --input: color-mix(in srgb, var(--navy) 16%, var(--paper));
 
-  /* Focus Ring */
-  --ring: oklch(0.69 0.19 46);
+  --ring: var(--ocean);
 
-  /* Charts */
-  --chart-1: oklch(0.24 0.076 257);
-  --chart-2: oklch(0.69 0.19 46);
-  --chart-3: oklch(0.521 0.062 245);
-  --chart-4: oklch(0.33 0.07 253);
-  --chart-5: oklch(0.8 0.055 245);
+  --chart-1: var(--navy);
+  --chart-2: var(--ocean);
+  --chart-3: var(--sky);
+  --chart-4: var(--ocean);
+  --chart-5: var(--sky);
 
   --radius: 0.625rem;
 
-  /* Sidebar */
-  --sidebar: oklch(0.979 0 0);
-  --sidebar-foreground: oklch(0.24 0.076 257);
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--navy);
 
-  --sidebar-primary: oklch(0.24 0.076 257);
-  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-primary: var(--navy);
+  --sidebar-primary-foreground: var(--paper);
 
-  --sidebar-accent: oklch(0.952 0.009 243);
-  --sidebar-accent-foreground: oklch(0.24 0.076 257);
+  --sidebar-accent: color-mix(in srgb, var(--sky) 18%, var(--paper));
+  --sidebar-accent-foreground: var(--navy);
 
-  --sidebar-border: oklch(0.9 0.01 245);
-  --sidebar-ring: oklch(0.69 0.19 46);
+  --sidebar-border: color-mix(in srgb, var(--navy) 14%, var(--mist));
+  --sidebar-ring: var(--ocean);
 }
 
 /* ========================================
@@ -154,5 +166,9 @@
   h5,
   h6 {
     @apply font-heading tracking-tight text-balance;
+  }
+
+  a {
+    @apply transition-colors;
   }
 }

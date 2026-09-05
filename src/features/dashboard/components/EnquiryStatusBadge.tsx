@@ -4,7 +4,7 @@ import type { EnquiryStatus } from "@/features/dashboard/constant/overview-data"
 const statusStyles: Record<EnquiryStatus, string> = {
   New: "bg-secondary text-chart-2",
   Contacted: "bg-secondary text-primary",
-  Confirmed: "bg-success/10 text-success",
+  Confirmed: "bg-accent text-accent-foreground",
 };
 
 const EnquiryStatusBadge = ({ status }: { status: EnquiryStatus }) => (

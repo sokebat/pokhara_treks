@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 
 const tones = {
   primary: { bg: "bg-primary", icon: "text-primary" },
-  accent: { bg: "bg-primary", icon: "text-primary" },
-  "chart-2": { bg: "bg-primary", icon: "text-primary" },
+  accent: { bg: "bg-accent", icon: "text-accent" },
+  "chart-2": { bg: "bg-sky", icon: "text-ocean" },
   "chart-3": { bg: "bg-foreground", icon: "text-foreground" },
 };
 
