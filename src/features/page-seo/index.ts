@@ -1,4 +1,3 @@
-export { PAGE_SEO_REVALIDATE_SECONDS } from "@/features/page-seo/constant/cache";
 export type {
   ListingPublicPath,
   ListingSeoKey,
