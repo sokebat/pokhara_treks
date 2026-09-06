@@ -1,38 +1,62 @@
 import { FaWhatsapp } from "react-icons/fa6";
 import { TbCalendar, TbPhoneCall } from "react-icons/tb";
 
+import { Button } from "@/components/ui/button";
 import { siteInfo } from "@/constant/site";
 
 const TripMobileBar = () => (
   <nav
-    aria-label="Quick contact"
-    className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t-2 border-primary-foreground/15 bg-primary pb-[env(safe-area-inset-bottom)] lg:hidden"
+    aria-label="Book this trek"
+    className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-primary-foreground/10 bg-primary shadow-[0_-10px_28px_rgba(15,23,42,0.22)] lg:hidden"
   >
-    <span className="absolute inset-x-0 -top-6 flex h-6 items-center justify-center gap-2 bg-primary text-xs text-primary-foreground">
-      Annapurna Base Camp, 7 days{" "}
-      <b className="font-bold">USD 475 pp</b>
-    </span>
-    <a
-      href={`tel:${siteInfo.phone}`}
-      className="flex flex-col items-center gap-0.5 border-r-2 border-primary-foreground/15 py-2 text-[11px] font-semibold text-primary-foreground"
-    >
-      <TbPhoneCall className="size-4" />
-      Call
-    </a>
-    <a
-      href={`https://wa.me/${siteInfo.phone.replace(/\D/g, "")}`}
-      className="flex flex-col items-center gap-0.5 border-r-2 border-primary-foreground/15 py-2 text-[11px] font-semibold text-primary-foreground"
-    >
-      <FaWhatsapp className="size-4" />
-      WhatsApp
-    </a>
-    <a
-      href="#departures"
-      className="flex flex-col items-center gap-0.5 bg-card py-2 text-[11px] font-semibold text-foreground"
-    >
-      <TbCalendar className="size-4" />
-      Check Dates
-    </a>
+    <div className="flex flex-col gap-2 px-3 pt-2.5 pb-[max(0.7rem,env(safe-area-inset-bottom))]">
+      <div className="flex items-baseline justify-between gap-3 px-0.5 text-primary-foreground">
+        <p className="min-w-0 truncate text-xs font-medium tracking-wide">
+          Annapurna Base Camp, 7 days
+        </p>
+        <p className="shrink-0 text-sm font-bold tabular-nums">
+          USD 475{" "}
+          <span className="text-[11px] font-semibold text-primary-foreground/75">
+            pp
+          </span>
+        </p>
+      </div>
+
+      <div className="grid grid-cols-3 gap-2">
+        <Button
+          nativeButton={false}
+          render={<a href={`tel:${siteInfo.phone}`} />}
+          variant="outline"
+          className="h-11 gap-1 px-2 text-xs border-primary-foreground/25 bg-primary-foreground/8 text-primary-foreground hover:bg-primary-foreground/15"
+        >
+          <TbPhoneCall className="size-4" />
+          Call
+        </Button>
+        <Button
+          nativeButton={false}
+          render={
+            <a
+              href={`https://wa.me/${siteInfo.phone.replace(/\D/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          }
+          variant="whatsapp"
+          className="h-11 gap-1 px-2 text-xs"
+        >
+          <FaWhatsapp className="size-4" />
+          WhatsApp
+        </Button>
+        <Button
+          nativeButton={false}
+          render={<a href="#departures" />}
+          className="h-11 gap-1 px-2 text-xs bg-card text-foreground hover:bg-card/90"
+        >
+          <TbCalendar className="size-4" />
+          Check Dates
+        </Button>
+      </div>
+    </div>
   </nav>
 );
 

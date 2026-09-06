@@ -13,9 +13,13 @@ import { Button } from "@/components/ui/button";
 import { homeFaqs } from "@/features/site/sections/constant/faq";
 import { siteInfo } from "@/constant/site";
 
-const FaqSection = () => {
+interface FaqSectionProps {
+  id?: string;
+}
+
+const FaqSection = ({ id }: { id?: string }) => {
   return (
-    <section className="bg-background py-12 sm:py-16">
+    <section id={id} className="scroll-mt-32 bg-background py-12 sm:py-16">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[20rem_1fr]">
           <div className="lg:sticky lg:top-24 lg:self-start">

@@ -23,14 +23,19 @@ import FeaturedTestimonialCard from "./FeaturedTestimonialCard";
 import RatingSummaryCard from "./RatingSummaryCard";
 import TestimonialCard from "./TestimonialCard";
 
-const TestimonialsSection = () => {
+const TestimonialsSection = ({
+  id,
+  withContainer = true,
+}: {
+  id?: string;
+  withContainer?: boolean;
+}) => {
   const [autoplayPlugin] = useState(() =>
     Autoplay({ delay: 4500, stopOnInteraction: false, stopOnMouseEnter: true }),
   );
 
-  return (
-    <section className="bg-background py-12 sm:py-16">
-      <Container>
+  const content = (
+    <>
         <SectionHeader
           title="Your words, not ours"
           description="Every review names the guide, so you can ask for them by name."
@@ -71,7 +76,12 @@ const TestimonialsSection = () => {
             <CarouselNext className="static translate-x-0 translate-y-0" />
           </div>
         </Carousel>
-      </Container>
+    </>
+  );
+
+  return (
+    <section id={id} className="scroll-mt-32 bg-background py-12 sm:py-16">
+      {withContainer ? <Container>{content}</Container> : content}
     </section>
   );
 };

@@ -22,8 +22,8 @@ const reassurances = [
 ];
 
 const TripBookingCard = () => (
-  <aside aria-label="Book this trek">
-    <Card className="gap-0 py-0 shadow-none lg:sticky lg:top-32">
+  <aside aria-label="Book this trek" className="lg:sticky lg:top-32">
+    <Card className="gap-0 py-0 shadow-none">
       <CardContent className="p-5">
         <div className="flex flex-wrap items-end gap-2">
           <ListingPrice price={475} />

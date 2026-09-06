@@ -40,7 +40,7 @@ const TripOverview = () => (
   <div>
     <section id="overview" className="scroll-mt-32 pb-10">
       <SectionHeader title="What this trek actually is" />
-      <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
+      <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
         <p className="text-base leading-relaxed text-foreground sm:text-lg">
           The Annapurna Sanctuary is a bowl. You walk up a river valley that
           narrows for three days until the walls close in on both sides, and

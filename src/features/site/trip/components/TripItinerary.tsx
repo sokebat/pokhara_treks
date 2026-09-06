@@ -87,7 +87,7 @@ const TripItinerary = () => (
                   {day.body.map((paragraph) => (
                     <p
                       key={paragraph}
-                      className="max-w-2xl text-[15px] leading-relaxed text-muted-foreground"
+                      className="text-[15px] leading-relaxed text-muted-foreground"
                     >
                       {paragraph}
                     </p>

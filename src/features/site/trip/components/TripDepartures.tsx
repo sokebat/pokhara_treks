@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -129,7 +131,13 @@ const TripDepartures = () => (
                 <TableCell className="px-4 py-3.5">
                   <Button
                     nativeButton={false}
-                    render={<a href={row.cta === "Enquire" ? "#ask" : "#departures"} />}
+                    render={
+                      row.cta === "Enquire" ? (
+                        <Link href="/customize-my-trip" />
+                      ) : (
+                        <a href="#departures" />
+                      )
+                    }
                     variant={row.outline ? "outline" : "default"}
                     size="sm"
                   >

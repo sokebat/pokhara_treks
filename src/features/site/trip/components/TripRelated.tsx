@@ -12,12 +12,19 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { popularTreks } from "@/features/site/home/constant/popular-treks";
-import { TripCard, cardGridClass } from "@/features/site/listing";
+import { shortTreks } from "@/features/site/home/constant/short-treks";
+import { TripCard } from "@/features/site/listing";
 import { variants } from "@/features/site/trip/constant/variants";
-import { cn } from "@/lib/utils";
 
 const tones = ["primary", "accent", "chart-2"] as const;
-const relatedTreks = popularTreks.slice(1, 4);
+const currentHref = "/annapurna-base-camp-trek";
+const relatedTreks = [...popularTreks, ...shortTreks]
+  .filter(
+    (trek, index, list) =>
+      trek.href !== currentHref &&
+      list.findIndex((item) => item.href === trek.href) === index,
+  )
+  .slice(0, 6);
 
 const TripRelated = () => (
   <section id="other" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
@@ -73,7 +80,7 @@ const TripRelated = () => (
     </Card>
 
     <h3 className="mt-8 text-lg font-semibold">Other treks the same people book</h3>
-    <div className={cn("mt-4", cardGridClass)}>
+    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {relatedTreks.map((trek, index) => (
         <TripCard
           key={trek.href}
