@@ -4,7 +4,7 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
 
 const TripDifficulty = () => (
-  <section id="difficulty" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
+  <section id="difficulty" className="scroll-mt-32 border-t-2 border-border py-8 sm:py-10">
     <SectionHeader title="How hard is it, honestly" />
 
     <div className="mt-6 mb-6 flex flex-wrap items-center gap-4">

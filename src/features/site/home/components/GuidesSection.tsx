@@ -12,7 +12,7 @@ interface GuidesSectionProps {
 
 const GuidesSection = ({ isactionactive }: GuidesSectionProps) => {
   return (
-    <section className="bg-background py-12 sm:py-16">
+    <section className="bg-background py-6 sm:py-8">
       <Container>
         <SectionHeader
           title="Meet the guides"
@@ -31,7 +31,7 @@ const GuidesSection = ({ isactionactive }: GuidesSectionProps) => {
           }
         />
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {guides.map((guide, index) => (
             <GuideCard key={guide.name} guide={guide} index={index} />
           ))}

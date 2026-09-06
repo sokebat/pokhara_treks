@@ -8,7 +8,7 @@ import { blogPosts } from "@/features/site/blogs/constant/blog-posts";
 
 const BlogSection = () => {
   return (
-    <section className="bg-secondary py-12 sm:py-16">
+    <section className="bg-secondary py-6 sm:py-8">
       <Container>
         <SectionHeader
           title="Trekking guides and stories"
@@ -24,7 +24,7 @@ const BlogSection = () => {
           }
         />
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {blogPosts.slice(0, 4).map((post, index) => (
             <BlogCard key={post.href} post={post} index={index} />
           ))}

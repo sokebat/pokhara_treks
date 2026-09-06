@@ -2,7 +2,7 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
 
 const TripTrail = () => (
-  <section id="detail" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
+  <section id="detail" className="scroll-mt-32 border-t-2 border-border py-8 sm:py-10">
     <SectionHeader title="What the walking is actually like" />
 
     <div className="mt-6 max-w-3xl">

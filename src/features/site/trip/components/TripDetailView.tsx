@@ -33,7 +33,7 @@ const TripDetailView = () => (
     <TripFacts />
 
     <Container>
-      <div className="flex flex-col gap-8 pt-8 pb-4 lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-6">
+      <div className="flex flex-col gap-6 pt-6 pb-2 lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-6">
         <div className="order-2 min-w-0 lg:order-1">
           <TripOverview />
           <TripItinerary />
@@ -47,8 +47,16 @@ const TripDetailView = () => (
           <TripSafety />
           <TripKit />
           <TripRelated />
-          <TestimonialsSection id="reviews" withContainer={false} />
-          <FaqSection id="questions" />
+          <TestimonialsSection
+            id="reviews"
+            withContainer={false}
+            className="px-0 pt-8 pb-4 sm:pt-8 sm:pb-6"
+          />
+          <FaqSection
+            id="questions"
+            withContainer={false}
+            className="py-6 sm:py-8"
+          />
         </div>
         <div className="order-1 lg:order-2">
           <TripBookingCard />

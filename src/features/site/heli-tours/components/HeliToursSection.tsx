@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 const HeliToursSection = () => {
   return (
-    <section className="bg-secondary py-12 sm:py-16">
+    <section className="bg-secondary py-6 sm:py-8">
       <Container>
         <SectionHeader
           title="Helicopter tours from Pokhara"
@@ -27,7 +27,7 @@ const HeliToursSection = () => {
           }
         />
 
-        <div className={cn("mt-8", cardGridClass)}>
+        <div className={cn("mt-4", cardGridClass)}>
           {featuredHeliTours.map((tour, index) => (
             <TripListingCard
               key={tour.href}

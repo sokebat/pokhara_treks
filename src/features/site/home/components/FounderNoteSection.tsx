@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const FounderNoteSection = () => {
   return (
-    <section className="bg-secondary py-12 sm:py-16">
+    <section className="bg-secondary py-6 sm:py-8">
       <Container>
         <div className="grid items-stretch gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
 

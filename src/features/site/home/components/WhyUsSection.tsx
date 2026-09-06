@@ -4,14 +4,14 @@ import { reasons, whyUsStats } from "@/features/site/home/constant/why-us";
 
 const WhyUsSection = () => {
   return (
-    <section className="bg-secondary pt-6 pb-12 sm:pt-8 sm:pb-16">
+    <section className="bg-secondary pt-5 pb-6 sm:pt-6 sm:pb-8">
       <Container>
         <SectionHeader
           title="Why travel with us"
           description="Six reasons, and every one of them is checkable."
         />
 
-        <div className="mt-8 grid grid-cols-2 divide-x-2 divide-y-2 divide-primary/20 overflow-hidden rounded-md border-2 border-primary/20 bg-card sm:grid-cols-4 sm:divide-y-0">
+        <div className="mt-5 grid grid-cols-2 divide-x-2 divide-y-2 divide-primary/20 overflow-hidden rounded-md border-2 border-primary/20 bg-card sm:grid-cols-4 sm:divide-y-0">
           {whyUsStats.map((stat) => (
             <div key={stat.label} className="p-3 sm:p-5 lg:p-6">
               <p className="text-xl font-bold text-foreground sm:text-3xl lg:text-4xl">

@@ -4,7 +4,7 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import { TREK_PHOTO } from "@/constant/photos";
 
 const TripRoute = () => (
-  <section id="route" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
+  <section id="route" className="scroll-mt-32 border-t-2 border-border py-8 sm:py-10">
     <SectionHeader title="Route and altitude" />
     <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:items-start">
       <figure>

@@ -12,7 +12,7 @@ const tones = ["primary", "accent", "chart-2"] as const;
 
 const ShortTreksSection = () => {
   return (
-    <section className="bg-background py-12 sm:py-16">
+    <section className="bg-background py-6 sm:py-8">
       <Container>
         <SectionHeader
           title="Short treks and day hikes from Pokhara"
@@ -29,7 +29,7 @@ const ShortTreksSection = () => {
           }
         />
 
-        <div className={cn("mt-8", cardGridClass)}>
+        <div className={cn("mt-4", cardGridClass)}>
           {shortTreks.map((trek, index) => (
             <TripCard
               key={trek.title}

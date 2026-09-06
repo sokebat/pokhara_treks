@@ -81,7 +81,7 @@ const departures = [
 const TripDepartures = () => (
   <section
     id="departures"
-    className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12"
+    className="scroll-mt-32 border-t-2 border-border py-8 sm:py-10"
   >
     <SectionHeader
       title="Departures you can join"

@@ -30,26 +30,26 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
         {groups.map((group, index) => {
           const isRegion = Boolean(group.href?.startsWith("/region/"));
           const itemClassName = cn(
-            "flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors",
+            "group/nav-item flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors",
             active === index
               ? "bg-accent text-accent-foreground"
-              : "text-foreground hover:bg-background",
+              : "text-foreground hover:bg-accent hover:text-accent-foreground",
           );
           const itemContent = (
             <>
               <span>{group.label}</span>
-              <span className="flex shrink-0 items-center gap-1.5">
-                <span
-                  className={cn(
-                    "text-xs tabular-nums",
-                    active === index
-                      ? "text-accent-foreground/70"
-                      : "text-muted-foreground",
-                  )}
-                >
+              <span
+                className={cn(
+                  "flex shrink-0 items-center gap-1.5",
+                  active === index
+                    ? "text-accent-foreground"
+                    : "text-muted-foreground group-hover/nav-item:text-accent-foreground",
+                )}
+              >
+                <span className="text-xs tabular-nums">
                   {group.children.length}
                 </span>
-                <TbChevronRight className="size-3.5 text-muted-foreground" />
+                <TbChevronRight className="size-3.5" />
               </span>
             </>
           );

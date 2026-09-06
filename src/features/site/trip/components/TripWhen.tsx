@@ -11,7 +11,7 @@ import {
 import { seasons } from "@/features/site/trip/constant/seasons";
 
 const TripWhen = () => (
-  <section id="when" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
+  <section id="when" className="scroll-mt-32 border-t-2 border-border py-8 sm:py-10">
     <SectionHeader
       title="When to walk this one"
       description="Four seasons, and the honest version of each."

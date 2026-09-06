@@ -38,7 +38,7 @@ const highlights = [
 
 const TripOverview = () => (
   <div>
-    <section id="overview" className="scroll-mt-32 pb-10">
+    <section id="overview" className="scroll-mt-32 pb-8">
       <SectionHeader title="What this trek actually is" />
       <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
         <p className="text-base leading-relaxed text-foreground sm:text-lg">
@@ -93,7 +93,7 @@ const TripOverview = () => (
       </div>
     </section>
 
-    <section className="border-t-2 border-border pt-10 pb-4">
+    <section className="border-t-2 border-border pt-8 pb-4">
       <SectionHeader title="Why people book this one" />
       <ul className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-x-8">
         {highlights.map((item) => (

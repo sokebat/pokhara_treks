@@ -47,14 +47,14 @@ const infoRows = [
 
 const FindUsSection = () => {
   return (
-    <section className="bg-secondary py-12 sm:py-16">
+    <section className="bg-secondary py-6 sm:py-8">
       <Container>
         <SectionHeader
           title="Find us in Lakeside"
           description="Ten minutes from most Lakeside hotels, two minutes from Barahi Chowk."
         />
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_20rem]">
+        <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_20rem]">
           <GoogleMap className="aspect-auto h-64 sm:min-h-80 lg:h-full" />
 
           <div className="flex flex-col rounded-md border-2 border-border bg-card p-5">

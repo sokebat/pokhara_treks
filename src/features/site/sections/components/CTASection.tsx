@@ -41,9 +41,9 @@ const CTASection = ({
   primary = defaultPrimary,
   secondary,
 }: CTASectionProps) => (
-  <section className="py-12 sm:py-16">
+  <section className="py-5 sm:py-7">
     <Container>
-      <div className="rounded-xl bg-primary px-6 py-12 text-center sm:px-10 sm:py-16 lg:px-16 lg:py-20">
+      <div className="rounded-xl bg-primary px-6 py-10 text-center sm:px-10 sm:py-12 lg:px-14 lg:py-14">
         <p className="text-sm font-semibold tracking-[0.16em] text-gold uppercase">
           {eyebrow}
         </p>
@@ -54,7 +54,7 @@ const CTASection = ({
           {description}
         </p>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
+        <div className="mt-6 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
           <Button
             nativeButton={false}
             render={renderLink(primary)}

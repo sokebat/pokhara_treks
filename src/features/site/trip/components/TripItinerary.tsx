@@ -61,7 +61,7 @@ const days = [
 ];
 
 const TripItinerary = () => (
-  <section id="itinerary" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
+  <section id="itinerary" className="scroll-mt-32 border-t-2 border-border py-8 sm:py-10">
     <SectionHeader
       title="Day by day"
       description="Day 1 is open. The rest expand. Nothing collapses again on its own."

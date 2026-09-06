@@ -18,6 +18,7 @@ import {
   reviewSummary,
   testimonials,
 } from "@/features/site/home/constant/testimonials";
+import { cn } from "@/lib/utils";
 
 import FeaturedTestimonialCard from "./FeaturedTestimonialCard";
 import RatingSummaryCard from "./RatingSummaryCard";
@@ -26,9 +27,11 @@ import TestimonialCard from "./TestimonialCard";
 const TestimonialsSection = ({
   id,
   withContainer = true,
+  className,
 }: {
   id?: string;
   withContainer?: boolean;
+  className?: string;
 }) => {
   const [autoplayPlugin] = useState(() =>
     Autoplay({ delay: 4500, stopOnInteraction: false, stopOnMouseEnter: true }),
@@ -51,7 +54,7 @@ const TestimonialsSection = ({
           }
         />
 
-        <div className="mt-8 grid gap-3 lg:grid-cols-[26rem_1fr]">
+        <div className="mt-4 grid gap-3 lg:grid-cols-[26rem_1fr]">
           <RatingSummaryCard />
           <FeaturedTestimonialCard />
         </div>
@@ -80,7 +83,10 @@ const TestimonialsSection = ({
   );
 
   return (
-    <section id={id} className="scroll-mt-32 bg-background py-12 sm:py-16">
+    <section
+      id={id}
+      className={cn("scroll-mt-32 bg-background py-6 sm:py-8", className)}
+    >
       {withContainer ? <Container>{content}</Container> : content}
     </section>
   );

@@ -4,7 +4,7 @@ import { siteInfo } from "@/constant/site";
 import { safety } from "@/features/site/trip/constant/safety";
 
 const TripSafety = () => (
-  <section id="safety" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
+  <section id="safety" className="scroll-mt-32 border-t-2 border-border py-8 sm:py-10">
     <SectionHeader title="If something goes wrong up there" />
     <ul className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-x-8">
       {safety.map((item) => (

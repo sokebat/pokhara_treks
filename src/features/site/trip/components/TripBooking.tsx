@@ -14,7 +14,7 @@ import { siteInfo } from "@/constant/site";
 import { cancelRows, payCards } from "@/features/site/trip/constant/booking";
 
 const TripBooking = () => (
-  <section id="booking" className="scroll-mt-32 border-t-2 border-border py-10 sm:py-12">
+  <section id="booking" className="scroll-mt-32 border-t-2 border-border py-8 sm:py-10">
     <SectionHeader
       title="How you book, pay and cancel"
       description="Twenty per cent holds the place. The rest is paid in Pokhara. Date changes are free up to 30 days out."

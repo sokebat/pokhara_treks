@@ -10,25 +10,30 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { homeFaqs } from "@/features/site/sections/constant/faq";
 import { siteInfo } from "@/constant/site";
 
 interface FaqSectionProps {
   id?: string;
+  className?: string;
+  withContainer?: boolean;
 }
 
-const FaqSection = ({ id }: { id?: string }) => {
-  return (
-    <section id={id} className="scroll-mt-32 bg-background py-12 sm:py-16">
-      <Container>
-        <div className="grid gap-10 lg:grid-cols-[20rem_1fr]">
+const FaqSection = ({
+  id,
+  className,
+  withContainer = true,
+}: FaqSectionProps) => {
+  const content = (
+        <div className="grid gap-6 lg:grid-cols-[20rem_1fr]">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <SectionHeader
               title="Things to know before you book"
               description="The ten questions we are asked most, answered plainly. Prices, permits and rules are the ones on this page and on every trip page."
             />
 
-            <div className="mt-6 flex flex-col gap-2.5">
+            <div className="mt-5 flex flex-col gap-2.5">
               <Button
                 nativeButton={false}
                 render={<Link href="/faq" />}
@@ -55,7 +60,7 @@ const FaqSection = ({ id }: { id?: string }) => {
               </Button>
             </div>
 
-            <div className="mt-6 border-t-2 border-border pt-6">
+            <div className="mt-5 border-t-2 border-border pt-5">
               <p className="text-sm text-muted-foreground">
                 Not answered here? Ask the office directly. A person replies,
                 usually the same day.
@@ -78,7 +83,14 @@ const FaqSection = ({ id }: { id?: string }) => {
             </Accordion>
           </div>
         </div>
-      </Container>
+  );
+
+  return (
+    <section
+      id={id}
+      className={cn("scroll-mt-32 bg-background py-6 sm:py-8", className)}
+    >
+      {withContainer ? <Container>{content}</Container> : content}
     </section>
   );
 };
