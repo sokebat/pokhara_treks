@@ -1,7 +1,6 @@
 "use client";
 
 import { Fragment } from "react";
-import { TbExternalLink } from "react-icons/tb";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,7 +12,6 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { getDashboardBreadcrumbs } from "@/features/dashboard/components/sidebar/nav-items";
@@ -30,8 +28,8 @@ const DashboardHeader = () => {
         className="mr-1 data-vertical:h-4 data-vertical:self-auto"
       />
 
-      <Breadcrumb className="min-w-0 flex-1">
-        <BreadcrumbList>
+      <Breadcrumb className="min-w-0">
+        <BreadcrumbList className="flex-nowrap">
           {crumbs.map((crumb, index) => {
             const last = index === crumbs.length - 1;
 
@@ -46,7 +44,7 @@ const DashboardHeader = () => {
                   ) : (
                     <BreadcrumbLink
                       render={<Link href={crumb.href} />}
-                      className="truncate font-heading"
+                      className="font-heading"
                     >
                       {crumb.title}
                     </BreadcrumbLink>
@@ -57,17 +55,6 @@ const DashboardHeader = () => {
           })}
         </BreadcrumbList>
       </Breadcrumb>
-
-      <Button
-        nativeButton={false}
-        variant="outline"
-        size="sm"
-        className="hidden sm:inline-flex"
-        render={<Link href="/" target="_blank" rel="noopener noreferrer" />}
-      >
-        View website
-        <TbExternalLink className="size-4" />
-      </Button>
     </header>
   );
 };

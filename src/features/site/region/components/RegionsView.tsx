@@ -1,11 +1,12 @@
 import { GridListingView } from "@/features/site/listing";
+import { regionListingPage } from "@/features/site/region/constant/listing";
 import { trekkingRegions } from "@/features/site/region/constant/regions";
 
 const RegionsView = () => (
   <GridListingView
-    eyebrow="Trekking Regions"
-    title="Where we walk in the Himalaya"
-    description="Eight regions we run from Pokhara — Annapurna at our door, Everest, Manaslu, Langtang and the quieter trails farther out."
+    eyebrow={regionListingPage.eyebrow}
+    title={regionListingPage.heading}
+    description={regionListingPage.intro}
     trips={trekkingRegions.map((region) => ({
       title: region.label,
       excerpt: region.description,

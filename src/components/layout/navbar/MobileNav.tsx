@@ -29,8 +29,8 @@ const MobileNav = () => {
         <TbMenu2 className="size-5" />
       </SheetTrigger>
       <SheetContent side="right" className="w-5/6 gap-0 p-0">
-        <SheetHeader className="flex-row items-center border-b-2 border-border py-5">
-          <Logo className="h-16 w-auto" onClick={close} />
+        <SheetHeader className="flex-row items-center border-b-2 border-border py-4">
+          <Logo className="h-12 w-auto max-w-[min(100%,220px)]" onClick={close} />
           <SheetTitle className="sr-only">Site navigation</SheetTitle>
         </SheetHeader>
         <nav className="flex-1 overflow-y-auto">

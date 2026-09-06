@@ -1,12 +1,8 @@
-import { eq } from "drizzle-orm";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
 
 import { authConfig } from "@/features/auth/auth.config";
-import { db } from "@/db";
-import { users } from "@/db/schema";
-import { loginFormSchema } from "@/features/auth/validation/login.validation";
+import { authorizeAdmin } from "@/features/auth/lib/authorize";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
@@ -16,45 +12,24 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
-        const parsed = loginFormSchema.safeParse(credentials);
-        if (!parsed.success) return null;
-
-        const { email, password } = parsed.data;
-
-        const [user] = await db
-          .select()
-          .from(users)
-          .where(eq(users.email, email.toLowerCase()))
-          .limit(1);
-
-        if (!user) return null;
-
-        const passwordsMatch = await bcrypt.compare(
-          password,
-          user.passwordHash,
-        );
-        if (!passwordsMatch) return null;
-
-        return {
-          id: user.id,
-          name: user.name,
-          email: user.email,
-        };
-      },
+      authorize: authorizeAdmin,
     }),
   ],
   callbacks: {
     ...authConfig.callbacks,
     jwt({ token, user }) {
-      if (user) {
-        token.id = user.id as string;
+      if (user?.id) {
+        token.id = user.id;
+        token.name = user.name;
+        token.email = user.email;
       }
       return token;
     },
     session({ session, token }) {
-      if (session.user) {
-        session.user.id = token.id as string;
+      if (session.user && typeof token.id === "string") {
+        session.user.id = token.id;
+        if (typeof token.name === "string") session.user.name = token.name;
+        if (typeof token.email === "string") session.user.email = token.email;
       }
       return session;
     },

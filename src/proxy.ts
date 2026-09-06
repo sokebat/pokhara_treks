@@ -2,16 +2,14 @@ import NextAuth from "next-auth";
 
 import { authConfig } from "@/features/auth/auth.config";
 
-// Next.js 16 renamed `middleware.ts` to `proxy.ts` (same behavior, new name).
-// This intentionally builds on `authConfig` alone (no Credentials provider,
-// no database, no bcrypt) so route protection only reads the session token
-// instead of re-verifying a password on every request.
-export default NextAuth(authConfig).auth;
+const { auth } = NextAuth(authConfig);
 
-// Dashboard route protection is paused for now — /dashboard is reachable
-// without logging in. Add "/dashboard/:path*" (and "/login") back to the
-// matcher below to re-enable it; the rest of the auth setup (schema, login
-// page, Credentials provider) is untouched and ready to go.
+/**
+ * Next.js 16 proxy: reads the signed JWT cookie and runs `authorized`.
+ * No database round-trip — that only happens at login.
+ */
+export default auth;
+
 export const config = {
-  matcher: [],
+  matcher: ["/dashboard", "/dashboard/:path*", "/login"],
 };

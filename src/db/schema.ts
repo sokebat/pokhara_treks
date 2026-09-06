@@ -1,6 +1,5 @@
 import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 
-// Every account here is an admin — there is no separate role system.
 export const users = pgTable("users", {
   id: uuid("id").primaryKey().defaultRandom(),
   name: text("name").notNull(),

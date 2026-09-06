@@ -80,8 +80,8 @@ const NavBar = () => {
         )}
       >
         <Container>
-          <div className="flex items-center gap-3 py-2 lg:gap-6">
-            <Logo priority className="h-12 w-auto" />
+          <div className="flex h-16 items-center gap-4 lg:gap-8">
+            <Logo priority className="h-[3.25rem] w-auto max-w-[min(100%,220px)]" />
 
             <DesktopNav className="hidden min-w-0 flex-1 xl:flex" />
 

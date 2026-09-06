@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 
 import Logo from "@/components/shared/Logo";
 import LoginForm from "@/features/auth/components/LoginForm";
-
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -15,10 +14,10 @@ export const metadata: Metadata = pageMetadata({
 
 export default function LoginPage() {
   return (
-    <div className="flex min-h-full flex-1 items-center justify-center bg-muted/30 px-4 py-16">
+    <div className="flex min-h-svh flex-1 items-center justify-center bg-muted/30 px-4 py-16">
       <div className="w-full max-w-sm rounded-md border-2 border-border bg-card p-8">
         <div className="flex flex-col items-center text-center">
-          <Logo className="h-12 w-auto" />
+          <Logo className="h-14 w-auto" priority />
           <h1 className="mt-6 text-lg font-bold text-foreground sm:text-xl">
             Admin Login
           </h1>

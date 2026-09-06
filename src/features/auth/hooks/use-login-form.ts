@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
 
+import { safeCallbackUrl } from "@/features/auth/lib/callback-url";
 import {
   loginFormDefaultValues,
   loginFormSchema,
@@ -36,8 +37,7 @@ export function useLoginForm() {
       return;
     }
 
-    const callbackUrl = searchParams.get("callbackUrl") ?? "/dashboard";
-    router.push(callbackUrl);
+    router.push(safeCallbackUrl(searchParams.get("callbackUrl")));
     router.refresh();
   };
 

@@ -1,3 +1,5 @@
+import { regionListingPage } from "@/features/site/region/constant/listing";
+
 import type { PageSeo } from "./metadata";
 import { pageMetadata } from "./metadata";
 
@@ -32,18 +34,10 @@ export const publicPages: PageSeo[] = [
     ],
   },
   {
-    path: "/region",
-    title: "Trekking Regions in Nepal",
-    description:
-      "Everest, Annapurna, Manaslu, Langtang, Dhaulagiri, west Nepal, Kanchenjunga, plus Tibet and Bhutan journeys from Pokhara.",
-    keywords: [
-      "Nepal trekking regions",
-      "Everest region",
-      "Annapurna region",
-      "Manaslu region",
-      "Langtang region",
-      "trekking from Pokhara",
-    ],
+    path: regionListingPage.path,
+    title: regionListingPage.seoTitle,
+    description: regionListingPage.seoDescription,
+    keywords: [...regionListingPage.keywords],
   },
   {
     path: "/about-us",

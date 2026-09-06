@@ -91,12 +91,12 @@ export const quickActions: QuickAction[] = [
   },
   {
     label: "Manage Treks",
-    href: "/dashboard/trips/treks",
+    href: "/dashboard/trekking",
     icon: TbMountain,
   },
   {
     label: "Write a Blog Post",
-    href: "/dashboard/blog",
+    href: "/dashboard/blogs",
     icon: TbNews,
   },
 ];

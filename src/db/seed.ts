@@ -1,63 +1,66 @@
 /**
- * Seeds admin users.
- *
- * Edit the `admins` array below to add, remove, or change admins, then
- * run `pnpm db:seed`. Safe to run more than once — it updates each
- * existing admin instead of failing on a duplicate email.
+ * Seeds admin users from SEED_ADMINS in .env / .env.local.
+ * Safe to re-run — existing emails are updated, not duplicated.
  */
-import { config } from "dotenv";
 import bcrypt from "bcryptjs";
-import postgres from "postgres";
 import { drizzle } from "drizzle-orm/postgres-js";
+import { z } from "zod";
 
+import { createSqlClient } from "@/db/client";
+import { loadDbEnv } from "@/db/env";
 import { users } from "@/db/schema";
 
-config({ path: ".env.local" });
+loadDbEnv();
 
-type SeedAdmin = { name: string; email: string; password: string };
+const seedAdminSchema = z.object({
+  name: z.string().min(1),
+  email: z.email(),
+  password: z.string().min(8),
+});
 
-// The admin list lives in .env.local (gitignored) as JSON, not here —
-// this file is committed to git, so real credentials can't live in it.
-function loadAdmins(): SeedAdmin[] {
+function loadAdmins() {
   const raw = process.env.SEED_ADMINS;
   if (!raw) {
     throw new Error(
-      "SEED_ADMINS is not set. Add a JSON array to .env.local, e.g.\n" +
-        `SEED_ADMINS='[{"name":"Admin One","email":"admin1@pokharatreks.com","password":"..."}]'`,
+      "SEED_ADMINS is not set. Add a JSON array to .env, e.g.\n" +
+        `SEED_ADMINS='[{"name":"Admin","email":"admin@pokharatreks.com","password":"..."}]'`,
     );
   }
-  return JSON.parse(raw) as SeedAdmin[];
+
+  const parsed = z.array(seedAdminSchema).min(1).safeParse(JSON.parse(raw));
+  if (!parsed.success) {
+    throw new Error(`SEED_ADMINS is invalid: ${parsed.error.message}`);
+  }
+
+  return parsed.data;
 }
 
 async function seed() {
-  if (!process.env.DATABASE_URL) {
-    throw new Error("DATABASE_URL is not set. Add it to .env.local first.");
-  }
-
   const admins = loadAdmins();
-
-  const client = postgres(process.env.DATABASE_URL, { prepare: false });
+  const client = createSqlClient();
   const db = drizzle(client);
 
-  for (const admin of admins) {
-    const passwordHash = await bcrypt.hash(admin.password, 12);
+  try {
+    for (const admin of admins) {
+      const passwordHash = await bcrypt.hash(admin.password, 12);
 
-    await db
-      .insert(users)
-      .values({
-        name: admin.name,
-        email: admin.email.toLowerCase(),
-        passwordHash,
-      })
-      .onConflictDoUpdate({
-        target: users.email,
-        set: { name: admin.name, passwordHash },
-      });
+      await db
+        .insert(users)
+        .values({
+          name: admin.name,
+          email: admin.email.toLowerCase(),
+          passwordHash,
+        })
+        .onConflictDoUpdate({
+          target: users.email,
+          set: { name: admin.name, passwordHash },
+        });
 
-    console.log(`Seeded admin user: ${admin.email}`);
+      console.log(`Seeded admin: ${admin.email}`);
+    }
+  } finally {
+    await client.end();
   }
-
-  await client.end();
 }
 
 seed()

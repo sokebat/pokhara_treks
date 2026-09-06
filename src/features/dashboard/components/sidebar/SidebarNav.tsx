@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { TbChevronRight } from "react-icons/tb";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -110,9 +110,18 @@ const NavExpandedGroup = ({
   pathname: string;
 }) => {
   const active = isNavItemActive(item, pathname);
+  const [open, setOpen] = useState(active);
+
+  useEffect(() => {
+    if (active) setOpen(true);
+  }, [active]);
 
   return (
-    <Collapsible defaultOpen={active} className="group/collapsible">
+    <Collapsible
+      open={open}
+      onOpenChange={setOpen}
+      className="group/collapsible"
+    >
       <SidebarMenuItem>
         <CollapsibleTrigger
           render={

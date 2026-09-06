@@ -1,14 +1,29 @@
 import {
   TbCalendarCheck,
   TbHelpCircle,
+  TbHelicopter,
   TbLayoutDashboard,
+  TbMapPin,
   TbMountain,
   TbNews,
+  TbParachute,
   TbSettings,
   TbStar,
   TbUsersGroup,
+  TbWalk,
 } from "react-icons/tb";
 import type { IconType } from "react-icons";
+
+import { navItems as siteNavItems } from "@/constant/nav";
+import { faqCategories } from "@/features/site/faq/constant/types";
+import { trekkingRegions } from "@/features/site/region/constant/regions";
+import {
+  contentGroupSlug,
+  contentLeafSlug,
+  contentPaths,
+  pathSegmentAfter,
+} from "@/features/dashboard/lib/content-paths";
+import { slugify } from "@/lib/utils";
 
 export type NavSubItem = {
   title: string;
@@ -41,8 +56,18 @@ export const isNavItemActive = (item: NavItem, pathname: string) =>
     ? pathname === item.url || pathname.startsWith(`${item.url}/`)
     : pathname === item.url;
 
-export const isNavSubItemActive = (url: string, pathname: string) =>
-  pathname === url;
+export const isNavSubItemActive = (url: string, pathname: string) => {
+  if (pathname === url) return true;
+
+  const addRegionUrl = `${contentPaths.regions}/new`;
+  const listingUrl = `${contentPaths.regions}/listing`;
+
+  return (
+    url === addRegionUrl &&
+    pathname.startsWith(`${contentPaths.regions}/`) &&
+    pathname !== listingUrl
+  );
+};
 
 export const getDashboardBreadcrumbs = (
   pathname: string,
@@ -76,8 +101,52 @@ export const getDashboardBreadcrumbs = (
     crumbs.push({ title: sub.title, href: sub.url });
   }
 
+  if (match.url === contentPaths.regions) {
+    const rest = pathSegmentAfter(contentPaths.regions, pathname);
+    if (rest && rest !== "listing" && rest !== "new") {
+      const region = trekkingRegions.find((item) => item.slug === rest);
+      const title =
+        region?.label ??
+        rest
+          .split("-")
+          .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+          .join(" ");
+      crumbs.push({ title, href: pathname });
+    }
+  }
+
   return crumbs;
 };
+
+function siteNavByLabel(label: string) {
+  return siteNavItems.find((item) => item.label === label);
+}
+
+function megaSubItems(label: string, root: string, allTitle: string) {
+  const item = siteNavByLabel(label);
+  const groups = item?.type === "mega" ? item.groups : [];
+
+  return [
+    { title: allTitle, url: root },
+    ...groups.map((group) => ({
+      title: group.label,
+      url: `${root}/${contentGroupSlug(group.label, group.href)}`,
+    })),
+  ];
+}
+
+function simpleSubItems(label: string, root: string, allTitle: string) {
+  const item = siteNavByLabel(label);
+  const children = item?.type === "simple" ? item.children : [];
+
+  return [
+    { title: allTitle, url: root },
+    ...children.map((child) => ({
+      title: child.label,
+      url: `${root}/${contentLeafSlug(child.href)}`,
+    })),
+  ];
+}
 
 export const navItems: NavItem[] = [
   {
@@ -87,32 +156,70 @@ export const navItems: NavItem[] = [
     items: [],
   },
   {
-    title: "Trips & Tours",
-    url: "/dashboard/trips",
+    title: "Regions",
+    url: contentPaths.regions,
+    icon: TbMapPin,
+    group: "content",
+    items: [
+      {
+        title: "Listing page",
+        url: `${contentPaths.regions}/listing`,
+      },
+      {
+        title: "Add region",
+        url: `${contentPaths.regions}/new`,
+      },
+    ],
+  },
+  {
+    title: "Trekking",
+    url: contentPaths.trekking,
     icon: TbMountain,
     group: "content",
-    items: [
-      { title: "Treks", url: "/dashboard/trips/treks" },
-      { title: "Short Treks & Day Hikes", url: "/dashboard/trips/short-treks" },
-      { title: "Helicopter Tours", url: "/dashboard/trips/heli-tours" },
-      { title: "Adventure Activities", url: "/dashboard/trips/adventures" },
-      { title: "Tours", url: "/dashboard/trips/tours" },
-    ],
+    items: megaSubItems("Trekking", contentPaths.trekking, "All Treks"),
   },
   {
-    title: "Blog",
-    url: "/dashboard/blog",
-    icon: TbNews,
+    title: "Heli Tour",
+    url: contentPaths.heliTours,
+    icon: TbHelicopter,
+    group: "content",
+    items: simpleSubItems(
+      "Heli Tour",
+      contentPaths.heliTours,
+      "All Helicopter Tours",
+    ),
+  },
+  {
+    title: "Activity",
+    url: contentPaths.activity,
+    icon: TbParachute,
+    group: "content",
+    items: megaSubItems("Activity", contentPaths.activity, "All Activities"),
+  },
+  {
+    title: "Tours",
+    url: contentPaths.tours,
+    icon: TbWalk,
+    group: "content",
+    items: megaSubItems("Tours", contentPaths.tours, "All Tours"),
+  },
+  {
+    title: "FAQ",
+    url: contentPaths.faq,
+    icon: TbHelpCircle,
     group: "content",
     items: [
-      { title: "All Posts", url: "/dashboard/blog" },
-      { title: "Categories", url: "/dashboard/blog/categories" },
+      { title: "All FAQs", url: contentPaths.faq },
+      ...faqCategories.map((category) => ({
+        title: category,
+        url: `${contentPaths.faq}/${slugify(category)}`,
+      })),
     ],
   },
   {
-    title: "FAQs",
-    url: "/dashboard/faqs",
-    icon: TbHelpCircle,
+    title: "Blogs",
+    url: contentPaths.blogs,
+    icon: TbNews,
     group: "content",
     items: [],
   },
