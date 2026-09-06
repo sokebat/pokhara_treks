@@ -1,4 +1,13 @@
-import { TbCalendarCheck, TbHelpCircle, TbLayoutDashboard, TbMountain, TbNews, TbSettings, TbStar, TbUsersGroup } from "react-icons/tb";
+import {
+  TbCalendarCheck,
+  TbHelpCircle,
+  TbLayoutDashboard,
+  TbMountain,
+  TbNews,
+  TbSettings,
+  TbStar,
+  TbUsersGroup,
+} from "react-icons/tb";
 import type { IconType } from "react-icons";
 
 export type NavSubItem = {
@@ -20,6 +29,54 @@ export const navGroupLabels: Record<NavGroup, string> = {
   content: "Content",
   operations: "Operations",
   admin: "Admin",
+};
+
+export type BreadcrumbCrumb = {
+  title: string;
+  href: string;
+};
+
+export const isNavItemActive = (item: NavItem, pathname: string) =>
+  item.items.length > 0
+    ? pathname === item.url || pathname.startsWith(`${item.url}/`)
+    : pathname === item.url;
+
+export const isNavSubItemActive = (url: string, pathname: string) =>
+  pathname === url;
+
+export const getDashboardBreadcrumbs = (
+  pathname: string,
+): BreadcrumbCrumb[] => {
+  const crumbs: BreadcrumbCrumb[] = [
+    { title: "Overview", href: "/dashboard" },
+  ];
+
+  if (pathname === "/dashboard") return crumbs;
+
+  const match = navItems
+    .filter((item) => item.url !== "/dashboard")
+    .filter(
+      (item) =>
+        pathname === item.url || pathname.startsWith(`${item.url}/`),
+    )
+    .sort((a, b) => b.url.length - a.url.length)[0];
+
+  if (!match) return crumbs;
+
+  crumbs.push({ title: match.title, href: match.url });
+
+  const sub = match.items
+    .filter(
+      (item) =>
+        pathname === item.url || pathname.startsWith(`${item.url}/`),
+    )
+    .sort((a, b) => b.url.length - a.url.length)[0];
+
+  if (sub && sub.url !== match.url && sub.title !== match.title) {
+    crumbs.push({ title: sub.title, href: sub.url });
+  }
+
+  return crumbs;
 };
 
 export const navItems: NavItem[] = [

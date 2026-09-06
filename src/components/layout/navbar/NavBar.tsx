@@ -71,6 +71,7 @@ const NavBar = () => {
       )}
 
       <header
+        data-slot="site-header"
         onMouseEnter={() => setPinned(true)}
         onMouseLeave={() => setPinned(false)}
         className={cn(

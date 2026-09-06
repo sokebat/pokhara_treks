@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import HeroSection from "@/features/site/home/components/HeroSection";
 import WaysToTravelSection from "@/features/site/home/components/WaysToTravelSection";
+import PopularTreksSection from "@/features/site/home/components/PopularTreksSection";
+import TravelSoloSection from "@/features/site/home/components/TravelSoloSection";
 import WhyUsSection from "@/features/site/home/components/WhyUsSection";
 import ShortTreksSection from "@/features/site/home/components/ShortTreksSection";
 import HeliToursSection from "@/features/site/heli-tours/components/HeliToursSection";
@@ -24,6 +26,10 @@ export default function Home() {
       <HeroSection />
 
       <WaysToTravelSection />
+
+      <PopularTreksSection />
+
+      <TravelSoloSection />
 
       <ShortTreksSection />
       <WhyUsSection />

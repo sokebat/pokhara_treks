@@ -19,6 +19,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 const getInitials = (name: string) =>
@@ -31,13 +32,14 @@ const getInitials = (name: string) =>
 
 const SidebarUserMenu = () => {
   const { data: session } = useSession();
+  const { state } = useSidebar();
   const user = session?.user;
 
   const name = user?.name ?? user?.email ?? "Admin";
   const email = user?.email ?? "Not signed in";
 
   return (
-    <SidebarFooter>
+    <SidebarFooter className="border-t-2 border-sidebar-border">
       <SidebarMenu>
         <SidebarMenuItem>
           <DropdownMenu>
@@ -45,17 +47,18 @@ const SidebarUserMenu = () => {
               render={
                 <SidebarMenuButton
                   size="lg"
+                  tooltip={state === "collapsed" ? name : undefined}
                   className="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground"
                 />
               }
             >
-              <Avatar size="sm" className="rounded-lg">
-                <AvatarFallback className="rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+              <Avatar size="sm" className="rounded-md after:rounded-md">
+                <AvatarFallback className="rounded-md bg-sidebar-primary font-heading text-sidebar-primary-foreground">
                   {getInitials(name)}
                 </AvatarFallback>
               </Avatar>
               <div className="flex min-w-0 flex-col gap-0.5 leading-none">
-                <span className="truncate font-medium">{name}</span>
+                <span className="truncate font-heading font-medium">{name}</span>
                 <span className="truncate text-xs text-sidebar-foreground/60">
                   {email}
                 </span>
@@ -66,7 +69,7 @@ const SidebarUserMenu = () => {
             <DropdownMenuContent
               align="end"
               side="top"
-              className="w-(--anchor-width) min-w-56 rounded-lg"
+              className="w-(--anchor-width) min-w-56 rounded-md"
             >
               <DropdownMenuGroup>
                 <DropdownMenuLabel className="font-normal">

@@ -1,11 +1,24 @@
 "use client";
 
-import { useRef } from "react";
 import { TbChevronDown } from "react-icons/tb";
 import { NavigationMenu as NavigationMenuPrimitive } from "@base-ui/react/navigation-menu";
 import { cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+
+function getNavMenuAnchor() {
+  if (typeof document === "undefined") return null;
+
+  const menus = document.querySelectorAll<HTMLElement>(
+    "[data-slot='navigation-menu']",
+  );
+
+  return (
+    [...menus].find((menu) => menu.getClientRects().length > 0) ??
+    menus[0] ??
+    null
+  );
+}
 
 function NavigationMenu({
   align = "center",
@@ -14,11 +27,8 @@ function NavigationMenu({
   ...props
 }: NavigationMenuPrimitive.Root.Props &
   Pick<NavigationMenuPrimitive.Positioner.Props, "align">) {
-  const rootRef = useRef<HTMLElement>(null);
-
   return (
     <NavigationMenuPrimitive.Root
-      ref={rootRef}
       data-slot="navigation-menu"
       className={cn(
         "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
@@ -27,7 +37,7 @@ function NavigationMenu({
       {...props}
     >
       {children}
-      <NavigationMenuPositioner align={align} anchor={rootRef} />
+      <NavigationMenuPositioner align={align} anchor={getNavMenuAnchor} />
     </NavigationMenuPrimitive.Root>
   );
 }
@@ -120,6 +130,7 @@ function NavigationMenuPositioner({
         alignOffset={alignOffset}
         collisionPadding={collisionPadding}
         collisionAvoidance={collisionAvoidance}
+        positionMethod="fixed"
         className={cn(
           "isolate z-50 h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom] duration-[0.35s] ease-[cubic-bezier(0.22,1,0.36,1)] data-instant:transition-none data-[side=bottom]:before:top-[-10px] data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0",
           className,

@@ -35,11 +35,7 @@ const SectionHeader = ({
       )}
     </div>
 
-    {action && (
-      <div className="flex shrink-0 sm:justify-end">
-        {action}
-      </div>
-    )}
+    {action && <div className="flex shrink-0 sm:justify-end">{action}</div>}
   </div>
 );
 

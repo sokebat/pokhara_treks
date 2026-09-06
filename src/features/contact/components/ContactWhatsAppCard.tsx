@@ -23,8 +23,9 @@ const ContactWhatsAppCard = () => (
           rel="noopener noreferrer"
         />
       }
+      variant="whatsapp"
       size="lg"
-      className="mt-5 bg-card text-foreground hover:bg-card/90"
+      className="mt-5 w-full"
     >
       <FaWhatsapp className="size-4" />
       Message us on WhatsApp

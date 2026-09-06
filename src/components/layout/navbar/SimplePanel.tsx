@@ -1,3 +1,4 @@
+import { TbChevronRight } from "react-icons/tb";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
@@ -25,11 +26,12 @@ const SimplePanel = ({ items, allHref, allLabel }: SimplePanelProps) => {
           closeOnClick
           render={<Link href={allHref} />}
           className={cn(
-            "font-heading rounded-md px-2 py-1.5 text-sm font-semibold text-chart-2 hover:bg-muted hover:text-primary",
+            "font-heading mb-1 flex items-center justify-between gap-2 rounded-md bg-secondary px-3 py-2.5 text-sm font-semibold text-primary hover:bg-sky/30",
             wide && "col-span-2",
           )}
         >
-          {allLabel}
+          <span>{allLabel}</span>
+          <TbChevronRight className="size-3.5" />
         </NavigationMenuLink>
       )}
       {items.map((leaf) => (

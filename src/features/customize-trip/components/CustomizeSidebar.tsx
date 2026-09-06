@@ -82,7 +82,7 @@ const CustomizeSidebar = () => (
         }
         variant="whatsapp"
         size="xl"
-        className="mt-5 w-full bg-card text-foreground hover:bg-card/90"
+        className="mt-5 w-full"
       >
         <FaWhatsapp className="size-4" />
         Message us on WhatsApp

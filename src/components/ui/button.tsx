@@ -13,7 +13,7 @@ const buttonVariants = cva(
         accent:
           "bg-accent text-accent-foreground hover:bg-[color-mix(in_srgb,var(--ocean)_82%,var(--navy)_18%)]",
         whatsapp:
-          "border-2 border-whatsapp bg-whatsapp text-whatsapp-foreground hover:border-[var(--whatsapp-hover)] hover:bg-[var(--whatsapp-hover)]",
+          "border-whatsapp bg-whatsapp text-whatsapp-foreground hover:border-[var(--whatsapp-hover)] hover:bg-[var(--whatsapp-hover)] hover:text-whatsapp-foreground",
 
         outline:
           "border-border bg-card hover:bg-secondary hover:text-foreground aria-expanded:bg-secondary aria-expanded:text-foreground",

@@ -19,7 +19,10 @@ interface DesktopNavProps {
 
 const DesktopNav = ({ className }: DesktopNavProps) => {
   return (
-    <NavigationMenu className={cn("w-full max-w-none justify-center", className)}>
+    <NavigationMenu
+      closeDelay={200}
+      className={cn("w-full max-w-none justify-center", className)}
+    >
       <NavigationMenuList className="flex-wrap gap-x-0.5 gap-y-1">
         {navItems.map((item) => {
           if (item.type === "link") {

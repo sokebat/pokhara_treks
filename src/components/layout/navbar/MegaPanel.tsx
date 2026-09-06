@@ -12,18 +12,28 @@ type MegaPanelProps = {
   groups: NavGroup[];
 };
 
+function columnsFor(count: number) {
+  if (count > 14) return 3;
+  if (count > 4) return 2;
+  return 1;
+}
+
 const MegaPanel = ({ groups }: MegaPanelProps) => {
   const [active, setActive] = React.useState(0);
   const current = groups[active];
-
-  const columns =
-    current.children.length > 14 ? 3 : current.children.length > 6 ? 2 : 1;
+  const maxCount = Math.max(...groups.map((group) => group.children.length), 0);
+  const panelColumns = columnsFor(maxCount);
+  const contentColumns = columnsFor(current.children.length);
   const panelWidth =
-    columns === 3 ? "w-[68rem]" : columns === 2 ? "w-[46rem]" : "w-[32rem]";
+    panelColumns === 3
+      ? "w-[68rem]"
+      : panelColumns === 2
+        ? "w-[46rem]"
+        : "w-[32rem]";
 
   return (
     <div
-      className={cn("flex max-w-[92vw]", panelWidth)}
+      className={cn("flex max-w-[92vw] items-stretch", panelWidth)}
       onClick={(event) => event.stopPropagation()}
     >
       <ul className="flex w-60 shrink-0 flex-col gap-0.5 border-r-2 border-border bg-muted/30 p-2">
@@ -32,8 +42,8 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
           const itemClassName = cn(
             "group/nav-item font-heading flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors",
             active === index
-              ? "bg-accent text-accent-foreground"
-              : "text-foreground hover:bg-accent hover:text-accent-foreground",
+              ? "bg-secondary text-primary"
+              : "text-foreground hover:bg-secondary hover:text-primary",
           );
           const itemContent = (
             <>
@@ -42,8 +52,8 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
                 className={cn(
                   "flex shrink-0 items-center gap-1.5",
                   active === index
-                    ? "text-accent-foreground"
-                    : "text-muted-foreground group-hover/nav-item:text-accent-foreground",
+                    ? "text-primary"
+                    : "text-muted-foreground group-hover/nav-item:text-primary",
                 )}
               >
                 <span className="text-xs tabular-nums">
@@ -86,7 +96,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
           <Link
             href={current.href}
             onClick={(event) => event.stopPropagation()}
-            className="font-heading mb-3 flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm font-semibold text-foreground hover:bg-muted hover:text-chart-2"
+            className="font-heading mb-3 flex w-full items-center justify-between gap-2 rounded-md bg-secondary px-3 py-2.5 text-sm font-semibold text-primary hover:bg-sky/30"
           >
             <span>About {current.label}</span>
             <TbChevronRight className="size-3.5" />
@@ -94,12 +104,10 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
         )}
         <div
           className={cn(
-            "grid gap-x-6 gap-y-1",
-            columns === 3
-              ? "grid-cols-3"
-              : columns === 2
-                ? "grid-cols-2"
-                : "grid-cols-1",
+            "grid w-fit max-w-full content-start gap-x-8 gap-y-0.5",
+            contentColumns === 3 && "grid-cols-3",
+            contentColumns === 2 && "grid-cols-2",
+            contentColumns === 1 && "grid-cols-1",
           )}
         >
           {current.children.map((leaf) => (

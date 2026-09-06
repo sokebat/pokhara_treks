@@ -10,32 +10,30 @@ import {
 import { logo } from "@/constant/image";
 
 const SidebarBrand = () => (
-  <SidebarHeader>
+  <SidebarHeader className="border-b-2 border-sidebar-border">
     <SidebarMenu>
       <SidebarMenuItem>
         <SidebarMenuButton
           size="lg"
           render={<Link href="/dashboard" />}
-          className="group-data-[collapsible=icon]:p-0!"
+          className="h-12 gap-2.5 group-data-[collapsible=icon]:p-0!"
         >
-          {/* Expanded: full wordmark */}
-          <Image
-            src={logo["logo-lg"]}
-            alt="Pokhara Treks & Expeditions"
-            width={2027}
-            height={464}
-            priority
-            className="h-8 w-auto shrink-0 group-data-[collapsible=icon]:hidden"
-          />
+          <span className="hidden size-8 shrink-0 items-center justify-center rounded-md bg-primary font-heading text-xs font-bold text-primary-foreground group-data-[collapsible=icon]:flex">
+            PT
+          </span>
 
-          {/* Collapsed: cropped mark */}
-          <div className="relative hidden size-8 shrink-0 overflow-hidden rounded-md group-data-[collapsible=icon]:block">
+          <div className="grid min-w-0 flex-1 text-left leading-tight group-data-[collapsible=icon]:hidden">
             <Image
               src={logo["logo-lg"]}
               alt="Pokhara Treks & Expeditions"
-              fill
-              className="object-cover object-left"
+              width={2027}
+              height={464}
+              priority
+              className="h-7 w-auto max-w-full object-contain object-left"
             />
+            <span className="font-heading mt-0.5 text-[0.65rem] font-semibold tracking-[0.16em] text-gold uppercase">
+              Dashboard
+            </span>
           </div>
         </SidebarMenuButton>
       </SidebarMenuItem>
