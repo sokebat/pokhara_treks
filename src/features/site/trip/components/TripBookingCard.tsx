@@ -41,7 +41,7 @@ const TripBookingCard = () => (
           <Select defaultValue="3-5">
             <SelectTrigger
               id="travellers"
-              className="mt-1.5 h-11 w-full rounded-md"
+              className="mt-1.5 h-11 w-full rounded-md bg-card"
             >
               <SelectValue />
             </SelectTrigger>

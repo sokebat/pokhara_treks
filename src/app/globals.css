@@ -4,6 +4,9 @@
 
 @source not "../../.next";
 
+/* Never follow OS dark mode. Dark utilities only match an unused .dark class. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   /* Fonts */
   --font-sans: var(--font-sans);
@@ -81,6 +84,7 @@
    ======================================== */
 
 :root {
+  color-scheme: only light;
   --navy: #2f4858;
   --ocean: #33658a;
   --sky: #86bbd8;
@@ -143,6 +147,16 @@
   --sidebar-ring: var(--ocean);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body {
+    color-scheme: only light;
+    background-color: #f3f4f6;
+    color: #2f4858;
+  }
+}
+
 /* ========================================
    BASE
    ======================================== */
@@ -152,14 +166,19 @@
     @apply border-border outline-ring/50;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    @apply scroll-smooth bg-[#f3f4f6] font-sans text-[#2f4858];
+    color-scheme: only light;
+    text-rendering: optimizeLegibility;
+    background-color: #f3f4f6;
+    --main-nav-offset: 64px;
   }
 
-  html {
-    @apply scroll-smooth font-sans;
-    color-scheme: light;
-    text-rendering: optimizeLegibility;
+  body {
+    @apply min-h-full bg-background text-foreground;
+    color-scheme: only light;
+    background-color: #f3f4f6;
+    color: #2f4858;
   }
 
   h1,
@@ -173,5 +192,14 @@
 
   a {
     @apply transition-colors;
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

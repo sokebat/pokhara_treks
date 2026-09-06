@@ -1,4 +1,4 @@
-import { TbChevronRight, TbDots } from "react-icons/tb";
+import { TbChevronRight } from "react-icons/tb";
 import * as React from "react"
 import { mergeProps } from "@base-ui/react/merge-props"
 import { useRender } from "@base-ui/react/use-render"
@@ -92,28 +92,6 @@ function BreadcrumbSeparator({
   )
 }
 
-function BreadcrumbEllipsis({
-  className,
-  ...props
-}: React.ComponentProps<"span">) {
-  return (
-    <span
-      data-slot="breadcrumb-ellipsis"
-      role="presentation"
-      aria-hidden="true"
-      className={cn(
-        "flex size-5 items-center justify-center [&>svg]:size-4",
-        className
-      )}
-      {...props}
-    >
-      <TbDots
-      />
-      <span className="sr-only">More</span>
-    </span>
-  )
-}
-
 export {
   Breadcrumb,
   BreadcrumbList,
@@ -121,5 +99,4 @@ export {
   BreadcrumbLink,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  BreadcrumbEllipsis,
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { TbMinus, TbPlus } from "react-icons/tb";
-import * as React from "react";
 import { NumberField as NumberFieldPrimitive } from "@base-ui/react/number-field";
 
 import { cn } from "@/lib/utils";

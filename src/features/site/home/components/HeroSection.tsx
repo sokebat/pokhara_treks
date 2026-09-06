@@ -23,7 +23,7 @@ const routes = [
 const HeroSection = () => {
   return (
     <section className="bg-secondary">
-      <div className="relative isolate flex h-[70svh] min-h-[36rem] items-center justify-center overflow-hidden bg-foreground px-4 pb-36 md:px-6 sm:pb-40 lg:min-h-[42rem]">
+      <div className="relative isolate overflow-hidden bg-foreground px-4 pt-10 pb-20 sm:px-6 sm:pt-14 sm:pb-24 lg:flex lg:h-[70svh] lg:min-h-[42rem] lg:items-center lg:justify-center lg:pt-0 lg:pb-40">
         <Image
           src={WOMEN_TREK_PHOTO}
           alt="A woman trekker with a backpack looking out over a snow-capped Himalayan mountain range"
@@ -37,26 +37,27 @@ const HeroSection = () => {
           className="absolute inset-0 bg-linear-to-t from-footer-deep from-[10%] via-footer/70 via-45% to-footer/25"
         />
 
-        <div className="relative z-10 w-full max-w-3xl text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground/40 bg-foreground/25 px-3.5 py-1 text-xs font-semibold tracking-[0.18em] text-primary-foreground uppercase [text-shadow:0_1px_12px_rgb(0_0_0_/_0.4)]">
+        <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
+          <p className="inline-flex max-w-full items-center gap-2 rounded-full border-2 border-primary-foreground/40 bg-foreground/25 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.12em] text-primary-foreground uppercase [text-shadow:0_1px_12px_rgb(0_0_0_/_0.4)] sm:px-3.5 sm:text-xs sm:tracking-[0.18em]">
             Women-led · Pokhara, Nepal
           </p>
 
-          <h1 className="mt-5 text-3xl leading-[1.15] font-bold tracking-tight text-primary-foreground [text-shadow:0_2px_20px_rgb(0_0_0_/_0.5)] sm:text-4xl sm:leading-[1.12] lg:text-5xl lg:leading-[1.1]">
+          <h1 className="mt-4 text-[1.65rem] leading-snug font-bold tracking-tight text-balance text-primary-foreground [text-shadow:0_2px_20px_rgb(0_0_0_/_0.5)] sm:mt-5 sm:text-4xl sm:leading-[1.12] lg:text-5xl lg:leading-[1.1]">
             The Himalaya, led by the women who know her best.
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-primary-foreground [text-shadow:0_2px_16px_rgb(0_0_0_/_0.5)] sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-pretty text-primary-foreground [text-shadow:0_2px_16px_rgb(0_0_0_/_0.5)] sm:mt-5 sm:text-lg sm:leading-8">
             {siteInfo.name} puts trained local women at the front of every
             journey — from Everest&apos;s high passes to Annapurna&apos;s
             sanctuary trails.
           </p>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-2.5 sm:flex-row sm:flex-wrap">
+          <div className="mt-6 flex w-full flex-col items-stretch justify-center gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
             <Button
               nativeButton={false}
               render={<Link href="/customize-my-trip" />}
               size="xl"
+              className="w-full sm:w-auto"
             >
               Plan Your Trip
               <TbArrowRight className="size-4" />
@@ -67,13 +68,14 @@ const HeroSection = () => {
               render={<Link href="/trip" />}
               variant="accent"
               size="xl"
+              className="w-full sm:w-auto"
             >
               Explore Treks
               <TbArrowRight className="size-4" />
             </Button>
           </div>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-primary-foreground [text-shadow:0_1px_12px_rgb(0_0_0_/_0.45)]">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs font-medium text-primary-foreground [text-shadow:0_1px_12px_rgb(0_0_0_/_0.45)] sm:mt-7 sm:gap-x-4 sm:gap-y-2 sm:text-sm">
             <span>Licensed women guides</span>
             <span
               aria-hidden
@@ -90,10 +92,10 @@ const HeroSection = () => {
       </div>
 
       <Container>
-        <div className="relative z-10 -mb-36 -translate-y-1/2 sm:-mb-40">
+        <div className="relative z-10 -mt-12 mb-8 sm:-mt-16 sm:mb-10 lg:-mt-0 lg:-mb-36 lg:-translate-y-1/2">
           <div className="overflow-hidden rounded-md border-2 border-primary/20 bg-card">
             <div className="grid lg:grid-cols-[minmax(16rem,22rem)_1fr]">
-              <div className="relative aspect-16/10 lg:aspect-auto lg:min-h-full">
+              <div className="relative aspect-16/9 lg:aspect-auto lg:min-h-full">
                 <Image
                   src={TREK_PHOTO}
                   alt="A trekking group led along a Himalayan mountain trail"
@@ -102,19 +104,19 @@ const HeroSection = () => {
                   className="object-cover"
                 />
                 <p className="absolute inset-x-0 bottom-0 flex items-center gap-2 bg-linear-to-t from-foreground/80 to-transparent px-4 pt-10 pb-4 text-sm font-semibold text-primary-foreground">
-                  <TbMapPin className="size-4 text-sky" />
+                  <TbMapPin className="size-4 shrink-0 text-sky" />
                   On the trail, Nepal
                 </p>
               </div>
 
-              <div className="flex flex-col justify-center p-5 sm:p-7 lg:p-8">
+              <div className="flex flex-col justify-center p-4 sm:p-7 lg:p-8">
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-md bg-primary">
+                  <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-md bg-primary sm:size-10">
                     <TbHeartHandshake className="size-5 text-primary-foreground" />
                   </span>
 
-                  <div>
-                    <p className="text-lg font-semibold text-foreground sm:text-xl">
+                  <div className="min-w-0">
+                    <p className="text-base font-semibold text-foreground sm:text-xl">
                       Led by local women
                     </p>
                     <p className="mt-1.5 max-w-xl text-sm leading-6 text-muted-foreground">
@@ -124,7 +126,7 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                <dl className="mt-6 grid grid-cols-1 gap-4 border-t-2 border-border pt-5 sm:grid-cols-3 sm:gap-6">
+                <dl className="mt-5 grid grid-cols-1 gap-3 border-t-2 border-border pt-5 sm:mt-6 sm:grid-cols-3 sm:gap-6">
                   {proofs.map((proof) => (
                     <div key={proof.kicker}>
                       <dt className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">

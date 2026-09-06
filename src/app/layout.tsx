@@ -14,7 +14,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  colorScheme: "light",
+  colorScheme: "only light",
+  themeColor: "#f3f4f6",
 };
 
 export const metadata: Metadata = {
@@ -81,6 +82,8 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png" }],
   },
   other: {
+    "color-scheme": "only light",
+    "supported-color-schemes": "light",
     "geo.region": "NP-P4",
     "geo.placename": "Pokhara",
     "geo.position": `${siteInfo.geo.latitude};${siteInfo.geo.longitude}`,
@@ -97,9 +100,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${plusJakartaSans.variable} h-full antialiased`}
-      style={{ colorScheme: "light" }}
+      style={{ colorScheme: "only light" }}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col bg-[#f3f4f6] text-[#2f4858]">
         <TooltipProvider>{children}</TooltipProvider>
       </body>
     </html>

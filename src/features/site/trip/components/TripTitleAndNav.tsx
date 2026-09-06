@@ -1,26 +1,9 @@
-import {
-  TbCalendar,
-  TbCheck,
-  TbHelpCircle,
-  TbMountain,
-  TbNotes,
-  TbRoute,
-  TbStar,
-} from "react-icons/tb";
+import { TbCheck } from "react-icons/tb";
 
 import Container from "@/components/shared/Container";
 import StarRating from "@/components/shared/StarRating";
-import { Button } from "@/components/ui/button";
 
-const navItems = [
-  { href: "#overview", label: "Overview", icon: TbNotes, current: true },
-  { href: "#itinerary", label: "Itinerary", icon: TbRoute },
-  { href: "#included", label: "What is included", icon: TbCheck },
-  { href: "#difficulty", label: "Difficulty", icon: TbMountain },
-  { href: "#departures", label: "Departures", icon: TbCalendar },
-  { href: "#reviews", label: "Reviews", icon: TbStar },
-  { href: "#questions", label: "Questions", icon: TbHelpCircle },
-];
+import TripOnPageNav from "./TripOnPageNav";
 
 const TripTitleAndNav = () => (
   <>
@@ -63,38 +46,7 @@ const TripTitleAndNav = () => (
       </Container>
     </section>
 
-    <nav
-      aria-label="On this page"
-      className="sticky top-16 z-30 border-y-2 border-border bg-secondary/90 backdrop-blur-md"
-    >
-      <Container>
-        <div className="flex items-center gap-4">
-          <ul className="flex h-12 min-w-0 flex-1 items-stretch gap-0.5 overflow-x-auto">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  aria-current={item.current ? "true" : undefined}
-                  className="flex h-full items-center gap-2 px-3.5 text-sm font-semibold whitespace-nowrap text-muted-foreground hover:text-primary aria-[current=true]:border-b-[2.5px] aria-[current=true]:border-accent aria-[current=true]:text-primary"
-                >
-                  <item.icon className="size-3.5 shrink-0 opacity-80" />
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <Button
-            nativeButton={false}
-            render={<a href="#departures" />}
-            size="sm"
-            className="hidden shrink-0 lg:inline-flex"
-          >
-            USD 475 pp · Check dates
-          </Button>
-        </div>
-      </Container>
-    </nav>
+    <TripOnPageNav />
   </>
 );
 
