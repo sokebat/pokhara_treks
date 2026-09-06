@@ -1,25 +1,32 @@
-import CatalogView from "@/features/dashboard/components/catalog/CatalogView";
-import { trekkingRegions } from "@/features/site/region/constant/regions";
+import RegionsTable from "@/features/dashboard/regions/components/RegionsTable";
+import { getRegionsForDashboard } from "@/features/dashboard/regions/service/region.service";
 
 export const metadata = {
   title: "Regions",
 };
 
-export default function RegionsPage() {
+type RegionsPageProps = {
+  searchParams: Promise<{ saved?: string }>;
+};
+
+export default async function RegionsPage({ searchParams }: RegionsPageProps) {
+  const [{ saved }, rows] = await Promise.all([
+    searchParams,
+    getRegionsForDashboard(),
+  ]);
+
   return (
-    <CatalogView
-      catalog={{
-        kind: "list",
-        title: "Region",
-        description: "Trekking region pages published on /region.",
-        metaLabel: "Typical trek",
-        rows: trekkingRegions.map((region) => ({
-          title: region.title,
-          href: `/region/${region.slug}`,
-          location: region.location,
-          meta: region.typicalDuration,
-        })),
-      }}
+    <RegionsTable
+      savedTitle={saved ?? null}
+      rows={rows.map((region) => ({
+        id: region.id,
+        slug: region.slug,
+        title: region.title,
+        location: region.location,
+        typicalDuration: region.typicalDuration,
+        highestPoint: region.highestPoint,
+        publicHref: `/region/${region.slug}`,
+      }))}
     />
   );
 }

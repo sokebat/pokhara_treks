@@ -14,13 +14,18 @@ import {
 import type { IconType } from "react-icons";
 
 import { faqCategories } from "@/features/site/faq/constant/types";
-import { trekkingRegions } from "@/features/site/region/constant/regions";
+import {
+  getRegionBySlug,
+  trekkingRegions,
+} from "@/features/site/region/constant/regions";
 import {
   contentMetaPath,
   contentMetaSlugs,
   contentPaths,
   isContentMetaSegment,
   pathSegmentAfter,
+  regionEditPath,
+  regionNewPath,
 } from "@/features/dashboard/lib/content-paths";
 import { slugify } from "@/lib/utils";
 
@@ -50,10 +55,20 @@ export type BreadcrumbCrumb = {
   href: string;
 };
 
-export const isNavItemActive = (item: NavItem, pathname: string) =>
-  item.items.length > 0
+export const isNavItemActive = (item: NavItem, pathname: string) => {
+  if (item.url === contentPaths.regions) {
+    return (
+      pathname === item.url ||
+      pathname.startsWith(`${item.url}/`) ||
+      pathname === contentPaths.region ||
+      pathname.startsWith(`${contentPaths.region}/`)
+    );
+  }
+
+  return item.items.length > 0
     ? pathname === item.url || pathname.startsWith(`${item.url}/`)
     : pathname === item.url;
+};
 
 export const isNavSubItemActive = (url: string, pathname: string) => {
   if (pathname === url) return true;
@@ -73,12 +88,50 @@ export const isNavSubItemActive = (url: string, pathname: string) => {
     }
   }
 
+  if (
+    url === contentPaths.regions &&
+    (pathname === contentPaths.region ||
+      pathname.startsWith(`${contentPaths.region}/`))
+  ) {
+    return true;
+  }
+
   return false;
 };
+
+function regionDashboardBreadcrumbs(pathname: string): BreadcrumbCrumb[] {
+  const crumbs: BreadcrumbCrumb[] = [
+    { title: "Overview", href: "/dashboard" },
+    { title: "Regions", href: contentPaths.regions },
+  ];
+
+  if (pathname === regionNewPath) {
+    crumbs.push({ title: "Add region", href: regionNewPath });
+    return crumbs;
+  }
+
+  if (pathname.startsWith(`${contentPaths.region}/edit/`)) {
+    const slug = pathname.slice(`${contentPaths.region}/edit/`.length);
+    const region = getRegionBySlug(slug);
+    crumbs.push({
+      title: region ? `Edit ${region.title}` : "Edit region",
+      href: regionEditPath(slug),
+    });
+  }
+
+  return crumbs;
+}
 
 export const getDashboardBreadcrumbs = (
   pathname: string,
 ): BreadcrumbCrumb[] => {
+  if (
+    pathname === contentPaths.region ||
+    pathname.startsWith(`${contentPaths.region}/`)
+  ) {
+    return regionDashboardBreadcrumbs(pathname);
+  }
+
   const crumbs: BreadcrumbCrumb[] = [
     { title: "Overview", href: "/dashboard" },
   ];

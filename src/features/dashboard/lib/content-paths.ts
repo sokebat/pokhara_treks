@@ -15,6 +15,7 @@ export function contentLeafSlug(href: string) {
 export const contentPaths = {
   trekking: "/dashboard/trip",
   regions: "/dashboard/regions",
+  region: "/dashboard/region",
   heliTours: "/dashboard/heli-tours",
   activity: "/dashboard/activity",
   tours: "/dashboard/tours",
@@ -22,11 +23,17 @@ export const contentPaths = {
   blogs: "/dashboard/blogs",
 } as const;
 
+export const regionNewPath = `${contentPaths.region}/new`;
+
+export function regionEditPath(slug: string) {
+  return `${contentPaths.region}/edit/${slug}`;
+}
+
 export const contentMetaSlugs = {
-  regions: "region-meta",
-  trekking: "trip-meta",
-  activity: "activity-meta",
-  heliTours: "tours-meta",
+  regions: "Region-meta",
+  trekking: "Trip-meta",
+  activity: "Activity-meta",
+  heliTours: "Heli-Tours-meta",
 } as const;
 
 export function contentMetaPath(root: string, slug: string) {
