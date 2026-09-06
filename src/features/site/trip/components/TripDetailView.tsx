@@ -48,7 +48,7 @@ const TripDetailView = () => (
           <TripKit />
           <TripRelated />
           <TestimonialsSection id="reviews" withContainer={false} />
-          <FaqSection id="questions" withContainer={false} iscta={false} />
+          <FaqSection id="questions" />
         </div>
         <div className="order-1 lg:order-2">
           <TripBookingCard />
