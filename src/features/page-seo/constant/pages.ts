@@ -39,13 +39,18 @@ export const listingSeoPages = [
   },
 ] as const;
 
-export type ListingSeoKey = (typeof listingSeoPages)[number]["key"];
 export type ListingSeoPage = (typeof listingSeoPages)[number];
+export type ListingSeoKey = ListingSeoPage["key"];
+export type ListingPublicPath = ListingSeoPage["publicPath"];
 
-export function getListingSeoPage(key: string) {
-  return listingSeoPages.find((page) => page.key === key);
-}
+export const listingSeoPagesByKey = Object.fromEntries(
+  listingSeoPages.map((page) => [page.key, page]),
+) as Record<ListingSeoKey, ListingSeoPage>;
 
 export function isListingSeoKey(key: string): key is ListingSeoKey {
-  return listingSeoPages.some((page) => page.key === key);
+  return Object.hasOwn(listingSeoPagesByKey, key);
+}
+
+export function getListingSeoPage(key: ListingSeoKey): ListingSeoPage {
+  return listingSeoPagesByKey[key];
 }

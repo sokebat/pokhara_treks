@@ -1,9 +1,11 @@
-import ListingSeoPage from "@/features/page-seo/components/ListingSeoPage";
+import type { Metadata } from "next";
 
-export const metadata = {
+import { ListingSeoEditor } from "@/features/page-seo";
+
+export const metadata: Metadata = {
   title: "activity-meta",
 };
 
 export default async function ActivityMetaPage() {
-  return <ListingSeoPage pageKey="activity" />;
+  return <ListingSeoEditor pageKey="activity" />;
 }

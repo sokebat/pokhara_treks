@@ -1,5 +1,6 @@
 "use client";
 
+import { useActionState } from "react";
 import { TbExternalLink } from "react-icons/tb";
 import Link from "next/link";
 
@@ -14,9 +15,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { savePageSeo } from "@/features/page-seo/actions/save-page-seo";
 import type { ListingSeoPage } from "@/features/page-seo/constant/pages";
-import { usePageSeoForm } from "@/features/page-seo/hooks/use-page-seo-form";
-import type { PageSeoRecord } from "@/features/page-seo/lib/keywords";
+import type { PageSeoRecord } from "@/features/page-seo/types";
+import {
+  firstFieldError,
+  idlePageSeoActionState,
+} from "@/features/page-seo/validation/page-seo.validation";
 
 type PageSeoFormProps = {
   page: ListingSeoPage;
@@ -24,21 +29,19 @@ type PageSeoFormProps = {
 };
 
 const PageSeoForm = ({ page, initial }: PageSeoFormProps) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    formError,
-    formSuccess,
-    onSubmit,
-  } = usePageSeoForm(page.key, initial);
+  const [state, formAction, pending] = useActionState(
+    savePageSeo,
+    idlePageSeoActionState,
+  );
+
+  const titleError = firstFieldError(state.fieldErrors, "title");
+  const descriptionError = firstFieldError(state.fieldErrors, "description");
+  const keywordsError = firstFieldError(state.fieldErrors, "keywords");
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      noValidate
-      className="flex flex-col gap-6"
-    >
+    <form action={formAction} className="flex flex-col gap-6">
+      <input type="hidden" name="key" value={page.key} />
+
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h1 className="text-xl font-bold text-foreground sm:text-2xl">
@@ -54,7 +57,11 @@ const PageSeoForm = ({ page, initial }: PageSeoFormProps) => {
           size="sm"
           className="rounded-md"
           render={
-            <Link href={page.publicPath} target="_blank" rel="noopener noreferrer" />
+            <Link
+              href={page.publicPath}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
           }
         >
           View {page.publicPath}
@@ -74,13 +81,16 @@ const PageSeoForm = ({ page, initial }: PageSeoFormProps) => {
             <Label htmlFor="title">Meta title</Label>
             <Input
               id="title"
+              name="title"
+              required
+              maxLength={120}
+              defaultValue={initial.title}
               placeholder="Trekking Regions in Nepal"
-              aria-invalid={!!errors.title}
+              aria-invalid={!!titleError}
               className="h-11 rounded-md"
-              {...register("title")}
             />
-            {errors.title && (
-              <p className="text-xs text-destructive">{errors.title.message}</p>
+            {titleError && (
+              <p className="text-xs text-destructive">{titleError}</p>
             )}
           </div>
 
@@ -88,16 +98,17 @@ const PageSeoForm = ({ page, initial }: PageSeoFormProps) => {
             <Label htmlFor="description">Meta description</Label>
             <Textarea
               id="description"
+              name="description"
+              required
+              maxLength={320}
               rows={4}
+              defaultValue={initial.description}
               placeholder="Everest, Annapurna, Manaslu…"
-              aria-invalid={!!errors.description}
+              aria-invalid={!!descriptionError}
               className="min-h-24 rounded-md"
-              {...register("description")}
             />
-            {errors.description && (
-              <p className="text-xs text-destructive">
-                {errors.description.message}
-              </p>
+            {descriptionError && (
+              <p className="text-xs text-destructive">{descriptionError}</p>
             )}
           </div>
 
@@ -105,30 +116,32 @@ const PageSeoForm = ({ page, initial }: PageSeoFormProps) => {
             <Label htmlFor="keywords">Keywords</Label>
             <Textarea
               id="keywords"
+              name="keywords"
+              maxLength={500}
               rows={3}
+              defaultValue={initial.keywords}
               placeholder="Nepal trekking regions, Annapurna region"
-              aria-invalid={!!errors.keywords}
+              aria-invalid={!!keywordsError}
               className="min-h-20 rounded-md"
-              {...register("keywords")}
             />
             <p className="text-xs text-muted-foreground">
               Separate keywords with commas.
             </p>
-            {errors.keywords && (
-              <p className="text-xs text-destructive">
-                {errors.keywords.message}
-              </p>
+            {keywordsError && (
+              <p className="text-xs text-destructive">{keywordsError}</p>
             )}
           </div>
 
-          {formError && <p className="text-sm text-destructive">{formError}</p>}
-          {formSuccess && (
-            <p className="text-sm text-foreground">{formSuccess}</p>
+          {state.status === "error" && state.message && (
+            <p className="text-sm text-destructive">{state.message}</p>
+          )}
+          {state.status === "success" && state.message && (
+            <p className="text-sm text-foreground">{state.message}</p>
           )}
 
           <div>
-            <Button type="submit" disabled={isSubmitting} className="rounded-md">
-              {isSubmitting ? "Saving..." : "Save SEO"}
+            <Button type="submit" disabled={pending} className="rounded-md">
+              {pending ? "Saving..." : "Save SEO"}
             </Button>
           </div>
         </CardContent>

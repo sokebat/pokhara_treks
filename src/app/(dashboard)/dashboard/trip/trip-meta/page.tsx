@@ -1,9 +1,11 @@
-import ListingSeoPage from "@/features/page-seo/components/ListingSeoPage";
+import type { Metadata } from "next";
 
-export const metadata = {
+import { ListingSeoEditor } from "@/features/page-seo";
+
+export const metadata: Metadata = {
   title: "trip-meta",
 };
 
 export default async function TripMetaPage() {
-  return <ListingSeoPage pageKey="trip" />;
+  return <ListingSeoEditor pageKey="trip" />;
 }

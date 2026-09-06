@@ -1,3 +1,6 @@
+const MAX_KEYWORDS = 20;
+const MAX_KEYWORD_LENGTH = 40;
+
 export function parseKeywords(raw: string) {
   return raw
     .split(",")
@@ -9,9 +12,10 @@ export function formatKeywords(keywords: string[]) {
   return keywords.join(", ");
 }
 
-export type PageSeoRecord = {
-  path: string;
-  title: string;
-  description: string;
-  keywords: string;
-};
+export function normalizeKeywords(raw: string) {
+  return formatKeywords(
+    parseKeywords(raw)
+      .slice(0, MAX_KEYWORDS)
+      .map((keyword) => keyword.slice(0, MAX_KEYWORD_LENGTH)),
+  );
+}
