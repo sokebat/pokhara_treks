@@ -17,7 +17,7 @@ import { TripCard } from "@/features/site/listing";
 import { variants } from "@/features/site/trip/constant/variants";
 
 const tones = ["primary", "accent", "chart-2"] as const;
-const currentHref = "/annapurna-base-camp-trek";
+const currentHref = "/trip/annapurna-base-camp-trek";
 const relatedTreks = [...popularTreks, ...shortTreks]
   .filter(
     (trek, index, list) =>

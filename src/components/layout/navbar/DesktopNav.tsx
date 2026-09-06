@@ -19,7 +19,7 @@ interface DesktopNavProps {
 
 const DesktopNav = ({ className }: DesktopNavProps) => {
   return (
-    <NavigationMenu className={cn("max-w-none", className)}>
+    <NavigationMenu className={cn("w-full max-w-none justify-center", className)}>
       <NavigationMenuList className="flex-wrap gap-x-0.5 gap-y-1">
         {navItems.map((item) => {
           if (item.type === "link") {
@@ -27,7 +27,7 @@ const DesktopNav = ({ className }: DesktopNavProps) => {
               <NavigationMenuItem key={item.label}>
                 <NavigationMenuLink
                   render={<Link href={item.href} />}
-                  className="inline-flex h-8 cursor-pointer items-center rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide uppercase hover:bg-muted hover:text-chart-2 lg:h-9 lg:px-2.5 lg:text-sm"
+                  className="font-heading inline-flex h-8 cursor-pointer items-center rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide uppercase hover:bg-muted hover:text-chart-2 lg:h-9 lg:px-2.5 lg:text-sm"
                 >
                   {item.label}
                 </NavigationMenuLink>

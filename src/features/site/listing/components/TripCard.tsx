@@ -37,7 +37,7 @@ const TripCard = ({
   facts,
   rating,
 }: TripCardProps) => (
-  <Card className="h-full gap-0 overflow-hidden rounded-md border-2 border-primary/20 bg-card py-0 shadow-none ring-0">
+  <Card className="gap-0 overflow-hidden rounded-md border-2 border-primary/20 bg-card py-0 shadow-none ring-0">
     <CardVisual
       icon={icon}
       tone={tone}
@@ -46,14 +46,14 @@ const TripCard = ({
       className="aspect-4/3"
     />
 
-    <CardContent className="flex flex-1 flex-col px-4 py-4">
-      <h3 className="line-clamp-2 min-h-12 text-sm font-semibold leading-6 text-pretty text-foreground sm:text-base">
+    <CardContent className="flex flex-col px-4 pt-3 pb-4">
+      <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-pretty text-foreground sm:text-base">
         {title}
         {subtitle && `, ${subtitle}`}
       </h3>
 
       {rating && (
-        <div className="mt-2 flex items-center justify-between gap-2">
+        <div className="mt-1.5 flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5">
             <StarRating rating={rating.value} />
             <span className="text-xs font-semibold text-foreground">
@@ -70,14 +70,14 @@ const TripCard = ({
         </div>
       )}
 
-      <ul className="mt-3 flex flex-col gap-1.5 border-t-2 border-border pt-3 text-xs">
+      <ul className="mt-2 flex flex-col gap-1.5 text-sm">
         {facts.map((fact) => (
           <li
             key={fact.label}
-            className="flex items-center justify-between text-muted-foreground"
+            className="flex items-center justify-between gap-3"
           >
-            <span className="flex items-center gap-1.5">
-              <fact.icon className="size-3.5" />
+            <span className="flex items-center gap-1.5 text-muted-foreground">
+              <fact.icon className="size-3.5 shrink-0" />
               {fact.label}
             </span>
             <span className="font-semibold text-foreground">{fact.value}</span>
@@ -85,14 +85,10 @@ const TripCard = ({
         ))}
       </ul>
 
-      <div className="mt-auto flex flex-wrap items-end justify-between gap-3 border-t-2 border-border pt-3">
+      <div className="mt-3 flex items-end justify-between gap-3">
         <ListingPrice price={price} />
 
-        <Button
-          nativeButton={false}
-          render={<Link href={href} />}
-          size="lg"
-        >
+        <Button nativeButton={false} render={<Link href={href} />} size="lg">
           {ctaLabel}
         </Button>
       </div>

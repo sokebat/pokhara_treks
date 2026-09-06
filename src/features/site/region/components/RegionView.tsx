@@ -5,8 +5,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 import JsonLd from "@/components/shared/JsonLd";
 import { Button } from "@/components/ui/button";
+import { TripListingCard, listingCardGridClass } from "@/features/site/listing";
 import type { TrekkingRegion } from "@/features/site/region/constant/regions";
 import { trekkingRegions } from "@/features/site/region/constant/regions";
+import { getRegionTrips } from "@/features/site/trekking/constant/trekking";
 import {
   CTASection,
   FaqSection,
@@ -20,6 +22,7 @@ type RegionViewProps = {
 
 const RegionView = ({ region }: RegionViewProps) => {
   const Icon = region.icon;
+  const trips = getRegionTrips(region.label);
   const otherRegions = trekkingRegions.filter(
     (item) => item.slug !== region.slug,
   );
@@ -142,6 +145,24 @@ const RegionView = ({ region }: RegionViewProps) => {
               ))}
             </ul>
           </div>
+
+          {trips.length > 0 ? (
+            <div className="mt-8">
+              <h2 className="text-base font-semibold text-foreground sm:text-lg">
+                Treks in this region
+              </h2>
+              <div className={listingCardGridClass}>
+                {trips.map((trip, index) => (
+                  <TripListingCard
+                    key={trip.href}
+                    trip={trip}
+                    index={index}
+                    ctaLabel="View Trek"
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
 
           <div className="mt-8">
             <h2 className="text-base font-semibold text-foreground sm:text-lg">

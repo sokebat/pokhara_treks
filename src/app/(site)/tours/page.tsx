@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-import ToursView from "@/features/site/tours/components/ToursView";
+import HeliToursView from "@/features/site/heli-tours/components/HeliToursView";
 import { getPageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = getPageSeo("/tours");
 
-export default function ToursPage() {
-  return <ToursView />;
+export default function HeliToursPage() {
+  return <HeliToursView />;
 }

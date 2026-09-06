@@ -28,7 +28,7 @@ const TripDetailsFields = ({
   register,
   errors,
 }: CustomizeTripFieldProps) => (
-  <div className="flex flex-col gap-5">
+  <div className="flex flex-col gap-4 sm:gap-5">
     <h2 className="flex items-center gap-2 text-sm font-semibold tracking-wide text-chart-2 uppercase">
       <span aria-hidden className="size-1.5 rounded-full bg-accent" />
       Trip Details
@@ -44,7 +44,10 @@ const TripDetailsFields = ({
             <Select value={field.value} onValueChange={field.onChange}>
               <SelectTrigger id="tripType" className="h-14 w-full rounded-md">
                 <TbTag className="size-4 text-muted-foreground" />
-                <SelectValue placeholder="Select trip type" />
+                <SelectValue placeholder="Select trip type">
+                  {tripTypeOptions.find((option) => option.value === field.value)
+                    ?.label}
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
                 {tripTypeOptions.map((option) => (

@@ -30,7 +30,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
         {groups.map((group, index) => {
           const isRegion = Boolean(group.href?.startsWith("/region/"));
           const itemClassName = cn(
-            "group/nav-item flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors",
+            "group/nav-item font-heading flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors",
             active === index
               ? "bg-accent text-accent-foreground"
               : "text-foreground hover:bg-accent hover:text-accent-foreground",
@@ -86,7 +86,7 @@ const MegaPanel = ({ groups }: MegaPanelProps) => {
           <Link
             href={current.href}
             onClick={(event) => event.stopPropagation()}
-            className="mb-3 flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm font-semibold text-foreground hover:bg-muted hover:text-chart-2"
+            className="font-heading mb-3 flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm font-semibold text-foreground hover:bg-muted hover:text-chart-2"
           >
             <span>About {current.label}</span>
             <TbChevronRight className="size-3.5" />

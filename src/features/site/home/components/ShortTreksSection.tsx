@@ -20,7 +20,7 @@ const ShortTreksSection = () => {
           action={
             <Button
               nativeButton={false}
-              render={<Link href="/day-hike-in-nepal" />}
+              render={<Link href="/trip" />}
               variant="accent"
               size="xl"
             >

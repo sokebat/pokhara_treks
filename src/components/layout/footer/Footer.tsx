@@ -10,19 +10,19 @@ import {
 const trekkingLinks = [
   { label: "Annapurna Region", href: "/region/annapurna-region" },
   { label: "Everest Region", href: "/region/everest-region" },
-  { label: "Mustang Region", href: "/upper-mustang-trek-nepal" },
+  { label: "Mustang Region", href: "/trip/upper-mustang-trek-nepal" },
   { label: "Manaslu Region", href: "/region/manaslu-region" },
-  { label: "Short Treks from Pokhara", href: "/short-treks-from-pokhara" },
+  { label: "Short Treks from Pokhara", href: "/trip" },
   { label: "Browse by Difficulty", href: "/browse-treks-by-difficulty" },
   { label: "Women Only Treks", href: "/women-only-treks" },
 ];
 
 const alsoWithUsLinks = [
-  { label: "Helicopter Tours", href: "/heli-tours" },
+  { label: "Helicopter Tours", href: "/tours" },
   { label: "Paragliding", href: "/paragliding-in-pokhara-1" },
   { label: "River Rafting", href: "/rafting-in-nepal" },
   { label: "Activities", href: "/activity" },
-  { label: "Tours", href: "/tours" },
+  { label: "Tours", href: "/trip" },
   { label: "Fixed Departures", href: "/fixed-departures" },
 ];
 

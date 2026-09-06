@@ -26,7 +26,7 @@ export const navItems: NavItem[] = [
   {
     type: "simple",
     label: "Heli Tour",
-    href: "/heli-tours",
+    href: "/tours",
     allLabel: "All helicopter tours",
     children: heliTours.map((tour) => ({
       label: tour.title,
@@ -51,7 +51,7 @@ export const navItems: NavItem[] = [
   {
     type: "mega",
     label: "Tours",
-    href: "/tours",
+    href: "/trip",
     groups: tourNavGroups,
   },
   {

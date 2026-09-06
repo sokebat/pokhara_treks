@@ -1,3 +1,4 @@
+import { tripHref } from "@/constant/nav/trip-href";
 import type { NavGroup } from "@/constant/nav/types";
 
 export const otherTrekkingGroups: NavGroup[] = [
@@ -5,16 +6,19 @@ export const otherTrekkingGroups: NavGroup[] = [
     label: "Manaslu Region",
     href: "/region/manaslu-region",
     children: [
-      { label: "8 Days Tsum Valley Trek", href: "/tsum-valley-trek" },
+      { label: "8 Days Tsum Valley Trek", href: tripHref("tsum-valley-trek") },
       {
         label: "Manaslu Circuit with Tsum Valley Trek - 18 Days",
-        href: "/manaslu-with-tsum-valley-trek",
+        href: tripHref("manaslu-with-tsum-valley-trek"),
       },
-      { label: "Manaslu Circuit Trek 2026", href: "/manaslu-circuit-trek" },
-      { label: "Bhimtang Trek (9 Days)", href: "/bhimtang-trek" },
+      {
+        label: "Manaslu Circuit Trek 2026",
+        href: tripHref("manaslu-circuit-trek"),
+      },
+      { label: "Bhimtang Trek (9 Days)", href: tripHref("bhimtang-trek") },
       {
         label: "Manaslu Circuit Trekking Nepal - 11 Days",
-        href: "/manaslu-circuit-trekking",
+        href: tripHref("manaslu-circuit-trekking"),
       },
     ],
   },
@@ -24,33 +28,36 @@ export const otherTrekkingGroups: NavGroup[] = [
     children: [
       {
         label: "Dhorpatan Trek with Gurja Khani",
-        href: "/dhorpatan-trek-with-gurjakhani",
+        href: tripHref("dhorpatan-trek-with-gurjakhani"),
       },
-      { label: "Jumla Rara Lake Trek", href: "/rara-lake-trek" },
+      { label: "Jumla Rara Lake Trek", href: tripHref("rara-lake-trek") },
       {
         label: "Lower Dolpo Circuit Trek",
-        href: "/lower-dolpa-trek-nepal",
+        href: tripHref("lower-dolpa-trek-nepal"),
       },
-      { label: "Upper Dolpo Trek", href: "/upper-dolpo-trek" },
+      { label: "Upper Dolpo Trek", href: tripHref("upper-dolpo-trek") },
     ],
   },
   {
     label: "Langtang Region",
     href: "/region/langtang-region",
     children: [
-      { label: "Gosaikunda Lake Trek", href: "/gosaikunda-trek-nepal" },
-      { label: "Helambu Trek", href: "/helambu-trek" },
+      {
+        label: "Gosaikunda Lake Trek",
+        href: tripHref("gosaikunda-trek-nepal"),
+      },
+      { label: "Helambu Trek", href: tripHref("helambu-trek") },
       {
         label: "Langtang Valley Trek - 5 Days",
-        href: "/langtang-valley-trek",
+        href: tripHref("langtang-valley-trek"),
       },
       {
         label: "Tamang Heritage Trail Trek",
-        href: "/tamang-heritage-trek",
+        href: tripHref("tamang-heritage-trek"),
       },
       {
         label: "Langtang Trek: Cost, Itinerary & Route Map",
-        href: "/langtang-trek-cost-itinerary-route-map",
+        href: tripHref("langtang-trek-cost-itinerary-route-map"),
       },
     ],
   },
@@ -60,7 +67,7 @@ export const otherTrekkingGroups: NavGroup[] = [
     children: [
       {
         label: "Dhaulagiri Circuit Trek - 16 Days",
-        href: "/dhaulagiri-circuit-trek",
+        href: tripHref("dhaulagiri-circuit-trek"),
       },
     ],
   },
@@ -70,23 +77,23 @@ export const otherTrekkingGroups: NavGroup[] = [
     children: [
       {
         label: "Kailash Mansarovar Yatra - 11 Days",
-        href: "/tibet-kailash-mansarovar-tour",
+        href: tripHref("tibet-kailash-mansarovar-tour"),
       },
       {
         label: "Bhutan 4 Night 5 Days Tour",
-        href: "/bhutan-4-night-5-days-tour",
+        href: tripHref("bhutan-4-night-5-days-tour"),
       },
       {
         label: "6 Night 7 Days Bhutan Tour",
-        href: "/bhutan-tour-6-night-7-days",
+        href: tripHref("bhutan-tour-6-night-7-days"),
       },
       {
         label: "Bhutan Tours and Trekking - 8 Days",
-        href: "/bhutan-tours-and-trekking-8-days-itinerary",
+        href: tripHref("bhutan-tours-and-trekking-8-days-itinerary"),
       },
       {
         label: "Kailash Mansarovar with EBC Tour",
-        href: "/kailash-mansarovar-everest-base-camp-tour",
+        href: tripHref("kailash-mansarovar-everest-base-camp-tour"),
       },
     ],
   },
@@ -96,7 +103,7 @@ export const otherTrekkingGroups: NavGroup[] = [
     children: [
       {
         label: "Kanchenjunga Circuit Trek - 17 Days",
-        href: "/kanchenjunga-circuit-trek",
+        href: tripHref("kanchenjunga-circuit-trek"),
       },
     ],
   },

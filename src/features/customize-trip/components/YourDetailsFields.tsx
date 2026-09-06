@@ -14,7 +14,7 @@ const YourDetailsFields = ({
   register,
   errors,
 }: CustomizeTripFieldProps) => (
-  <div className="flex flex-col gap-5 border-t-2 border-border pt-8">
+  <div className="flex flex-col gap-4 border-t-2 border-border pt-6 sm:gap-5">
     <h2 className="flex items-center gap-2 text-sm font-semibold tracking-wide text-primary uppercase">
       <span aria-hidden className="size-1.5 rounded-full bg-accent" />
       Your Details
@@ -83,10 +83,10 @@ const YourDetailsFields = ({
         <TbMessage className="pointer-events-none absolute top-4 left-4 size-4 text-muted-foreground" />
         <Textarea
           id="message"
-          rows={4}
+          rows={3}
           placeholder="Preferred region, difficulty level, budget, or anything special we should plan around..."
           aria-invalid={!!errors.message}
-          className="min-h-28 rounded-md pl-11"
+          className="min-h-24 rounded-md pl-11"
           {...register("message")}
         />
       </div>

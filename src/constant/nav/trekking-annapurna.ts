@@ -1,3 +1,4 @@
+import { tripHref } from "@/constant/nav/trip-href";
 import type { NavGroup } from "@/constant/nav/types";
 
 export const annapurnaTrekkingGroup: NavGroup = {
@@ -6,75 +7,75 @@ export const annapurnaTrekkingGroup: NavGroup = {
   children: [
     {
       label: "Upper Mustang Trek - 14 Days",
-      href: "/upper-mustang-trek-nepal",
+      href: tripHref("upper-mustang-trek-nepal"),
     },
     {
       label: "Annapurna Base Camp Trek (7 Days)",
-      href: "/annapurna-base-camp-trek",
+      href: tripHref("annapurna-base-camp-trek"),
     },
     {
       label: "Annapurna Circuit Trek (12 Days)",
-      href: "/annapurna-circuit-trek",
+      href: tripHref("annapurna-circuit-trek"),
     },
-    { label: "Mardi Himal Trek – 7 Days", href: "/mardi-himal-trek" },
+    { label: "Mardi Himal Trek – 7 Days", href: tripHref("mardi-himal-trek") },
     {
       label: "North Annapurna Base Camp Trek - 5 Days",
-      href: "/annapurna-north-base-camp-trek",
+      href: tripHref("annapurna-north-base-camp-trek"),
     },
     {
       label: "Annapurna Sanctuary Trek - 9 Days",
-      href: "/annapurna-sanctuary-trek",
+      href: tripHref("annapurna-sanctuary-trek"),
     },
-    { label: "Khopra Ridge Trek - 7 Days", href: "/khopra-trek-nepal" },
+    { label: "Khopra Ridge Trek - 7 Days", href: tripHref("khopra-trek-nepal") },
     {
       label: "Ghorepani Poonhill Trek From Pokhara",
-      href: "/poonhill-trek-from-pokhara",
+      href: tripHref("poonhill-trek-from-pokhara"),
     },
     {
       label: "Annapurna Circuit Trek with Tilicho Lake - 11 Days",
-      href: "/tilicho-lake-trek",
+      href: tripHref("tilicho-lake-trek"),
     },
-    { label: "Mohare Danda Trek - 4 Days", href: "/mohare-danda-trek" },
-    { label: "Nar Phu Trek - 10 Days", href: "/nar-phu-valley-trek" },
-    { label: "Panchase Trek", href: "/panchase-trek" },
+    { label: "Mohare Danda Trek - 4 Days", href: tripHref("mohare-danda-trek") },
+    { label: "Nar Phu Trek - 10 Days", href: tripHref("nar-phu-valley-trek") },
+    { label: "Panchase Trek", href: tripHref("panchase-trek") },
     {
       label: "Ghandruk Village Trek: 6 Days",
-      href: "/ghandruk-village-trek",
+      href: tripHref("ghandruk-village-trek"),
     },
-    { label: "Kapuche Glacier Lake Trek", href: "/kapuche-lake-trek" },
-    { label: "Kori Himal Trek - 6 Days", href: "/kori-himal-trek" },
-    { label: "Khumai Korcha Trek - 4 Days", href: "/korcha-trek" },
-    { label: "Sikles Village Trek", href: "/sikles-village-trek" },
-    { label: "Royal Trek Nepal", href: "/royal-trek-nepal" },
+    { label: "Kapuche Glacier Lake Trek", href: tripHref("kapuche-lake-trek") },
+    { label: "Kori Himal Trek - 6 Days", href: tripHref("kori-himal-trek") },
+    { label: "Khumai Korcha Trek - 4 Days", href: tripHref("korcha-trek") },
+    { label: "Sikles Village Trek", href: tripHref("sikles-village-trek") },
+    { label: "Royal Trek Nepal", href: tripHref("royal-trek-nepal") },
     {
       label: "Four Peaks Trek",
-      href: "/four-peaks-trek-annapurna-region",
+      href: tripHref("four-peaks-trek-annapurna-region"),
     },
     {
       label: "Upper Mustang Jeep Tour (11 Days)",
-      href: "/upper-mustang-jeep-tour",
+      href: tripHref("upper-mustang-jeep-tour"),
     },
-    { label: "Lower Mustang Trek", href: "/lower-mustang-trek-nepal" },
-    { label: "Hidden Lake Trek", href: "/hidden-lake-trek-nepal" },
-    { label: "Kajin Sara Trek", href: "/kajin-sara-trek" },
+    { label: "Lower Mustang Trek", href: tripHref("lower-mustang-trek-nepal") },
+    { label: "Hidden Lake Trek", href: tripHref("hidden-lake-trek-nepal") },
+    { label: "Kajin Sara Trek", href: tripHref("kajin-sara-trek") },
     {
       label: "Annapurna Base Camp Trekking - 6 Days",
-      href: "/base-camp-annapurna-cost",
+      href: tripHref("base-camp-annapurna-cost"),
     },
-    { label: "Namun La Pass Trek - 9 Days", href: "/namunla-trek" },
+    { label: "Namun La Pass Trek - 9 Days", href: tripHref("namunla-trek") },
     {
       label: "Short Annapurna Base Camp Trek - 5 Days",
-      href: "/short-annapurna-base-camp-trek",
+      href: tripHref("short-annapurna-base-camp-trek"),
     },
-    { label: "Teri La Pass Trek - 20 Days", href: "/teri-la-pass-trek" },
+    { label: "Teri La Pass Trek - 20 Days", href: tripHref("teri-la-pass-trek") },
     {
       label: "Annapurna Base Camp Trek - 13 Days",
-      href: "/annapurna-base-camp-trek-13-days",
+      href: tripHref("annapurna-base-camp-trek-13-days"),
     },
-    { label: "Three Peak Trek", href: "/three-peaks-trek" },
+    { label: "Three Peak Trek", href: tripHref("three-peaks-trek") },
     {
       label: "Upper Mustang Tiji Festival Tour – 12 Days",
-      href: "/tiji-festival-tour",
+      href: tripHref("tiji-festival-tour"),
     },
   ],
 };

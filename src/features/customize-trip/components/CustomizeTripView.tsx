@@ -2,37 +2,38 @@ import Container from "@/components/shared/Container";
 
 import CustomizeHero from "./CustomizeHero";
 import CustomizeSidebar from "./CustomizeSidebar";
-import CustomizeSteps from "./CustomizeSteps";
+
 import CustomizeTripForm from "./CustomizeTripForm";
+import { FindUsSection } from "@/features/site/sections";
 
 const CustomizeTripView = () => (
-  <div className="pb-16 sm:pb-24">
+  <div>
     <CustomizeHero />
-    <CustomizeSteps />
 
-    <Container>
-      <div className="grid gap-8 pt-14 sm:pt-20 lg:grid-cols-[1fr_1.6fr]">
-        <CustomizeSidebar />
-
-        <div className="overflow-hidden rounded-md border-2 border-border bg-card">
-          <div
-            aria-hidden
-            className="h-1.5 bg-linear-to-r from-accent via-accent to-primary"
-          />
-          <div className="p-6 sm:p-10">
-            <h2 className="text-lg font-bold text-foreground sm:text-xl">
-              Plan your trip
-            </h2>
-            <p className="mt-1.5 text-sm text-muted-foreground">
-              Fill in the details below — it takes less than two minutes.
-            </p>
-            <div className="mt-8">
-              <CustomizeTripForm />
+    <div className="bg-background pb-16 sm:pb-20">
+      <Container>
+        <div className="relative z-10 -mt-12 sm:-mt-16 lg:-mt-20">
+          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
+            <div
+              id="plan-your-trip"
+              className="scroll-mt-24 overflow-hidden rounded-xl border-2 border-primary/15 bg-card"
+            >
+              <div
+                aria-hidden
+                className="h-1.5 bg-linear-to-r from-accent via-accent to-primary"
+              />
+              <div className="p-5 sm:p-8 lg:p-10">
+                <CustomizeTripForm />
+              </div>
             </div>
+
+            <CustomizeSidebar />
           </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
+
+    <FindUsSection />
   </div>
 );
 

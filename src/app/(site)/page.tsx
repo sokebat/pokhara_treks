@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import HeroSection from "@/features/site/home/components/HeroSection";
+import WaysToTravelSection from "@/features/site/home/components/WaysToTravelSection";
 import WhyUsSection from "@/features/site/home/components/WhyUsSection";
 import ShortTreksSection from "@/features/site/home/components/ShortTreksSection";
 import HeliToursSection from "@/features/site/heli-tours/components/HeliToursSection";
@@ -22,15 +23,15 @@ export default function Home() {
     <>
       <HeroSection />
 
-      <WhyUsSection />
+      <WaysToTravelSection />
 
       <ShortTreksSection />
+      <WhyUsSection />
 
       <HeliToursSection />
 
-      <GuidesSection isactionactive={true} />
-
       <FounderNoteSection />
+      <GuidesSection isactionactive={true} />
 
       <TestimonialsSection />
 

@@ -6,14 +6,11 @@ import {
   TbWalk,
 } from "react-icons/tb";
 
-import { navItems } from "@/constant/nav";
+import { tourNavGroups } from "@/constant/nav/tours";
 import type { SectionMeta } from "@/features/site/listing";
-import {
-  buildSectionsFromNav,
-  getMegaGroups,
-} from "@/features/site/listing";
+import { buildSectionsFromNav } from "@/features/site/listing";
 
-const toursMeta: Record<string, SectionMeta> = {
+export const toursMeta: Record<string, SectionMeta> = {
   "Day Hike in Nepal": {
     shortLabel: "Day hikes",
     icon: TbWalk,
@@ -46,15 +43,11 @@ const toursMeta: Record<string, SectionMeta> = {
   },
 };
 
-export const tourSections = buildSectionsFromNav(
-  getMegaGroups(navItems, "/tours"),
-  toursMeta,
-  {
-    defaultIcon: TbCamera,
-    excerpt: ({ title }) =>
-      `${title}. Booked from our Lakeside office in Pokhara.`,
-  },
-);
+export const tourSections = buildSectionsFromNav(tourNavGroups, toursMeta, {
+  defaultIcon: TbCamera,
+  excerpt: ({ title }) =>
+    `${title}. Booked from our Lakeside office in Pokhara.`,
+});
 
 export const tourCount = tourSections.reduce(
   (total, section) => total + section.items.length,

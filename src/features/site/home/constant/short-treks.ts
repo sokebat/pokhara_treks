@@ -16,7 +16,7 @@ export const shortTreks: Trek[] = [
   {
     title: "Ghorepani Poon Hill Trek",
     days: "4 Days",
-    href: "/poonhill-trek-from-pokhara",
+    href: "/trip/poonhill-trek-from-pokhara",
     rating: 4.8,
     reviews: 94,
     difficulty: "Easy to Moderate",
@@ -29,7 +29,7 @@ export const shortTreks: Trek[] = [
   {
     title: "Mardi Himal Trek",
     days: "5 Days",
-    href: "/mardi-himal-trek",
+    href: "/trip/mardi-himal-trek",
     rating: 4.9,
     reviews: 61,
     difficulty: "Moderate",
@@ -42,7 +42,7 @@ export const shortTreks: Trek[] = [
   {
     title: "Australian Camp & Dhampus",
     days: "2 Days",
-    href: "/australian-camp-day-hike",
+    href: "/trip/australian-camp-day-hike",
     rating: 4.9,
     reviews: 31,
     difficulty: "Easy",
@@ -68,7 +68,7 @@ export const shortTreks: Trek[] = [
   {
     title: "Pokhara Peace Pagoda Hike",
     days: "Half Day",
-    href: "/pokhara-peace-pagoda-hike",
+    href: "/trip/pokhara-peace-pagoda-hike",
     rating: 4.9,
     reviews: 40,
     difficulty: "Easy",
@@ -81,7 +81,7 @@ export const shortTreks: Trek[] = [
   {
     title: "Panchase Hill Day Hike",
     days: "1 Day",
-    href: "/panchase-trek",
+    href: "/trip/panchase-trek",
     rating: 4.8,
     reviews: 27,
     difficulty: "Moderate",
@@ -94,7 +94,7 @@ export const shortTreks: Trek[] = [
   {
     title: "Begnas Lake Day Hike",
     days: "1 Day",
-    href: "/begnas-lake-day-hike",
+    href: "/trip/begnas-lake-day-hike",
     rating: 4.7,
     reviews: 22,
     difficulty: "Easy",
@@ -107,7 +107,7 @@ export const shortTreks: Trek[] = [
   {
     title: "Naudanda Ridge Day Hike",
     days: "1 Day",
-    href: "/naudanda-day-hike",
+    href: "/trip/naudanda-day-hike",
     rating: 4.6,
     reviews: 18,
     difficulty: "Easy",

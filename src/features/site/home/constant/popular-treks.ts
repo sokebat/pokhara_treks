@@ -13,7 +13,7 @@ export const popularTreks: Trek[] = [
   {
     title: "Annapurna Base Camp Trek",
     days: "7 Days",
-    href: "/annapurna-base-camp-trek",
+    href: "/trip/annapurna-base-camp-trek",
     rating: 4.9,
     reviews: 86,
     difficulty: "Moderate",
@@ -26,7 +26,7 @@ export const popularTreks: Trek[] = [
   {
     title: "Mardi Himal Trek",
     days: "5 Days",
-    href: "/mardi-himal-trek",
+    href: "/trip/mardi-himal-trek",
     rating: 4.9,
     reviews: 61,
     difficulty: "Moderate",
@@ -39,7 +39,7 @@ export const popularTreks: Trek[] = [
   {
     title: "Ghorepani Poon Hill Trek",
     days: "4 Days",
-    href: "/poonhill-trek-from-pokhara",
+    href: "/trip/poonhill-trek-from-pokhara",
     rating: 4.8,
     reviews: 94,
     difficulty: "Easy to Moderate",
@@ -52,7 +52,7 @@ export const popularTreks: Trek[] = [
   {
     title: "Khopra Danda Trek",
     days: "8 Days",
-    href: "/khopra-trek-nepal",
+    href: "/trip/khopra-trek-nepal",
     rating: 4.9,
     reviews: 52,
     difficulty: "Moderate",
@@ -65,7 +65,7 @@ export const popularTreks: Trek[] = [
   {
     title: "Annapurna Circuit Trek",
     days: "13 Days",
-    href: "/annapurna-circuit-trek",
+    href: "/trip/annapurna-circuit-trek",
     rating: 4.9,
     reviews: 77,
     difficulty: "Challenging",
@@ -78,7 +78,7 @@ export const popularTreks: Trek[] = [
   {
     title: "Upper Mustang Trek",
     days: "12 Days",
-    href: "/upper-mustang-trek-nepal",
+    href: "/trip/upper-mustang-trek-nepal",
     rating: 4.8,
     reviews: 43,
     difficulty: "Moderate",

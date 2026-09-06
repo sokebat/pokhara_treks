@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from "react";
 import { TbChevronDown } from "react-icons/tb";
 import { NavigationMenu as NavigationMenuPrimitive } from "@base-ui/react/navigation-menu";
 import { cva } from "class-variance-authority";
@@ -5,14 +8,17 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 function NavigationMenu({
-  align = "start",
+  align = "center",
   className,
   children,
   ...props
 }: NavigationMenuPrimitive.Root.Props &
   Pick<NavigationMenuPrimitive.Positioner.Props, "align">) {
+  const rootRef = useRef<HTMLElement>(null);
+
   return (
     <NavigationMenuPrimitive.Root
+      ref={rootRef}
       data-slot="navigation-menu"
       className={cn(
         "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
@@ -21,7 +27,7 @@ function NavigationMenu({
       {...props}
     >
       {children}
-      <NavigationMenuPositioner align={align} />
+      <NavigationMenuPositioner align={align} anchor={rootRef} />
     </NavigationMenuPrimitive.Root>
   );
 }
@@ -56,7 +62,7 @@ function NavigationMenuItem({
 }
 
 const navigationMenuTriggerStyle = cva(
-  "group/navigation-menu-trigger inline-flex h-9 w-max items-center justify-center rounded-md px-2.5 py-1.5 text-sm font-medium transition-all outline-none hover:bg-muted focus:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-popup-open:bg-muted/50 data-popup-open:hover:bg-muted data-open:bg-muted/50 data-open:hover:bg-muted data-open:focus:bg-muted",
+  "group/navigation-menu-trigger font-heading inline-flex h-9 w-max items-center justify-center rounded-md px-2.5 py-1.5 text-sm font-medium transition-all outline-none hover:bg-muted focus:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-popup-open:bg-muted/50 data-popup-open:hover:bg-muted data-open:bg-muted/50 data-open:hover:bg-muted data-open:focus:bg-muted",
 );
 
 function NavigationMenuTrigger({
@@ -99,8 +105,10 @@ function NavigationMenuPositioner({
   className,
   side = "bottom",
   sideOffset = 8,
-  align = "start",
+  align = "center",
   alignOffset = 0,
+  collisionPadding = 16,
+  collisionAvoidance = { side: "none", align: "shift", fallbackAxisSide: "none" },
   ...props
 }: NavigationMenuPrimitive.Positioner.Props) {
   return (
@@ -110,6 +118,8 @@ function NavigationMenuPositioner({
         sideOffset={sideOffset}
         align={align}
         alignOffset={alignOffset}
+        collisionPadding={collisionPadding}
+        collisionAvoidance={collisionAvoidance}
         className={cn(
           "isolate z-50 h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom] duration-[0.35s] ease-[cubic-bezier(0.22,1,0.36,1)] data-instant:transition-none data-[side=bottom]:before:top-[-10px] data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0",
           className,

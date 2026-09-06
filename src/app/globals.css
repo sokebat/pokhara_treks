@@ -8,9 +8,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  /* Fonts */
-  --font-sans: var(--font-sans);
-  --font-heading: var(--font-sans);
+  /* Fonts — Archivo for display, Source Sans 3 for body */
+  --font-sans: var(--font-source-sans);
+  --font-heading: var(--font-archivo);
   --font-mono:
     ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
@@ -179,6 +179,8 @@
     color-scheme: only light;
     background-color: #f3f4f6;
     color: #2f4858;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1,
@@ -187,7 +189,16 @@
   h4,
   h5,
   h6 {
-    @apply font-heading tracking-tight text-balance;
+    @apply font-heading text-balance;
+    letter-spacing: -0.015em;
+  }
+
+  button,
+  [data-slot="button"],
+  [data-slot="label"],
+  [data-slot="navigation-menu-trigger"],
+  .uppercase {
+    font-family: var(--font-archivo);
   }
 
   a {

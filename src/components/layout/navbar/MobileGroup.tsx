@@ -22,12 +22,12 @@ const MobileGroup = ({ group, onNavigate }: MobileGroupProps) => {
           <Link
             href={group.href}
             onClick={onNavigate}
-            className="min-w-0 flex-1 text-left text-sm font-medium text-foreground hover:text-chart-2"
+            className="font-heading min-w-0 flex-1 text-left text-sm font-medium text-foreground hover:text-chart-2"
           >
             {group.label}
           </Link>
         ) : (
-          <span className="min-w-0 flex-1 text-left text-sm font-medium text-foreground">
+          <span className="font-heading min-w-0 flex-1 text-left text-sm font-medium text-foreground">
             {group.label}
           </span>
         )}

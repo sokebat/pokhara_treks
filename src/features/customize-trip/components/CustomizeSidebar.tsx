@@ -3,6 +3,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+import { WOMEN_TREK_PHOTO } from "@/constant/photos";
 import { siteInfo } from "@/constant/site";
 import {
   colorVariants,
@@ -11,12 +12,12 @@ import {
 
 const CustomizeSidebar = () => (
   <div className="flex flex-col gap-6 lg:sticky lg:top-24 lg:self-start">
-    <div className="relative aspect-4/3 w-full overflow-hidden rounded-md border-2 border-border">
+    <div className="relative hidden aspect-4/3 w-full overflow-hidden rounded-xl border-2 border-primary/15 lg:block">
       <Image
-        src="/images/hero-women-trekking.jpg"
+        src={WOMEN_TREK_PHOTO}
         alt="A woman trekker looking out over a snow-capped Himalayan mountain range"
         fill
-        sizes="(min-width: 1024px) 30vw, 100vw"
+        sizes="(min-width: 1024px) 20rem, 100vw"
         className="object-cover object-[68%_center]"
       />
       <div
@@ -33,7 +34,7 @@ const CustomizeSidebar = () => (
       </div>
     </div>
 
-    <div className="flex flex-col gap-5 rounded-md border-2 border-border bg-card p-6">
+    <div className="flex flex-col gap-5 rounded-xl border-2 border-primary/15 bg-card p-6">
       {sidebarHighlights.map((item, index) => {
         const variant = colorVariants[index % colorVariants.length];
         return (
@@ -44,7 +45,9 @@ const CustomizeSidebar = () => (
               <item.icon className="size-4" />
             </span>
             <div>
-              <p className="text-sm font-semibold text-foreground">{item.title}</p>
+              <p className="text-sm font-semibold text-foreground">
+                {item.title}
+              </p>
               <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground">
                 {item.description}
               </p>
@@ -54,7 +57,7 @@ const CustomizeSidebar = () => (
       })}
     </div>
 
-    <div className="rounded-md bg-foreground p-6 text-primary-foreground">
+    <div className="rounded-xl bg-foreground p-6 text-primary-foreground">
       <div className="flex items-start gap-3">
         <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-sky/20 text-sky">
           <FaWhatsapp className="size-5" />
@@ -77,8 +80,9 @@ const CustomizeSidebar = () => (
             rel="noopener noreferrer"
           />
         }
+        variant="whatsapp"
         size="xl"
-        className="mt-5 bg-card text-foreground hover:bg-card/90"
+        className="mt-5 w-full bg-card text-foreground hover:bg-card/90"
       >
         <FaWhatsapp className="size-4" />
         Message us on WhatsApp

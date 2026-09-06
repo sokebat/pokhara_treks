@@ -18,7 +18,7 @@ const HeliToursSection = () => {
           action={
             <Button
               nativeButton={false}
-              render={<Link href="/heli-tours" />}
+              render={<Link href="/tours" />}
               variant="accent"
               size="xl"
             >

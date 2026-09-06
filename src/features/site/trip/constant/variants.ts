@@ -30,6 +30,6 @@ export const variants = [
     alt: "4,130 m, landing",
     difficulty: "Easy, no walking",
     price: "USD 490",
-    href: "/heli-tours",
+    href: "/tours/annapurna-base-camp-heli-landing-tour",
   },
 ];

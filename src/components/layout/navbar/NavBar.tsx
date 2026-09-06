@@ -82,7 +82,7 @@ const NavBar = () => {
           <div className="flex items-center gap-3 py-2 lg:gap-6">
             <Logo priority className="h-12 w-auto" />
 
-            <DesktopNav className="hidden xl:flex" />
+            <DesktopNav className="hidden min-w-0 flex-1 xl:flex" />
 
             <div className="ml-auto flex items-center gap-3">
               <Button

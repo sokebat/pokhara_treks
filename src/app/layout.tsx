@@ -1,16 +1,24 @@
 import type { Metadata, Viewport } from "next";
 
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Archivo, Source_Sans_3 } from "next/font/google";
 
 import "./globals.css";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { siteInfo } from "@/constant/site";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-sans",
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  fallback: ["Segoe UI", "system-ui", "sans-serif"],
+});
+
+const archivo = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Segoe UI", "system-ui", "sans-serif"],
 });
 
 export const viewport: Viewport = {
@@ -99,7 +107,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} h-full antialiased`}
+      className={`${sourceSans.variable} ${archivo.variable} h-full antialiased`}
       style={{ colorScheme: "only light" }}
     >
       <body className="flex min-h-full flex-col bg-[#f3f4f6] text-[#2f4858]">

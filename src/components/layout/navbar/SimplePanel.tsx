@@ -25,7 +25,7 @@ const SimplePanel = ({ items, allHref, allLabel }: SimplePanelProps) => {
           closeOnClick
           render={<Link href={allHref} />}
           className={cn(
-            "rounded-md px-2 py-1.5 text-sm font-semibold text-chart-2 hover:bg-muted hover:text-primary",
+            "font-heading rounded-md px-2 py-1.5 text-sm font-semibold text-chart-2 hover:bg-muted hover:text-primary",
             wide && "col-span-2",
           )}
         >

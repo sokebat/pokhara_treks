@@ -21,7 +21,7 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
       <Link
         href={item.href}
         onClick={onNavigate}
-        className="block border-b-2 border-border px-4 py-3 text-sm font-semibold text-foreground"
+        className="font-heading block border-b-2 border-border px-4 py-3 text-sm font-semibold text-foreground"
       >
         {item.label}
       </Link>
@@ -34,7 +34,7 @@ const MobileNavItem = ({ item, onNavigate }: MobileNavItemProps) => {
         <Link
           href={item.href}
           onClick={onNavigate}
-          className="min-w-0 flex-1 text-left text-sm font-semibold text-foreground hover:text-chart-2"
+          className="font-heading min-w-0 flex-1 text-left text-sm font-semibold text-foreground hover:text-chart-2"
         >
           {item.label}
         </Link>

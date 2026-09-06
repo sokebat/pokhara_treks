@@ -110,19 +110,6 @@ export const publicPages: PageSeo[] = [
   },
   {
     path: "/tours",
-    title: "Tours in Nepal",
-    description:
-      "Day hikes, city and sunrise tours, multi-day Nepal circuits, birding and wildlife safari from Pokhara.",
-    keywords: [
-      "Nepal tours",
-      "Pokhara day tour",
-      "Kathmandu day tour",
-      "Chitwan safari",
-      "Nepal cultural tour",
-    ],
-  },
-  {
-    path: "/heli-tours",
     title: "Helicopter Tours from Pokhara",
     description:
       "Annapurna, Mardi, Tilicho, Mustang, Everest and Muktinath helicopter landing tours from Pokhara — morning flights, back in Lakeside for lunch.",

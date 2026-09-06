@@ -17,7 +17,7 @@ const routes = [
   { name: "Annapurna", href: "/region/annapurna-region" },
   { name: "Everest", href: "/region/everest-region" },
   { name: "Manaslu", href: "/region/manaslu-region" },
-  { name: "Mustang", href: "/upper-mustang-trek-nepal" },
+  { name: "Mustang", href: "/trip/upper-mustang-trek-nepal" },
 ];
 
 const HeroSection = () => {
