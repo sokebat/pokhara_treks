@@ -13,7 +13,7 @@ export function contentLeafSlug(href: string) {
 }
 
 export const contentPaths = {
-  trekking: "/dashboard/trekking",
+  trekking: "/dashboard/trip",
   regions: "/dashboard/regions",
   heliTours: "/dashboard/heli-tours",
   activity: "/dashboard/activity",
@@ -21,6 +21,21 @@ export const contentPaths = {
   faq: "/dashboard/faq",
   blogs: "/dashboard/blogs",
 } as const;
+
+export const contentMetaSlugs = {
+  regions: "region-meta",
+  trekking: "trip-meta",
+  activity: "activity-meta",
+  heliTours: "tours-meta",
+} as const;
+
+export function contentMetaPath(root: string, slug: string) {
+  return `${root}/${slug}`;
+}
+
+export function isContentMetaSegment(segment: string) {
+  return (Object.values(contentMetaSlugs) as string[]).includes(segment);
+}
 
 export const contentRoots = Object.values(contentPaths);
 

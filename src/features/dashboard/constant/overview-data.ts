@@ -91,7 +91,7 @@ export const quickActions: QuickAction[] = [
   },
   {
     label: "Manage Treks",
-    href: "/dashboard/trekking",
+    href: "/dashboard/trip",
     icon: TbMountain,
   },
   {

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 
 import ActivityView from "@/features/site/activity/components/ActivityView";
-import { getPageSeo } from "@/lib/seo";
+import { listingPageMetadata } from "@/features/page-seo/lib/listing-metadata";
 
-export const metadata: Metadata = getPageSeo("/activity");
+export async function generateMetadata(): Promise<Metadata> {
+  return listingPageMetadata("/activity");
+}
 
 export default function ActivityPage() {
   return <ActivityView />;

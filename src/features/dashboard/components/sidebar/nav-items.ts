@@ -10,17 +10,16 @@ import {
   TbSettings,
   TbStar,
   TbUsersGroup,
-  TbWalk,
 } from "react-icons/tb";
 import type { IconType } from "react-icons";
 
-import { navItems as siteNavItems } from "@/constant/nav";
 import { faqCategories } from "@/features/site/faq/constant/types";
 import { trekkingRegions } from "@/features/site/region/constant/regions";
 import {
-  contentGroupSlug,
-  contentLeafSlug,
+  contentMetaPath,
+  contentMetaSlugs,
   contentPaths,
+  isContentMetaSegment,
   pathSegmentAfter,
 } from "@/features/dashboard/lib/content-paths";
 import { slugify } from "@/lib/utils";
@@ -59,14 +58,22 @@ export const isNavItemActive = (item: NavItem, pathname: string) =>
 export const isNavSubItemActive = (url: string, pathname: string) => {
   if (pathname === url) return true;
 
-  const addRegionUrl = `${contentPaths.regions}/new`;
-  const listingUrl = `${contentPaths.regions}/listing`;
+  const metaRoots = [
+    [contentPaths.regions, contentMetaSlugs.regions],
+    [contentPaths.trekking, contentMetaSlugs.trekking],
+    [contentPaths.activity, contentMetaSlugs.activity],
+    [contentPaths.heliTours, contentMetaSlugs.heliTours],
+  ] as const;
 
-  return (
-    url === addRegionUrl &&
-    pathname.startsWith(`${contentPaths.regions}/`) &&
-    pathname !== listingUrl
-  );
+  for (const [root, slug] of metaRoots) {
+    const metaUrl = contentMetaPath(root, slug);
+    if (url === metaUrl) return false;
+    if (url === root && pathname.startsWith(`${root}/`) && pathname !== metaUrl) {
+      return true;
+    }
+  }
+
+  return false;
 };
 
 export const getDashboardBreadcrumbs = (
@@ -103,7 +110,7 @@ export const getDashboardBreadcrumbs = (
 
   if (match.url === contentPaths.regions) {
     const rest = pathSegmentAfter(contentPaths.regions, pathname);
-    if (rest && rest !== "listing" && rest !== "new") {
+    if (rest && !isContentMetaSegment(rest)) {
       const region = trekkingRegions.find((item) => item.slug === rest);
       const title =
         region?.label ??
@@ -118,33 +125,14 @@ export const getDashboardBreadcrumbs = (
   return crumbs;
 };
 
-function siteNavByLabel(label: string) {
-  return siteNavItems.find((item) => item.label === label);
-}
-
-function megaSubItems(label: string, root: string, allTitle: string) {
-  const item = siteNavByLabel(label);
-  const groups = item?.type === "mega" ? item.groups : [];
-
+function contentAndMetaItems(
+  root: string,
+  contentTitle: string,
+  metaSlug: string,
+): NavSubItem[] {
   return [
-    { title: allTitle, url: root },
-    ...groups.map((group) => ({
-      title: group.label,
-      url: `${root}/${contentGroupSlug(group.label, group.href)}`,
-    })),
-  ];
-}
-
-function simpleSubItems(label: string, root: string, allTitle: string) {
-  const item = siteNavByLabel(label);
-  const children = item?.type === "simple" ? item.children : [];
-
-  return [
-    { title: allTitle, url: root },
-    ...children.map((child) => ({
-      title: child.label,
-      url: `${root}/${contentLeafSlug(child.href)}`,
-    })),
+    { title: contentTitle, url: root },
+    { title: metaSlug, url: contentMetaPath(root, metaSlug) },
   ];
 }
 
@@ -160,33 +148,32 @@ export const navItems: NavItem[] = [
     url: contentPaths.regions,
     icon: TbMapPin,
     group: "content",
-    items: [
-      {
-        title: "Listing page",
-        url: `${contentPaths.regions}/listing`,
-      },
-      {
-        title: "Add region",
-        url: `${contentPaths.regions}/new`,
-      },
-    ],
+    items: contentAndMetaItems(
+      contentPaths.regions,
+      "Region",
+      contentMetaSlugs.regions,
+    ),
   },
   {
-    title: "Trekking",
+    title: "Trip",
     url: contentPaths.trekking,
     icon: TbMountain,
     group: "content",
-    items: megaSubItems("Trekking", contentPaths.trekking, "All Treks"),
+    items: contentAndMetaItems(
+      contentPaths.trekking,
+      "Trip",
+      contentMetaSlugs.trekking,
+    ),
   },
   {
     title: "Heli Tour",
     url: contentPaths.heliTours,
     icon: TbHelicopter,
     group: "content",
-    items: simpleSubItems(
-      "Heli Tour",
+    items: contentAndMetaItems(
       contentPaths.heliTours,
-      "All Helicopter Tours",
+      "Heli Tour",
+      contentMetaSlugs.heliTours,
     ),
   },
   {
@@ -194,14 +181,11 @@ export const navItems: NavItem[] = [
     url: contentPaths.activity,
     icon: TbParachute,
     group: "content",
-    items: megaSubItems("Activity", contentPaths.activity, "All Activities"),
-  },
-  {
-    title: "Tours",
-    url: contentPaths.tours,
-    icon: TbWalk,
-    group: "content",
-    items: megaSubItems("Tours", contentPaths.tours, "All Tours"),
+    items: contentAndMetaItems(
+      contentPaths.activity,
+      "Activity",
+      contentMetaSlugs.activity,
+    ),
   },
   {
     title: "FAQ",

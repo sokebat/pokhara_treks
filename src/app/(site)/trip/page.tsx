@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 
 import TrekkingView from "@/features/site/trekking/components/TrekkingView";
-import { getPageSeo } from "@/lib/seo";
+import { listingPageMetadata } from "@/features/page-seo/lib/listing-metadata";
 
-export const metadata: Metadata = getPageSeo("/trip");
+export async function generateMetadata(): Promise<Metadata> {
+  return listingPageMetadata("/trip");
+}
 
 export default function TripPage() {
   return <TrekkingView />;

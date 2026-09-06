@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 
 import HeliToursView from "@/features/site/heli-tours/components/HeliToursView";
-import { getPageSeo } from "@/lib/seo";
+import { listingPageMetadata } from "@/features/page-seo/lib/listing-metadata";
 
-export const metadata: Metadata = getPageSeo("/tours");
+export async function generateMetadata(): Promise<Metadata> {
+  return listingPageMetadata("/tours");
+}
 
 export default function HeliToursPage() {
   return <HeliToursView />;

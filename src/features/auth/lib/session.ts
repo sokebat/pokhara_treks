@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import { redirect } from "next/navigation";
 
 import { auth } from "@/features/auth/auth";
@@ -15,4 +16,17 @@ export async function requireAdmin() {
   }
 
   return session;
+}
+
+export async function requireApiAdmin() {
+  const session = await auth();
+
+  if (!session?.user?.id) {
+    return {
+      session: null,
+      error: NextResponse.json({ error: "Unauthorized" }, { status: 401 }),
+    };
+  }
+
+  return { session, error: null };
 }
