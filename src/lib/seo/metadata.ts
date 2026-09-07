@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { siteInfo } from "@/constant/site";
-import type { TrekkingRegion } from "@/features/site/region/constant/regions";
+import type { PublicRegion } from "@/features/site/region/types/public-region";
 
 export type PageSeo = {
   title: string;
@@ -81,20 +81,30 @@ export function pageMetadata({
   };
 }
 
-export function regionMetadata(region: TrekkingRegion): Metadata {
+export function regionMetadata(region: PublicRegion): Metadata {
+  const keywordList = region.keywords
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+
   return pageMetadata({
-    title: `${region.title} Trekking`,
-    description: `${region.description} Guided from our Lakeside office in Pokhara.`,
+    title: region.metaTitle || `${region.title} Trekking`,
+    description:
+      region.metaDescription ||
+      `${region.description} Guided from our Lakeside office in Pokhara.`,
     path: `/region/${region.slug}`,
     image: region.image,
     imageAlt: region.imageAlt,
-    keywords: [
-      `${region.title} trek`,
-      `trekking in ${region.shortLabel}`,
-      `${region.shortLabel} Nepal`,
-      ...region.highlights.slice(0, 3),
-      "Pokhara Treks",
-      "Nepal trekking",
-    ],
+    keywords:
+      keywordList.length > 0
+        ? keywordList
+        : [
+            `${region.title} trek`,
+            `trekking in ${region.shortLabel}`,
+            `${region.shortLabel} Nepal`,
+            region.location,
+            "Pokhara Treks",
+            "Nepal trekking",
+          ],
   });
 }

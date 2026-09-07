@@ -1,4 +1,4 @@
-import { slugify } from "@/lib/utils";
+import { slugify } from "@/lib/slug";
 import { LegalPage } from "../constant/legal";
  
 interface LegalContentProps {

@@ -55,7 +55,6 @@ export const regions = pgTable("regions", {
   permits: text("permits").notNull().default(""),
   typicalDuration: text("typical_duration").notNull().default(""),
   bodyHtml: text("body_html").notNull().default(""),
-  highlightsHtml: text("highlights_html").notNull().default(""),
   sortOrder: integer("sort_order").notNull().default(0),
   createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()

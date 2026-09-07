@@ -3,7 +3,10 @@ import { z } from "zod";
 import type { RegionFormValues } from "@/features/dashboard/regions/types";
 
 function plainTextFromHtml(html: string) {
-  return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 export const regionFormSchema = z.object({
@@ -16,7 +19,10 @@ export const regionFormSchema = z.object({
     .trim()
     .min(1, "Slug is required")
     .max(120)
-    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Use lowercase letters, numbers, and hyphens"),
+    .regex(
+      /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
+      "Use lowercase letters, numbers, and hyphens",
+    ),
   location: z.string().trim().min(1, "Location is required").max(160),
   description: z.string().trim().max(500),
   metaTitle: z.string().trim().min(1, "Meta title is required").max(120),
@@ -32,12 +38,9 @@ export const regionFormSchema = z.object({
   bestSeason: z.string().trim().max(120),
   permits: z.string().trim().max(160),
   typicalDuration: z.string().trim().max(80),
-  bodyHtml: z
-    .string()
-    .refine((html) => plainTextFromHtml(html).length > 0, {
-      message: "Description is required",
-    }),
-  highlightsHtml: z.string(),
+  bodyHtml: z.string().refine((html) => plainTextFromHtml(html).length > 0, {
+    message: "Description is required",
+  }),
 });
 
 export type RegionFormInput = z.infer<typeof regionFormSchema>;
@@ -72,6 +75,8 @@ export function firstRegionFieldError(
   return fieldErrors[field]?.[0];
 }
 
-export function parseRegionFormValues(values: RegionFormValues & { id?: string }) {
+export function parseRegionFormValues(
+  values: RegionFormValues & { id?: string },
+) {
   return regionFormSchema.safeParse(values);
 }

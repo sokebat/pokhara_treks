@@ -13,18 +13,11 @@ import type {
   TripListingItem,
   TripListingSection,
 } from "@/features/site/listing/types";
+import { slugify } from "@/lib/slug";
 
 const trekByHref = new Map<string, Trek>(
   [...popularTreks, ...shortTreks].map((trek) => [trek.href, trek]),
 );
-
-function slugFromLabel(label: string) {
-  return label
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 function titleFromNavLabel(label: string) {
   return label
@@ -101,7 +94,7 @@ export function buildSectionsFromNav(
         });
 
       return {
-        slug: slugFromLabel(group.label),
+        slug: slugify(group.label),
         label: group.label,
         shortLabel: meta?.shortLabel ?? location,
         description: meta?.description ?? `Trips in the ${location}.`,

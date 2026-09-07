@@ -14,7 +14,7 @@ import {
 import { siteInfo } from "@/constant/site";
 import { faqCategories, faqItems } from "@/features/site/faq/constant/faq";
 import { faqJsonLd } from "@/lib/seo";
-import { slugify } from "@/lib/utils";
+import { slugify } from "@/lib/slug";
 
 import FaqAnswer from "./FaqAnswer";
 

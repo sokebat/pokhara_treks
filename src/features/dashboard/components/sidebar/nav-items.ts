@@ -27,7 +27,7 @@ import {
   regionEditPath,
   regionNewPath,
 } from "@/features/dashboard/lib/content-paths";
-import { slugify } from "@/lib/utils";
+import { slugify } from "@/lib/slug";
 
 export type NavSubItem = {
   title: string;
@@ -55,20 +55,10 @@ export type BreadcrumbCrumb = {
   href: string;
 };
 
-export const isNavItemActive = (item: NavItem, pathname: string) => {
-  if (item.url === contentPaths.regions) {
-    return (
-      pathname === item.url ||
-      pathname.startsWith(`${item.url}/`) ||
-      pathname === contentPaths.region ||
-      pathname.startsWith(`${contentPaths.region}/`)
-    );
-  }
-
-  return item.items.length > 0
+export const isNavItemActive = (item: NavItem, pathname: string) =>
+  item.items.length > 0
     ? pathname === item.url || pathname.startsWith(`${item.url}/`)
     : pathname === item.url;
-};
 
 export const isNavSubItemActive = (url: string, pathname: string) => {
   if (pathname === url) return true;
@@ -88,14 +78,6 @@ export const isNavSubItemActive = (url: string, pathname: string) => {
     }
   }
 
-  if (
-    url === contentPaths.regions &&
-    (pathname === contentPaths.region ||
-      pathname.startsWith(`${contentPaths.region}/`))
-  ) {
-    return true;
-  }
-
   return false;
 };
 
@@ -110,8 +92,8 @@ function regionDashboardBreadcrumbs(pathname: string): BreadcrumbCrumb[] {
     return crumbs;
   }
 
-  if (pathname.startsWith(`${contentPaths.region}/edit/`)) {
-    const slug = pathname.slice(`${contentPaths.region}/edit/`.length);
+  if (pathname.startsWith(`${contentPaths.regions}/edit/`)) {
+    const slug = pathname.slice(`${contentPaths.regions}/edit/`.length);
     const region = getRegionBySlug(slug);
     crumbs.push({
       title: region ? `Edit ${region.title}` : "Edit region",
@@ -126,9 +108,20 @@ export const getDashboardBreadcrumbs = (
   pathname: string,
 ): BreadcrumbCrumb[] => {
   if (
-    pathname === contentPaths.region ||
-    pathname.startsWith(`${contentPaths.region}/`)
+    pathname === contentPaths.regions ||
+    pathname.startsWith(`${contentPaths.regions}/`)
   ) {
+    const metaUrl = contentMetaPath(
+      contentPaths.regions,
+      contentMetaSlugs.regions,
+    );
+    if (pathname === metaUrl) {
+      return [
+        { title: "Overview", href: "/dashboard" },
+        { title: "Regions", href: contentPaths.regions },
+        { title: "Region SEO", href: metaUrl },
+      ];
+    }
     return regionDashboardBreadcrumbs(pathname);
   }
 
@@ -163,7 +156,7 @@ export const getDashboardBreadcrumbs = (
 
   if (match.url === contentPaths.regions) {
     const rest = pathSegmentAfter(contentPaths.regions, pathname);
-    if (rest && !isContentMetaSegment(rest)) {
+    if (rest && !isContentMetaSegment(rest) && !rest.startsWith("edit/")) {
       const region = trekkingRegions.find((item) => item.slug === rest);
       const title =
         region?.label ??
@@ -182,10 +175,11 @@ function contentAndMetaItems(
   root: string,
   contentTitle: string,
   metaSlug: string,
+  metaTitle: string,
 ): NavSubItem[] {
   return [
     { title: contentTitle, url: root },
-    { title: metaSlug, url: contentMetaPath(root, metaSlug) },
+    { title: metaTitle, url: contentMetaPath(root, metaSlug) },
   ];
 }
 
@@ -203,8 +197,9 @@ export const navItems: NavItem[] = [
     group: "content",
     items: contentAndMetaItems(
       contentPaths.regions,
-      "Region",
+      "All regions",
       contentMetaSlugs.regions,
+      "Region SEO",
     ),
   },
   {
@@ -216,6 +211,7 @@ export const navItems: NavItem[] = [
       contentPaths.trekking,
       "Trip",
       contentMetaSlugs.trekking,
+      "Trip SEO",
     ),
   },
   {
@@ -227,6 +223,7 @@ export const navItems: NavItem[] = [
       contentPaths.heliTours,
       "Heli Tour",
       contentMetaSlugs.heliTours,
+      "Tours SEO",
     ),
   },
   {
@@ -238,6 +235,7 @@ export const navItems: NavItem[] = [
       contentPaths.activity,
       "Activity",
       contentMetaSlugs.activity,
+      "Activity SEO",
     ),
   },
   {

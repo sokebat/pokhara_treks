@@ -3,40 +3,26 @@
 import { useTransition } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { TbDots, TbExternalLink, TbPencil, TbTrash } from "react-icons/tb";
+import { TbExternalLink, TbPencil, TbTrash } from "react-icons/tb";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { deleteRegion } from "@/features/dashboard/regions/actions/delete-region";
 import { regionEditPath } from "@/features/dashboard/lib/content-paths";
+import type { RegionTableRow } from "@/features/dashboard/regions/types";
 
 type RegionRowActionsProps = {
-  id: string;
-  slug: string;
-  title: string;
-  publicHref: string;
+  row: RegionTableRow;
 };
 
-export default function RegionRowActions({
-  id,
-  slug,
-  title,
-  publicHref,
-}: RegionRowActionsProps) {
+export default function RegionRowActions({ row }: RegionRowActionsProps) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
 
   const onDelete = () => {
-    if (!window.confirm(`Delete “${title}”? This cannot be undone.`)) return;
+    if (!window.confirm(`Delete “${row.title}”? This cannot be undone.`)) return;
 
     startTransition(async () => {
-      const result = await deleteRegion(id);
+      const result = await deleteRegion(row.id);
       if (!result.ok) {
         window.alert(result.message);
         return;
@@ -46,51 +32,46 @@ export default function RegionRowActions({
   };
 
   return (
-    <div className="flex items-center justify-end gap-1.5">
+    <div className="inline-flex items-center overflow-hidden rounded-md border-2 border-border bg-card">
       <Button
         nativeButton={false}
-        variant="outline"
+        variant="ghost"
         size="sm"
-        className="rounded-md"
-        render={<Link href={regionEditPath(slug)} />}
+        className="h-8 rounded-none border-0 px-2.5 text-muted-foreground hover:bg-secondary hover:text-foreground"
+        render={
+          <Link
+            href={row.publicHref}
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+        }
+      >
+        <TbExternalLink className="size-3.5" />
+        View
+      </Button>
+      <span aria-hidden className="h-5 w-px shrink-0 bg-border" />
+      <Button
+        nativeButton={false}
+        variant="ghost"
+        size="sm"
+        className="h-8 rounded-none border-0 px-2.5 text-muted-foreground hover:bg-secondary hover:text-foreground"
+        render={<Link href={regionEditPath(row.slug)} />}
       >
         <TbPencil className="size-3.5" />
         Edit
       </Button>
-      <DropdownMenu>
-        <DropdownMenuTrigger
-          render={
-            <Button
-              variant="outline"
-              size="icon-sm"
-              className="rounded-md"
-              aria-label={`More actions for ${title}`}
-              disabled={pending}
-            />
-          }
-        >
-          <TbDots className="size-4" />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="min-w-40">
-          <DropdownMenuItem
-            render={
-              <Link
-                href={publicHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              />
-            }
-          >
-            <TbExternalLink className="size-4" />
-            View on site
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem variant="destructive" onClick={onDelete}>
-            <TbTrash className="size-4" />
-            Delete
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <span aria-hidden className="h-5 w-px shrink-0 bg-border" />
+      <Button
+        type="button"
+        variant="ghost"
+        size="icon-sm"
+        className="size-8 rounded-none border-0 text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
+        aria-label={`Delete ${row.title}`}
+        disabled={pending}
+        onClick={onDelete}
+      >
+        <TbTrash className="size-3.5" />
+      </Button>
     </div>
   );
 }

@@ -17,13 +17,6 @@ export function paragraphsToHtml(paragraphs: string[]) {
   return paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("");
 }
 
-export function highlightsToHtml(highlights: string[]) {
-  if (highlights.length === 0) return "<ul><li></li></ul>";
-  return `<ul>${highlights
-    .map((item) => `<li>${escapeHtml(item)}</li>`)
-    .join("")}</ul>`;
-}
-
 function factValue(region: TrekkingRegion, label: string) {
   return region.facts.find((fact) => fact.label === label)?.value ?? "";
 }
@@ -36,7 +29,7 @@ export function regionSeoDefaults(region: TrekkingRegion) {
       `${region.title} trek`,
       `trekking in ${region.shortLabel}`,
       `${region.shortLabel} Nepal`,
-      ...region.highlights.slice(0, 3),
+      region.location,
       "Pokhara Treks",
       "Nepal trekking",
     ].join(", "),
@@ -64,7 +57,6 @@ export function regionToFormValues(region: TrekkingRegion): RegionFormValues {
     typicalDuration:
       factValue(region, "Typical trek") || region.typicalDuration,
     bodyHtml: paragraphsToHtml(region.paragraphs),
-    highlightsHtml: highlightsToHtml(region.highlights),
   };
 }
 

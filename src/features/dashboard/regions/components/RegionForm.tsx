@@ -2,7 +2,7 @@
 
 import { useState, useTransition, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { TbArrowLeft, TbCheck } from "react-icons/tb";
+import { TbArrowLeft, TbCheck, TbRefresh } from "react-icons/tb";
 import Link from "next/link";
 
 import RichTextEditor from "@/components/shared/RichTextEditor";
@@ -17,11 +17,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import DashboardPageHeader from "@/features/dashboard/components/DashboardPageHeader";
+import { contentPaths } from "@/features/dashboard/lib/content-paths";
 import { saveRegion } from "@/features/dashboard/regions/actions/save-region";
 import type { RegionFormValues } from "@/features/dashboard/regions/types";
 import { firstRegionFieldError } from "@/features/dashboard/regions/validation/region.validation";
-import { contentPaths } from "@/features/dashboard/lib/content-paths";
-import { slugify } from "@/lib/utils";
+import { regionPath } from "@/features/site/region/constant/regions";
+import { slugify } from "@/lib/slug";
 
 type RegionFormProps = {
   mode: "new" | "edit";
@@ -117,28 +119,26 @@ export default function RegionForm({
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-6">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h1 className="text-xl font-bold text-foreground sm:text-2xl">
-            {mode === "new" ? "Add region" : "Edit region"}
-          </h1>
-          <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-            {mode === "new"
-              ? "Create a trekking region page with hero copy, SEO, facts, and rich content."
-              : `Update content for ${initialValues.title}.`}
-          </p>
-        </div>
-        <Button
-          nativeButton={false}
-          variant="outline"
-          size="sm"
-          className="rounded-md"
-          render={<Link href={contentPaths.regions} />}
-        >
-          <TbArrowLeft className="size-4" />
-          Back to regions
-        </Button>
-      </div>
+      <DashboardPageHeader
+        title={mode === "new" ? "Add region" : "Edit region"}
+        description={
+          mode === "new"
+            ? "Create a trekking region page with hero copy, SEO, facts, and rich content."
+            : `Update content for ${initialValues.title}.`
+        }
+        actions={
+          <Button
+            nativeButton={false}
+            variant="outline"
+            size="sm"
+            className="rounded-md"
+            render={<Link href={contentPaths.regions} />}
+          >
+            <TbArrowLeft className="size-4" />
+            Back to regions
+          </Button>
+        }
+      />
 
       <Card>
         <CardHeader>
@@ -189,7 +189,20 @@ export default function RegionForm({
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="slug">Slug</Label>
+            <div className="flex items-center justify-between gap-2">
+              <Label htmlFor="slug">Slug</Label>
+              <button
+                type="button"
+                className="inline-flex items-center gap-1 text-xs font-medium text-chart-2 hover:underline"
+                onClick={() => {
+                  setSlugTouched(false);
+                  setField("slug", slugify(values.title));
+                }}
+              >
+                <TbRefresh className="size-3.5" />
+                From title
+              </button>
+            </div>
             <Input
               id="slug"
               value={values.slug}
@@ -201,6 +214,9 @@ export default function RegionForm({
               aria-invalid={!!errors.slug}
               className="h-11 rounded-md font-mono text-sm"
             />
+            <p className="font-mono text-xs text-muted-foreground">
+              Public URL: {regionPath(values.slug || "…")}
+            </p>
             <FieldError message={errors.slug} />
           </div>
 
@@ -238,7 +254,8 @@ export default function RegionForm({
         <CardHeader>
           <CardTitle>Search engines</CardTitle>
           <CardDescription>
-            Meta title, description, and keywords for Google and social previews.
+            Meta title, description, and keywords for Google and social
+            previews.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-5">
@@ -399,23 +416,6 @@ export default function RegionForm({
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>What people walk here</CardTitle>
-          <CardDescription>
-            Highlight list shown as bullets on the region page.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <RichTextEditor
-            value={values.highlightsHtml}
-            onChange={(html) => setField("highlightsHtml", html)}
-            placeholder="Add trek highlights…"
-            minHeightClassName="min-h-40"
-          />
-        </CardContent>
-      </Card>
-
       <div className="flex flex-wrap items-center gap-3 pb-4">
         <Button type="submit" disabled={pending} className="rounded-md">
           {pending
@@ -430,9 +430,7 @@ export default function RegionForm({
             Saved
           </p>
         )}
-        {formError && (
-          <p className="text-sm text-destructive">{formError}</p>
-        )}
+        {formError && <p className="text-sm text-destructive">{formError}</p>}
       </div>
     </form>
   );

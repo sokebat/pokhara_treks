@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 
-import { trekkingRegions } from "@/features/site/region/constant/regions";
+import { listPublicRegionSlugs } from "@/features/site/region/service/public-region.service";
 import { absoluteUrl, publicPages } from "@/lib/seo";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
+  const regionSlugs = await listPublicRegionSlugs();
 
   const pages: MetadataRoute.Sitemap = publicPages.map((page) => ({
     url: absoluteUrl(page.path),
@@ -18,8 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
           : 0.8,
   }));
 
-  const regions: MetadataRoute.Sitemap = trekkingRegions.map((region) => ({
-    url: absoluteUrl(`/region/${region.slug}`),
+  const regions: MetadataRoute.Sitemap = regionSlugs.map((slug) => ({
+    url: absoluteUrl(`/region/${slug}`),
     lastModified,
     changeFrequency: "monthly",
     priority: 0.7,

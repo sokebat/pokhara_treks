@@ -8,32 +8,44 @@ export const listingSeoPages = [
   {
     key: "regions",
     publicPath: "/region",
-    dashboardPath: contentMetaPath(contentPaths.regions, contentMetaSlugs.regions),
-    heading: contentMetaSlugs.regions,
+    dashboardPath: contentMetaPath(
+      contentPaths.regions,
+      contentMetaSlugs.regions,
+    ),
+    heading: "Region SEO",
     description:
       "Title, description and keywords for the public listing at /region.",
   },
   {
     key: "trip",
     publicPath: "/trip",
-    dashboardPath: contentMetaPath(contentPaths.trekking, contentMetaSlugs.trekking),
-    heading: contentMetaSlugs.trekking,
+    dashboardPath: contentMetaPath(
+      contentPaths.trekking,
+      contentMetaSlugs.trekking,
+    ),
+    heading: "Trip SEO",
     description:
       "Title, description and keywords for the public listing at /trip.",
   },
   {
     key: "activity",
     publicPath: "/activity",
-    dashboardPath: contentMetaPath(contentPaths.activity, contentMetaSlugs.activity),
-    heading: contentMetaSlugs.activity,
+    dashboardPath: contentMetaPath(
+      contentPaths.activity,
+      contentMetaSlugs.activity,
+    ),
+    heading: "Activity SEO",
     description:
       "Title, description and keywords for the public listing at /activity.",
   },
   {
     key: "tours",
     publicPath: "/tours",
-    dashboardPath: contentMetaPath(contentPaths.heliTours, contentMetaSlugs.heliTours),
-    heading: contentMetaSlugs.heliTours,
+    dashboardPath: contentMetaPath(
+      contentPaths.heliTours,
+      contentMetaSlugs.heliTours,
+    ),
+    heading: "Tours SEO",
     description:
       "Title, description and keywords for the public listing at /tours.",
   },

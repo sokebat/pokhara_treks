@@ -1,15 +1,12 @@
 import { siteInfo } from "@/constant/site";
 import type { FaqItem } from "@/features/site/faq/constant/faq";
-import type { TrekkingRegion } from "@/features/site/region/constant/regions";
+import type { PublicRegion } from "@/features/site/region/types/public-region";
 
 import { absoluteUrl } from "./metadata";
 
 function faqAnswerText(item: FaqItem) {
   return item.sections
-    .flatMap((section) => [
-      section.paragraph,
-      ...(section.list ?? []),
-    ])
+    .flatMap((section) => [section.paragraph, ...(section.list ?? [])])
     .filter(Boolean)
     .join(" ");
 }
@@ -77,9 +74,7 @@ export function faqJsonLd(items: FaqItem[]) {
   };
 }
 
-export function breadcrumbJsonLd(
-  crumbs: { name: string; path: string }[],
-) {
+export function breadcrumbJsonLd(crumbs: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -92,7 +87,12 @@ export function breadcrumbJsonLd(
   };
 }
 
-export function regionJsonLd(region: TrekkingRegion) {
+type RegionSeoSource = Pick<
+  PublicRegion,
+  "slug" | "title" | "description" | "image"
+>;
+
+export function regionJsonLd(region: RegionSeoSource) {
   return [
     breadcrumbJsonLd([
       { name: "Home", path: "/" },

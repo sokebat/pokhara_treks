@@ -20,5 +20,4 @@ export type TrekkingRegion = {
   typicalDuration: string;
   facts: RegionFact[];
   paragraphs: string[];
-  highlights: string[];
 };

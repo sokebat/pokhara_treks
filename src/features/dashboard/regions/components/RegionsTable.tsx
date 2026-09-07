@@ -1,21 +1,8 @@
 import Link from "next/link";
-import { TbPlus } from "react-icons/tb";
-
-import RegionRowActions from "@/features/dashboard/regions/components/RegionRowActions";
-import {
-  regionEditPath,
-  regionNewPath,
-} from "@/features/dashboard/lib/content-paths";
+import { TbExternalLink, TbPlus, TbSeo } from "react-icons/tb";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Table,
   TableBody,
@@ -24,206 +11,183 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
-export type RegionTableRow = {
-  id: string;
-  slug: string;
-  title: string;
-  location: string;
-  typicalDuration: string;
-  highestPoint: string;
-  publicHref: string;
-};
+import DashboardPageHeader from "@/features/dashboard/components/DashboardPageHeader";
+import {
+  contentMetaPath,
+  contentMetaSlugs,
+  contentPaths,
+  regionEditPath,
+  regionNewPath,
+} from "@/features/dashboard/lib/content-paths";
+import RegionRowActions from "@/features/dashboard/regions/components/RegionRowActions";
+import { getRegionsForDashboard } from "@/features/dashboard/regions/service/region.service";
+import { regionPath } from "@/features/site/region/constant/regions";
 
 type RegionsTableProps = {
-  rows: RegionTableRow[];
   savedTitle?: string | null;
 };
 
-export default function RegionsTable({
-  rows,
-  savedTitle,
-}: RegionsTableProps) {
+const columns = [
+  "Region",
+  "Location",
+  "Highest point",
+  "Season",
+  "Typical trek",
+  "Actions",
+] as const;
+
+function cellValue(value: string) {
+  return value.trim() || "—";
+}
+
+export default async function RegionsTable({ savedTitle }: RegionsTableProps) {
+  const rows = await getRegionsForDashboard();
+  const seoHref = contentMetaPath(
+    contentPaths.regions,
+    contentMetaSlugs.regions,
+  );
+
   return (
     <div className="flex flex-1 flex-col gap-6">
-      {/* Page Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h1 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-            Regions
-          </h1>
+      <DashboardPageHeader
+        title="Regions"
+        description="Trekking region pages published on the site."
+        actions={
+          <>
+            <Button
+              nativeButton={false}
+              variant="outline"
+              className="rounded-md"
+              render={
+                <Link href="/region" target="_blank" rel="noopener noreferrer" />
+              }
+            >
+              <TbExternalLink className="size-4" />
+              View site
+            </Button>
+            <Button
+              nativeButton={false}
+              variant="outline"
+              className="rounded-md"
+              render={<Link href={seoHref} />}
+            >
+              <TbSeo className="size-4" />
+              Region SEO
+            </Button>
+            <Button
+              nativeButton={false}
+              className="rounded-md"
+              render={<Link href={regionNewPath} />}
+            >
+              <TbPlus className="size-4" />
+              Add region
+            </Button>
+          </>
+        }
+      />
 
-          <p className="mt-1 text-sm text-muted-foreground">
-            Manage trekking region pages published on your website.
-          </p>
-        </div>
-
-        <Button
-          nativeButton={false}
-          className="h-9 rounded-md px-4 shadow-none"
-          render={<Link href={regionNewPath} />}
-        >
-          <TbPlus className="size-4" />
-          Add region
-        </Button>
-      </div>
-
-      {/* Saved Message */}
       {savedTitle ? (
-        <div className="rounded-lg bg-muted/50 px-4 py-3 text-sm text-foreground">
-          <span className="font-medium">Region saved:</span>{" "}
+        <p className="rounded-md border-2 border-border bg-secondary/60 px-4 py-3 text-sm">
+          <span className="font-semibold text-foreground">Region saved:</span>{" "}
           <span className="text-muted-foreground">“{savedTitle}”</span>
-        </div>
+        </p>
       ) : null}
 
-      {/* Regions */}
-      <Card className="overflow-hidden rounded-xl border-0 bg-background shadow-none">
-        <CardHeader className="px-0 pb-5 pt-0">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <CardTitle className="text-base font-semibold">
-                All regions
-              </CardTitle>
-
-              <CardDescription className="mt-1 text-sm">
-                {rows.length === 0
-                  ? "No regions have been added yet."
-                  : `${rows.length} ${
-                      rows.length === 1 ? "region" : "regions"
-                    } published on the site.`}
-              </CardDescription>
-            </div>
-
-            {rows.length > 0 && (
-              <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
-                {rows.length} total
-              </span>
-            )}
-          </div>
-        </CardHeader>
-
-        <CardContent className="p-0">
-          {/* Single subtle border around the actual table */}
-          <div className="overflow-hidden rounded-lg border border-border/60">
-            <Table>
-              {/* Table Header */}
-              <TableHeader>
-                <TableRow className="border-border/60 bg-muted/30 hover:bg-muted/30">
-                  <TableHead className="h-12 px-5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Region
+      <Card className="gap-0 overflow-hidden py-0 shadow-none">
+        <CardContent className="px-0">
+          <Table className="min-w-[860px] text-[15px]">
+            <TableHeader>
+              <TableRow className="bg-secondary/60 hover:bg-secondary/60">
+                {columns.map((head) => (
+                  <TableHead
+                    key={head}
+                    className={`px-4 py-3 text-muted-foreground ${
+                      head === "Actions" ? "text-right" : ""
+                    }`}
+                  >
+                    {head}
                   </TableHead>
-
-                  <TableHead className="h-12 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Location
-                  </TableHead>
-
-                  <TableHead className="h-12 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Highest point
-                  </TableHead>
-
-                  <TableHead className="h-12 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Trek duration
-                  </TableHead>
-
-                  <TableHead className="h-12 px-5 text-right text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Actions
-                  </TableHead>
+                ))}
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {rows.length === 0 ? (
+                <TableRow>
+                  <TableCell colSpan={columns.length} className="h-48 px-4">
+                    <div className="flex flex-col items-center justify-center text-center">
+                      <p className="font-semibold text-foreground">
+                        No regions yet
+                      </p>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        Add a trekking region to publish it on the site.
+                      </p>
+                      <Button
+                        nativeButton={false}
+                        variant="outline"
+                        size="sm"
+                        className="mt-4 rounded-md"
+                        render={<Link href={regionNewPath} />}
+                      >
+                        <TbPlus className="size-4" />
+                        Add region
+                      </Button>
+                    </div>
+                  </TableCell>
                 </TableRow>
-              </TableHeader>
-
-              {/* Table Body */}
-              <TableBody>
-                {rows.length === 0 ? (
-                  <TableRow className="border-0">
-                    <TableCell colSpan={5} className="h-52 text-center">
-                      <div className="mx-auto flex max-w-sm flex-col items-center">
-                        <p className="font-medium text-foreground">
-                          No regions yet
-                        </p>
-
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          Add your first trekking region to get started.
-                        </p>
-
-                        <Button
-                          nativeButton={false}
-                          variant="outline"
-                          size="sm"
-                          className="mt-4 rounded-md shadow-none"
-                          render={<Link href={regionNewPath} />}
-                        >
-                          <TbPlus className="size-4" />
-                          Add region
-                        </Button>
+              ) : (
+                rows.map((row) => (
+                  <TableRow key={row.id}>
+                    <TableCell className="px-4 py-3.5 whitespace-normal">
+                      <Link
+                        href={regionEditPath(row.slug)}
+                        className="flex items-center gap-3"
+                      >
+                        {row.image ? (
+                          <span className="relative size-12 shrink-0 overflow-hidden rounded-md border-2 border-border bg-muted">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={row.image}
+                              alt=""
+                              className="size-full object-cover"
+                            />
+                          </span>
+                        ) : (
+                          <span className="flex size-12 shrink-0 items-center justify-center rounded-md border-2 border-border bg-muted text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                            {row.title.slice(0, 2)}
+                          </span>
+                        )}
+                        <span>
+                          <span className="block font-semibold text-foreground hover:text-chart-2">
+                            {row.title}
+                          </span>
+                          <span className="mt-0.5 block font-mono text-xs text-muted-foreground">
+                            {regionPath(row.slug)}
+                          </span>
+                        </span>
+                      </Link>
+                    </TableCell>
+                    <TableCell className="px-4 py-3.5 whitespace-normal text-muted-foreground">
+                      {cellValue(row.location)}
+                    </TableCell>
+                    <TableCell className="px-4 py-3.5 font-semibold whitespace-normal">
+                      {cellValue(row.highestPoint)}
+                    </TableCell>
+                    <TableCell className="px-4 py-3.5 whitespace-normal text-muted-foreground">
+                      {cellValue(row.bestSeason)}
+                    </TableCell>
+                    <TableCell className="px-4 py-3.5 font-semibold tabular-nums">
+                      {cellValue(row.typicalDuration)}
+                    </TableCell>
+                    <TableCell className="px-4 py-3.5">
+                      <div className="flex justify-end">
+                        <RegionRowActions row={row} />
                       </div>
                     </TableCell>
                   </TableRow>
-                ) : (
-                  rows.map((row) => (
-                    <TableRow
-                      key={row.id}
-                      className="border-border/50 transition-colors last:border-0 hover:bg-muted/20"
-                    >
-                      {/* Region */}
-                      <TableCell className="px-5 py-4">
-                        <Link
-                          href={regionEditPath(row.slug)}
-                          className="group block"
-                        >
-                          <div className="font-medium text-foreground transition-colors group-hover:text-chart-2">
-                            {row.title}
-                          </div>
-
-                          <div className="mt-1 text-xs text-muted-foreground">
-                            /region/{row.slug}
-                          </div>
-                        </Link>
-                      </TableCell>
-
-                      {/* Location */}
-                      <TableCell className="py-4">
-                        <span className="text-sm text-muted-foreground">
-                          {row.location || "—"}
-                        </span>
-                      </TableCell>
-
-                      {/* Highest Point */}
-                      <TableCell className="py-4">
-                        {row.highestPoint ? (
-                          <span className="inline-flex rounded-md bg-muted px-2.5 py-1 text-xs font-medium text-foreground">
-                            {row.highestPoint}
-                          </span>
-                        ) : (
-                          <span className="text-sm text-muted-foreground">
-                            —
-                          </span>
-                        )}
-                      </TableCell>
-
-                      {/* Trek Duration */}
-                      <TableCell className="py-4">
-                        <span className="text-sm text-muted-foreground">
-                          {row.typicalDuration || "—"}
-                        </span>
-                      </TableCell>
-
-                      {/* Actions */}
-                      <TableCell className="px-5 py-4">
-                        <div className="flex justify-end">
-                          <RegionRowActions
-                            id={row.id}
-                            slug={row.slug}
-                            title={row.title}
-                            publicHref={row.publicHref}
-                          />
-                        </div>
-                      </TableCell>
-                    </TableRow>
-                  ))
-                )}
-              </TableBody>
-            </Table>
-          </div>
+                ))
+              )}
+            </TableBody>
+          </Table>
         </CardContent>
       </Card>
     </div>

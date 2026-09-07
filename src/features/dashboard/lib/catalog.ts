@@ -6,7 +6,7 @@ import { heliTours } from "@/features/site/heli-tours/constant/heli-tours";
 import type { TripListingItem } from "@/features/site/listing/types";
 import { tourSections } from "@/features/site/tours/constant/tours";
 import { trekkingSections } from "@/features/site/trekking/constant/trekking";
-import { slugify } from "@/lib/utils";
+import { slugify } from "@/lib/slug";
 
 import {
   contentLeafSlug,

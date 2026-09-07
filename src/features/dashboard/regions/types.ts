@@ -15,7 +15,18 @@ export type RegionFormValues = {
   permits: string;
   typicalDuration: string;
   bodyHtml: string;
-  highlightsHtml: string;
+};
+
+export type RegionTableRow = {
+  id: string;
+  slug: string;
+  title: string;
+  location: string;
+  typicalDuration: string;
+  highestPoint: string;
+  bestSeason: string;
+  image: string;
+  publicHref: string;
 };
 
 export const emptyRegionFormValues = (): RegionFormValues => ({
@@ -35,5 +46,4 @@ export const emptyRegionFormValues = (): RegionFormValues => ({
   permits: "",
   typicalDuration: "",
   bodyHtml: "",
-  highlightsHtml: "<ul><li></li></ul>",
 });

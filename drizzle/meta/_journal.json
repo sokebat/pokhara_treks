@@ -22,6 +22,13 @@
       "when": 1788703748365,
       "tag": "0002_fearless_terrax",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1788745510659,
+      "tag": "0003_drop-region-highlights",
+      "breakpoints": true
     }
   ]
 }

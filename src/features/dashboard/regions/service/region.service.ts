@@ -1,6 +1,3 @@
-import { revalidatePath } from "next/cache";
-import { cache } from "react";
-
 import type { NewRegion, RegionRow } from "@/db/schema";
 import { contentPaths } from "@/features/dashboard/lib/content-paths";
 import {
@@ -12,8 +9,14 @@ import {
   updateRegionById,
   upsertRegionBySlug,
 } from "@/features/dashboard/regions/repository/region.repository";
-import type { RegionFormValues } from "@/features/dashboard/regions/types";
+import type {
+  RegionFormValues,
+  RegionTableRow,
+} from "@/features/dashboard/regions/types";
 import type { RegionFormInput } from "@/features/dashboard/regions/validation/region.validation";
+import { regionPath } from "@/features/site/region/constant/regions";
+import { revalidatePath } from "next/cache";
+import { cache } from "react";
 
 export function rowToFormValues(row: RegionRow): RegionFormValues {
   return {
@@ -33,7 +36,20 @@ export function rowToFormValues(row: RegionRow): RegionFormValues {
     permits: row.permits,
     typicalDuration: row.typicalDuration,
     bodyHtml: row.bodyHtml,
-    highlightsHtml: row.highlightsHtml,
+  };
+}
+
+function toTableRow(row: RegionRow): RegionTableRow {
+  return {
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    location: row.location,
+    typicalDuration: row.typicalDuration,
+    highestPoint: row.highestPoint,
+    bestSeason: row.bestSeason,
+    image: row.image,
+    publicHref: regionPath(row.slug),
   };
 }
 
@@ -58,22 +74,22 @@ function toNewRegion(
     permits: input.permits,
     typicalDuration: input.typicalDuration,
     bodyHtml: input.bodyHtml,
-    highlightsHtml: input.highlightsHtml,
     sortOrder,
   };
 }
 
 function revalidateRegionPaths(slug: string) {
   revalidatePath(contentPaths.regions);
-  revalidatePath(`/dashboard/region/new`);
-  revalidatePath(`/dashboard/region/edit/${slug}`);
+  revalidatePath(`${contentPaths.regions}/new`);
+  revalidatePath(`${contentPaths.regions}/edit/${slug}`);
   revalidatePath("/region");
   revalidatePath(`/region/${slug}`);
 }
 
 export const getRegionsForDashboard = cache(async () => {
   try {
-    return await listRegions();
+    const rows = await listRegions();
+    return rows.map(toTableRow);
   } catch (error) {
     console.error("[regions] list failed", error);
     return [];
