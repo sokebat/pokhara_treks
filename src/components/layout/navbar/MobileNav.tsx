@@ -14,6 +14,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Logo from "@/components/shared/Logo";
+import { iconButtonClass } from "./HeaderActions";
 import MobileNavItem from "./MobileNavItem";
 
 const MobileNav = () => {
@@ -24,7 +25,7 @@ const MobileNav = () => {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger
         render={<Button variant="ghost" size="icon" aria-label="Open menu" />}
-        className="md:hidden"
+        className={`${iconButtonClass} md:hidden`}
       >
         <TbMenu2 className="size-5" />
       </SheetTrigger>

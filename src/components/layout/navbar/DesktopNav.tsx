@@ -10,6 +10,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import MegaPanel from "./MegaPanel";
+import { navBarItemClass } from "./nav-item-style";
 import NavParentTrigger from "./NavParentTrigger";
 import SimplePanel from "./SimplePanel";
 
@@ -23,14 +24,14 @@ const DesktopNav = ({ className }: DesktopNavProps) => {
       closeDelay={200}
       className={cn("w-full max-w-none justify-center", className)}
     >
-      <NavigationMenuList className="flex-wrap gap-x-0.5 gap-y-1">
+      <NavigationMenuList className="flex-wrap gap-x-4 gap-y-1">
         {navItems.map((item) => {
           if (item.type === "link") {
             return (
               <NavigationMenuItem key={item.label}>
                 <NavigationMenuLink
                   render={<Link href={item.href} />}
-                  className="font-heading inline-flex h-8 cursor-pointer items-center rounded-md px-2 py-1.5 text-xs font-semibold tracking-wide uppercase hover:bg-muted hover:text-chart-2 lg:h-9 lg:px-2.5 lg:text-sm"
+                  className={navBarItemClass}
                 >
                   {item.label}
                 </NavigationMenuLink>

@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 
 import { NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
+import { navBarItemClass } from "./nav-item-style";
+
 type NavParentTriggerProps = {
   href: string;
   children: ReactNode;
@@ -18,7 +20,7 @@ const NavParentTrigger = ({ href, children }: NavParentTriggerProps) => {
     <NavigationMenuTrigger
       nativeButton={false}
       render={<Link href={href} />}
-      className="font-heading cursor-pointer text-xs font-semibold tracking-wide uppercase hover:text-chart-2 lg:text-sm"
+      className={navBarItemClass}
       onClick={(event) => {
         if (event.button !== 0) return;
 

@@ -32,7 +32,7 @@ const getStickyOffset = () => {
       "--main-nav-offset",
     ),
   );
-  return (Number.isFinite(mainNav) ? mainNav : 64) + 48;
+  return (Number.isFinite(mainNav) ? mainNav : 80) + 48;
 };
 
 const TripOnPageNav = () => {
@@ -87,7 +87,7 @@ const TripOnPageNav = () => {
   return (
     <nav
       aria-label="On this page"
-      className="sticky top-[var(--main-nav-offset,64px)] z-30 border-y-2 border-border bg-secondary/90 backdrop-blur-md transition-[top] duration-300 ease-out"
+      className="sticky top-[var(--main-nav-offset,80px)] z-30 border-y-2 border-border bg-secondary/90 backdrop-blur-md transition-[top] duration-300 ease-out"
     >
       <Container>
         <div className="flex items-center gap-4">

@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 
 import Container from "@/components/shared/Container";
 import Logo from "@/components/shared/Logo";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import DesktopNav from "./DesktopNav";
+import HeaderActions from "./HeaderActions";
 import MobileNav from "./MobileNav";
 import TopBar from "./TopBar";
 
@@ -50,7 +49,7 @@ const NavBar = () => {
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--main-nav-offset",
-      visible ? "64px" : "0px",
+      visible ? "80px" : "0px",
     );
 
     return () => {
@@ -75,34 +74,26 @@ const NavBar = () => {
         onMouseEnter={() => setPinned(true)}
         onMouseLeave={() => setPinned(false)}
         className={cn(
-          "sticky top-0 z-40 w-full border-b-2 border-border bg-card transition-transform duration-300 ease-out",
+          "sticky top-0 z-40 w-full border-b border-border bg-card transition-transform duration-300 ease-out",
           visible ? "translate-y-0" : "-translate-y-full",
         )}
       >
         <Container>
-          <div className="flex h-16 items-center gap-4 lg:gap-8">
+          <div className="flex min-h-[80px] min-w-0 items-center gap-3 sm:gap-4 lg:gap-5">
             <Logo priority className="h-[3.25rem] w-auto max-w-[min(100%,220px)]" />
 
-            <DesktopNav className="hidden min-w-0 flex-1 xl:flex" />
+            <DesktopNav className="hidden min-w-0 flex-1 justify-end [&_[data-slot=navigation-menu-list]]:justify-end xl:flex" />
 
-            <div className="ml-auto flex items-center gap-3">
-              <Button
-                nativeButton={false}
-                render={<Link href="/customize-my-trip" />}
-                size="lg"
-                className="hidden sm:inline-flex"
-              >
-                Plan Your Trip
-              </Button>
-
+            <div className="ml-auto flex items-center gap-3.5 xl:ml-[22px]">
+              <HeaderActions />
               <MobileNav />
             </div>
           </div>
         </Container>
 
-        <div className="hidden border-t-2 border-border bg-muted/30 md:block xl:hidden">
+        <div className="hidden border-t border-border bg-muted/30 md:block xl:hidden">
           <Container>
-            <DesktopNav className="flex justify-center py-1.5" />
+            <DesktopNav className="flex justify-center [&_[data-slot=navigation-menu-trigger]]:h-11 [&_[data-slot=navigation-menu-link]]:h-11" />
           </Container>
         </div>
       </header>
