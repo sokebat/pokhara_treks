@@ -4,8 +4,7 @@ import Link from "next/link";
 
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
-import { TREK_PHOTO, WOMEN_TREK_PHOTO } from "@/constant/photos";
-import { siteInfo } from "@/constant/site";
+import { HERO_PHOTO, TREK_PHOTO } from "@/constant/photos";
 
 const proofs = [
   { kicker: "Home base", value: "Lakeside, Pokhara" },
@@ -23,47 +22,53 @@ const routes = [
 const HeroSection = () => {
   return (
     <section>
+      {/* Hero. Two layers cut from one photograph, both still: a blurred ambient
+          copy filling the width, and the sharp frame pinned right and masked into
+          it. Below sm the ambient drops away and the sharp frame fills the width. */}
       <div className="relative isolate overflow-hidden bg-foreground">
-        <Image
-          src={WOMEN_TREK_PHOTO}
-          alt="A woman trekker with a backpack looking out over a snow-capped Himalayan mountain range"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[68%_center]"
-        />
+        <div aria-hidden className="absolute inset-0 hidden overflow-hidden sm:block">
+          <Image
+            src={HERO_PHOTO}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="scale-[1.06] object-cover object-[50%_16%] blur-[10px] saturate-[.9]"
+          />
+        </div>
+
+        <div className="absolute top-0 left-[-9%] aspect-3/4 w-[118%] sm:left-auto sm:right-[-1%] sm:h-[143%] sm:w-auto sm:[-webkit-mask-image:linear-gradient(90deg,transparent_0,#000_34%)] sm:[mask-image:linear-gradient(90deg,transparent_0,#000_34%)]">
+          <Image
+            src={HERO_PHOTO}
+            alt="A snow peak lit by the morning sun above a sea of cloud, with a trekker walking the grassy ridge in front of it"
+            fill
+            priority
+            sizes="(min-width: 640px) 60vw, 118vw"
+            className="object-cover"
+          />
+        </div>
+
         <div
           aria-hidden
-          className="absolute inset-0 bg-linear-to-t from-footer-deep from-[8%] via-footer/70 via-48% to-footer/25"
+          className="absolute inset-0 bg-linear-[100deg] from-footer-deep/90 from-0% via-footer/65 via-42% to-footer/20 to-100%"
         />
 
         <Container>
-          <div className="relative z-10 mx-auto max-w-3xl py-10 pb-24 text-center sm:py-14 sm:pb-28 lg:py-16 lg:pb-32">
-            <p className="inline-flex max-w-full items-center gap-2 rounded-full border-2 border-primary-foreground/40 bg-foreground/25 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.12em] text-primary-foreground uppercase [text-shadow:0_1px_12px_rgb(0_0_0_/_0.4)] sm:px-3.5 sm:text-xs sm:tracking-[0.18em]">
-              Women-led · Pokhara, Nepal
-            </p>
-
-            <h1 className="mt-4 text-2xl leading-snug font-bold tracking-tight text-balance text-primary-foreground [text-shadow:0_2px_20px_rgb(0_0_0_/_0.5)] sm:mt-5 sm:text-3xl sm:leading-tight md:text-4xl lg:text-5xl lg:leading-[1.1]">
-              The Himalaya, led by the women who know her best.
+          <div className="relative z-10 max-w-[40rem] py-[clamp(3.25rem,8vw,6.875rem)] pb-[clamp(5.25rem,12vw,10.375rem)] text-primary-foreground max-sm:pb-[4.375rem]">
+            <h1 className="text-[clamp(2.125rem,5vw,3.625rem)] leading-[1.04] font-bold tracking-tight text-balance">
+              You belong on these trails
             </h1>
 
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-pretty text-primary-foreground [text-shadow:0_2px_16px_rgb(0_0_0_/_0.5)] sm:mt-5 sm:text-base sm:leading-7 md:text-lg md:leading-8">
-              {siteInfo.name} puts trained local women at the front of every
-              journey — from Everest&apos;s high passes to Annapurna&apos;s
-              sanctuary trails.
+            <h2 className="mt-4 max-w-[44ch] font-sans text-[clamp(1.0625rem,1.7vw,1.25rem)] leading-[1.5] font-normal text-pretty text-primary-foreground/85">
+              Women-led trekking and adventure in Nepal, from our door in
+              Lakeside, Pokhara
+            </h2>
+
+            <p className="font-heading mt-5 inline-flex items-start gap-2.5 text-xs leading-[1.5] font-semibold tracking-[0.08em] text-gold uppercase before:mt-[0.7em] before:h-[1.5px] before:w-[22px] before:shrink-0 before:bg-gold before:content-['']">
+              Leading women-led trekking in the Annapurna region
             </p>
 
-            <div className="mt-6 flex w-full flex-col items-stretch justify-center gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
-              <Button
-                nativeButton={false}
-                render={<Link href="/customize-my-trip" />}
-                size="xl"
-                className="w-full sm:w-auto"
-              >
-                Plan Your Trip
-                <TbArrowRight className="size-4" />
-              </Button>
-
+            <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap">
               <Button
                 nativeButton={false}
                 render={<Link href="/trip" />}
@@ -71,22 +76,20 @@ const HeroSection = () => {
                 size="xl"
                 className="w-full sm:w-auto"
               >
-                Explore Treks
+                Find Your Trek
                 <TbArrowRight className="size-4" />
               </Button>
-            </div>
 
-            <p className="mt-5 text-xs font-medium text-pretty text-primary-foreground [text-shadow:0_1px_12px_rgb(0_0_0_/_0.45)] sm:mt-7 sm:text-sm">
-              Licensed women guides
-              <span aria-hidden className="mx-2 text-sky">
-                ·
-              </span>
-              Groups of eight
-              <span aria-hidden className="mx-2 text-sky">
-                ·
-              </span>
-              Based in Lakeside
-            </p>
+              <Button
+                nativeButton={false}
+                render={<Link href="/customize-my-trip" />}
+                variant="outline"
+                size="xl"
+                className="w-full border-primary-foreground/60 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-foreground sm:w-auto"
+              >
+                Plan Your Trip
+              </Button>
+            </div>
           </div>
         </Container>
       </div>
